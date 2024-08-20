@@ -74,11 +74,11 @@ const UploadProduct = ({ onClose }) => {
 
     if (responseData.success) {
       toast.success(responseData?.message);
+      onClose();
     }
 
     if (responseData.error) {
       toast.error(responseData?.message);
-      onClose
     }
   };
 

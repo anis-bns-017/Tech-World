@@ -8,8 +8,9 @@ import { toast } from "react-toastify";
 import { MdDelete } from "react-icons/md";
 import SummaryApi from "../common";
 
-const AdminEditProduct = ({ onClose, productData }) => {
+const AdminEditProduct = ({ productData, onClose, fetchData }) => {
   const [data, setData] = useState({
+    ...productData,
     productName: productData?.productName,
     brandName: productData?.brandName,
     category: productData?.category,
@@ -61,8 +62,8 @@ const AdminEditProduct = ({ onClose, productData }) => {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    const response = await fetch(SummaryApi.uploadProduct.url, {
-      method: SummaryApi.uploadProduct.method,
+    const response = await fetch(SummaryApi.updateProduct.url, {
+      method: SummaryApi.updateProduct.method,
       credentials: "include",
       headers: {
         "content-type": "application/json",
@@ -74,11 +75,12 @@ const AdminEditProduct = ({ onClose, productData }) => {
 
     if (responseData.success) {
       toast.success(responseData?.message);
+      onClose();
+      fetchData();
     }
 
     if (responseData.error) {
       toast.error(responseData?.message);
-      onClose;
     }
   };
 
@@ -241,7 +243,7 @@ const AdminEditProduct = ({ onClose, productData }) => {
           ></textarea>
 
           <button className="px-23 py-2  bg-red-600 text-white rounded mb-10 hover:bg-red-800">
-            Upload Product
+            Update Product
           </button>
         </form>
       </div>
