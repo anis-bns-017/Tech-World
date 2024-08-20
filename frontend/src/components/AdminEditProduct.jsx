@@ -8,15 +8,15 @@ import { toast } from "react-toastify";
 import { MdDelete } from "react-icons/md";
 import SummaryApi from "../common";
 
-const UploadProduct = ({ onClose }) => {
+const AdminEditProduct = ({ onClose, productData }) => {
   const [data, setData] = useState({
-    productName: "",
-    brandName: "",
-    category: "",
-    productImage: [],
-    description: "",
-    price: "",
-    sellingPrice: "",
+    productName: productData?.productName,
+    brandName: productData?.brandName,
+    category: productData?.category,
+    productImage: productData?.productImage || [],
+    description: productData?.description,
+    price: productData?.price,
+    sellingPrice: productData?.sellingPrice,
   });
 
   const [openFullScreenImage, setOpenFullScreenImage] = useState(false);
@@ -78,7 +78,7 @@ const UploadProduct = ({ onClose }) => {
 
     if (responseData.error) {
       toast.error(responseData?.message);
-      onClose
+      onClose;
     }
   };
 
@@ -86,7 +86,7 @@ const UploadProduct = ({ onClose }) => {
     <div className="fixed w-full h-full bg-slate-200 bg-opacity-35 top-0 left-0 right-0 bottom-0 flex justify-center items-center">
       <div className="bg-white p-4 rounded w-full max-w-2xl h-full max-h-[80%] overflow-hidden">
         <div className="flex justify-center items-center">
-          <h2 className="font-bold text-lg">Upload Product</h2>
+          <h2 className="font-bold text-lg">Edit Product</h2>
           <div className="w-fit ml-auto text-2xl" onClick={onClose}>
             <IoMdClose />
           </div>
@@ -257,4 +257,4 @@ const UploadProduct = ({ onClose }) => {
   );
 };
 
-export default UploadProduct;
+export default AdminEditProduct;
