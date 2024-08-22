@@ -31,7 +31,7 @@ const AllProducts = () => {
       </div>
 
       {/* All product */}
-      <div className="flex items-center gap-5 py-4">
+      <div className="flex items-center flex-wrap gap-5 py-4 h-[calc(100vh-190px)] overflow-y-scroll">
         {allProduct.map((product, index) => {
           return (
             <AdminProductCard
@@ -45,7 +45,10 @@ const AllProducts = () => {
 
       {/* Upload product component */}
       {openUploadProduct && (
-        <UploadProduct onClose={() => setOpenUploadProduct(false)} />
+        <UploadProduct
+          onClose={() => setOpenUploadProduct(false)}
+          fetchData={fetchAllProduct}
+        />
       )}
     </div>
   );

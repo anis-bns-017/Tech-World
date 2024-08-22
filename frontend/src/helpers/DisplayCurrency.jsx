@@ -1,2 +1,9 @@
+const displayCurrency = (num) => {
+  const formatter = new Intl.NumberFormat("en-BD", {
+    minimumFractionDigits: 2,
+  })
 
-const displayCurrency = ()
+  return formatter.format(num);
+};
+
+export default displayCurrency;

@@ -1,16 +1,16 @@
 const express = require("express");
 
 const router = express.Router();
-const userSignupController = require("../controller/userSignup");
-const userSigninController = require("../controller/userSignin");
+const userSignupController = require("../controller/user/userSignup");
+const userSigninController = require("../controller/user/userSignin");
 const authToken = require("../middleware/authToken");
-const userDetailsController = require("../controller/userDetails");
-const userLogout = require("../controller/userLogOut");
-const allUsers = require("../controller/allUsers");
-const updateUser = require("../controller/updateUser");
-const UploadProductController = require("../controller/uploadProduct");
-const getProductController = require("../controller/getProduct")
-const updateProductController = require("../controller/updateProduct")
+const userDetailsController = require("../controller/user/userDetails");
+const userLogout = require("../controller/user/userLogout");
+const allUsers = require("../controller/user/allUsers");
+const updateUser = require("../controller/user/updateUser");
+const UploadProductController = require("../controller/product/uploadProduct");
+const getProductController = require("../controller/product/getProduct")
+const updateProductController = require("../controller/product/updateProduct")
 
 router.post("/signup", userSignupController);
 router.post("/signin", userSigninController);

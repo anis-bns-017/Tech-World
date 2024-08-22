@@ -8,7 +8,7 @@ import { toast } from "react-toastify";
 import { MdDelete } from "react-icons/md";
 import SummaryApi from "../common";
 
-const UploadProduct = ({ onClose }) => {
+const UploadProduct = ({ onClose, fetchData }) => {
   const [data, setData] = useState({
     productName: "",
     brandName: "",
@@ -32,6 +32,7 @@ const UploadProduct = ({ onClose }) => {
   };
   const handleUploadProduct = async (e) => {
     const file = e.target.files[0];
+    console.log(file);
 
     const uploadImageCloudinary = await uploadImage(file);
 
@@ -44,7 +45,6 @@ const UploadProduct = ({ onClose }) => {
   };
 
   const handleDeleteProductImage = async (index) => {
-    console.log("index", index);
 
     const newProductImage = [...data.productImage];
     newProductImage.splice(index, 1);
@@ -75,6 +75,7 @@ const UploadProduct = ({ onClose }) => {
     if (responseData.success) {
       toast.success(responseData?.message);
       onClose();
+      fetchData();
     }
 
     if (responseData.error) {

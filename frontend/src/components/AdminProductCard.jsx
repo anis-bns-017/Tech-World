@@ -1,11 +1,12 @@
 import { MdModeEdit } from "react-icons/md";
 import AdminEditProduct from "./AdminEditProduct";
 import { useState } from "react";
+import displayCurrency from "../helpers/DisplayCurrency";
 
 const AdminProductCard = ({ data, fetchData }) => {
   const [editProduct, setEditProduct] = useState(false);
   return (
-    <div className="bg-white rounded p-4">
+    <div className="bg-white rounded p-5 ml-0.8">
       <div className="w-40">
         <img
           className="fit mx-auto"
@@ -13,11 +14,11 @@ const AdminProductCard = ({ data, fetchData }) => {
           width={120}
           height={120}
         />
-        <h1>{data.productName}</h1>
+        <h1 className="text-ellipsis line-clamp-2">{data.productName}</h1>
         <div>
-          <div>
-            {data.sellingPrice}
-          </div>
+          <div className="font-semibold">{`৳ ${displayCurrency(
+            data.sellingPrice
+          )}`}</div>
 
           <div
             onClick={() => setEditProduct(true)}
@@ -28,7 +29,8 @@ const AdminProductCard = ({ data, fetchData }) => {
         </div>
       </div>
 
-      {editProduct && (
+      {
+      editProduct && (
         <AdminEditProduct
           productData={data}
           onClose={() => setEditProduct(false)}
