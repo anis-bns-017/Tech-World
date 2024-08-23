@@ -1,8 +1,10 @@
+import CategoryList from "../components/CategoryList"
+
  
 const Home = () => {
   return (
-    <div>
-      Home
+    <div className="container mx-auto p-4">
+      <CategoryList />
     </div>
   )
 }

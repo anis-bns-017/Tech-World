@@ -26,3 +26,8 @@ body {
 .userTable td {
   @apply border text-base text-center
 }
+
+/* scrollbar Hidden */
+.scrollbaar-none::-webkit-scrollbar {
+  display: none;
+}
