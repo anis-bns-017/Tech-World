@@ -12,36 +12,40 @@ const SummaryApi = {
 
   current_user: {
     url: `${backendDomain}/api/user-details`,
-    method: "get"
-  }, 
+    method: "get",
+  },
   logout_user: {
     url: `${backendDomain}/api/user-logout`,
-    method: "get"
-  }, 
+    method: "get",
+  },
   allUser: {
     url: `${backendDomain}/api/all-users`,
-    method: "get"
-  }, 
+    method: "get",
+  },
   updateUser: {
     url: `${backendDomain}/api/update-user`,
-    method: "post"
-  }, 
+    method: "post",
+  },
   uploadProduct: {
     url: `${backendDomain}/api/upload-product`,
-    method: "post"
-  }, 
+    method: "post",
+  },
   allProduct: {
     url: `${backendDomain}/api/get-product`,
-    method: "get"
-  }, 
+    method: "get",
+  },
   updateProduct: {
     url: `${backendDomain}/api/update-product`,
-    method: "post"
-  }, 
+    method: "post",
+  },
   categoryProduct: {
     url: `${backendDomain}/api/get-categoryProduct`,
-    method: "get"
-  }
+    method: "get",
+  },
+  categoryWiseProduct: {
+    url: `${backendDomain}/api/category-product`,
+    method: "post",
+  },
 };
 
 export default SummaryApi;
