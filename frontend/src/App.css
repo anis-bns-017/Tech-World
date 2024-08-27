@@ -28,6 +28,6 @@ body {
 }
 
 /* scrollbar Hidden */
-.scrollbaar-none::-webkit-scrollbar {
+.scrollbar-none::-webkit-scrollbar {
   display: none;
 }

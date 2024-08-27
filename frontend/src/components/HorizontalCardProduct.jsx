@@ -4,6 +4,8 @@ import displayCurrency from "../helpers/DisplayCurrency";
 
 import { FaAngleLeft } from "react-icons/fa6";
 import { FaAngleRight } from "react-icons/fa6";
+import { Link } from "react-router-dom";
+import AddToCart from "../helpers/AddToCart";
 
 const HorizontalCardProduct = ({ category, heading }) => {
   const [data, setData] = useState([]);
@@ -38,7 +40,7 @@ const HorizontalCardProduct = ({ category, heading }) => {
       <h2 className="text-2xl font-semibold py-4">{heading}</h2>
 
       <div
-        className="flex items-center gap-4 md:gap-6 overflow-scroll transition-all"
+        className="flex items-center gap-4 md:gap-6 overflow-scroll scrollbar-none transition-all"
         ref={scrollElement}
       >
         <button
@@ -82,7 +84,7 @@ const HorizontalCardProduct = ({ category, heading }) => {
             })
           : data.map((product, index) => {
               return (
-                <div
+                <Link to={"product/" + product?._id}
                   key={index}
                   className="w-full max-w-[280px] md: min-w-[340px] h-36 bg-white rounded-sm shadow flex"
                 >
@@ -108,11 +110,11 @@ const HorizontalCardProduct = ({ category, heading }) => {
                         {"৳" + displayCurrency(product?.price)}
                       </p>
                     </div>
-                    <button className="bg-red-600 hover:bg-red-700 text-white px-3 py-1 rounded-full">
+                    <button className="bg-red-600 hover:bg-red-700 text-white px-3 py-1 rounded-full" onClick={()=> AddToCart(e, product?._id)}>
                       Add to Cart
                     </button>
                   </div>
-                </div>
+                </Link>
               );
             })}
       </div>
