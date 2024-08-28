@@ -7,7 +7,7 @@ import { FaAngleRight } from "react-icons/fa6";
 import { Link } from "react-router-dom";
 import AddToCart from "../helpers/AddToCart";
 
-const VerticalCardProduct = ({ category, heading }) => {
+const CategoryWiseProductDisplay = ({ category, heading }) => {
   const [data, setData] = useState([]);
   const [loading, setLoading] = useState(true);
   const loadingList = new Array(13).fill(null);
@@ -123,4 +123,4 @@ const VerticalCardProduct = ({ category, heading }) => {
   );
 };
 
-export default VerticalCardProduct;
+export default CategoryWiseProductDisplay;

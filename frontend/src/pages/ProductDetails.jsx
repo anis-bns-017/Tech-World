@@ -5,6 +5,7 @@ import { FaStar } from "react-icons/fa6";
 import { FaRegStarHalfStroke } from "react-icons/fa6";
 import displayCurrency from "../helpers/DisplayCurrency";
 import VerticalCardProduct from "../components/VerticalCardProduct";
+import CategoryWiseProductDisplay from "../components/CategoryWiseProductDisplay";
 
 const ProductDetails = () => {
   const [data, setData] = useState({
@@ -73,7 +74,7 @@ const ProductDetails = () => {
 
   const handleLeaveImageZoom = () => {
     setZoomImage(false);
-  }
+  };
 
   return (
     <div className="container mx-auto p-4">
@@ -206,8 +207,13 @@ const ProductDetails = () => {
         )}
       </div>
 
-     </div>
-    
+      {data.category && (
+        <CategoryWiseProductDisplay
+          category={data?.category}
+          heading="Recommended Product"
+        />
+      )}
+    </div>
   );
 };
 
