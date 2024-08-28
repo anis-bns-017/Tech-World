@@ -1,6 +1,10 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import SummaryApi from "../common";
+import { FaStar } from "react-icons/fa6";
+import { FaRegStarHalfStroke } from "react-icons/fa6";
+import displayCurrency from "../helpers/DisplayCurrency";
+
 const ProductDetails = () => {
   const [data, setData] = useState({
     productName: "",
@@ -45,6 +49,7 @@ const ProductDetails = () => {
   };
   return (
     <div className="container mx-auto p-4">
+
       {/* product image */}
       <div className="min-h-[200px] flex flex-col lg:flex-row gap-4">
         <div className="h-96 flex flex-col lg:flex-row-reverse gap-4">
@@ -53,6 +58,7 @@ const ProductDetails = () => {
               src={activeImage}
               className="h-full w-full object-scale-down mix-blend-multiply"
             />
+
           </div>
 
           <div className="h-full">
@@ -79,6 +85,7 @@ const ProductDetails = () => {
                         src={imageUrl}
                         className="w-full h-full object-scale-down mix-blend-multiply cursor-pointer"
                         onMouseEnter={() => handleMouseEnterProduct(imageUrl)}
+                        onClick={() => handleMouseEnterProduct(imageUrl)}
                       />
                     </div>
                   );
@@ -89,7 +96,69 @@ const ProductDetails = () => {
         </div>
 
         {/* product details */}
-        <div> Product Details </div>
+        {loading ? (
+          <div className="grid gap-1 w-full">
+            <p className="bg-slate-200 animate-pulse h-6 lg:h-8 rounded-full inline-block w-full"></p>
+            <h2 className="text-2xl lg:text-4xl h-6 lg:h-8 bg-slate-200 animate-pulse font-medium w-full"></h2>
+            <p className="capitalize text-slate-400 bg-slate-200 min-w-[200px] animate-pulse h-6 lg:h-8 w-full"></p>
+            <div className="text-red-600 bg-slate-200 h-6 lg:h-8 animate-pulse flex items-center gap-1 w-full"></div>
+
+            <div className="flex items-center gap-2 text-2xl lg:text-3xl font-medium my-1 h-6 lg:h-8 animate-pulse w-full">
+              <p className="text-red-600 bg-slate-200 w-full"></p>
+              <p className="text-slate-400 line-through bg-slate-200 w-full"></p>
+            </div>
+
+            <div className="flex items-center gap-3 my-2 w-full">
+              <button className="h-6 lg:h-8 animate-pulse rounded bg-slate-200 w-full"></button>
+              <button className="h-6 lg:h-8 animate-pulse rounded bg-slate-200 w-full"></button>
+            </div>
+
+            <div>
+              <p className="text-slate-600 font-medium my-1 h-6 lg:h-8 animate-pulse rounded bg-slate-200 w-full"></p>
+              <p className="h-10 lg:h-12 animate-pulse rounded bg-slate-200 w-full"></p>
+            </div>
+          </div>
+        ) : (
+          <div className="flex flex-col gap-1">
+            <p className="bg-red-200 text-red-700 px-2 rounded-full inline-block w-fit">
+              {data?.brandName}
+            </p>
+            <h2 className="text-2xl lg:text-4xl font-medium">
+              {data?.productName}
+            </h2>
+            <p className="capitalize text-slate-400">{data?.category}</p>
+            <div className="text-red-600 flex items-center gap-1">
+              <FaStar />
+              <FaStar />
+              <FaStar />
+              <FaStar />
+              <FaRegStarHalfStroke />
+            </div>
+
+            <div className="flex items-center gap-2 text-2xl font-medium">
+              <p className="text-red-600">
+                {"৳" + displayCurrency(data.sellingPrice)}
+              </p>
+              <p className="text-slate-400 line-through">
+                {"৳" + displayCurrency(data.price)}
+              </p>
+            </div>
+
+            <div className="flex items-center gap-3">
+              <button className="border-2 border-red-600 rounded px-3 py-1 min-w-[120px] text-red-600 font-medium hover:text-white hover:bg-red-600">
+                Buy
+              </button>
+              <button className="border-2 border-red-600 rounded px-3 py-1 min-w-[120px] text-white font-medium bg-red-600 hover:text-red-600 hover:bg-white transition-all">
+                Add to Cart
+              </button>
+            </div>
+
+            <div>
+              <p className="text-slate-600 font-medium my-1">Description</p>
+              <p>{data?.description}</p>
+            </div>
+          </div>
+        )}
       </div>
     </div>
   );

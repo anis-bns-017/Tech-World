@@ -55,7 +55,7 @@ const VerticalCardProduct = ({ category, heading }) => {
         </button>
 
         {loading
-          ? loadingList.map((product, index) => {
+          ? loadingList?.map((product, index) => {
               return (
                 <div
                   key={index}
@@ -80,7 +80,7 @@ const VerticalCardProduct = ({ category, heading }) => {
                 </div>
               );
             })
-          : data.map((product, index) => {
+          : data?.map((product, index) => {
               return (
                 <div
                   key={index}

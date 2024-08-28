@@ -23,7 +23,7 @@ const CategoryList = () => {
     <div className="container mx-auto p-4">
       <div className="flex items-center gap-4 justify-between overflow-scroll scrollbaar-none">
         {loading
-          ? categoryLoading.map((el, index) => {
+          ? categoryLoading?.map((el, index) => {
               return (
                 <div
                   key={"categoryLoading" + index}
@@ -31,7 +31,7 @@ const CategoryList = () => {
                 ></div>
               );
             })
-          : categoryProduct.map((product, index) => {
+          : categoryProduct?.map((product, index) => {
               return (
                 <Link
                   to={"/product-category/" + product?.category}
