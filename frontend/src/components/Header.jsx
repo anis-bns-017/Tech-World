@@ -2,7 +2,7 @@ import Logo from "./Logo";
 import { ImSearch } from "react-icons/im";
 import { FaUser } from "react-icons/fa";
 import { FaCartPlus } from "react-icons/fa";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import SummaryApi from "../common";
 import { toast } from "react-toastify";
@@ -16,6 +16,7 @@ const Header = () => {
   const dispatch = useDispatch();
   const [menuDisplay, setMenuDisplay] = useState(false);
   const context = useContext(Context);
+  const navigate = useNavigate();
 
   const handleLogout = async () => {
     const fetchData = await fetch(SummaryApi.logout_user.url, {
@@ -34,6 +35,16 @@ const Header = () => {
     }
   };
 
+  const handleSearch = (e) => {
+    const { value } = e.target;
+
+    if (value) {
+      navigate(`/search?q-${value}`);
+    } else {
+      navigate("/search");
+    }
+  };
+
   return (
     <header className="h-16 shadow-md bg-white fixed w-full z-40">
       <div className="flex items-center h-full container mx-auto px-4 justify-between">
@@ -48,6 +59,7 @@ const Header = () => {
             type="text"
             placeholder="Search produce here...."
             className="w-full outline-none pl-2"
+            onChange={handleSearch}
           />
 
           <div className="text-lg min-w-[50px] h-6 bg-red-600 flex items-center justify-center rounded-r-full">
@@ -92,7 +104,7 @@ const Header = () => {
           </div>
 
           {user?._id && (
-            <Link to={'/cart'} className="text-2xl relative">
+            <Link to={"/cart"} className="text-2xl relative">
               <span>
                 <FaCartPlus />
               </span>
