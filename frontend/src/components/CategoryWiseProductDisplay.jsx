@@ -111,10 +111,10 @@ const CategoryWiseProductDisplay = ({ category, heading }) => {
                     </p>
                     <div className="flex gap-3">
                       <p className="text-red-600 font-semibold">
-                        {"৳" + displayCurrency(product?.sellingPrice)}
+                        {"" + displayCurrency(product?.sellingPrice)}
                       </p>
                       <p className="text-slate-500 line-through">
-                        {"৳" + displayCurrency(product?.price)}
+                        {"" + displayCurrency(product?.price)}
                       </p>
                     </div>
                     <button

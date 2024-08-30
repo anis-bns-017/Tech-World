@@ -16,7 +16,7 @@ const AdminProductCard = ({ data, fetchData }) => {
         />
         <h1 className="text-ellipsis line-clamp-2">{data.productName}</h1>
         <div>
-          <div className="font-semibold">{`৳ ${displayCurrency(
+          <div className="font-semibold">{` ${displayCurrency(
             data.sellingPrice
           )}`}</div>
 

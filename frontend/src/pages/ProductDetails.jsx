@@ -182,10 +182,10 @@ const ProductDetails = () => {
 
             <div className="flex items-center gap-2 text-2xl font-medium">
               <p className="text-red-600">
-                {"৳" + displayCurrency(data.sellingPrice)}
+                {"" + displayCurrency(data.sellingPrice)}
               </p>
               <p className="text-slate-400 line-through">
-                {"৳" + displayCurrency(data.price)}
+                {"" + displayCurrency(data.price)}
               </p>
             </div>
 

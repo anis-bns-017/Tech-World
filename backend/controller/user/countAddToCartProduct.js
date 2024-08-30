@@ -9,15 +9,15 @@ const countAddToCartProduct = async (req, res) => {
     });
 
     res.json({
-        data: {
-            count: count, 
-        }, 
-        message: "OK", 
-        success: true, 
-        error: false
-    })
+      data: {
+        count: count,
+      },
+      message: "OK",
+      success: true,
+      error: false,
+    });
   } catch (err) {
-    res.status(400).json({
+    res.json({
       message: err.message || err,
       error: true,
       success: false,

@@ -2,8 +2,6 @@ const userModel = require("../../models/userModel");
 
 async function allUsers(req, res) {
    try {
-      console.log("All UserID: ", req.userId);
-
       const allUsers = await userModel.find();
       res.json({
          message: "all users",

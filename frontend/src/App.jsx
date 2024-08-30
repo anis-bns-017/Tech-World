@@ -44,7 +44,7 @@ const App = () => {
   useEffect(() => {
     //user details
     fetchUserDetails();
-
+    cartProductCount, 
     //user details cart products
     fetchUserAddToCart();
   }, []);
