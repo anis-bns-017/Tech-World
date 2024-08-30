@@ -2,10 +2,11 @@ import { useContext, useEffect, useState } from "react";
 import SummaryApi from "../common";
 import Context from "../context/Context";
 import displayCurrency from "../helpers/DisplayCurrency";
+import { MdDelete } from "react-icons/md";
 
 const Cart = () => {
   const [data, setData] = useState([]);
-  const [loading, setLoading] = useState(false);
+  const [loading, setLoading] = useState(true);
   const context = useContext(Context);
   const loadingCart = new Array(context.cartProductCount).fill(null);
 
@@ -31,7 +32,68 @@ const Cart = () => {
     fetchData();
   }, []);
 
-  console.log("Data: ", data);
+  const increaseQuantity = async (id, qty) => {
+    const response = await fetch(SummaryApi.updateCartProduct.url, {
+      method: SummaryApi.updateCartProduct.method,
+      credentials: "include",
+      headers: {
+        "content-type": "application/json",
+      },
+      body: JSON.stringify({
+        _id: id,
+        quantity: qty + 1,
+      }),
+    });
+
+    const responseData = await response.json();
+
+    if (responseData.success) {
+      fetchData();
+    }
+  };
+
+  const decreaseQuantity = async (id, qty) => {
+    if (qty > 1) {
+      const response = await fetch(SummaryApi.updateCartProduct.url, {
+        method: SummaryApi.updateCartProduct.method,
+        credentials: "include",
+        headers: {
+          "content-type": "application/json",
+        },
+        body: JSON.stringify({
+          _id: id,
+          quantity: qty - 1,
+        }),
+      });
+
+      const responseData = await response.json();
+
+      if (responseData.success) {
+        fetchData();
+      }
+    }
+  };
+
+  const deleteCartItem = async (id) => {
+    const response = await fetch(SummaryApi.deleteCartProduct.url, {
+      method: SummaryApi.deleteCartProduct.method,
+      credentials: "include",
+      headers: {
+        "content-type": "application/json",
+      },
+      body: JSON.stringify({
+        _id: id,
+      }),
+    });
+
+    const responseData = await response.json();
+
+    if (responseData.success) {
+      fetchData();
+      context.fetchUserAddToCart();
+    }
+  };
+
   return (
     <div className="container mx-auto">
       <div className="text-center font-lg">
@@ -66,20 +128,39 @@ const Cart = () => {
                       />
                     </div>
 
-                    <div className="px-4 py-2">
+                    <div className="px-4 py-2 relative">
+                      {/* delete product */}
+                      <div
+                        className="absolute right-0 text-red-600 rounded-full p-2 hover:bg-red-600 cursor-pointer hover:text-white"
+                        onClick={() => deleteCartItem(product._id)}
+                      >
+                        <MdDelete />
+                      </div>
                       <h2 className="text-lg lg:text-xl text-ellipsis line-clamp-1">
                         {product?.productId?.productName}
                       </h2>
                       <p className="capitalize text-slate-500">
                         {product?.productId?.category}
                       </p>
-                      <p className="text-red-600 font-semibold text-lg">{displayCurrency(product?.productId?.sellingPrice)}</p>
+                      <p className="text-red-600 font-semibold text-lg">
+                        {displayCurrency(product?.productId?.sellingPrice)}
+                      </p>
                       <div className="flex items-center gap-3">
-                        <button className="border border-red-600 text-red-600 animation-all hover:scale-110 hover:bg-red-600 hover:text-white w-6 h-6 rounded">
+                        <button
+                          className="border bg-red-700 border-red-600 font-semibold text-white animation-all hover:scale-110 hover:bg-red-600 hover:text-white w-6 h-6 rounded"
+                          onClick={() =>
+                            decreaseQuantity(product._id, product?.quantity)
+                          }
+                        >
                           -
                         </button>
-                        <span>{product?.quantity}</span>
-                        <button className="border bg-green-600 border-blue-600 animation-all text-white  hover:bg-green-800 hover:scale-110 hover:text-white w-6 h-6 rounded">
+                        <span>{product.quantity}</span>
+                        <button
+                          className="border bg-green-600 border-blue-600 font-semibold animation-all text-white  hover:bg-green-900 hover:scale-110 hover:text-white w-6 h-6 rounded"
+                          onClick={() =>
+                            increaseQuantity(product._id, product?.quantity)
+                          }
+                        >
                           +
                         </button>
                       </div>
@@ -94,7 +175,12 @@ const Cart = () => {
           {loading ? (
             <div className="h-36 bg-slate-200 border border-slate-300 animate-pulse"></div>
           ) : (
-            <div className="h-36 bg-slate-200"></div>
+            <div className="h-36 bg-slate-200">
+              <h2 className="text-white bg-red-600 px-4 py-1">Summary</h2>
+              <div>
+                <p>Quantity</p>
+              </div>
+            </div>
           )}
         </div>
       </div>

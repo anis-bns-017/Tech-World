@@ -34,10 +34,6 @@ const App = () => {
 
     const dataApi = await dataResponse.json();
 
-    // if (dataApi.success) {
-    //   dispatch(setUserDetails(dataApi.data));
-    // }
-
     setCartProductCount(dataApi?.data?.count);
   };
 
