@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from "react";
+import { useContext, useEffect, useRef, useState } from "react";
 import fetchCategoryWiseProduct from "../helpers/fetchCategoryWiseProduct";
 import displayCurrency from "../helpers/DisplayCurrency";
 
@@ -6,13 +6,20 @@ import { FaAngleLeft } from "react-icons/fa6";
 import { FaAngleRight } from "react-icons/fa6";
 import { Link } from "react-router-dom";
 import AddToCart from "../helpers/AddToCart";
+import Context from "../context/Context";
 
 const CategoryWiseProductDisplay = ({ category, heading }) => {
   const [data, setData] = useState([]);
   const [loading, setLoading] = useState(true);
   const loadingList = new Array(13).fill(null);
-  const [scroll, setScroll] = useState(0);
   const scrollElement = useRef();
+
+  const { fetchUserAddToCart } = useContext(Context);
+
+  const handleAddToCart = async (e, id) => {
+    await AddToCart(e, id);
+    fetchUserAddToCart();
+  };
 
   const fetchData = async () => {
     setLoading(true);
@@ -20,7 +27,6 @@ const CategoryWiseProductDisplay = ({ category, heading }) => {
     setLoading(false);
 
     setData(categoryProduct?.data);
-    console.log(categoryProduct?.data);
   };
 
   useEffect(() => {
@@ -111,7 +117,10 @@ const CategoryWiseProductDisplay = ({ category, heading }) => {
                         {"৳" + displayCurrency(product?.price)}
                       </p>
                     </div>
-                    <button className="bg-red-600 hover:bg-red-700 text-white px-3 py-1 rounded-full" onClick={()=> AddToCart(e, product?._id)}>
+                    <button
+                      className="bg-red-600 hover:bg-red-700 text-white px-3 py-1 rounded-full"
+                      onClick={(e) => handleAddToCart(e)}
+                    >
                       Add to Cart
                     </button>
                   </div>

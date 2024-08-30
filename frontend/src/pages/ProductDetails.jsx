@@ -4,7 +4,6 @@ import SummaryApi from "../common";
 import { FaStar } from "react-icons/fa6";
 import { FaRegStarHalfStroke } from "react-icons/fa6";
 import displayCurrency from "../helpers/DisplayCurrency";
-import VerticalCardProduct from "../components/VerticalCardProduct";
 import CategoryWiseProductDisplay from "../components/CategoryWiseProductDisplay";
 
 const ProductDetails = () => {
@@ -121,10 +120,10 @@ const ProductDetails = () => {
               </div>
             ) : (
               <div className="flex gap-2 lg:flex-col overflow-scroll scrollbar-none h-full">
-                {data?.productImage?.map((imageUrl) => {
+                {data?.productImage?.map((imageUrl, index) => {
                   return (
                     <div
-                      key={imageUrl}
+                      key={index}
                       className="h-20 w-20 bg-slate-200 rounded p-1"
                     >
                       <img

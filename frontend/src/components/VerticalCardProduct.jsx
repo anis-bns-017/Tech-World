@@ -20,7 +20,6 @@ const VerticalCardProduct = ({ category, heading }) => {
     setLoading(false);
 
     setData(categoryProduct?.data);
-    console.log(categoryProduct?.data);
   };
 
   useEffect(() => {
@@ -111,7 +110,7 @@ const VerticalCardProduct = ({ category, heading }) => {
                         {"৳" + displayCurrency(product?.price)}
                       </p>
                     </div>
-                    <button className="bg-red-600 hover:bg-red-700 text-white px-3 py-1 rounded-full" onClick={()=> AddToCart(e, product?._id)}>
+                    <button className="bg-red-600 hover:bg-red-700 text-white px-3 py-1 rounded-full" onClick={(e)=> AddToCart(e, product?._id)}>
                       Add to Cart
                     </button>
                   </div>
