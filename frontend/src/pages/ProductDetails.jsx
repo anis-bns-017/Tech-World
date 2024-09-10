@@ -1,10 +1,12 @@
-import { useCallback, useEffect, useState } from "react";
+import { useCallback, useContext, useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import SummaryApi from "../common";
 import { FaStar } from "react-icons/fa6";
 import { FaRegStarHalfStroke } from "react-icons/fa6";
 import displayCurrency from "../helpers/DisplayCurrency";
 import CategoryWiseProductDisplay from "../components/CategoryWiseProductDisplay";
+import AddToCart from "../helpers/AddToCart";
+import Context from "../context/Context";
 
 const ProductDetails = () => {
   const [data, setData] = useState({
@@ -23,6 +25,12 @@ const ProductDetails = () => {
     y: 0,
   });
   const [zoomImage, setZoomImage] = useState(false);
+  const { fetchUserAddToCart } = useContext(Context);
+
+  const handleAddToCart = async (e, id) => {
+    await AddToCart(e, id);
+    fetchUserAddToCart();
+  };
 
   const productImageListLoading = new Array(4).fill(null);
 
@@ -49,7 +57,7 @@ const ProductDetails = () => {
 
   useEffect(() => {
     fetchProductDetails();
-  }, []);
+  }, [params]);
 
   const handleMouseEnterProduct = (imageUrl) => {
     setActiveImage(imageUrl);
@@ -75,13 +83,14 @@ const ProductDetails = () => {
     setZoomImage(false);
   };
 
+
   return (
     <div className="container mx-auto p-4">
       {/* product image */}
 
       <div className="min-h-[200px] flex flex-col lg:flex-row gap-4">
         <div className="h-96 flex flex-col lg:flex-row-reverse gap-4">
-          <div className="h-[300px] w-[300px] lg:h-96 lg:w-96 bg-slate-200 relative">
+          <div className="h-[300px] w-[300px] lg:h-96 lg:w-96 px-5 bg-slate-200 relative">
             <img
               src={activeImage}
               onMouseMove={handleZoomImage}
@@ -182,10 +191,10 @@ const ProductDetails = () => {
 
             <div className="flex items-center gap-2 text-2xl font-medium">
               <p className="text-red-600">
-                {"" + displayCurrency(data.sellingPrice)}
+                {displayCurrency(data?.sellingPrice)}
               </p>
               <p className="text-slate-400 line-through">
-                {"" + displayCurrency(data.price)}
+                {displayCurrency(data?.price)}
               </p>
             </div>
 
@@ -193,7 +202,8 @@ const ProductDetails = () => {
               <button className="border-2 border-red-600 rounded px-3 py-1 min-w-[120px] text-red-600 font-medium hover:text-white hover:bg-red-600">
                 Buy
               </button>
-              <button className="border-2 border-red-600 rounded px-3 py-1 min-w-[120px] text-white font-medium bg-red-600 hover:text-red-600 hover:bg-white transition-all">
+              <button className="border-2 border-red-600 rounded px-3 py-1 min-w-[120px] text-white font-medium bg-red-600 hover:text-red-600 hover:bg-white transition-all"
+              onClick={(e)=> handleAddToCart(e, params?.id)}>
                 Add to Cart
               </button>
             </div>
@@ -206,7 +216,7 @@ const ProductDetails = () => {
         )}
       </div>
 
-      {data.category && (
+      {data?.category && (
         <CategoryWiseProductDisplay
           category={data?.category}
           heading="Recommended Product"

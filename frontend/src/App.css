@@ -2,13 +2,11 @@
 @tailwind components;
 @tailwind utilities;
 
- 
-
 body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  font-family:Arial, sans-serif;
-  @apply bg-slate-100 
+  font-family: Arial, sans-serif;
+  @apply bg-slate-100;
 }
 
 .customShadow {
@@ -16,18 +14,47 @@ body {
 }
 
 /* user table */
-.userTable{
-  @apply bg-white 
+.userTable {
+  @apply bg-white;
 }
-.userTable th{
-  @apply border text-base font-medium
+.userTable th {
+  @apply border text-base font-medium;
 }
 
 .userTable td {
-  @apply border text-base text-center
+  @apply border text-base text-center;
 }
 
 /* scrollbar Hidden */
 .scrollbar-none::-webkit-scrollbar {
   display: none;
 }
+
+.text-wrapper { 
+  color: black;
+  margin: 0;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: flex-start;
+  background-color: white;
+  overflow: hidden;
+}
+
+.text-wrapper p {
+  font-size: 14px;
+  color: black;
+  white-space: nowrap;
+  padding: 0 6rem;
+  letter-spacing: 1px;
+  animation: move-rtl 20s linear infinite;
+}
+
+@keyframes move-rtl {
+  0% {
+    transform: translateX(120%);
+  }
+  100% {
+    transform: translateX(-100%)
+  }
+}
+

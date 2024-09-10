@@ -20,8 +20,8 @@ const CategoryList = () => {
   }, []);
 
   return (
-    <div className="container mx-auto p-4">
-      <div className="flex items-center gap-4 justify-between overflow-scroll scrollbaar-none">
+    <div className="w-full h-[50px] bg-white relative -mt-3 justify-center items-center">
+      <div className="flex gap-3 text-[15px] mx-11 mt-3 text-center items-center absolute">
         {loading
           ? categoryLoading?.map((el, index) => {
               return (
@@ -34,20 +34,11 @@ const CategoryList = () => {
           : categoryProduct?.map((product, index) => {
               return (
                 <Link
-                  to={"/product-category/" + product?.category}
+                  to={"/product-category/" + product.category}
                   key={product?.category}
                   className="cursor-pointer"
                 >
-                  <div className="w-16 h-16 md:w-20 md:h-20 rounded-full overflow-hidden p-4 bg-slate-200 flex justify-center items-center">
-                    <img
-                      src={product.productImage[0]}
-                      alt={product.category}
-                      className="h-full object-scale-down mix-blend-multiply hover:scale-125 transition-all"
-                    />
-                  </div>
-                  <p className="text-center text-sm md:text-base capitalize">
-                    {product?.category}
-                  </p>
+                  <p className="cursor-pointer hover:text-red-500">{product?.category}</p>
                 </Link>
               );
             })}

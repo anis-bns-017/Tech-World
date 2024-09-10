@@ -7,6 +7,7 @@ import { FaAngleRight } from "react-icons/fa6";
 import { Link } from "react-router-dom";
 import AddToCart from "../helpers/AddToCart";
 import Context from "../context/Context";
+import ScrollTop from "../helpers/ScrollTop";
 
 const CategoryWiseProductDisplay = ({ category, heading }) => {
   const [data, setData] = useState([]);
@@ -91,9 +92,10 @@ const CategoryWiseProductDisplay = ({ category, heading }) => {
           : data?.map((product, index) => {
               return (
                 <Link
-                  to={"product/" + product?._id}
+                  to={"/product/" + product?._id}
                   key={index}
                   className="w-full max-w-[280px] md: min-w-[340px] bg-white rounded-sm shadow"
+                  onClick={ScrollTop}
                 >
                   <div className="bg-slate-200 h-48 p-4 min-w-[280px] md:min-w-[145px] flex justify-center items-center">
                     <img
@@ -111,15 +113,15 @@ const CategoryWiseProductDisplay = ({ category, heading }) => {
                     </p>
                     <div className="flex gap-3">
                       <p className="text-red-600 font-semibold">
-                        {"" + displayCurrency(product?.sellingPrice)}
+                        {displayCurrency(product?.sellingPrice)}
                       </p>
                       <p className="text-slate-500 line-through">
-                        {"" + displayCurrency(product?.price)}
+                        {displayCurrency(product?.price)}
                       </p>
                     </div>
                     <button
                       className="bg-red-600 hover:bg-red-700 text-white px-3 py-1 rounded-full"
-                      onClick={(e) => handleAddToCart(e)}
+                      onClick={(e) => handleAddToCart(e, product?._id)}
                     >
                       Add to Cart
                     </button>

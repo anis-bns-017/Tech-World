@@ -7,8 +7,9 @@ import { FaAngleRight } from "react-icons/fa6";
 import { Link } from "react-router-dom";
 import AddToCart from "../helpers/AddToCart";
 import Context from "../context/Context";
+import ScrollTop from "../helpers/ScrollTop";
 
-const VerticalCardProduct = ({ category, heading }) => {
+const RProduct = ({ category, heading }) => {
   const [data, setData] = useState([]);
   const [loading, setLoading] = useState(true);
   const loadingList = new Array(13).fill(null);
@@ -20,8 +21,6 @@ const VerticalCardProduct = ({ category, heading }) => {
     await AddToCart(e, id);
     fetchUserAddToCart();
   };
-
-
 
   const fetchData = async () => {
     setLoading(true);
@@ -93,9 +92,10 @@ const VerticalCardProduct = ({ category, heading }) => {
           : data?.map((product, index) => {
               return (
                 <Link
-                  to={"product/" + product?._id}
+                  to={"/product/" + product?._id}
                   key={index}
                   className="w-full max-w-[280px] md: min-w-[340px] bg-white rounded-sm shadow"
+                  onClick={ScrollTop}
                 >
                   <div className="bg-slate-200 h-48 p-4 min-w-[280px] md:min-w-[145px] flex justify-center items-center">
                     <img
@@ -119,7 +119,10 @@ const VerticalCardProduct = ({ category, heading }) => {
                         {displayCurrency(product?.price)}
                       </p>
                     </div>
-                    <button className="bg-red-600 hover:bg-red-700 text-white px-3 py-1 rounded-full" onClick={(e)=> handleAddToCart(e, product?._id)}>
+                    <button
+                      className="bg-red-600 hover:bg-red-700 text-white px-3 py-1 rounded-full"
+                      onClick={(e) => handleAddToCart(e, product?._id)}
+                    >
                       Add to Cart
                     </button>
                   </div>
@@ -131,4 +134,4 @@ const VerticalCardProduct = ({ category, heading }) => {
   );
 };
 
-export default VerticalCardProduct;
+export default RProduct;

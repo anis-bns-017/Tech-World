@@ -1,10 +1,10 @@
 const displayCurrency = (num) => {
   const formatter = new Intl.NumberFormat("en-BD", {
-    minimumFractionDigits: 2,
+    minimumFractionDigits: 0,
   });
 
   // Manually add the Taka symbol before the formatted number
-  return `৳${formatter.format(num)}`;
+  return `${formatter.format(num)}৳`;
 };
 
 export default displayCurrency;

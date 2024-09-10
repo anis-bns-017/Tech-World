@@ -2,13 +2,14 @@
 @tailwind components;
 @tailwind utilities;
 
- 
+* {
+  font-family: Trebuchet MS, sans-serif;
+}
 
 body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  font-family:Arial, sans-serif;
-  @apply bg-slate-100 
+  @apply bg-slate-100;
 }
 
 .customShadow {
@@ -16,18 +17,71 @@ body {
 }
 
 /* user table */
-.userTable{
-  @apply bg-white 
+.userTable {
+  @apply bg-white;
 }
-.userTable th{
-  @apply border text-base font-medium
+.userTable th {
+  @apply border text-base font-medium;
 }
 
 .userTable td {
-  @apply border text-base text-center
+  @apply border text-base text-center;
+}
+
+
+.pcBuilder {
+  font-size: 15px;
+  font-weight: bold;
+  color: #fcfcfc;
+  font-family: sans-serif;
+  text-decoration: none;
+  background: linear-gradient(#0115ca, #4d55af) repeat-x #fff;
+  background-position-x: 0%;
+  background-position-y: 0%;
+  background-size: auto;
+  background-size: 200% 100%;
+  background-position-x: 0;
+  background-position-y: 3em;
+  transition: background-position-y 0.5s ease;
+  animation: waveAnimation 4s infinite linear;
+  animation-play-state: running;
+  animation-play-state: paused;
+}
+
+.pcBuilder:hover{
+  background-position-x: 0;
+  background-position-y: 0;
+  animation-play-state: running;
+}
+
+@keyframes waveAnimation{
+  from {
+      background-position-x: 0%;
+  }
+  to {
+      background-position-x: 200%;
+  }
 }
 
 /* scrollbar Hidden */
 .scrollbar-none::-webkit-scrollbar {
   display: none;
 }
+
+/* Define the keyframes for the blink animation */
+@keyframes blink {
+  0%,
+  100% {
+    color: tomato;
+    opacity: 1;
+  } /* Fully visible at the start and end */
+  50% {
+    opacity: 0;
+  } /* Invisible at the midpoint */
+}
+
+/* Apply the animation to the icon */
+.blink-icon {
+  animation: blink 2s infinite; /* 1-second duration, infinite loop */
+}
+

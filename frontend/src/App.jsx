@@ -8,6 +8,8 @@ import { useEffect, useState } from "react";
 import Context from "./context/Context";
 import { useDispatch } from "react-redux";
 import { setUserDetails } from "./store/userSlice";
+import AllProducts from "./pages/AllProducts";
+import NavBar from "./components/NavBar";
 
 const App = () => {
   const dispatch = useDispatch();
@@ -40,9 +42,9 @@ const App = () => {
   useEffect(() => {
     //user details
     fetchUserDetails();
-    cartProductCount, 
-    //user details cart products
-    fetchUserAddToCart();
+    cartProductCount,
+      //user details cart products
+      fetchUserAddToCart();
   }, []);
 
   return (
@@ -51,12 +53,13 @@ const App = () => {
         value={{
           fetchUserDetails, //use details fetch
           cartProductCount, //current user add to cart product count
-          fetchUserAddToCart
+          fetchUserAddToCart,
         }}
       >
         <ToastContainer />
 
         <Header />
+        <NavBar />
 
         <main className="min-h-[calc(100vh-120px)] pt-16">
           <Outlet />

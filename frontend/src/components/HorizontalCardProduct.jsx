@@ -21,7 +21,6 @@ const HorizontalCardProduct = ({ category, heading }) => {
     fetchUserAddToCart();
   };
 
-
   const fetchData = async () => {
     setLoading(true);
     const categoryProduct = await fetchCategoryWiseProduct(category);
@@ -91,7 +90,8 @@ const HorizontalCardProduct = ({ category, heading }) => {
             })
           : data?.map((product, index) => {
               return (
-                <Link to={"product/" + product?._id}
+                <Link
+                  to={"product/" + product?._id}
                   key={index}
                   className="w-full max-w-[280px] md: min-w-[340px] h-36 bg-white rounded-sm shadow flex"
                 >
@@ -111,15 +111,19 @@ const HorizontalCardProduct = ({ category, heading }) => {
                     </p>
                     <div className="flex gap-3">
                       <p className="text-red-600 font-semibold">
-                        {"" + displayCurrency(product?.sellingPrice)}
+                        {displayCurrency(product?.sellingPrice)}
                       </p>
                       <p className="text-slate-500 line-through">
-                        {"" + displayCurrency(product?.price)}
+                        {displayCurrency(product?.price)}
                       </p>
                     </div>
-                    <button className="bg-red-600 hover:bg-red-700 text-white px-3 py-1 rounded-full" onClick={(e)=> handleAddToCart(e, product?._id)}>
+                    <button
+                      className="bg-red-600 hover:bg-red-700 text-white px-3 py-1 rounded-full"
+                      onClick={(e) => handleAddToCart(e, product?._id)}
+                    >
                       Add to Cart
                     </button>
+                    {/* <p>{product._id}</p> */}
                   </div>
                 </Link>
               );

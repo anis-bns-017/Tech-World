@@ -11,11 +11,12 @@ const SignUp = () => {
   const [showPassword, setShowPassword] = useState(false);
   const [showConfirmPassword, setShowConfirmPassword] = useState(false);
   const [data, setData] = useState({
-    name: "",
+    fistName: "",
+    lastName: "",
     email: "",
     password: "",
     confirmPassword: "",
-    profilePic: "",
+    phone: "",
   });
 
   const navigate = useNavigate();
@@ -68,10 +69,102 @@ const SignUp = () => {
       };
     });
   };
-  
+
   return (
     <section id="signup">
       <div className="mx-auto container p-4">
+        <div className="bg-slate-100 p-5 w-full max-w-sm mx-auto rounded">
+          <h2 className="text-[21px] font-medium">Register Account</h2>
+          <form className="pt-6 flex flex-col gap-2" onSubmit={handleSubmit}>
+            <div className="flex gap-3">
+              <div>
+                <label className="text-sm font-semibold"> First Name </label>
+                <span className="text-red-600">*</span>
+                <div className="bg-slate-100">
+                  <input
+                    type="text"
+                    placeholder="First Name"
+                    name="fistName"
+                    value={data.fistName}
+                    onChange={handleChange}
+                    required
+                    className="border bg-slate-100 border-slate-400 p-2 rounded outline-none indent-2"
+                  />
+                </div>
+              </div>
+
+              <div>
+                <label className="text-xm font-semibold"> Last Name </label>
+                <span className="text-red-600">*</span>
+                <div className="bg-slate-100">
+                  <input
+                    type="text"
+                    placeholder="Last Name"
+                    name="lastName"
+                    value={data.lastName}
+                    onChange={handleChange}
+                    required
+                    className="border bg-slate-100 border-slate-400 p-2 rounded outline-none indent-2"
+                  />
+                </div>
+              </div>
+            </div>
+
+            <div className="grid mt-3">
+              <label>
+                E-mail <span className="text-red-600">*</span>
+              </label>
+
+              <div className="bg-slate-100 p-2">
+                <input
+                  type="email"
+                  placeholder="E-mail"
+                  name="email"
+                  value={data.email}
+                  required
+                  onChange={handleChange}
+                  className="-ml-2 w-[25.9rem] border bg-slate-100 border-slate-400 p-2 rounded outline-none indent-2"
+                />
+              </div>
+            </div>
+
+            <div className="grid">
+              <label>
+                Telephone <span className="text-red-600">*</span>
+              </label>
+              <div className="bg-slate-100 p-2 flex w-[50rem]">
+                <input
+                  type="number"
+                  placeholder="Telephone"
+                  name="phone"
+                  value={data.phone}
+                  onChange={handleChange}
+                  required
+                  className="-ml-2 w-[25.9rem] border bg-slate-100 border-slate-400 p-2 rounded outline-none indent-2"
+                />
+              </div>
+            </div>
+
+            <button className="bg-blue-800 w-[25.9rem] text-white px-6 py-2 w-fulltransition-all rounded-[5px] block mt-6 pcBuilder cursor-pointer hover:bg-blue-500">
+              Continue
+            </button>
+          </form>
+
+          <p className="mb-12 text-center items-center mt-5 w-full">
+            <div className="flex w-full">
+              <p className="w-[80px] h-[0.1px] bg-slate-300 mt-3"></p>
+              <p className="">Already have an account?</p>
+              <p className="w-[80px] h-[0.1px] bg-slate-300 mt-3"></p>
+            </div>
+          </p>
+
+          <p className="-mt-5 w-[130%]">If you already have an account with us, please login at the</p>
+          <p className="text-red-500 hover:underline cursor-pointer">Login Page</p>
+        </div>
+      </div>
+
+      <div>
+        {/* <div className="mx-auto container p-4">
         <div className="bg-white p-5 w-full max-w-sm mx-auto rounded">
           <div className="w-20 h-20 mx-auto relative overflow-hidden rounded-full">
             <div>
@@ -183,6 +276,7 @@ const SignUp = () => {
             </Link>
           </p>
         </div>
+      </div> */}
       </div>
     </section>
   );
