@@ -6,6 +6,7 @@ import { Link, useNavigate } from "react-router-dom";
 import SummaryApi from "../common";
 import { toast } from "react-toastify";
 import Context from "../context/Context";
+import OTPVerification from "../components/OTPVerification";
 
 const Login = () => {
   const [showPassword, setShowPassword] = useState(false);
@@ -57,6 +58,7 @@ const Login = () => {
 
   return (
     <div>
+      {/* <Link to={"/otp-project"} className="bg-blue-500 p-5 rounded-lg m-5 hover:bg-blue-400">GO</Link> */}
       <section id="login">
         <div className="mx-auto container p-4">
           <div className="bg-slate-100 p-5 w-full max-w-lg mx-auto rounded">

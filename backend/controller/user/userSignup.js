@@ -4,7 +4,7 @@ const userModel = require("../../models/userModel");
 
 async function userSignupController(req, res) {
   try {
-    const { firstName, lastName, email, password, phone } = req.body;
+    const { firstName, lastName, email, password, phone, otp } = req.body;
 
     const user = await userModel.findOne({ email });
     if (user) {

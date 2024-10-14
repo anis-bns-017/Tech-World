@@ -10,7 +10,6 @@ async function userDetailsController(req, res) {
       success: true, 
       message: "User Details"
     })
-    console.log(user);
   } catch (err) {
     res.status(400).json({
       message: err?.message || err,

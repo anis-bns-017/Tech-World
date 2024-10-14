@@ -11,6 +11,8 @@ import CategoryProduct from "../components/CategoryProduct";
 import ProductDetails from "../pages/ProductDetails";
 import Cart from "../pages/Cart";
 import SearchProduct from "../pages/SearchProduct";
+import Wow from "../components/Wow";
+
 
 const router = createBrowserRouter([
   {
@@ -26,45 +28,50 @@ const router = createBrowserRouter([
         element: <Login />,
       },
       {
-        path: "forgot-password", 
-        element: <ForgotPassword />
-      }, 
-      {
-        path: "sign-up", 
-        element: <SignUp />
-      }, 
-      {
-        path: 'product-category/:categoryName', 
-        element: <CategoryProduct />
+        path: "forgot-password",
+        element: <ForgotPassword />,
       },
       {
-        path: 'product/:id', 
-        element: <ProductDetails />
+        path: "sign-up",
+        element: <SignUp />,
+      },
+
+      {
+        path: "otp-project",
+        element: <Wow />,
+      },
+  
+      {
+        path: "product-category/:categoryName",
+        element: <CategoryProduct />,
       },
       {
-        path: 'cart', 
-        element: <Cart />
+        path: "product/:id",
+        element: <ProductDetails />,
       },
       {
-        path: 'search', 
-        element: <SearchProduct />
+        path: "cart",
+        element: <Cart />,
       },
       {
-        path: 'admin-panel', 
+        path: "search",
+        element: <SearchProduct />,
+      },
+      {
+        path: "admin-panel",
         element: <AdminPanel />,
         children: [
           {
-            path: "all-users", 
-            element: <AllUsers />
-          }, 
+            path: "all-users",
+            element: <AllUsers />,
+          },
           {
-            path: "all-products", 
-            element: <AllProducts />
-          }
-        ]
-      }, {
-
-      }
+            path: "all-products",
+            element: <AllProducts />,
+          },
+        ],
+      },
+      {},
     ],
   },
 ]);

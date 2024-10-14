@@ -60,11 +60,11 @@ const Header = () => {
 
   return (
     <header className="">
-      <div className="h-[110px] shadow-md bg-black z-40 w-full justify-between">
-        <div className="flex items-center h-full container ml-2 pl-4 text-white">
+      <div className="h-[100px] shadow-md bg-black z-40 w-full">
+        <div className="flex justify-between items-center h-full container ml-10 pl-4 text-white">
           <div className="">
             <Link to={"/"}>
-              <img className="" src={tech2} height={110} width={220} />
+              <img className="" src={tech2} height={50} width={180} />
             </Link>
           </div>
 

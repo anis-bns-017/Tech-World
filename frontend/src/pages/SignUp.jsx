@@ -6,12 +6,14 @@ import { IoMdEyeOff } from "react-icons/io";
 import imageToBase64 from "../helpers/ImageToBase64";
 import SummaryApi from "../common";
 import { toast } from "react-toastify";
+import Wow from "../components/Wow";
+import { MdTextFields } from "react-icons/md";
 
 const SignUp = () => {
   const [showPassword, setShowPassword] = useState(false);
   const [showConfirmPassword, setShowConfirmPassword] = useState(false);
   const [data, setData] = useState({
-    fistName: "",
+    firstName: "",
     lastName: "",
     email: "",
     password: "",
@@ -57,19 +59,6 @@ const SignUp = () => {
     }
   };
 
-  const handleUploadPic = async (e) => {
-    const file = e.target.files[0];
-
-    const currPic = await imageToBase64(file);
-    console.log(currPic);
-    setData((prev) => {
-      return {
-        ...prev,
-        profilePic: currPic,
-      };
-    });
-  };
-
   return (
     <section id="signup">
       <div className="mx-auto container p-4">
@@ -84,8 +73,8 @@ const SignUp = () => {
                   <input
                     type="text"
                     placeholder="First Name"
-                    name="fistName"
-                    value={data.fistName}
+                    name="firstName"
+                    value={data.firstName}
                     onChange={handleChange}
                     required
                     className="border bg-slate-100 border-slate-400 p-2 rounded outline-none indent-2"
@@ -128,6 +117,42 @@ const SignUp = () => {
               </div>
             </div>
 
+            <div className="grid mt-3">
+              <label>
+                Password <span className="text-red-600">*</span>
+              </label>
+
+              <div className="bg-slate-100 p-2">
+                <input
+                  type="password"
+                  placeholder="Password"
+                  name="password"
+                  value={data.password}
+                  required
+                  onChange={handleChange}
+                  className="-ml-2 w-[25.9rem] border bg-slate-100 border-slate-400 p-2 rounded outline-none indent-2"
+                />
+              </div>
+            </div>
+
+            <div className="grid mt-3">
+              <label>
+                Confirm Password <span className="text-red-600">*</span>
+              </label>
+
+              <div className="bg-slate-100 p-2">
+                <input
+                  type="password"
+                  placeholder="Confirm Password"
+                  name="confirmPassword"
+                  value={data.confirmPassword}
+                  required
+                  onChange={handleChange}
+                  className="-ml-2 w-[25.9rem] border bg-slate-100 border-slate-400 p-2 rounded outline-none indent-2"
+                />
+              </div>
+            </div>
+
             <div className="grid">
               <label>
                 Telephone <span className="text-red-600">*</span>
@@ -145,7 +170,7 @@ const SignUp = () => {
               </div>
             </div>
 
-            <button className="bg-blue-800 w-[25.9rem] text-white px-6 py-2 w-fulltransition-all rounded-[5px] block mt-6 pcBuilder cursor-pointer hover:bg-blue-500">
+            <button className="bg-blue-800 w-[25.9rem] text-white px-6 py-2 w-fulltransition-all text-center rounded-[5px] block mt-6 pcBuilder cursor-pointer hover:bg-blue-500">
               Continue
             </button>
           </form>
@@ -158,8 +183,15 @@ const SignUp = () => {
             </div>
           </p>
 
-          <p className="-mt-5 w-[130%]">If you already have an account with us, please login at the</p>
-          <p className="text-red-500 hover:underline cursor-pointer">Login Page</p>
+          <p className="-mt-5 w-[130%]">
+            If you already have an account with us, please login at the
+          </p>
+          <Link
+            to={"/login"}
+            className="text-red-500 hover:underline cursor-pointer"
+          >
+            Login Page
+          </Link>
         </div>
       </div>
 
