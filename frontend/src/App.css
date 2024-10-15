@@ -70,3 +70,6 @@ body {
   @apply !w-full py-6 !text-base
 }
 
+.scrollbar-none::-webkit-scrollbar {
+  display: none;
+}

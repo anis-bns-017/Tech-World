@@ -11,7 +11,7 @@ import CategoryProduct from "../components/CategoryProduct";
 import ProductDetails from "../pages/ProductDetails";
 import Cart from "../pages/Cart";
 import SearchProduct from "../pages/SearchProduct";
-import Wow from "../components/Wow";
+import UserAccount from "../pages/UserAccount";
 
 
 const router = createBrowserRouter([
@@ -36,11 +36,7 @@ const router = createBrowserRouter([
         element: <SignUp />,
       },
 
-      {
-        path: "otp-project",
-        element: <Wow />,
-      },
-  
+
       {
         path: "product-category/:categoryName",
         element: <CategoryProduct />,
@@ -52,6 +48,10 @@ const router = createBrowserRouter([
       {
         path: "cart",
         element: <Cart />,
+      },
+      {
+        path: "account/account",
+        element: <UserAccount />,
       },
       {
         path: "search",

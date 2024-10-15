@@ -6,7 +6,6 @@ import { Link, useNavigate } from "react-router-dom";
 import SummaryApi from "../common";
 import { toast } from "react-toastify";
 import Context from "../context/Context";
-import OTPVerification from "../components/OTPVerification";
 
 const Login = () => {
   const [showPassword, setShowPassword] = useState(false);

@@ -6,7 +6,7 @@ import { IoMdEyeOff } from "react-icons/io";
 import imageToBase64 from "../helpers/ImageToBase64";
 import SummaryApi from "../common";
 import { toast } from "react-toastify";
-import Wow from "../components/Wow";
+
 import { MdTextFields } from "react-icons/md";
 
 const SignUp = () => {
