@@ -1,9 +1,6 @@
 import BannerProduct from "../components/BannerProduct";
-import CategoryList from "../components/CategoryList";
 import FeatureCategory from "../components/FeatureCategory";
-import HorizontalCardProduct from "../components/HorizontalCardProduct";
 import TextFlow from "../components/TextFlow";
-import VerticalCardProduct from "../components/VerticalCardProduct";
 import AllProducts from "./AllProducts";
 
 const Home = () => {

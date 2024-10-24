@@ -44,6 +44,6 @@ router.post("/addToCart", authToken, addToCartController);
 router.get("/countAddToCartProduct", authToken, countAddToCartProduct);
 router.get("/view-cart-product", addToCartViewProduct);
 router.post("/update-cart-product", authToken, updateAddtoCartProduct);
-router.post("/delete-cart-product", authToken, deleleAddToCartProduct)
+router.post("/delete-cart-product", authToken, deleleAddToCartProduct);
 
 module.exports = router;

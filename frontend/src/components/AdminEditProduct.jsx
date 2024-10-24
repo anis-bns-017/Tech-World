@@ -45,7 +45,6 @@ const AdminEditProduct = ({ productData, onClose, fetchData }) => {
   };
 
   const handleDeleteProductImage = async (index) => {
-    console.log("index", index);
 
     const newProductImage = [...data.productImage];
     newProductImage.splice(index, 1);

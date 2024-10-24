@@ -12,7 +12,8 @@ import ProductDetails from "../pages/ProductDetails";
 import Cart from "../pages/Cart";
 import SearchProduct from "../pages/SearchProduct";
 import UserAccount from "../pages/UserAccount";
-
+import OrderHistory from "../pages/UserActivity/OrderHistory";
+import UpdateUserInfo from "../pages/UserActivity/UpdateUserInfo";
 
 const router = createBrowserRouter([
   {
@@ -24,7 +25,7 @@ const router = createBrowserRouter([
         element: <Home />,
       },
       {
-        path: "/login",
+        path: "login",
         element: <Login />,
       },
       {
@@ -35,8 +36,6 @@ const router = createBrowserRouter([
         path: "sign-up",
         element: <SignUp />,
       },
-
-
       {
         path: "product-category/:categoryName",
         element: <CategoryProduct />,
@@ -50,8 +49,16 @@ const router = createBrowserRouter([
         element: <Cart />,
       },
       {
-        path: "account/account",
+        path: "/account",
         element: <UserAccount />,
+      },
+      {
+        path: "account/order", 
+        element: <OrderHistory />
+      }, 
+      {
+        path: "account/edit", 
+        element: <UpdateUserInfo />
       },
       {
         path: "search",

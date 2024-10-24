@@ -10,9 +10,12 @@ import { useDispatch } from "react-redux";
 import { setUserDetails } from "./store/userSlice";
 import AllProducts from "./pages/AllProducts";
 import NavBar from "./components/NavBar";
+import UserInfo from "./pages/UserActivity/UserInfo";
 
 const App = () => {
   const dispatch = useDispatch();
+  const [showUserInfo, setShowUserInfo] = useState(false);
+  
   const [cartProductCount, setCartProductCount] = useState(0);
 
   const fetchUserDetails = async () => {
@@ -27,6 +30,10 @@ const App = () => {
       dispatch(setUserDetails(dataApi.data));
     }
   };
+
+  const checkFlag = (prev) => {
+    setShowUserInfo(!prev);
+  }
 
   const fetchUserAddToCart = async () => {
     const dataResponse = await fetch(SummaryApi.addToCartProductCount.url, {
@@ -45,6 +52,7 @@ const App = () => {
     cartProductCount,
       //user details cart products
       fetchUserAddToCart();
+      checkFlag();
   }, []);
 
   return (
@@ -54,6 +62,7 @@ const App = () => {
           fetchUserDetails, //use details fetch
           cartProductCount, //current user add to cart product count
           fetchUserAddToCart,
+          checkFlag
         }}
       >
         <ToastContainer />

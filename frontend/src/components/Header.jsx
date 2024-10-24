@@ -141,9 +141,9 @@ const Header = () => {
               <div className="pl-4">
                 <h5 className="text-[15px] cursor-pointer">Account</h5>
                 <div className="flex gap-1">
-                  <p className="text-slate-400 text-[11px] cursor-pointer hover:text-red-500">
+                  <Link to={"/account"} className="text-slate-400 text-[11px] cursor-pointer hover:text-red-500">
                     Profile
-                  </p>
+                  </Link>
                   <p className="text-slate-400 text-[11px]">or</p>
                   <p
                     className="text-slate-400 text-[11px] cursor-pointer hover:text-red-500"

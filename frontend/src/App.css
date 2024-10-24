@@ -6,7 +6,7 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-family: Arial, sans-serif;
-  @apply bg-slate-100;
+  @apply bg-slate-50;
 }
 
 .customShadow {
