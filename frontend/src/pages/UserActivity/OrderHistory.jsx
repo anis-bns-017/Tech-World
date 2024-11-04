@@ -1,12 +1,11 @@
 
-import UserCredits from "./UserCredits";
-import UserInfo from "./UserInfo";
 
 const OrderHistory = () => {
   return (
     <>
-      <UserCredits />
-      <UserInfo />
+      <div>
+        <div className="ml-[200px] text-2xl text-blue-700">Order History</div>
+      </div>
     </>
   );
 };

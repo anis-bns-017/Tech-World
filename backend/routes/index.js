@@ -20,6 +20,7 @@ const addToCartViewProduct = require("../controller/user/addToCartViewProduct");
 const updateAddtoCartProduct = require("../controller/user/updateAddtoCartProduct");
 const deleleAddToCartProduct = require("../controller/user/deleleAddToCartProduct");
 const searchProudct = require("../controller/product/searchProduct");
+const updateAddressController = require("../controller/user/updateAddressController");
 
 router.post("/signup", userSignupController);
 router.post("/signin", userSigninController);
@@ -29,6 +30,9 @@ router.get("/user-logout", userLogout);
 //admin-panel
 router.get("/all-users", authToken, allUsers);
 router.post("/update-user", authToken, updateUser);
+
+//user
+router.post("/update-address", authToken, updateAddressController);
 
 //product
 router.post("/upload-product", authToken, UploadProductController);

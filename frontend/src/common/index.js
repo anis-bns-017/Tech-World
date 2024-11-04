@@ -1,4 +1,4 @@
-const backendDomain = "http://localhost:3000";
+const backendDomain = "http://localhost:8080";
 
 const SummaryApi = {
   signUp: {
@@ -14,6 +14,7 @@ const SummaryApi = {
     url: `${backendDomain}/api/user-details`,
     method: "get",
   },
+
   logout_user: {
     url: `${backendDomain}/api/user-logout`,
     method: "get",
@@ -26,6 +27,14 @@ const SummaryApi = {
     url: `${backendDomain}/api/update-user`,
     method: "post",
   },
+  updatePassword: {
+    url: `${backendDomain}/api/password`,
+    method: "post",
+  },
+  updateAddress: {
+    url: `${backendDomain}/api/update-address`,
+    method: "post",
+  }, 
   uploadProduct: {
     url: `${backendDomain}/api/upload-product`,
     method: "post",

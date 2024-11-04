@@ -5,7 +5,6 @@ async function updateUser(req, res) {
     const {_id, firstName, lastName, phone, email, role } = req.body;
 
     // Log the incoming userId for debugging
-    console.log("Incoming userId:", _id);
 
     const user_a = await userModel.findOne({ email: email });
 

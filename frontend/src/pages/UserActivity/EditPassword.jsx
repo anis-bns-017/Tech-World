@@ -1,15 +1,12 @@
+import { useSelector } from "react-redux";
 import { useState, useEffect } from "react";
 import { toast } from "react-toastify";
 import SummaryApi from "../../common";
-import { useSelector } from "react-redux";
 
-const UpdateUserInfo = () => {
+const EditPassword = () => {
   const user = useSelector((state) => state?.user?.user);
   const [data, setData] = useState({
-    firstName: "",
-    lastName: "",
-    email: "",
-    phone: "",
+    password: ""
   });
 
   // const navigate = useNavigate();
@@ -59,58 +56,43 @@ const UpdateUserInfo = () => {
       toast.error("An error occurred while updating user information");
     }
   };
-
   return (
     <>
-      <div className="ml-[200px] text-2xl text-blue-700">
-        My Account Information
+      <div className="ml-[185px] text-2xl text-blue-700">Chnage Password</div>
+      <div className="ml-[185px] mt-5 text-black">
+        Please type and confirm to change your current password.
       </div>
       <div className="bg-slate-50 p-5 w-full max-w-sm mx-[27vh] rounded">
         <form className="pt-6 flex flex-col gap-2" onSubmit={handleSubmit}>
-          <div className="flex gap-3">
-            <div>
-              <label className="text-sm font-semibold">First Name</label>
-              <span className="text-red-600">*</span>
-              <div className="bg-slate-50">
-                <input
-                  type="text"
-                  placeholder="First Name"
-                  name="firstName"
-                  value={data.firstName}
-                  onChange={handleChange}
-                  required
-                  className="border bg-slate-50 border-slate-400 p-2 rounded outline-none indent-2"
-                />
-              </div>
-            </div>
 
-            <div>
-              <label className="text-sm font-semibold">Last Name</label>
-              <span className="text-red-600">*</span>
-              <div className="bg-slate-50">
-                <input
-                  type="text"
-                  placeholder="Last Name"
-                  name="lastName"
-                  value={data.lastName}
-                  onChange={handleChange}
-                  required
-                  className="border bg-slate-50 border-slate-400 p-2 rounded outline-none indent-2"
-                />
-              </div>
+
+          <div className="grid mt-3">
+            <label className="font-semibold">
+              Old Password <span className="text-red-600">*</span>
+            </label>
+            <div className="bg-slate-50 p-2">
+              <input
+                type="password"
+                placeholder="Old Password"
+                name="old-password"
+                value={data.password}
+                onChange={handleChange}
+                required
+                className="w-full border bg-slate-50 border-slate-400 p-2 rounded outline-none indent-2"
+              />
             </div>
           </div>
 
           <div className="grid mt-3">
-            <label>
-              E-mail <span className="text-red-600">*</span>
+            <label className="font-semibold">
+              New Password <span className="text-red-600">*</span>
             </label>
             <div className="bg-slate-50 p-2">
               <input
-                type="email"
-                placeholder="E-mail"
-                name="email"
-                value={data.email}
+                type="password"
+                placeholder="Old Password"
+                name="new-password"
+                value={data.password}
                 onChange={handleChange}
                 required
                 className="w-full border bg-slate-50 border-slate-400 p-2 rounded outline-none indent-2"
@@ -118,28 +100,29 @@ const UpdateUserInfo = () => {
             </div>
           </div>
 
-          <div className="grid">
-            <label>
-              Telephone <span className="text-red-600">*</span>
+          <div className="grid mt-3">
+            <label className="font-semibold">
+              Password Confirm <span className="text-red-600">*</span>
             </label>
             <div className="bg-slate-50 p-2">
               <input
-                type="tel"
-                placeholder="Telephone"
-                name="phone"
-                value={data.phone}
+                type="password"
+                placeholder="Password Confirm"
+                name="password-confirm"
+                value={data.password}
                 onChange={handleChange}
                 required
                 className="w-full border bg-slate-50 border-slate-400 p-2 rounded outline-none indent-2"
               />
             </div>
           </div>
+           
 
           <button
             type="submit"
             className="bg-blue-800 text-white px-6 py-2 mt-6 rounded hover:bg-blue-500 transition-all"
           >
-            Update
+            Continue
           </button>
         </form>
       </div>
@@ -147,4 +130,4 @@ const UpdateUserInfo = () => {
   );
 };
 
-export default UpdateUserInfo;
+export default EditPassword;

@@ -1,7 +1,7 @@
 import { ImSearch } from "react-icons/im";
 import { FaUser } from "react-icons/fa";
 import { FaCartPlus } from "react-icons/fa";
-import { Link, useLocation, useNavigate } from "react-router-dom";
+import { Link, Navigate, useLocation, useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import SummaryApi from "../common";
 import { toast } from "react-toastify";
@@ -19,9 +19,7 @@ import TextFlow from "./TextFlow";
 const Header = () => {
   const user = useSelector((state) => state?.user?.user);
   const dispatch = useDispatch();
-  const [menuDisplay, setMenuDisplay] = useState(false);
-  const [loginOut, setLoginOut] = useState("Login");
-  const [register, setRegister] = useState("Register");
+ 
 
   const context = useContext(Context);
   const navigate = useNavigate();
@@ -40,6 +38,7 @@ const Header = () => {
     if (data.success) {
       toast.success(data.message);
       dispatch(setUserDetails(null));
+      navigate("/");
     }
 
     if (data.error) {

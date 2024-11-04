@@ -1,17 +1,10 @@
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import loginIcons from "../assest/signin.gif";
-import { IoEye } from "react-icons/io5";
-import { IoMdEyeOff } from "react-icons/io";
-import imageToBase64 from "../helpers/ImageToBase64";
-import SummaryApi from "../common";
+ import SummaryApi from "../common";
 import { toast } from "react-toastify";
 
-import { MdTextFields } from "react-icons/md";
 
 const SignUp = () => {
-  const [showPassword, setShowPassword] = useState(false);
-  const [showConfirmPassword, setShowConfirmPassword] = useState(false);
   const [data, setData] = useState({
     firstName: "",
     lastName: "",
@@ -19,6 +12,8 @@ const SignUp = () => {
     password: "",
     confirmPassword: "",
     phone: "",
+    otp: "", 
+
   });
 
   const navigate = useNavigate();
@@ -62,14 +57,14 @@ const SignUp = () => {
   return (
     <section id="signup">
       <div className="mx-auto container p-4">
-        <div className="bg-slate-100 p-5 w-full max-w-sm mx-auto rounded">
+        <div className="bg-slate-50 p-5 w-full max-w-sm mx-auto rounded">
           <h2 className="text-[21px] font-medium">Register Account</h2>
           <form className="pt-6 flex flex-col gap-2" onSubmit={handleSubmit}>
             <div className="flex gap-3">
               <div>
                 <label className="text-sm font-semibold"> First Name </label>
                 <span className="text-red-600">*</span>
-                <div className="bg-slate-100">
+                <div className="bg-slate-50">
                   <input
                     type="text"
                     placeholder="First Name"
@@ -77,15 +72,15 @@ const SignUp = () => {
                     value={data.firstName}
                     onChange={handleChange}
                     required
-                    className="border bg-slate-100 border-slate-400 p-2 rounded outline-none indent-2"
+                    className="border bg-slate-50 border-slate-400 p-2 rounded outline-none indent-2"
                   />
                 </div>
               </div>
 
               <div>
-                <label className="text-xm font-semibold"> Last Name </label>
+                <label className="text-sm font-semibold"> Last Name </label>
                 <span className="text-red-600">*</span>
-                <div className="bg-slate-100">
+                <div className="bg-slate-50">
                   <input
                     type="text"
                     placeholder="Last Name"
@@ -93,7 +88,7 @@ const SignUp = () => {
                     value={data.lastName}
                     onChange={handleChange}
                     required
-                    className="border bg-slate-100 border-slate-400 p-2 rounded outline-none indent-2"
+                    className="border bg-slate-50 border-slate-400 p-2 rounded outline-none indent-2"
                   />
                 </div>
               </div>
@@ -104,7 +99,7 @@ const SignUp = () => {
                 E-mail <span className="text-red-600">*</span>
               </label>
 
-              <div className="bg-slate-100 p-2">
+              <div className="bg-slate-50 p-2">
                 <input
                   type="email"
                   placeholder="E-mail"
@@ -112,7 +107,7 @@ const SignUp = () => {
                   value={data.email}
                   required
                   onChange={handleChange}
-                  className="-ml-2 w-[25.9rem] border bg-slate-100 border-slate-400 p-2 rounded outline-none indent-2"
+                  className="-ml-2 w-[25.9rem] border bg-slate-50 border-slate-400 p-2 rounded outline-none indent-2"
                 />
               </div>
             </div>
@@ -122,7 +117,7 @@ const SignUp = () => {
                 Password <span className="text-red-600">*</span>
               </label>
 
-              <div className="bg-slate-100 p-2">
+              <div className="bg-slate-50 p-2">
                 <input
                   type="password"
                   placeholder="Password"
@@ -130,7 +125,7 @@ const SignUp = () => {
                   value={data.password}
                   required
                   onChange={handleChange}
-                  className="-ml-2 w-[25.9rem] border bg-slate-100 border-slate-400 p-2 rounded outline-none indent-2"
+                  className="-ml-2 w-[25.9rem] border bg-slate-50 border-slate-400 p-2 rounded outline-none indent-2"
                 />
               </div>
             </div>
@@ -140,7 +135,7 @@ const SignUp = () => {
                 Confirm Password <span className="text-red-600">*</span>
               </label>
 
-              <div className="bg-slate-100 p-2">
+              <div className="bg-slate-50 p-2">
                 <input
                   type="password"
                   placeholder="Confirm Password"
@@ -148,7 +143,7 @@ const SignUp = () => {
                   value={data.confirmPassword}
                   required
                   onChange={handleChange}
-                  className="-ml-2 w-[25.9rem] border bg-slate-100 border-slate-400 p-2 rounded outline-none indent-2"
+                  className="-ml-2 w-[25.9rem] border bg-slate-50 border-slate-400 p-2 rounded outline-none indent-2"
                 />
               </div>
             </div>
@@ -157,7 +152,7 @@ const SignUp = () => {
               <label>
                 Telephone <span className="text-red-600">*</span>
               </label>
-              <div className="bg-slate-100 p-2 flex w-[50rem]">
+              <div className="bg-slate-50 p-2 flex w-[50rem]">
                 <input
                   type="number"
                   placeholder="Telephone"
@@ -165,7 +160,7 @@ const SignUp = () => {
                   value={data.phone}
                   onChange={handleChange}
                   required
-                  className="-ml-2 w-[25.9rem] border bg-slate-100 border-slate-400 p-2 rounded outline-none indent-2"
+                  className="-ml-2 w-[25.9rem] border bg-slate-50 border-slate-400 p-2 rounded outline-none indent-2"
                 />
               </div>
             </div>
@@ -220,7 +215,7 @@ const SignUp = () => {
           <form className="pt-6 flex flex-col gap-2" onSubmit={handleSubmit}>
             <div className="grid">
               <label> Name : </label>
-              <div className="bg-slate-100 p-2">
+              <div className="bg-slate-50 p-2">
                 <input
                   type="text"
                   placeholder="enter your name.."
@@ -235,7 +230,7 @@ const SignUp = () => {
 
             <div className="grid">
               <label> Email : </label>
-              <div className="bg-slate-100 p-2">
+              <div className="bg-slate-50 p-2">
                 <input
                   type="email"
                   placeholder="enter email.."
@@ -250,7 +245,7 @@ const SignUp = () => {
 
             <div>
               <label> Password : </label>
-              <div className="bg-slate-100 p-2 flex">
+              <div className="bg-slate-50 p-2 flex">
                 <input
                   type={showPassword ? "text" : "password"}
                   placeholder="enter password"
@@ -272,7 +267,7 @@ const SignUp = () => {
 
             <div>
               <label> Confirm Password : </label>
-              <div className="bg-slate-100 p-2 flex">
+              <div className="bg-slate-50 p-2 flex">
                 <input
                   type={showConfirmPassword ? "text" : "password"}
                   placeholder="enter confirm password"

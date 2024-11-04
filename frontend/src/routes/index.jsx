@@ -13,7 +13,10 @@ import Cart from "../pages/Cart";
 import SearchProduct from "../pages/SearchProduct";
 import UserAccount from "../pages/UserAccount";
 import OrderHistory from "../pages/UserActivity/OrderHistory";
-import UpdateUserInfo from "../pages/UserActivity/UpdateUserInfo";
+ import EditPassword from "../pages/UserActivity/EditPassword";
+ import UpdateUserInfo from "../pages/UserActivity/UpdateUserInfo";
+import UserQuotes from "../pages/UserActivity/UserQuotes";
+import UserAddress from "../pages/UserActivity/UserAddress";
 
 const router = createBrowserRouter([
   {
@@ -48,18 +51,35 @@ const router = createBrowserRouter([
         path: "cart",
         element: <Cart />,
       },
+
       {
-        path: "/account",
+        path: "account",
         element: <UserAccount />,
+        children: [
+          {
+            path: "edit",
+            element: <UpdateUserInfo />,
+          },
+          {
+            path: "edit-password", 
+            element: <EditPassword />
+          },
+          {
+            path: "order", 
+            element: <OrderHistory />
+          },
+          {
+            path: "quotes", 
+            element: <UserQuotes />
+          },
+          {
+            path: "address", 
+            element: <UserAddress />
+          },
+        ]
       },
-      {
-        path: "account/order", 
-        element: <OrderHistory />
-      }, 
-      {
-        path: "account/edit", 
-        element: <UpdateUserInfo />
-      },
+      
+
       {
         path: "search",
         element: <SearchProduct />,
@@ -78,7 +98,6 @@ const router = createBrowserRouter([
           },
         ],
       },
-      {},
     ],
   },
 ]);
