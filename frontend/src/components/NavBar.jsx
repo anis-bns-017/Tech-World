@@ -1,25 +1,29 @@
+import { useState } from "react";
+import { Link } from "react-router-dom";
+
 const NavBar = () => {
+  const [openUploadProduct, setOpenUploadProduct] = useState(false);
   return (
     <div className="w-full h-[50px] bg-white relative -mt-3 justify-center items-center">
       <div className="flex gap-3 text-[15px] mx-11 mt-3 text-center items-center absolute">
-        <p className="cursor-pointer hover:text-red-500">Desktop</p>
-        <p className="cursor-pointer hover:text-red-500">Laptop</p>
-        <p className="cursor-pointer hover:text-red-500">Compoenent</p>
-        <p className="cursor-pointer hover:text-red-500">Monitor</p>
-        <p className="cursor-pointer hover:text-red-500">UPS</p>
-        <p className="cursor-pointer hover:text-red-500">Phone</p>
-        <p className="cursor-pointer hover:text-red-500">Tablet</p>
-        <p className="cursor-pointer hover:text-red-500">Office equipment</p>
-        <p className="cursor-pointer hover:text-red-500">Camera</p>
-        <p className="cursor-pointer hover:text-red-500">Security</p>
-        <p className="cursor-pointer hover:text-red-500">Networking</p>
-        <p className="cursor-pointer hover:text-red-500">Software</p>
-        <p className="cursor-pointer hover:text-red-500">Server & Storage </p>
-        <p className="cursor-pointer hover:text-red-500">Accessories</p>
-        <p className="cursor-pointer hover:text-red-500">Gadget</p>
-        <p className="cursor-pointer hover:text-red-500">Gaming</p>
-        <p className="cursor-pointer hover:text-red-500">TV</p>
-        <p className="cursor-pointer hover:text-red-500">Appliance</p>
+        <Link to={"upload-desktop"} className="cursor-pointer hover:text-red-500">Desktop</Link>
+        <Link to={"upload-laptop"} className="cursor-pointer hover:text-red-500">Laptop</Link>
+        <Link className="cursor-pointer hover:text-red-500">Compoenent</Link>
+        <Link className="cursor-pointer hover:text-red-500">Monitor</Link>
+        <Link className="cursor-pointer hover:text-red-500">UPS</Link>
+        <Link className="cursor-pointer hover:text-red-500">Phone</Link>
+        <Link className="cursor-pointer hover:text-red-500">Tablet</Link>
+        <Link className="cursor-pointer hover:text-red-500">Office equipment</Link>
+        <Link className="cursor-pointer hover:text-red-500">Camera</Link>
+        <Link className="cursor-pointer hover:text-red-500">Security</Link>
+        <Link className="cursor-pointer hover:text-red-500">Networking</Link>
+        <Link className="cursor-pointer hover:text-red-500">Software</Link>
+        <Link className="cursor-pointer hover:text-red-500">Server & Storage </Link>
+        <Link className="cursor-pointer hover:text-red-500">Accessories</Link>
+        <Link className="cursor-pointer hover:text-red-500">Gadget</Link>
+        <Link className="cursor-pointer hover:text-red-500">Gaming</Link>
+        <Link className="cursor-pointer hover:text-red-500">TV</Link>
+        <Link className="cursor-pointer hover:text-red-500">Appliance</Link>
       </div>
     </div>
   );

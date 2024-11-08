@@ -22,6 +22,7 @@ const deleleAddToCartProduct = require("../controller/user/deleleAddToCartProduc
 const searchProudct = require("../controller/product/searchProduct");
 const updateAddressController = require("../controller/user/updateAddressController");
 const desktopUploadController = require("../controller/productUpload/desktopUploadController");
+const laptopUploadController = require("../controller/productUpload/laptopUploadController");
 
 router.post("/signup", userSignupController);
 router.post("/signin", userSigninController);
@@ -36,7 +37,8 @@ router.post("/update-user", authToken, updateUser);
 router.post("/update-address", authToken, updateAddressController);
 
 //product
-router.post("/upload", authToken, desktopUploadController);
+router.post("/upload-desktop", authToken, desktopUploadController);
+router.post("/upload-laptop", authToken, laptopUploadController);
 router.get("/get-product", getProductController);
 router.post("/update-product", authToken, updateProductController);
 router.get("/get-categoryProduct", getCategoryProduct);

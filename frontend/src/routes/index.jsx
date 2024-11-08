@@ -18,6 +18,7 @@ import OrderHistory from "../pages/UserActivity/OrderHistory";
 import UserQuotes from "../pages/UserActivity/UserQuotes";
 import UserAddress from "../pages/UserActivity/UserAddress";
 import Desktop from "../components/uploadProduct/Desktop";
+import Laptop from "../components/uploadProduct/Laptop";
 
 const router = createBrowserRouter([
   {
@@ -41,9 +42,15 @@ const router = createBrowserRouter([
         element: <SignUp />,
       },
       {
-        path: "upload",
+        path: "upload-desktop",
         element: <Desktop />,
       },
+
+      {
+        path: "upload-laptop",
+        element: <Laptop />,
+      },
+
       {
         path: "product-category/:categoryName",
         element: <CategoryProduct />,

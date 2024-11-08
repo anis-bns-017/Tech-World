@@ -10,8 +10,13 @@ const SummaryApi = {
     method: "post",
   },
 
-  uploadThings: {
-    url: `${backendDomain}/api/upload`,
+  uploadDesktop: {
+    url: `${backendDomain}/api/upload-desktop`,
+    method: "post",
+  },
+
+  uploadLaptop: {
+    url: `${backendDomain}/api/upload-laptop`,
     method: "post",
   },
 
