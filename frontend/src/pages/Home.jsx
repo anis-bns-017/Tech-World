@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import BannerProduct from "../components/BannerProduct";
 import FeatureCategory from "../components/FeatureCategory";
 import TextFlow from "../components/TextFlow";
@@ -8,6 +9,7 @@ const Home = () => {
     <div className="">
       <BannerProduct />
       <TextFlow />
+      <Link to={"/upload"} className="w-auto h-auto bg-slate-400 rounded">Upload</Link>
       <FeatureCategory />
       <AllProducts />
       {/* <CategoryList /> */}

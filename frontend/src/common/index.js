@@ -10,6 +10,11 @@ const SummaryApi = {
     method: "post",
   },
 
+  uploadThings: {
+    url: `${backendDomain}/api/upload`,
+    method: "post",
+  },
+
   current_user: {
     url: `${backendDomain}/api/user-details`,
     method: "get",

@@ -17,6 +17,7 @@ import OrderHistory from "../pages/UserActivity/OrderHistory";
  import UpdateUserInfo from "../pages/UserActivity/UpdateUserInfo";
 import UserQuotes from "../pages/UserActivity/UserQuotes";
 import UserAddress from "../pages/UserActivity/UserAddress";
+import Desktop from "../components/uploadProduct/Desktop";
 
 const router = createBrowserRouter([
   {
@@ -38,6 +39,10 @@ const router = createBrowserRouter([
       {
         path: "sign-up",
         element: <SignUp />,
+      },
+      {
+        path: "upload",
+        element: <Desktop />,
       },
       {
         path: "product-category/:categoryName",
