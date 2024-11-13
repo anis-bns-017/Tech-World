@@ -13,12 +13,17 @@ import Cart from "../pages/Cart";
 import SearchProduct from "../pages/SearchProduct";
 import UserAccount from "../pages/UserAccount";
 import OrderHistory from "../pages/UserActivity/OrderHistory";
- import EditPassword from "../pages/UserActivity/EditPassword";
- import UpdateUserInfo from "../pages/UserActivity/UpdateUserInfo";
+import EditPassword from "../pages/UserActivity/EditPassword";
+import UpdateUserInfo from "../pages/UserActivity/UpdateUserInfo";
 import UserQuotes from "../pages/UserActivity/UserQuotes";
 import UserAddress from "../pages/UserActivity/UserAddress";
 import Desktop from "../components/uploadProduct/Desktop";
 import Laptop from "../components/uploadProduct/Laptop";
+import Monitor from "../components/uploadProduct/Monitor";
+import Phone from "../components/uploadProduct/Phone";
+import Tablet from "../components/uploadProduct/Tablet";
+import Camera from "../components/uploadProduct/Camera";
+import Keyboard from "../components/uploadProduct/Keyboard";
 
 const router = createBrowserRouter([
   {
@@ -50,6 +55,26 @@ const router = createBrowserRouter([
         path: "upload-laptop",
         element: <Laptop />,
       },
+      {
+        path: "upload-monitor",
+        element: <Monitor />,
+      },
+      {
+        path: "upload-phone",
+        element: <Phone />,
+      },
+      {
+        path: "upload-tablet",
+        element: <Tablet />,
+      },
+      {
+        path: "upload-camera",
+        element: <Camera />,
+      },
+      {
+        path: "upload-keyboard",
+        element: <Keyboard />,
+      },
 
       {
         path: "product-category/:categoryName",
@@ -73,24 +98,23 @@ const router = createBrowserRouter([
             element: <UpdateUserInfo />,
           },
           {
-            path: "edit-password", 
-            element: <EditPassword />
+            path: "edit-password",
+            element: <EditPassword />,
           },
           {
-            path: "order", 
-            element: <OrderHistory />
+            path: "order",
+            element: <OrderHistory />,
           },
           {
-            path: "quotes", 
-            element: <UserQuotes />
+            path: "quotes",
+            element: <UserQuotes />,
           },
           {
-            path: "address", 
-            element: <UserAddress />
+            path: "address",
+            element: <UserAddress />,
           },
-        ]
+        ],
       },
-      
 
       {
         path: "search",

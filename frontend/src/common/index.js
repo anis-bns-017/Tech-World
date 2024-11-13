@@ -20,6 +20,30 @@ const SummaryApi = {
     method: "post",
   },
 
+  uploadMonitor: {
+    url: `${backendDomain}/api/upload-monitor`,
+    method: "post",
+  },
+
+  uploadPhone: {
+    url: `${backendDomain}/api/upload-phone`,
+    method: "post",
+  },
+  uploadTablet: {
+    url: `${backendDomain}/api/upload-tablet`,
+    method: "post",
+  },
+
+  uploadCamera: {
+    url: `${backendDomain}/api/upload-camera`,
+    method: "post",
+  },
+
+  uploadKeyboard: {
+    url: `${backendDomain}/api/upload-keyboard`,
+    method: "post",
+  },
+
   current_user: {
     url: `${backendDomain}/api/user-details`,
     method: "get",

@@ -11,6 +11,7 @@ import { setUserDetails } from "./store/userSlice";
 import AllProducts from "./pages/AllProducts";
 import NavBar from "./components/NavBar";
 import UserInfo from "./pages/UserActivity/UserInfo";
+import NavBar_copy from "./components/NavBar_copy";
 
 const App = () => {
   const dispatch = useDispatch();
@@ -69,6 +70,7 @@ const App = () => {
 
         <Header />
         <NavBar />
+        <NavBar_copy />
 
         <main className="min-h-[calc(100vh-120px)] pt-16">
           <Outlet />

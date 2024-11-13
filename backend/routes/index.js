@@ -23,6 +23,11 @@ const searchProudct = require("../controller/product/searchProduct");
 const updateAddressController = require("../controller/user/updateAddressController");
 const desktopUploadController = require("../controller/productUpload/desktopUploadController");
 const laptopUploadController = require("../controller/productUpload/laptopUploadController");
+const monitorUploadController = require("../controller/productUpload/monitorUploadController");
+const phoneUploadController = require("../controller/productUpload/phoneUploadController");
+const tabletUploadController = require("../controller/productUpload/tabletUploadController");
+const cameraUploadController = require("../controller/productUpload/cameraUploadController");
+const keyboardUploadController = require("../controller/productUpload/keyboardUploadController");
 
 router.post("/signup", userSignupController);
 router.post("/signin", userSigninController);
@@ -37,8 +42,17 @@ router.post("/update-user", authToken, updateUser);
 router.post("/update-address", authToken, updateAddressController);
 
 //product
+
+//upload
 router.post("/upload-desktop", authToken, desktopUploadController);
 router.post("/upload-laptop", authToken, laptopUploadController);
+router.post("/upload-monitor", authToken, monitorUploadController);
+router.post("/upload-phone", authToken, phoneUploadController);
+router.post("/upload-tablet", authToken, tabletUploadController);
+router.post("/upload-camera", authToken, cameraUploadController);
+router.post("/upload-keyboard", authToken, keyboardUploadController);
+
+//other thing about product.
 router.get("/get-product", getProductController);
 router.post("/update-product", authToken, updateProductController);
 router.get("/get-categoryProduct", getCategoryProduct);
