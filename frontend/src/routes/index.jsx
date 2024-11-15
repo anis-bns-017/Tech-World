@@ -25,6 +25,7 @@ import Tablet from "../components/uploadProduct/Tablet";
 import Camera from "../components/uploadProduct/Camera";
 import Keyboard from "../components/uploadProduct/Keyboard";
 import Mouse from "../components/uploadProduct/Mouse";
+import HeadPhone from "../components/uploadProduct/HeadPhone";
 
 const router = createBrowserRouter([
   {
@@ -79,6 +80,11 @@ const router = createBrowserRouter([
       {
         path: "upload-mouse",
         element: <Mouse />,
+      },
+
+      {
+        path: "upload-headphone",
+        element: <HeadPhone />,
       },
 
       {

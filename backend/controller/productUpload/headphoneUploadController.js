@@ -1,18 +1,18 @@
 const uploadProductPermission = require("../../helpers/permission");
-const desktopModel = require("../../models/Category/desktopModel")
+const headphoneModel = require("../../models/Category/headphoneModel")
 
-async function desktopUploadController(req, res) {
+async function headphoneUploadController(req, res) {
   try {
     const sessionUserId = req.userId;
     if (!uploadProductPermission(sessionUserId)) {
       throw new Error("permission denied");
     }
 
-    const uploadProduct = new desktopModel(req.body);
+    const uploadProduct = new headphoneModel(req.body);
     const saveProduct = await uploadProduct.save();
 
     res.status(201).json({
-      message: "a desktop uploaded successfully",
+      message: "a headphone uploaded successfully",
       error: false,
       success: true,
       data: saveProduct,
@@ -26,4 +26,4 @@ async function desktopUploadController(req, res) {
   }
 }
 
-module.exports = desktopUploadController;
+module.exports = headphoneUploadController;

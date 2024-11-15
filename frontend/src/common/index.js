@@ -49,6 +49,11 @@ const SummaryApi = {
     method: "post",
   },
 
+  uploadHeadphone: {
+    url: `${backendDomain}/api/upload-headphone`,
+    method: "post",
+  },
+
   current_user: {
     url: `${backendDomain}/api/user-details`,
     method: "get",
