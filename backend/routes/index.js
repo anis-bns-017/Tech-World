@@ -28,6 +28,7 @@ const phoneUploadController = require("../controller/productUpload/phoneUploadCo
 const tabletUploadController = require("../controller/productUpload/tabletUploadController");
 const cameraUploadController = require("../controller/productUpload/cameraUploadController");
 const keyboardUploadController = require("../controller/productUpload/keyboardUploadController");
+const mouseUploadController = require("../controller/productUpload/mouseUploadController");
 
 router.post("/signup", userSignupController);
 router.post("/signin", userSigninController);
@@ -51,6 +52,7 @@ router.post("/upload-phone", authToken, phoneUploadController);
 router.post("/upload-tablet", authToken, tabletUploadController);
 router.post("/upload-camera", authToken, cameraUploadController);
 router.post("/upload-keyboard", authToken, keyboardUploadController);
+router.post("/upload-mouse", authToken, mouseUploadController);
 
 //other thing about product.
 router.get("/get-product", getProductController);

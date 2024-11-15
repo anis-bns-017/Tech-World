@@ -44,6 +44,11 @@ const SummaryApi = {
     method: "post",
   },
 
+  uploadMouse: {
+    url: `${backendDomain}/api/upload-mouse`,
+    method: "post",
+  },
+
   current_user: {
     url: `${backendDomain}/api/user-details`,
     method: "get",

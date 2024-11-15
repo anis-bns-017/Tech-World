@@ -11,7 +11,7 @@ const NavBar_copy = () => {
         >
           keyboard
         </Link>
-        <Link className="cursor-pointer hover:text-red-500">
+        <Link to={"upload-mouse"} className="cursor-pointer hover:text-red-500">
           mouse
         </Link>
         <Link className="cursor-pointer hover:text-red-500">Compoenent</Link>
