@@ -4,8 +4,14 @@ const Schema = mongoose.Schema;
 const addressSchema = new mongoose.Schema(
   {
     user: {
-      type: Schema.Types.String,
-      ref: "user",
+      type: Schema.Types.ObjectId, // Reference by ObjectId
+      ref: "user", // Refers to the 'user' model
+      required: true,
+    },
+    userDetails: {
+      // Embedding full user data
+      type: Object,
+      required: true, // Ensure user details are always present
     },
     firstName: String,
     lastName: String,

@@ -1,4 +1,4 @@
-var bcrypt = require("bcryptjs");
+const bcrypt = require("bcryptjs");
 const userModel = require("../../models/userModel");
 const address_Model = require("../../models/address_Model");
 
@@ -6,45 +6,44 @@ async function userSignupController(req, res) {
   try {
     const { firstName, lastName, email, password, phone, otp } = req.body;
 
-    const user = await userModel.findOne({ email });
-    console.log("anis", user);
-    if (user) {
-      throw new Error("Already user exist.");
+    // Check if the user already exists
+    const existingUser = await userModel.findOne({ email });
+    if (existingUser) {
+      throw new Error("User already exists.");
     }
 
-    if (!firstName) {
-      throw new Error("Please provide first name.");
-    }
+    // Validate required fields
+    if (!firstName) throw new Error("Please provide a first name.");
+    if (!lastName) throw new Error("Please provide a last name.");
+    if (!email) throw new Error("Please provide an email.");
+    if (!password) throw new Error("Please provide a password.");
 
-    if (!lastName) {
-      throw new Error("Please provide last name.");
-    }
-
-    if (!email) {
-      throw new Error("Please provide email.");
-    }
-
+    // Hash the password
     const salt = bcrypt.genSaltSync(10);
-    const hashPassword = await bcrypt.hashSync(password, salt);
+    const hashPassword = bcrypt.hashSync(password, salt);
 
     if (!hashPassword) {
-      throw new Error("Something is wrong");
+      throw new Error("Password hashing failed.");
     }
 
-    const payload = {
+    // Create and save the user
+    const userPayload = {
       ...req.body,
       role: "GENERAL",
       password: hashPassword,
     };
 
-    const userData = new userModel(payload);
-    const saveUser = await userData.save();
+    const userData = new userModel(userPayload);
+    const saveUser = await userData.save(); // This will include the user's `_id`
+    console.log("User saved successfully:", saveUser);
 
-    const payload2 = {
-      _id: String(userData._id),
-      user: String(userData._id)                                                                                                                  , 
-      firstName: "",
-      lastName: "",
+    // Create and save the address for the user
+    const addressPayload = {
+      user: saveUser._id, // Save reference to the user's ID
+      userDetails: saveUser, // Embed full user data directly in the address
+      firstName: "", 
+      lastName: "", 
+      wow: "anis", 
       company: "",
       address1: "",
       address2: "",
@@ -54,20 +53,17 @@ async function userSignupController(req, res) {
       region: "",
     };
 
-    const userAddress = new address_Model(payload2);
+    const userAddress = new address_Model(addressPayload);
     const saveAddress = await userAddress.save();
+    console.log("Address with embedded user data saved successfully:", saveAddress);
 
+    // Send the response
     res.status(201).json({
-      data: saveUser,
+      user: saveUser,
+      address: saveAddress, // Embedded data now stored permanently in MongoDB
       success: true,
       error: false,
-      message: "User created successfully!",
-    });
-
-    res.status(201).json({
-      data: saveAddress,
-      success: true,
-      error: false,
+      message: "User and address created successfully!",
     });
   } catch (err) {
     res.json({

@@ -71,7 +71,7 @@ const Header = () => {
             <input
               type="text"
               placeholder="Search"
-              className="w-full h-10 text-sm outline-none p-2 rounded-l-md indent-3"
+              className="w-full text-black h-10 text-sm outline-none p-2 rounded-l-md indent-3"
               onChange={handleSearch}
               value={search}
             />

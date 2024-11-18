@@ -1,25 +1,25 @@
-import { MdCollectionsBookmark } from "react-icons/md";
-import { CgNotes } from "react-icons/cg";
-import { FaUserEdit } from "react-icons/fa";
-import { MdOutlineWifiPassword } from "react-icons/md";
-import { ImAddressBook } from "react-icons/im";
-import { CiHeart } from "react-icons/ci";
-import { FaComputer } from "react-icons/fa6";
-import { FaStar } from "react-icons/fa";
-import { TbTransactionDollar } from "react-icons/tb";
-import { FaUserLarge } from "react-icons/fa6";
 import { useSelector } from "react-redux";
-import { useState } from "react";
 import UserCredits from "./UserActivity/UserCredits";
-import { Link, Outlet } from "react-router-dom";
 import UserInfo from "./UserActivity/UserInfo";
+import ROLE from "../common/Role";
+import AdminPanel from "./AdminPanel";
 
 const UserAccount = () => {
+  const user = useSelector((state) => state?.user?.user);
+  console.log("user ", user?.role);
+  // user?.role === ROLE.ADMIN
   return (
     <>
       <div>
-        <UserCredits />
-        <UserInfo />
+        {user?.role === ROLE.ADMIN ? (
+          <AdminPanel />
+        ) : (
+          <div>
+            <UserCredits />
+            <UserInfo />
+          </div>
+        )}
+
         {/* <nav>
           <section className="flex flex-wrap mx-[150px] scrollbar-none p-10">
             <Link

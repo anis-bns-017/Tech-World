@@ -4,7 +4,7 @@ const headphoneModel = require("../../models/Category/headphoneModel")
 async function headphoneUploadController(req, res) {
   try {
     const sessionUserId = req.userId;
-    if (!uploadProductPermission(sessionUserId)) {
+    if (uploadProductPermission(sessionUserId)) {
       throw new Error("permission denied");
     }
 

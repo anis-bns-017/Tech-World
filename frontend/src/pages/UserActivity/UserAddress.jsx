@@ -34,8 +34,8 @@ const UserAddress = () => {
     e.preventDefault();
 
     if (data.password === data.confirmPassword) {
-      const dataResponse = await fetch(SummaryApi.uploadThings.url, {
-        method: SummaryApi.uploadThings.method,
+      const dataResponse = await fetch(SummaryApi.updateUserAddress.url, {
+        method: SummaryApi.updateUserAddress.method,
         credentials: "include",
         headers: {
           "content-type": "application/json",

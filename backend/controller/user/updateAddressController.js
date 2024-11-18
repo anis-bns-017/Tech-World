@@ -1,17 +1,25 @@
-
-var bcrypt = require("bcryptjs");
- const address_Model = require("../../models/address_Model")
- const userModel = require("../../models/userModel")
+const bcrypt = require("bcryptjs");
+const address_Model = require("../../models/address_Model");
+const userModel = require("../../models/userModel");
 
 async function userSignupController(req, res) {
-
   try {
-    const { firstName, company,  lastName, address1, address2, post_code, country, region, city } = req.body;
+    const {
+      firstName,
+      company,
+      lastName,
+      address1,
+      address2,
+      post_code,
+      country,
+      region,
+      city,
+    } = req.body;
 
-
+    // Find the user by ID
     const user = await userModel.findById(req.userId);
-    console.log("user: ", user);
-    
+    console.log("User:", user);
+
     // Check if the user exists
     if (!user) {
       return res.status(404).json({
@@ -21,82 +29,39 @@ async function userSignupController(req, res) {
       });
     }
 
+    // Prepare the update payload
     const payload = {
-      ...(firstName && { firstName: firstName }),
-      ...(lastName && { lastName: lastName }),
-      ...(address1) && {address1: address1},
-      ...(address2) && {address2: address2},
-      ...(post_code) && {post_code: post_code},
-      ...(country) && {country: country},
-      ...(city) && {city: city},   
-      ...(company) && {company: company},   
-      ...(region) && {region: region},   
+      ...(firstName && { firstName }),
+      ...(lastName && { lastName }),
+      ...(address1 && { address1 }),
+      ...(address2 && { address2 }),
+      ...(post_code && { post_code }),
+      ...(country && { country }),
+      ...(region && { region }),
+      ...(city && { city }),
+      ...(company && { company }),
     };
 
-    const updatedUser = await address_Model.findByIdAndUpdate(req.userId, payload, { new: true });
+    // Update the existing address or create one if it doesn't exist
+    const updatedAddress = await address_Model.findOneAndUpdate(
+      { user: user._id }, // Find the address by the `user` field
+      { $set: payload }, // Update with the new data
+      { new: true, upsert: true } // `upsert: true` creates a new document if none is found
+    );
 
-    // Log the updated user for debugging
-    console.log("User updated:", updatedUser);
+    console.log("Updated Address:", updatedAddress);
 
-    /*
-    const userModel = require("../../models/userModel");
-
-
-
-    // Update the user with the new data
-    const updatedUser = await userModel.findByIdAndUpdate(user, payload, { new: true });
-
-    // Log the updated user for debugging
-    console.log("User updated:", updatedUser);
-
-    res.json({
-      data: updatedUser,
-      message: "User updated successfully",
+    // Send the response
+    res.status(200).json({
+      data: updatedAddress,
       success: true,
       error: false,
+      message: "User address updated successfully!",
     });
   } catch (err) {
-    console.error("Error updating user:", err); // Log the error details
+    console.error("Error updating address:", err); // Log the error details
     res.status(500).json({
-      message: err.message || "An error occurred while updating the user.",
-      error: true,
-      success: false,
-    });
-  }
-
-  const userData = new address_Model(payload);
-    const saveUser = await userData.save();
-}
-
-module.exports = updateUser;
-
-    */
-
-    if (!firstName) {
-      throw new Error("Please provide first name.");
-    }
-
-    if (!lastName) {
-      throw new Error("Please provide last name.");
-    }
-
-
-    // const payload2 = {
-    //   ...req.body,
-    // };
-
-    const userData = new address_Model(payload);
-    const saveUser = await userData.save();
-
-    res.status(201).json({
-      data: saveUser,
-      success: true,
-      error: false,
-      message: "User address created successfully!",
-    });
-  } catch (err) {
-    res.json({
-      message: err?.message || err || "An error occurred while updating the user.",
+      message: err?.message || "An error occurred while updating the address.",
       error: true,
       success: false,
     });

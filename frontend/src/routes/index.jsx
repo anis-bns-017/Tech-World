@@ -49,6 +49,11 @@ const router = createBrowserRouter([
         element: <SignUp />,
       },
       {
+        path: "update-address",
+        element: <UserAddress />,
+      },
+
+      {
         path: "upload-desktop",
         element: <Desktop />,
       },

@@ -10,6 +10,11 @@ const SummaryApi = {
     method: "post",
   },
 
+  updateUserAddress: {
+    url: `${backendDomain}/api/update-address`,
+    method: "post",
+  },
+
   uploadDesktop: {
     url: `${backendDomain}/api/upload-desktop`,
     method: "post",
