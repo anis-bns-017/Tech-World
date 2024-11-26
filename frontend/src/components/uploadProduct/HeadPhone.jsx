@@ -135,7 +135,7 @@ const HeadPhone = ({ onClose, fetchData }) => {
                   value={data.productName}
                   onChange={handleOnChange}
                   name="productName"
-                  className="p-2 w-full bg-slate-100 border rounded"
+                  className="p-2 w-full bg-slate-50 border rounded"
                 />
               </div>
 
@@ -150,7 +150,7 @@ const HeadPhone = ({ onClose, fetchData }) => {
                   value={data.brandName}
                   onChange={handleOnChange}
                   name="brandName"
-                  className="p-2 w-full bg-slate-100 border rounded"
+                  className="p-2 w-full bg-slate-50 border rounded"
                 />
               </div>
             </div>
@@ -161,7 +161,7 @@ const HeadPhone = ({ onClose, fetchData }) => {
                   Key Features :
                 </label>
                 <textarea
-                  className="min-h-32 p-2 w-full bg-slate-100 border resize-none"
+                  className="min-h-32 p-2 w-full bg-slate-50 border resize-none"
                   placeholder="Enter Proddct Key Features"
                   rows={3}
                   cols={5}
@@ -177,7 +177,7 @@ const HeadPhone = ({ onClose, fetchData }) => {
                 </label>
 
                 <label htmlFor="uploadImageInput">
-                  <div className="p-2 bg-slate-100 border rounded min-h-32 w-full flex justify-center items-center cursor-pointer">
+                  <div className="p-2 bg-slate-50 border rounded min-h-32 w-full flex justify-center items-center cursor-pointer">
                     <div className="text-slate-600 flex justify-center items-center flex-col gap-2">
                       <span className="text-4xl">
                         <FaCloudUploadAlt />
@@ -205,7 +205,7 @@ const HeadPhone = ({ onClose, fetchData }) => {
                               alt={el}
                               width={80}
                               height={80}
-                              className="bg-slate-100 border cursor-pointer"
+                              className="bg-slate-50 border cursor-pointer"
                               onClick={() => {
                                 setOpenFullScreenImage(true);
                                 setFullscreenImage(el);
@@ -238,7 +238,7 @@ const HeadPhone = ({ onClose, fetchData }) => {
                 </label>
                 <select
                   value={data.category}
-                  className="p-2 w-full bg-slate-100 border rounded"
+                  className="p-2 w-full bg-slate-50 border rounded"
                   onChange={handleOnChange}
                   name="category"
                 >
@@ -264,7 +264,7 @@ const HeadPhone = ({ onClose, fetchData }) => {
                   value={data.frequency_range}
                   onChange={handleOnChange}
                   name="frequency_range"
-                  className="p-2 w-full bg-slate-100 border rounded"
+                  className="p-2 w-full bg-slate-50 border rounded"
                 />
               </div>
             </div>
@@ -281,7 +281,7 @@ const HeadPhone = ({ onClose, fetchData }) => {
                   value={data.sensitivity}
                   onChange={handleOnChange}
                   name="sensitivity"
-                  className="p-2 w-full bg-slate-100 border rounded"
+                  className="p-2 w-full bg-slate-50 border rounded"
                 />
               </div>
 
@@ -296,7 +296,7 @@ const HeadPhone = ({ onClose, fetchData }) => {
                   value={data.cable_lenght}
                   onChange={handleOnChange}
                   name="cable_lenght"
-                  className="p-2 w-full bg-slate-100 border rounded"
+                  className="p-2 w-full bg-slate-50 border rounded"
                 />
               </div>
             </div>
@@ -313,7 +313,7 @@ const HeadPhone = ({ onClose, fetchData }) => {
                   value={data.impedance}
                   onChange={handleOnChange}
                   name="impedance"
-                  className="p-2 w-full bg-slate-100 border rounded"
+                  className="p-2 w-full bg-slate-50 border rounded"
                 />
               </div>
 
@@ -328,7 +328,7 @@ const HeadPhone = ({ onClose, fetchData }) => {
                   value={data.driver_diameter}
                   onChange={handleOnChange}
                   name="driver_diameter"
-                  className="p-2 w-full bg-slate-100 border rounded"
+                  className="p-2 w-full bg-slate-50 border rounded"
                 />
               </div>
             </div>
@@ -337,7 +337,7 @@ const HeadPhone = ({ onClose, fetchData }) => {
               Others :
             </label>
             <textarea
-              className="h-40 p-2 bg-slate-100 border resize-none"
+              className="h-40 p-2 bg-slate-50 border resize-none"
               placeholder="Enter Others"
               rows={3}
               cols={5}
@@ -358,7 +358,7 @@ const HeadPhone = ({ onClose, fetchData }) => {
                   value={data.connectivity}
                   onChange={handleOnChange}
                   name="connectivity"
-                  className="p-2 w-full bg-slate-100 border rounded"
+                  className="p-2 w-full bg-slate-50 border rounded"
                 />
               </div>
 
@@ -373,7 +373,7 @@ const HeadPhone = ({ onClose, fetchData }) => {
                   value={data.battery_capacity}
                   onChange={handleOnChange}
                   name="battery_capacity"
-                  className="p-2 w-full bg-slate-100 border rounded"
+                  className="p-2 w-full bg-slate-50 border rounded"
                 />
               </div>
             </div>
@@ -390,7 +390,7 @@ const HeadPhone = ({ onClose, fetchData }) => {
                   value={data.battery_life}
                   onChange={handleOnChange}
                   name="battery_life"
-                  className="p-2 w-full bg-slate-100 border rounded"
+                  className="p-2 w-full bg-slate-50 border rounded"
                 />
               </div>
 
@@ -405,7 +405,7 @@ const HeadPhone = ({ onClose, fetchData }) => {
                   value={data.input_jack}
                   onChange={handleOnChange}
                   name="coinput_jacklor"
-                  className="p-2 w-full bg-slate-100 border rounded"
+                  className="p-2 w-full bg-slate-50 border rounded"
                 />
               </div>
             </div>
@@ -422,7 +422,7 @@ const HeadPhone = ({ onClose, fetchData }) => {
                   value={data.system_requirement}
                   onChange={handleOnChange}
                   name="system_requirement"
-                  className="p-2 w-full bg-slate-100 border rounded"
+                  className="p-2 w-full bg-slate-50 border rounded"
                 />
               </div>
 
@@ -437,7 +437,7 @@ const HeadPhone = ({ onClose, fetchData }) => {
                   value={data.weight}
                   onChange={handleOnChange}
                   name="weight"
-                  className="p-2 w-full bg-slate-100 border rounded"
+                  className="p-2 w-full bg-slate-50 border rounded"
                 />
               </div>
             </div>
@@ -454,7 +454,7 @@ const HeadPhone = ({ onClose, fetchData }) => {
                   value={data.noise_ratio}
                   onChange={handleOnChange}
                   name="noise_ratio"
-                  className="p-2 w-full bg-slate-100 border rounded"
+                  className="p-2 w-full bg-slate-50 border rounded"
                 />
               </div>
 
@@ -469,7 +469,7 @@ const HeadPhone = ({ onClose, fetchData }) => {
                   value={data.pickup_pattern}
                   onChange={handleOnChange}
                   name="pickup_pattern"
-                  className="p-2 w-full bg-slate-100 border rounded"
+                  className="p-2 w-full bg-slate-50 border rounded"
                 />
               </div>
             </div>
@@ -486,7 +486,7 @@ const HeadPhone = ({ onClose, fetchData }) => {
                   value={data.color}
                   onChange={handleOnChange}
                   name="color"
-                  className="p-2 w-full bg-slate-100 border rounded"
+                  className="p-2 w-full bg-slate-50 border rounded"
                 />
               </div>
 
@@ -501,7 +501,7 @@ const HeadPhone = ({ onClose, fetchData }) => {
                   value={data.mic_frequency}
                   onChange={handleOnChange}
                   name="mic_frequency"
-                  className="p-2 w-full bg-slate-100 border rounded"
+                  className="p-2 w-full bg-slate-50 border rounded"
                 />
               </div>
             </div>
@@ -518,7 +518,7 @@ const HeadPhone = ({ onClose, fetchData }) => {
                   value={data.mic_sensitivity}
                   onChange={handleOnChange}
                   name="mic_sensitivity"
-                  className="p-2 w-full bg-slate-100 border rounded"
+                  className="p-2 w-full bg-slate-50 border rounded"
                 />
               </div>
 
@@ -533,7 +533,7 @@ const HeadPhone = ({ onClose, fetchData }) => {
                   value={data.warranty}
                   onChange={handleOnChange}
                   name="warranty"
-                  className="p-2 w-full bg-slate-100 border rounded"
+                  className="p-2 w-full bg-slate-50 border rounded"
                 />
               </div>
             </div>
@@ -550,7 +550,7 @@ const HeadPhone = ({ onClose, fetchData }) => {
                   value={data.price}
                   onChange={handleOnChange}
                   name="price"
-                  className="p-2 w-full bg-slate-100 border rounded"
+                  className="p-2 w-full bg-slate-50 border rounded"
                 />
               </div>
               <div className="flex-1">
@@ -564,7 +564,7 @@ const HeadPhone = ({ onClose, fetchData }) => {
                   value={data.sellingPrice}
                   onChange={handleOnChange}
                   name="sellingPrice"
-                  className="p-2 w-full bg-slate-100 border rounded"
+                  className="p-2 w-full bg-slate-50 border rounded"
                 />
               </div>
             </div>
@@ -573,7 +573,7 @@ const HeadPhone = ({ onClose, fetchData }) => {
               Description :
             </label>
             <textarea
-              className="h-40 p-2 bg-slate-100 border resize-none"
+              className="h-40 p-2 bg-slate-50 border resize-none"
               placeholder="Enter Proddct Description"
               rows={3}
               cols={5}

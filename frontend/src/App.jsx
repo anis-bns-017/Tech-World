@@ -12,11 +12,13 @@ import AllProducts from "./pages/AllProducts";
 import NavBar from "./components/NavBar";
 import UserInfo from "./pages/UserActivity/UserInfo";
 import NavBar_copy from "./components/NavBar_copy";
+import DropdownMenu from "./pages/UserActivity/DropdownMenu";
+import DropDown from "./dropMenu/DropDown";
 
 const App = () => {
   const dispatch = useDispatch();
   const [showUserInfo, setShowUserInfo] = useState(false);
-  
+
   const [cartProductCount, setCartProductCount] = useState(0);
 
   const fetchUserDetails = async () => {
@@ -34,7 +36,7 @@ const App = () => {
 
   const checkFlag = (prev) => {
     setShowUserInfo(!prev);
-  }
+  };
 
   const fetchUserAddToCart = async () => {
     const dataResponse = await fetch(SummaryApi.addToCartProductCount.url, {
@@ -53,7 +55,7 @@ const App = () => {
     cartProductCount,
       //user details cart products
       fetchUserAddToCart();
-      checkFlag();
+    checkFlag();
   }, []);
 
   return (
@@ -63,14 +65,14 @@ const App = () => {
           fetchUserDetails, //use details fetch
           cartProductCount, //current user add to cart product count
           fetchUserAddToCart,
-          checkFlag
+          checkFlag,
         }}
       >
         <ToastContainer />
 
         <Header />
-        <NavBar />
-        <NavBar_copy />
+        {/* <DropDown /> */}
+        {/* <NavBar_copy /> */}
 
         <main className="min-h-[calc(100vh-120px)] pt-16">
           <Outlet />

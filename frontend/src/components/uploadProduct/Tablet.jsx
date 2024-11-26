@@ -141,7 +141,7 @@ const Tablet = ({ onClose, fetchData }) => {
                   value={data.productName}
                   onChange={handleOnChange}
                   name="productName"
-                  className="p-2 w-full bg-slate-100 border rounded"
+                  className="p-2 w-full bg-slate-50 border rounded"
                 />
               </div>
 
@@ -156,7 +156,7 @@ const Tablet = ({ onClose, fetchData }) => {
                   value={data.brandName}
                   onChange={handleOnChange}
                   name="brandName"
-                  className="p-2 w-full bg-slate-100 border rounded"
+                  className="p-2 w-full bg-slate-50 border rounded"
                 />
               </div>
             </div>
@@ -167,7 +167,7 @@ const Tablet = ({ onClose, fetchData }) => {
                   Key Features :
                 </label>
                 <textarea
-                  className="min-h-32 p-2 w-full bg-slate-100 border resize-none"
+                  className="min-h-32 p-2 w-full bg-slate-50 border resize-none"
                   placeholder="Enter Proddct Key Features"
                   rows={3}
                   cols={5}
@@ -183,7 +183,7 @@ const Tablet = ({ onClose, fetchData }) => {
                 </label>
 
                 <label htmlFor="uploadImageInput">
-                  <div className="p-2 bg-slate-100 border rounded min-h-32 w-full flex justify-center items-center cursor-pointer">
+                  <div className="p-2 bg-slate-50 border rounded min-h-32 w-full flex justify-center items-center cursor-pointer">
                     <div className="text-slate-600 flex justify-center items-center flex-col gap-2">
                       <span className="text-4xl">
                         <FaCloudUploadAlt />
@@ -211,7 +211,7 @@ const Tablet = ({ onClose, fetchData }) => {
                               alt={el}
                               width={80}
                               height={80}
-                              className="bg-slate-100 border cursor-pointer"
+                              className="bg-slate-50 border cursor-pointer"
                               onClick={() => {
                                 setOpenFullScreenImage(true);
                                 setFullscreenImage(el);
@@ -244,7 +244,7 @@ const Tablet = ({ onClose, fetchData }) => {
                 </label>
                 <select
                   value={data.category}
-                  className="p-2 w-full bg-slate-100 border rounded"
+                  className="p-2 w-full bg-slate-50 border rounded"
                   onChange={handleOnChange}
                   name="category"
                 >
@@ -270,7 +270,7 @@ const Tablet = ({ onClose, fetchData }) => {
                   value={data.display_size}
                   onChange={handleOnChange}
                   name="display_size"
-                  className="p-2 w-full bg-slate-100 border rounded"
+                  className="p-2 w-full bg-slate-50 border rounded"
                 />
               </div>
             </div>
@@ -287,7 +287,7 @@ const Tablet = ({ onClose, fetchData }) => {
                   value={data.display_type}
                   onChange={handleOnChange}
                   name="display_type"
-                  className="p-2 w-full bg-slate-100 border rounded"
+                  className="p-2 w-full bg-slate-50 border rounded"
                 />
               </div>
 
@@ -302,7 +302,7 @@ const Tablet = ({ onClose, fetchData }) => {
                   value={data.display_resolution}
                   onChange={handleOnChange}
                   name="display_resolution"
-                  className="p-2 w-full bg-slate-100 border rounded"
+                  className="p-2 w-full bg-slate-50 border rounded"
                 />
               </div>
             </div>
@@ -319,7 +319,7 @@ const Tablet = ({ onClose, fetchData }) => {
                   value={data.processor}
                   onChange={handleOnChange}
                   name="processor"
-                  className="p-2 w-full bg-slate-100 border rounded"
+                  className="p-2 w-full bg-slate-50 border rounded"
                 />
               </div>
 
@@ -334,7 +334,7 @@ const Tablet = ({ onClose, fetchData }) => {
                   value={data.ram}
                   onChange={handleOnChange}
                   name="ram"
-                  className="p-2 w-full bg-slate-100 border rounded"
+                  className="p-2 w-full bg-slate-50 border rounded"
                 />
               </div>
             </div>
@@ -351,7 +351,7 @@ const Tablet = ({ onClose, fetchData }) => {
                   value={data.storage}
                   onChange={handleOnChange}
                   name="storage"
-                  className="p-2 w-full bg-slate-100 border rounded"
+                  className="p-2 w-full bg-slate-50 border rounded"
                 />
               </div>
 
@@ -366,7 +366,7 @@ const Tablet = ({ onClose, fetchData }) => {
                   value={data.connectivity}
                   onChange={handleOnChange}
                   name="connectivity"
-                  className="p-2 w-full bg-slate-100 border rounded"
+                  className="p-2 w-full bg-slate-50 border rounded"
                 />
               </div>
             </div>
@@ -383,7 +383,7 @@ const Tablet = ({ onClose, fetchData }) => {
                   value={data.operating_system}
                   onChange={handleOnChange}
                   name="operating_system"
-                  className="p-2 w-full bg-slate-100 border rounded"
+                  className="p-2 w-full bg-slate-50 border rounded"
                 />
               </div>
 
@@ -398,7 +398,7 @@ const Tablet = ({ onClose, fetchData }) => {
                   value={data.audio}
                   onChange={handleOnChange}
                   name="audio"
-                  className="p-2 w-full bg-slate-100 border rounded"
+                  className="p-2 w-full bg-slate-50 border rounded"
                 />
               </div>
             </div>
@@ -415,7 +415,7 @@ const Tablet = ({ onClose, fetchData }) => {
                   value={data.dimension}
                   onChange={handleOnChange}
                   name="dimension"
-                  className="p-2 w-full bg-slate-100 border rounded"
+                  className="p-2 w-full bg-slate-50 border rounded"
                 />
               </div>
 
@@ -430,7 +430,7 @@ const Tablet = ({ onClose, fetchData }) => {
                   value={data.weight}
                   onChange={handleOnChange}
                   name="weight"
-                  className="p-2 w-full bg-slate-100 border rounded"
+                  className="p-2 w-full bg-slate-50 border rounded"
                 />
               </div>
             </div>
@@ -447,7 +447,7 @@ const Tablet = ({ onClose, fetchData }) => {
                   value={data.sim}
                   onChange={handleOnChange}
                   name="sim"
-                  className="p-2 w-full bg-slate-100 border rounded"
+                  className="p-2 w-full bg-slate-50 border rounded"
                 />
               </div>
 
@@ -462,7 +462,7 @@ const Tablet = ({ onClose, fetchData }) => {
                   value={data.color}
                   onChange={handleOnChange}
                   name="color"
-                  className="p-2 w-full bg-slate-100 border rounded"
+                  className="p-2 w-full bg-slate-50 border rounded"
                 />
               </div>
             </div>
@@ -479,7 +479,7 @@ const Tablet = ({ onClose, fetchData }) => {
                   value={data.rear_camera}
                   onChange={handleOnChange}
                   name="rear_camera"
-                  className="p-2 w-full bg-slate-100 border rounded"
+                  className="p-2 w-full bg-slate-50 border rounded"
                 />
               </div>
 
@@ -494,7 +494,7 @@ const Tablet = ({ onClose, fetchData }) => {
                   value={data.front_camera}
                   onChange={handleOnChange}
                   name="front_camera"
-                  className="p-2 w-full bg-slate-100 border rounded"
+                  className="p-2 w-full bg-slate-50 border rounded"
                 />
               </div>
             </div>
@@ -511,7 +511,7 @@ const Tablet = ({ onClose, fetchData }) => {
                   value={data.battery_type}
                   onChange={handleOnChange}
                   name="battery_type"
-                  className="p-2 w-full bg-slate-100 border rounded"
+                  className="p-2 w-full bg-slate-50 border rounded"
                 />
               </div>
 
@@ -526,7 +526,7 @@ const Tablet = ({ onClose, fetchData }) => {
                   value={data.battery_capacity}
                   onChange={handleOnChange}
                   name="battery_capacity"
-                  className="p-2 w-full bg-slate-100 border rounded"
+                  className="p-2 w-full bg-slate-50 border rounded"
                 />
               </div>
             </div>
@@ -543,7 +543,7 @@ const Tablet = ({ onClose, fetchData }) => {
                   value={data.bluetooth}
                   onChange={handleOnChange}
                   name="bluetooth"
-                  className="p-2 w-full bg-slate-100 border rounded"
+                  className="p-2 w-full bg-slate-50 border rounded"
                 />
               </div>
 
@@ -558,7 +558,7 @@ const Tablet = ({ onClose, fetchData }) => {
                   value={data.GPS}
                   onChange={handleOnChange}
                   name="GPS"
-                  className="p-2 w-full bg-slate-100 border rounded"
+                  className="p-2 w-full bg-slate-50 border rounded"
                 />
               </div>
             </div>
@@ -575,7 +575,7 @@ const Tablet = ({ onClose, fetchData }) => {
                   value={data.sensor}
                   onChange={handleOnChange}
                   name="sensor"
-                  className="p-2 w-full bg-slate-100 border rounded"
+                  className="p-2 w-full bg-slate-50 border rounded"
                 />
               </div>
 
@@ -590,7 +590,7 @@ const Tablet = ({ onClose, fetchData }) => {
                   value={data.usb}
                   onChange={handleOnChange}
                   name="usb"
-                  className="p-2 w-full bg-slate-100 border rounded"
+                  className="p-2 w-full bg-slate-50 border rounded"
                 />
               </div>
 
@@ -608,7 +608,7 @@ const Tablet = ({ onClose, fetchData }) => {
                   value={data.wlan}
                   onChange={handleOnChange}
                   name="wlan"
-                  className="p-2 w-full bg-slate-100 border rounded"
+                  className="p-2 w-full bg-slate-50 border rounded"
                 />
               </div>
 
@@ -623,7 +623,7 @@ const Tablet = ({ onClose, fetchData }) => {
                   value={data.price}
                   onChange={handleOnChange}
                   name="price"
-                  className="p-2 w-full bg-slate-100 border rounded"
+                  className="p-2 w-full bg-slate-50 border rounded"
                 />
               </div>
             </div>
@@ -640,7 +640,7 @@ const Tablet = ({ onClose, fetchData }) => {
                   value={data.sellingPrice}
                   onChange={handleOnChange}
                   name="sellingPrice"
-                  className="p-2 w-full bg-slate-100 border rounded"
+                  className="p-2 w-full bg-slate-50 border rounded"
                 />
               </div>
 
@@ -655,7 +655,7 @@ const Tablet = ({ onClose, fetchData }) => {
                   value={data.warranty}
                   onChange={handleOnChange}
                   name="warranty"
-                  className="p-2 w-full bg-slate-100 border rounded"
+                  className="p-2 w-full bg-slate-50 border rounded"
                 />
               </div>
             </div>
@@ -664,7 +664,7 @@ const Tablet = ({ onClose, fetchData }) => {
               Description :
             </label>
             <textarea
-              className="h-40 p-2 bg-slate-100 border resize-none"
+              className="h-40 p-2 bg-slate-50 border resize-none"
               placeholder="Enter Proddct Description"
               rows={3}
               cols={5}

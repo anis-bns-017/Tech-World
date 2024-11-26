@@ -17,6 +17,7 @@ import image5Mobile from "../assest/banner/img5_mobile.png";
 import banner1 from "../assest/banner/logitechdoubledeal.webp";
 import banner2 from "../assest/banner/happy-hour.webp";
 import { useEffect, useState } from "react";
+import DropdownMenu from "../pages/UserActivity/DropdownMenu";
 
 const BannerProduct = () => {
   const [currentImage, setCurrentImage] = useState(0);
@@ -54,59 +55,72 @@ const BannerProduct = () => {
 
   return (
     <>
-      <div className="flex">
-        <div className="container mb-10 px-10 rounded">
-          <div className="h-[32rem] w-[60rem] bg-slate-200 relative">
-            {/* Desktop and Tablet version */}
-            <div className="hidden md:flex h-full w-full overflow-hidden">
-              {desktopImages.map((imageUrl, index) => {
-                return (
-                  <div
-                    className="w-full h-full min-h-full min-w-full transition-all"
-                    key={imageUrl}
-                    style={{ transform: `translateX(-${currentImage * 100}%)` }}
-                  >
-                    <img src={imageUrl} alt="" className="w-full h-full" />
-                  </div>
-                );
-              })}
-            </div>
-          </div>
+      <div className="absolute">
+        <div>
+          <DropdownMenu />
         </div>
-        <div className="grid">
-          <div>
-            <div className="h-[18rem] w-[20rem] bg-[#ffe8a1] mr-20 shadow-lg p-3 items-center text-center">
-              <p className="text-lg font-semibold mt-3">Compare Products</p>
-              <p className="text-sm text-yellow-800">
-                Choose Two Prodcuts to Compare
-              </p>
-              <form className="">
-                <div className="flex">
-                  <input
-                    className="absolute mt-8 w-64 h-10 mx-5 outline-none indent-4 shadow-md rounded"
-                    type="text"
-                    placeholder="Search and Select Product"
-                  />
-                  <ImSearch className="relative ml-[15.5rem] text-slate-400 mt-[45px]" />
-                </div>
-                <div className="flex mt-6">
-                  <input
-                    className="absolute w-64 h-10 mx-5 outline-none indent-4 shadow-md rounded"
-                    type="text"
-                    placeholder="Search and Select Product"
-                  />
-                  <ImSearch className="relative ml-[15.5rem] text-slate-400 mt-[15px]" />
-                </div>
-                <div className="rounded p-2 mx-5 mt-10 border-[2px] bg-transparent text-blue-700 border-blue-700 pcBuilder cursor-pointer">
-                  <div>
-                    <button className="w-full hover:text-white">View Comparison</button>
-                  </div>
-                </div>
-              </form>
+        <div className="flex relative">
+          <div className="container mb-10 px-10 rounded">
+            <div className="h-[32rem] w-[59rem] bg-slate-200">
+              {/* Desktop and Tablet version */}
+              <div className="hidden md:flex h-full w-full overflow-hidden">
+                {desktopImages.map((imageUrl, index) => {
+                  return (
+                    <div
+                      className="w-full h-full min-h-full min-w-full transition-all"
+                      key={imageUrl}
+                      style={{
+                        transform: `translateX(-${currentImage * 100}%)`,
+                      }}
+                    >
+                      <img src={imageUrl} alt="" className="w-full h-full" />
+                    </div>
+                  );
+                })}
+              </div>
             </div>
           </div>
-          <div>
-            <img className="cursor-pointer h-[12rem] w-[20rem]" src={career} alt="" />
+          <div className="mr-11 grid">
+            <div>
+              <div className="h-[18rem] w-[20rem] bg-[#ffe8a1] shadow-lg p-3 items-center text-center">
+                <p className="text-lg font-semibold mt-3">Compare Products</p>
+                <p className="text-sm text-yellow-800">
+                  Choose Two Prodcuts to Compare
+                </p>
+                <form className="">
+                  <div className="flex">
+                    <input
+                      className="absolute mt-8 w-64 h-10 mx-5 outline-none indent-4 shadow-md rounded"
+                      type="text"
+                      placeholder="Search and Select Product"
+                    />
+                    <ImSearch className="relative ml-[15.5rem] text-slate-400 mt-[45px]" />
+                  </div>
+                  <div className="flex mt-6">
+                    <input
+                      className="absolute w-64 h-10 mx-5 outline-none indent-4 shadow-md rounded"
+                      type="text"
+                      placeholder="Search and Select Product"
+                    />
+                    <ImSearch className="relative ml-[15.5rem] text-slate-400 mt-[15px]" />
+                  </div>
+                  <div className="rounded p-2 mx-5 mt-10 border-[2px] bg-transparent text-blue-700 border-blue-700 pcBuilder cursor-pointer">
+                    <div>
+                      <button className="w-full hover:text-white">
+                        View Comparison
+                      </button>
+                    </div>
+                  </div>
+                </form>
+              </div>
+            </div>
+            <div>
+              <img
+                className="cursor-pointer h-[12rem] w-[20rem]"
+                src={career}
+                alt=""
+              />
+            </div>
           </div>
         </div>
       </div>

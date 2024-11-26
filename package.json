@@ -1,6 +1,7 @@
 {
   "dependencies": {
     "bcryptjs": "^2.4.3",
+    "framer-motion": "^11.11.17",
     "twilio": "^5.3.3"
   }
 }

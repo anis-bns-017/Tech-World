@@ -103,7 +103,7 @@ const UserAddress = () => {
           <div className="grid mt-3">
             <label>Company</label>
 
-            <div className="bg-slate-50 p-2">
+            <div className="p-2">
               <input
                 type="text"
                 placeholder="Company"
@@ -121,7 +121,7 @@ const UserAddress = () => {
               Address 1 <span className="text-red-600">*</span>
             </label>
 
-            <div className="bg-slate-50 p-2">
+            <div className="p-2">
               <input
                 type="text"
                 placeholder="Address 1"
@@ -137,7 +137,7 @@ const UserAddress = () => {
           <div className="grid mt-3">
             <label>Address 2</label>
 
-            <div className="bg-slate-50 p-2">
+            <div className="p-2">
               <input
                 type="text"
                 placeholder="Address2"

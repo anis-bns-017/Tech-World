@@ -168,7 +168,7 @@ const Laptop = () => {
                   value={data.productName}
                   onChange={handleOnChange}
                   name="productName"
-                  className="p-2 w-full bg-slate-100 border rounded"
+                  className="p-2 w-full bg-slate-50 border rounded"
                   
                 />
               </div>
@@ -184,7 +184,7 @@ const Laptop = () => {
                   value={data.brandName}
                   onChange={handleOnChange}
                   name="brandName"
-                  className="p-2 w-full bg-slate-100 border rounded"
+                  className="p-2 w-full bg-slate-50 border rounded"
                   
                 />
               </div>
@@ -196,7 +196,7 @@ const Laptop = () => {
                   Key Features :
                 </label>
                 <textarea
-                  className="min-h-32 p-2 w-full bg-slate-100 border resize-none"
+                  className="min-h-32 p-2 w-full bg-slate-50 border resize-none"
                   placeholder="Enter Proddct Key Features"
                   rows={3}
                   cols={5}
@@ -212,7 +212,7 @@ const Laptop = () => {
                 </label>
 
                 <label htmlFor="uploadImageInput">
-                  <div className="p-2 bg-slate-100 border rounded min-h-32 w-full flex justify-center items-center cursor-pointer">
+                  <div className="p-2 bg-slate-50 border rounded min-h-32 w-full flex justify-center items-center cursor-pointer">
                     <div className="text-slate-600 flex justify-center items-center flex-col gap-2">
                       <span className="text-4xl">
                         <FaCloudUploadAlt />
@@ -240,7 +240,7 @@ const Laptop = () => {
                               alt={el}
                               width={80}
                               height={80}
-                              className="bg-slate-100 border cursor-pointer"
+                              className="bg-slate-50 border cursor-pointer"
                               onClick={() => {
                                 setOpenFullScreenImage(true);
                                 setFullscreenImage(el);
@@ -273,7 +273,7 @@ const Laptop = () => {
                 </label>
                 <select
                   value={data.category}
-                  className="p-2 w-full bg-slate-100 border rounded"
+                  className="p-2 w-full bg-slate-50 border rounded"
                   onChange={handleOnChange}
                   name="category"
                   
@@ -300,7 +300,7 @@ const Laptop = () => {
                   value={data.motherboard}
                   onChange={handleOnChange}
                   name="usb_type_c"
-                  className="p-2 w-full bg-slate-100 border rounded"
+                  className="p-2 w-full bg-slate-50 border rounded"
                   
                 />
               </div>
@@ -318,7 +318,7 @@ const Laptop = () => {
                   value={data.processor_brand}
                   onChange={handleOnChange}
                   name="processor_brand"
-                  className="p-2 w-full bg-slate-100 border rounded"
+                  className="p-2 w-full bg-slate-50 border rounded"
                   
                 />
               </div>
@@ -334,7 +334,7 @@ const Laptop = () => {
                   value={data.processor_model}
                   onChange={handleOnChange}
                   name="processor_model"
-                  className="p-2 w-full bg-slate-100 border rounded"
+                  className="p-2 w-full bg-slate-50 border rounded"
                   
                 />
               </div>
@@ -352,7 +352,7 @@ const Laptop = () => {
                   value={data.processor_frequency}
                   onChange={handleOnChange}
                   name="processor_frequency"
-                  className="p-2 w-full bg-slate-100 border rounded"
+                  className="p-2 w-full bg-slate-50 border rounded"
                   
                 />
               </div>
@@ -368,7 +368,7 @@ const Laptop = () => {
                   value={data.processor_core}
                   onChange={handleOnChange}
                   name="processor_core"
-                  className="p-2 w-full bg-slate-100 border rounded"
+                  className="p-2 w-full bg-slate-50 border rounded"
                   
                 />
               </div>
@@ -386,7 +386,7 @@ const Laptop = () => {
                   value={data.processor_thread}
                   onChange={handleOnChange}
                   name="processor_thread"
-                  className="p-2 w-full bg-slate-100 border rounded"
+                  className="p-2 w-full bg-slate-50 border rounded"
                   
                 />
               </div>
@@ -402,7 +402,7 @@ const Laptop = () => {
                   value={data.cpu_cache}
                   onChange={handleOnChange}
                   name="cpu_cache"
-                  className="p-2 w-full bg-slate-100 border rounded"
+                  className="p-2 w-full bg-slate-50 border rounded"
                   
                 />
               </div>
@@ -420,7 +420,7 @@ const Laptop = () => {
                   value={data.chipset}
                   onChange={handleOnChange}
                   name="chipset"
-                  className="p-2 w-full bg-slate-100 border rounded"
+                  className="p-2 w-full bg-slate-50 border rounded"
                   
                 />
               </div>
@@ -436,7 +436,7 @@ const Laptop = () => {
                   value={data.chipset_model}
                   onChange={handleOnChange}
                   name="chipset_model"
-                  className="p-2 w-full bg-slate-100 border rounded"
+                  className="p-2 w-full bg-slate-50 border rounded"
                   
                 />
               </div>
@@ -454,7 +454,7 @@ const Laptop = () => {
                   value={data.display}
                   onChange={handleOnChange}
                   name="display"
-                  className="p-2 w-full bg-slate-100 border rounded"
+                  className="p-2 w-full bg-slate-50 border rounded"
                   
                 />
               </div>
@@ -470,7 +470,7 @@ const Laptop = () => {
                   value={data.display_type}
                   onChange={handleOnChange}
                   name="display_type"
-                  className="p-2 w-full bg-slate-100 border rounded"
+                  className="p-2 w-full bg-slate-50 border rounded"
                   
                 />
               </div>
@@ -488,7 +488,7 @@ const Laptop = () => {
                   value={data.display_resolution}
                   onChange={handleOnChange}
                   name="display_resolution"
-                  className="p-2 w-full bg-slate-100 border rounded"
+                  className="p-2 w-full bg-slate-50 border rounded"
                   
                 />
               </div>
@@ -504,7 +504,7 @@ const Laptop = () => {
                   value={data.touch_screen}
                   onChange={handleOnChange}
                   name="touch_screen"
-                  className="p-2 w-full bg-slate-100 border rounded"
+                  className="p-2 w-full bg-slate-50 border rounded"
                   
                 />
               </div>
@@ -522,7 +522,7 @@ const Laptop = () => {
                   value={data.refresh_rate}
                   onChange={handleOnChange}
                   name="refresh_rate"
-                  className="p-2 w-full bg-slate-100 border rounded"
+                  className="p-2 w-full bg-slate-50 border rounded"
                   
                 />
               </div>
@@ -538,7 +538,7 @@ const Laptop = () => {
                   value={data.display_features}
                   onChange={handleOnChange}
                   name="display_features"
-                  className="p-2 w-full bg-slate-100 border rounded"
+                  className="p-2 w-full bg-slate-50 border rounded"
                   
                 />
               </div>
@@ -556,7 +556,7 @@ const Laptop = () => {
                   value={data.ram}
                   onChange={handleOnChange}
                   name="ram"
-                  className="p-2 w-full bg-slate-100 border rounded"
+                  className="p-2 w-full bg-slate-50 border rounded"
                   
                 />
               </div>
@@ -572,7 +572,7 @@ const Laptop = () => {
                   value={data.ram_type}
                   onChange={handleOnChange}
                   name="ram_type"
-                  className="p-2 w-full bg-slate-100 border rounded"
+                  className="p-2 w-full bg-slate-50 border rounded"
                   
                 />
               </div>
@@ -590,7 +590,7 @@ const Laptop = () => {
                   value={data.bus_speed}
                   onChange={handleOnChange}
                   name="bus_speed"
-                  className="p-2 w-full bg-slate-100 border rounded"
+                  className="p-2 w-full bg-slate-50 border rounded"
                   
                 />
               </div>
@@ -606,7 +606,7 @@ const Laptop = () => {
                   value={data.total_ram_slot}
                   onChange={handleOnChange}
                   name="total_ram_slot"
-                  className="p-2 w-full bg-slate-100 border rounded"
+                  className="p-2 w-full bg-slate-50 border rounded"
                   
                 />
               </div>
@@ -624,7 +624,7 @@ const Laptop = () => {
                   value={data.max_ram_capacity}
                   onChange={handleOnChange}
                   name="max_ram_capacity"
-                  className="p-2 w-full bg-slate-100 border rounded"
+                  className="p-2 w-full bg-slate-50 border rounded"
                   
                 />
               </div>
@@ -640,7 +640,7 @@ const Laptop = () => {
                   value={data.storage_type}
                   onChange={handleOnChange}
                   name="storage_type"
-                  className="p-2 w-full bg-slate-100 border rounded"
+                  className="p-2 w-full bg-slate-50 border rounded"
                   
                 />
               </div>
@@ -658,7 +658,7 @@ const Laptop = () => {
                   value={data.motherboard}
                   onChange={handleOnChange}
                   name="storage_capacity"
-                  className="p-2 w-full bg-slate-100 border rounded"
+                  className="p-2 w-full bg-slate-50 border rounded"
                   
                 />
               </div>
@@ -674,7 +674,7 @@ const Laptop = () => {
                   value={data.motherboard}
                   onChange={handleOnChange}
                   name="extra_m2_slot"
-                  className="p-2 w-full bg-slate-100 border rounded"
+                  className="p-2 w-full bg-slate-50 border rounded"
                   
                 />
               </div>
@@ -692,7 +692,7 @@ const Laptop = () => {
                   value={data.motherboard}
                   onChange={handleOnChange}
                   name="storage_upgrade"
-                  className="p-2 w-full bg-slate-100 border rounded"
+                  className="p-2 w-full bg-slate-50 border rounded"
                   
                 />
               </div>
@@ -708,7 +708,7 @@ const Laptop = () => {
                   value={data.motherboard}
                   onChange={handleOnChange}
                   name="graphics_model"
-                  className="p-2 w-full bg-slate-100 border rounded"
+                  className="p-2 w-full bg-slate-50 border rounded"
                   
                 />
               </div>
@@ -726,7 +726,7 @@ const Laptop = () => {
                   value={data.motherboard}
                   onChange={handleOnChange}
                   name="graphics_memory"
-                  className="p-2 w-full bg-slate-100 border rounded"
+                  className="p-2 w-full bg-slate-50 border rounded"
                   
                 />
               </div>
@@ -742,7 +742,7 @@ const Laptop = () => {
                   value={data.motherboard}
                   onChange={handleOnChange}
                   name="graphics_type"
-                  className="p-2 w-full bg-slate-100 border rounded"
+                  className="p-2 w-full bg-slate-50 border rounded"
                   
                 />
               </div>
@@ -760,7 +760,7 @@ const Laptop = () => {
                   value={data.motherboard}
                   onChange={handleOnChange}
                   name="keyboard_type"
-                  className="p-2 w-full bg-slate-100 border rounded"
+                  className="p-2 w-full bg-slate-50 border rounded"
                   
                 />
               </div>
@@ -775,7 +775,7 @@ const Laptop = () => {
                   value={data.motherboard}
                   onChange={handleOnChange}
                   name="touchPad"
-                  className="p-2 w-full bg-slate-100 border rounded"
+                  className="p-2 w-full bg-slate-50 border rounded"
                   
                 />
               </div>
@@ -793,7 +793,7 @@ const Laptop = () => {
                   value={data.motherboard}
                   onChange={handleOnChange}
                   name="webcame"
-                  className="p-2 w-full bg-slate-100 border rounded"
+                  className="p-2 w-full bg-slate-50 border rounded"
                   
                 />
               </div>
@@ -808,7 +808,7 @@ const Laptop = () => {
                   value={data.motherboard}
                   onChange={handleOnChange}
                   name="speaker"
-                  className="p-2 w-full bg-slate-100 border rounded"
+                  className="p-2 w-full bg-slate-50 border rounded"
                   
                 />
               </div>
@@ -826,7 +826,7 @@ const Laptop = () => {
                   value={data.motherboard}
                   onChange={handleOnChange}
                   name="microphone"
-                  className="p-2 w-full bg-slate-100 border rounded"
+                  className="p-2 w-full bg-slate-50 border rounded"
                   
                 />
               </div>
@@ -842,7 +842,7 @@ const Laptop = () => {
                   value={data.motherboard}
                   onChange={handleOnChange}
                   name="audio_features"
-                  className="p-2 w-full bg-slate-100 border rounded"
+                  className="p-2 w-full bg-slate-50 border rounded"
                   
                 />
               </div>
@@ -860,7 +860,7 @@ const Laptop = () => {
                   value={data.motherboard}
                   onChange={handleOnChange}
                   name="optical_drive"
-                  className="p-2 w-full bg-slate-100 border rounded"
+                  className="p-2 w-full bg-slate-50 border rounded"
                   
                 />
               </div>
@@ -875,7 +875,7 @@ const Laptop = () => {
                   value={data.motherboard}
                   onChange={handleOnChange}
                   name="card_reader"
-                  className="p-2 w-full bg-slate-100 border rounded"
+                  className="p-2 w-full bg-slate-50 border rounded"
                   
                 />
               </div>
@@ -893,7 +893,7 @@ const Laptop = () => {
                   value={data.motherboard}
                   onChange={handleOnChange}
                   name="hdmi_port"
-                  className="p-2 w-full bg-slate-100 border rounded"
+                  className="p-2 w-full bg-slate-50 border rounded"
                   
                 />
               </div>
@@ -908,7 +908,7 @@ const Laptop = () => {
                   value={data.motherboard}
                   onChange={handleOnChange}
                   name="usb_port"
-                  className="p-2 w-full bg-slate-100 border rounded"
+                  className="p-2 w-full bg-slate-50 border rounded"
                   
                 />
               </div>
@@ -926,7 +926,7 @@ const Laptop = () => {
                   value={data.motherboard}
                   onChange={handleOnChange}
                   name="microphone_port"
-                  className="p-2 w-full bg-slate-100 border rounded"
+                  className="p-2 w-full bg-slate-50 border rounded"
                   
                 />
               </div>
@@ -942,7 +942,7 @@ const Laptop = () => {
                   value={data.motherboard}
                   onChange={handleOnChange}
                   name="lan"
-                  className="p-2 w-full bg-slate-100 border rounded"
+                  className="p-2 w-full bg-slate-50 border rounded"
                   
                 />
               </div>
@@ -960,7 +960,7 @@ const Laptop = () => {
                   value={data.motherboard}
                   onChange={handleOnChange}
                   name="wifi"
-                  className="p-2 w-full bg-slate-100 border rounded"
+                  className="p-2 w-full bg-slate-50 border rounded"
                   
                 />
               </div>
@@ -976,7 +976,7 @@ const Laptop = () => {
                   value={data.motherboard}
                   onChange={handleOnChange}
                   name="bluetooth"
-                  className="p-2 w-full bg-slate-100 border rounded"
+                  className="p-2 w-full bg-slate-50 border rounded"
                   
                 />
               </div>
@@ -993,7 +993,7 @@ const Laptop = () => {
                   value={data.motherboard}
                   onChange={handleOnChange}
                   name="fingerPrint"
-                  className="p-2 w-full bg-slate-100 border rounded"
+                  className="p-2 w-full bg-slate-50 border rounded"
                   
                 />
               </div>
@@ -1009,7 +1009,7 @@ const Laptop = () => {
                   value={data.motherboard}
                   onChange={handleOnChange}
                   name="camera_privacy_shutter"
-                  className="p-2 w-full bg-slate-100 border rounded"
+                  className="p-2 w-full bg-slate-50 border rounded"
                   
                 />
               </div>
@@ -1027,7 +1027,7 @@ const Laptop = () => {
                   value={data.motherboard}
                   onChange={handleOnChange}
                   name="security_chip"
-                  className="p-2 w-full bg-slate-100 border rounded"
+                  className="p-2 w-full bg-slate-50 border rounded"
                   
                 />
               </div>
@@ -1043,7 +1043,7 @@ const Laptop = () => {
                   value={data.motherboard}
                   onChange={handleOnChange}
                   name="operating_system"
-                  className="p-2 w-full bg-slate-100 border rounded"
+                  className="p-2 w-full bg-slate-50 border rounded"
                   
                 />
               </div>
@@ -1061,7 +1061,7 @@ const Laptop = () => {
                   value={data.motherboard}
                   onChange={handleOnChange}
                   name="battery_capacity"
-                  className="p-2 w-full bg-slate-100 border rounded"
+                  className="p-2 w-full bg-slate-50 border rounded"
                   
                 />
               </div>
@@ -1077,7 +1077,7 @@ const Laptop = () => {
                   value={data.motherboard}
                   onChange={handleOnChange}
                   name="adapter_type"
-                  className="p-2 w-full bg-slate-100 border rounded"
+                  className="p-2 w-full bg-slate-50 border rounded"
                   
                 />
               </div>
@@ -1095,7 +1095,7 @@ const Laptop = () => {
                   value={data.motherboard}
                   onChange={handleOnChange}
                   name="dimensions"
-                  className="p-2 w-full bg-slate-100 border rounded"
+                  className="p-2 w-full bg-slate-50 border rounded"
                   
                 />
               </div>
@@ -1111,7 +1111,7 @@ const Laptop = () => {
                   value={data.motherboard}
                   onChange={handleOnChange}
                   name="weight"
-                  className="p-2 w-full bg-slate-100 border rounded"
+                  className="p-2 w-full bg-slate-50 border rounded"
                   
                 />
               </div>
@@ -1129,7 +1129,7 @@ const Laptop = () => {
                   value={data.motherboard}
                   onChange={handleOnChange}
                   name="body_material"
-                  className="p-2 w-full bg-slate-100 border rounded"
+                  className="p-2 w-full bg-slate-50 border rounded"
                   
                 />
               </div>
@@ -1145,7 +1145,7 @@ const Laptop = () => {
                   value={data.motherboard}
                   onChange={handleOnChange}
                   name="warranty"
-                  className="p-2 w-full bg-slate-100 border rounded"
+                  className="p-2 w-full bg-slate-50 border rounded"
                   
                 />
               </div>
@@ -1163,7 +1163,7 @@ const Laptop = () => {
                   value={data.price}
                   onChange={handleOnChange}
                   name="price"
-                  className="p-2 w-full bg-slate-100 border rounded"
+                  className="p-2 w-full bg-slate-50 border rounded"
                   
                 />
               </div>
@@ -1179,7 +1179,7 @@ const Laptop = () => {
                   value={data.sellingPrice}
                   onChange={handleOnChange}
                   name="sellingPrice"
-                  className="p-2 w-full bg-slate-100 border rounded"
+                  className="p-2 w-full bg-slate-50 border rounded"
                   
                 />
               </div>
@@ -1189,7 +1189,7 @@ const Laptop = () => {
               Description :
             </label>
             <textarea
-              className="h-40 p-2 bg-slate-100 border resize-none"
+              className="h-40 p-2 bg-slate-50 border resize-none"
               placeholder="Enter Proddct Description"
               rows={3}
               cols={5}

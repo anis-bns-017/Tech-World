@@ -130,7 +130,7 @@ const Keyboard = ({ onClose, fetchData }) => {
                   value={data.productName}
                   onChange={handleOnChange}
                   name="productName"
-                  className="p-2 w-full bg-slate-100 border rounded"
+                  className="p-2 w-full bg-slate-50 border rounded"
                 />
               </div>
 
@@ -145,7 +145,7 @@ const Keyboard = ({ onClose, fetchData }) => {
                   value={data.brandName}
                   onChange={handleOnChange}
                   name="brandName"
-                  className="p-2 w-full bg-slate-100 border rounded"
+                  className="p-2 w-full bg-slate-50 border rounded"
                 />
               </div>
             </div>
@@ -156,7 +156,7 @@ const Keyboard = ({ onClose, fetchData }) => {
                   Key Features :
                 </label>
                 <textarea
-                  className="min-h-32 p-2 w-full bg-slate-100 border resize-none"
+                  className="min-h-32 p-2 w-full bg-slate-50 border resize-none"
                   placeholder="Enter Proddct Key Features"
                   rows={3}
                   cols={5}
@@ -172,7 +172,7 @@ const Keyboard = ({ onClose, fetchData }) => {
                 </label>
 
                 <label htmlFor="uploadImageInput">
-                  <div className="p-2 bg-slate-100 border rounded min-h-32 w-full flex justify-center items-center cursor-pointer">
+                  <div className="p-2 bg-slate-50 border rounded min-h-32 w-full flex justify-center items-center cursor-pointer">
                     <div className="text-slate-600 flex justify-center items-center flex-col gap-2">
                       <span className="text-4xl">
                         <FaCloudUploadAlt />
@@ -200,7 +200,7 @@ const Keyboard = ({ onClose, fetchData }) => {
                               alt={el}
                               width={80}
                               height={80}
-                              className="bg-slate-100 border cursor-pointer"
+                              className="bg-slate-50 border cursor-pointer"
                               onClick={() => {
                                 setOpenFullScreenImage(true);
                                 setFullscreenImage(el);
@@ -233,7 +233,7 @@ const Keyboard = ({ onClose, fetchData }) => {
                 </label>
                 <select
                   value={data.category}
-                  className="p-2 w-full bg-slate-100 border rounded"
+                  className="p-2 w-full bg-slate-50 border rounded"
                   onChange={handleOnChange}
                   name="category"
                 >
@@ -259,7 +259,7 @@ const Keyboard = ({ onClose, fetchData }) => {
                   value={data.wired_wiredless}
                   onChange={handleOnChange}
                   name="wired_wiredless"
-                  className="p-2 w-full bg-slate-100 border rounded"
+                  className="p-2 w-full bg-slate-50 border rounded"
                 />
               </div>
             </div>
@@ -276,7 +276,7 @@ const Keyboard = ({ onClose, fetchData }) => {
                   value={data.keys}
                   onChange={handleOnChange}
                   name="keys"
-                  className="p-2 w-full bg-slate-100 border rounded"
+                  className="p-2 w-full bg-slate-50 border rounded"
                 />
               </div>
 
@@ -291,7 +291,7 @@ const Keyboard = ({ onClose, fetchData }) => {
                   value={data.polling_rate}
                   onChange={handleOnChange}
                   name="polling_rate"
-                  className="p-2 w-full bg-slate-100 border rounded"
+                  className="p-2 w-full bg-slate-50 border rounded"
                 />
               </div>
             </div>
@@ -308,7 +308,7 @@ const Keyboard = ({ onClose, fetchData }) => {
                   value={data.switch_color}
                   onChange={handleOnChange}
                   name="switch_color"
-                  className="p-2 w-full bg-slate-100 border rounded"
+                  className="p-2 w-full bg-slate-50 border rounded"
                 />
               </div>
 
@@ -323,7 +323,7 @@ const Keyboard = ({ onClose, fetchData }) => {
                   value={data.lighting}
                   onChange={handleOnChange}
                   name="lighting"
-                  className="p-2 w-full bg-slate-100 border rounded"
+                  className="p-2 w-full bg-slate-50 border rounded"
                 />
               </div>
             </div>
@@ -332,7 +332,7 @@ const Keyboard = ({ onClose, fetchData }) => {
               Others :
             </label>
             <textarea
-              className="h-40 p-2 bg-slate-100 border resize-none"
+              className="h-40 p-2 bg-slate-50 border resize-none"
               placeholder="Enter Others"
               rows={3}
               cols={5}
@@ -353,7 +353,7 @@ const Keyboard = ({ onClose, fetchData }) => {
                   value={data.system_requirements}
                   onChange={handleOnChange}
                   name="system_requirements"
-                  className="p-2 w-full bg-slate-100 border rounded"
+                  className="p-2 w-full bg-slate-50 border rounded"
                 />
               </div>
 
@@ -368,7 +368,7 @@ const Keyboard = ({ onClose, fetchData }) => {
                   value={data.cabel_length}
                   onChange={handleOnChange}
                   name="cabel_length"
-                  className="p-2 w-full bg-slate-100 border rounded"
+                  className="p-2 w-full bg-slate-50 border rounded"
                 />
               </div>
             </div>
@@ -385,7 +385,7 @@ const Keyboard = ({ onClose, fetchData }) => {
                   value={data.interface}
                   onChange={handleOnChange}
                   name="interface"
-                  className="p-2 w-full bg-slate-100 border rounded"
+                  className="p-2 w-full bg-slate-50 border rounded"
                 />
               </div>
 
@@ -400,7 +400,7 @@ const Keyboard = ({ onClose, fetchData }) => {
                   value={data.color}
                   onChange={handleOnChange}
                   name="color"
-                  className="p-2 w-full bg-slate-100 border rounded"
+                  className="p-2 w-full bg-slate-50 border rounded"
                 />
               </div>
             </div>
@@ -417,7 +417,7 @@ const Keyboard = ({ onClose, fetchData }) => {
                   value={data.dimension}
                   onChange={handleOnChange}
                   name="dimension"
-                  className="p-2 w-full bg-slate-100 border rounded"
+                  className="p-2 w-full bg-slate-50 border rounded"
                 />
               </div>
 
@@ -432,7 +432,7 @@ const Keyboard = ({ onClose, fetchData }) => {
                   value={data.weight}
                   onChange={handleOnChange}
                   name="weight"
-                  className="p-2 w-full bg-slate-100 border rounded"
+                  className="p-2 w-full bg-slate-50 border rounded"
                 />
               </div>
             </div>
@@ -449,7 +449,7 @@ const Keyboard = ({ onClose, fetchData }) => {
                   value={data.price}
                   onChange={handleOnChange}
                   name="price"
-                  className="p-2 w-full bg-slate-100 border rounded"
+                  className="p-2 w-full bg-slate-50 border rounded"
                 />
               </div>
               <div className="flex-1">
@@ -463,7 +463,7 @@ const Keyboard = ({ onClose, fetchData }) => {
                   value={data.sellingPrice}
                   onChange={handleOnChange}
                   name="sellingPrice"
-                  className="p-2 w-full bg-slate-100 border rounded"
+                  className="p-2 w-full bg-slate-50 border rounded"
                 />
               </div>
             </div>
@@ -478,7 +478,7 @@ const Keyboard = ({ onClose, fetchData }) => {
                 value={data.warranty}
                 onChange={handleOnChange}
                 name="warranty"
-                className="p-2 w-full bg-slate-100 border rounded"
+                className="p-2 w-full bg-slate-50 border rounded"
               />
             </div>
 
@@ -486,7 +486,7 @@ const Keyboard = ({ onClose, fetchData }) => {
               Description :
             </label>
             <textarea
-              className="h-40 p-2 bg-slate-100 border resize-none"
+              className="h-40 p-2 bg-slate-50 border resize-none"
               placeholder="Enter Proddct Description"
               rows={3}
               cols={5}

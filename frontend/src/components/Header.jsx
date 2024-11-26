@@ -1,32 +1,30 @@
 import { ImSearch } from "react-icons/im";
-import { FaUser } from "react-icons/fa";
-import { FaCartPlus } from "react-icons/fa";
+
 import { Link, Navigate, useLocation, useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import SummaryApi from "../common";
 import { toast } from "react-toastify";
 import { setUserDetails } from "../store/userSlice";
 import { useContext, useState } from "react";
-import ROLE from "../common/Role";
-import starTech from "../assest/banner/startTech.png";
+
 import tech2 from "../assest/banner/tech2.png";
 import Context from "../context/Context";
 import { MdOutlineCardGiftcard } from "react-icons/md";
 import { SlEnergy } from "react-icons/sl";
 import { FaUserAlt } from "react-icons/fa";
-import TextFlow from "./TextFlow";
+import DropDown from "../dropMenu/DropDown";
+import DropdownMenu from "../pages/UserActivity/DropdownMenu";
 
 const Header = () => {
   const user = useSelector((state) => state?.user?.user);
   const dispatch = useDispatch();
- 
 
   const context = useContext(Context);
   const navigate = useNavigate();
   const searchInput = useLocation();
   const [search, setSearch] = useState(searchInput?.search?.split("=")[1]);
 
-  console.log("user ", user?._id);
+  console.log("user ", user);
 
   const handleLogout = async () => {
     const fetchData = await fetch(SummaryApi.logout_user.url, {
@@ -140,7 +138,10 @@ const Header = () => {
               <div className="pl-4">
                 <h5 className="text-[15px] cursor-pointer">Account</h5>
                 <div className="flex gap-1">
-                  <Link to={"/account"} className="text-slate-400 text-[11px] cursor-pointer hover:text-red-500">
+                  <Link
+                    to={"/account"}
+                    className="text-slate-400 text-[11px] cursor-pointer hover:text-red-500"
+                  >
                     Profile
                   </Link>
                   <p className="text-slate-400 text-[11px]">or</p>
@@ -160,77 +161,9 @@ const Header = () => {
               <button className="w-[100px]">PC Builder</button>
             </div>
           </div>
-
-          {/* <div className="flex items-center gap-7">
-          <div className="relative flex justify-center">
-            {user?._id && (
-              <div
-                className="text-3xl cursor-pointer"
-                onClick={() => setMenuDisplay((prev) => !prev)}
-              >
-                {user?.profilePic ? (
-                  <img
-                    src={user?.profilePic}
-                    className="w-10 h-10 rounded-full"
-                    alt={user?.name}
-                  />
-                ) : (
-                  <FaUser />
-                )}
-              </div>
-            )} */}
-
-          {/* {menuDisplay && (
-              <div className="absolute bg-white botom-0 top-11 h-fit p-2 shadow-lg rounded">
-                <nav>
-                  {user?.role === ROLE.ADMIN && (
-                    <Link
-                      to={"admin-panel/all-products"}
-                      onClick={() => setMenuDisplay((prev) => !prev)}
-                      className="whitespace-nowrap hidden md:block hover:bg-slate-300 p-2"
-                    >
-                      Admin Panel
-                    </Link>
-                  )}
-                </nav>
-              </div>
-            )}
-          </div> */}
-
-          {/* {user?._id && (
-            <Link to={"/cart"} className="text-2xl relative">
-              <span>
-                <FaCartPlus />
-              </span>
-
-              <div>
-                <p className="text-sm bg-blue-600 w-4 h-4 rounded text-yellow-100 p-2 flex items-center justify-center absolute -top-3 -right-4">
-                  {context?.cartProductCount}
-                </p>
-              </div>
-            </Link>
-          )} */}
-
-          {/* <div>
-            {user?._id ? (
-              <button
-                onClick={handleLogout}
-                className="px-3 py-1 rounded-full text-white bg-red-600 hover:bg-red-700"
-              >
-                Logout
-              </button>
-            ) : (
-              <Link
-                to={"/login"}
-                className="px-3 py-1 rounded-full text-white bg-red-600 hover:bg-red-700"
-              >
-                Login
-              </Link>
-            )}
-          </div>
-        </div>*/}
         </div>
       </div>
+      <div>{user?.role === "ADMIN" ? <DropdownMenu /> : <DropDown />}</div>
     </header>
   );
 };

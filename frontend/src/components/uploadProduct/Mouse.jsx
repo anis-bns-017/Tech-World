@@ -134,7 +134,7 @@ const Mouse = ({ onClose, fetchData }) => {
                   value={data.productName}
                   onChange={handleOnChange}
                   name="productName"
-                  className="p-2 w-full bg-slate-100 border rounded"
+                  className="p-2 w-full bg-slate-50 border rounded"
                   required
                 />
               </div>
@@ -150,7 +150,7 @@ const Mouse = ({ onClose, fetchData }) => {
                   value={data.brandName}
                   onChange={handleOnChange}
                   name="brandName"
-                  className="p-2 w-full bg-slate-100 border rounded"
+                  className="p-2 w-full bg-slate-50 border rounded"
                   required
                 />
               </div>
@@ -162,7 +162,7 @@ const Mouse = ({ onClose, fetchData }) => {
                   Key Features :
                 </label>
                 <textarea
-                  className="min-h-32 p-2 w-full bg-slate-100 border resize-none"
+                  className="min-h-32 p-2 w-full bg-slate-50 border resize-none"
                   placeholder="Enter Proddct Key Features"
                   rows={3}
                   cols={5}
@@ -178,7 +178,7 @@ const Mouse = ({ onClose, fetchData }) => {
                 </label>
 
                 <label htmlFor="uploadImageInput">
-                  <div className="p-2 bg-slate-100 border rounded min-h-32 w-full flex justify-center items-center cursor-pointer">
+                  <div className="p-2 bg-slate-50 border rounded min-h-32 w-full flex justify-center items-center cursor-pointer">
                     <div className="text-slate-600 flex justify-center items-center flex-col gap-2">
                       <span className="text-4xl">
                         <FaCloudUploadAlt />
@@ -206,7 +206,7 @@ const Mouse = ({ onClose, fetchData }) => {
                               alt={el}
                               width={80}
                               height={80}
-                              className="bg-slate-100 border cursor-pointer"
+                              className="bg-slate-50 border cursor-pointer"
                               onClick={() => {
                                 setOpenFullScreenImage(true);
                                 setFullscreenImage(el);
@@ -239,7 +239,7 @@ const Mouse = ({ onClose, fetchData }) => {
                 </label>
                 <select
                   value={data.category}
-                  className="p-2 w-full bg-slate-100 border rounded"
+                  className="p-2 w-full bg-slate-50 border rounded"
                   onChange={handleOnChange}
                   name="category"
                 >
@@ -265,7 +265,7 @@ const Mouse = ({ onClose, fetchData }) => {
                   value={data.number_of_keys}
                   onChange={handleOnChange}
                   name="number_of_keys"
-                  className="p-2 w-full bg-slate-100 border rounded"
+                  className="p-2 w-full bg-slate-50 border rounded"
                 />
               </div>
             </div>
@@ -282,7 +282,7 @@ const Mouse = ({ onClose, fetchData }) => {
                   value={data.connection_type}
                   onChange={handleOnChange}
                   name="connection_type"
-                  className="p-2 w-full bg-slate-100 border rounded"
+                  className="p-2 w-full bg-slate-50 border rounded"
                 />
               </div>
 
@@ -297,7 +297,7 @@ const Mouse = ({ onClose, fetchData }) => {
                   value={data.optical_sensor}
                   onChange={handleOnChange}
                   name="optical_sensor"
-                  className="p-2 w-full bg-slate-100 border rounded"
+                  className="p-2 w-full bg-slate-50 border rounded"
                 />
               </div>
             </div>
@@ -314,7 +314,7 @@ const Mouse = ({ onClose, fetchData }) => {
                   value={data.resolution}
                   onChange={handleOnChange}
                   name="resolution"
-                  className="p-2 w-full bg-slate-100 border rounded"
+                  className="p-2 w-full bg-slate-50 border rounded"
                 />
               </div>
 
@@ -329,7 +329,7 @@ const Mouse = ({ onClose, fetchData }) => {
                   value={data.button}
                   onChange={handleOnChange}
                   name="button"
-                  className="p-2 w-full bg-slate-100 border rounded"
+                  className="p-2 w-full bg-slate-50 border rounded"
                 />
               </div>
             </div>
@@ -338,7 +338,7 @@ const Mouse = ({ onClose, fetchData }) => {
               Battery Life :
             </label>
             <textarea
-              className="h-40 p-2 bg-slate-100 border resize-none"
+              className="h-40 p-2 bg-slate-50 border resize-none"
               placeholder="Enter Battery Life"
               rows={3}
               cols={5}
@@ -359,7 +359,7 @@ const Mouse = ({ onClose, fetchData }) => {
                   value={data.switch_lifecycle}
                   onChange={handleOnChange}
                   name="switch_lifecycle"
-                  className="p-2 w-full bg-slate-100 border rounded"
+                  className="p-2 w-full bg-slate-50 border rounded"
                 />
               </div>
 
@@ -374,7 +374,7 @@ const Mouse = ({ onClose, fetchData }) => {
                   value={data.tracking_method}
                   onChange={handleOnChange}
                   name="tracking_method"
-                  className="p-2 w-full bg-slate-100 border rounded"
+                  className="p-2 w-full bg-slate-50 border rounded"
                 />
               </div>
             </div>
@@ -391,7 +391,7 @@ const Mouse = ({ onClose, fetchData }) => {
                   value={data.acceleration}
                   onChange={handleOnChange}
                   name="acceleration"
-                  className="p-2 w-full bg-slate-100 border rounded"
+                  className="p-2 w-full bg-slate-50 border rounded"
                 />
               </div>
 
@@ -406,7 +406,7 @@ const Mouse = ({ onClose, fetchData }) => {
                   value={data.color}
                   onChange={handleOnChange}
                   name="color"
-                  className="p-2 w-full bg-slate-100 border rounded"
+                  className="p-2 w-full bg-slate-50 border rounded"
                 />
               </div>
             </div>
@@ -423,7 +423,7 @@ const Mouse = ({ onClose, fetchData }) => {
                   value={data.dimension}
                   onChange={handleOnChange}
                   name="dimension"
-                  className="p-2 w-full bg-slate-100 border rounded"
+                  className="p-2 w-full bg-slate-50 border rounded"
                 />
               </div>
 
@@ -438,7 +438,7 @@ const Mouse = ({ onClose, fetchData }) => {
                   value={data.weight}
                   onChange={handleOnChange}
                   name="weight"
-                  className="p-2 w-full bg-slate-100 border rounded"
+                  className="p-2 w-full bg-slate-50 border rounded"
                 />
               </div>
             </div>
@@ -455,7 +455,7 @@ const Mouse = ({ onClose, fetchData }) => {
                   value={data.cable_lenth}
                   onChange={handleOnChange}
                   name="cable_lenth"
-                  className="p-2 w-full bg-slate-100 border rounded"
+                  className="p-2 w-full bg-slate-50 border rounded"
                 />
               </div>
               <div className="flex-1">
@@ -469,7 +469,7 @@ const Mouse = ({ onClose, fetchData }) => {
                   value={data.mechanical_switches}
                   onChange={handleOnChange}
                   name="mechanical_switches"
-                  className="p-2 w-full bg-slate-100 border rounded"
+                  className="p-2 w-full bg-slate-50 border rounded"
                 />
               </div>
             </div>
@@ -486,7 +486,7 @@ const Mouse = ({ onClose, fetchData }) => {
                   value={data.price}
                   onChange={handleOnChange}
                   name="price"
-                  className="p-2 w-full bg-slate-100 border rounded"
+                  className="p-2 w-full bg-slate-50 border rounded"
                 />
               </div>
               <div className="flex-1">
@@ -500,7 +500,7 @@ const Mouse = ({ onClose, fetchData }) => {
                   value={data.sellingPrice}
                   onChange={handleOnChange}
                   name="sellingPrice"
-                  className="p-2 w-full bg-slate-100 border rounded"
+                  className="p-2 w-full bg-slate-50 border rounded"
                 />
               </div>
             </div>
@@ -517,7 +517,7 @@ const Mouse = ({ onClose, fetchData }) => {
                   value={data.warranty}
                   onChange={handleOnChange}
                   name="warranty"
-                  className="p-2 w-full bg-slate-100 border rounded"
+                  className="p-2 w-full bg-slate-50 border rounded"
                 />
               </div>
 
@@ -532,7 +532,7 @@ const Mouse = ({ onClose, fetchData }) => {
                   value={data.built_in_memory}
                   onChange={handleOnChange}
                   name="built_in_memory"
-                  className="p-2 w-full bg-slate-100 border rounded"
+                  className="p-2 w-full bg-slate-50 border rounded"
                 />
               </div>
             </div>
@@ -541,7 +541,7 @@ const Mouse = ({ onClose, fetchData }) => {
               Description :
             </label>
             <textarea
-              className="h-40 p-2 bg-slate-100 border resize-none"
+              className="h-40 p-2 bg-slate-50 border resize-none"
               placeholder="Enter Proddct Description"
               rows={3}
               cols={5}

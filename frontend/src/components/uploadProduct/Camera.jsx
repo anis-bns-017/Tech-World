@@ -131,7 +131,7 @@ const Camera = ({ onClose, fetchData }) => {
                   value={data.productName}
                   onChange={handleOnChange}
                   name="productName"
-                  className="p-2 w-full bg-slate-100 border rounded"
+                  className="p-2 w-full bg-slate-50 border rounded"
                 />
               </div>
 
@@ -146,7 +146,7 @@ const Camera = ({ onClose, fetchData }) => {
                   value={data.brandName}
                   onChange={handleOnChange}
                   name="brandName"
-                  className="p-2 w-full bg-slate-100 border rounded"
+                  className="p-2 w-full bg-slate-50 border rounded"
                 />
               </div>
             </div>
@@ -157,7 +157,7 @@ const Camera = ({ onClose, fetchData }) => {
                   Key Features :
                 </label>
                 <textarea
-                  className="min-h-32 p-2 w-full bg-slate-100 border resize-none"
+                  className="min-h-32 p-2 w-full bg-slate-50 border resize-none"
                   placeholder="Enter Proddct Key Features"
                   rows={3}
                   cols={5}
@@ -173,7 +173,7 @@ const Camera = ({ onClose, fetchData }) => {
                 </label>
 
                 <label htmlFor="uploadImageInput">
-                  <div className="p-2 bg-slate-100 border rounded min-h-32 w-full flex justify-center items-center cursor-pointer">
+                  <div className="p-2 bg-slate-50 border rounded min-h-32 w-full flex justify-center items-center cursor-pointer">
                     <div className="text-slate-600 flex justify-center items-center flex-col gap-2">
                       <span className="text-4xl">
                         <FaCloudUploadAlt />
@@ -201,7 +201,7 @@ const Camera = ({ onClose, fetchData }) => {
                               alt={el}
                               width={80}
                               height={80}
-                              className="bg-slate-100 border cursor-pointer"
+                              className="bg-slate-50 border cursor-pointer"
                               onClick={() => {
                                 setOpenFullScreenImage(true);
                                 setFullscreenImage(el);
@@ -234,7 +234,7 @@ const Camera = ({ onClose, fetchData }) => {
                 </label>
                 <select
                   value={data.category}
-                  className="p-2 w-full bg-slate-100 border rounded"
+                  className="p-2 w-full bg-slate-50 border rounded"
                   onChange={handleOnChange}
                   name="category"
                 >
@@ -260,7 +260,7 @@ const Camera = ({ onClose, fetchData }) => {
                   value={data.image_sensor}
                   onChange={handleOnChange}
                   name="image_sensor"
-                  className="p-2 w-full bg-slate-100 border rounded"
+                  className="p-2 w-full bg-slate-50 border rounded"
                 />
               </div>
             </div>
@@ -277,7 +277,7 @@ const Camera = ({ onClose, fetchData }) => {
                   value={data.sensor_resolution}
                   onChange={handleOnChange}
                   name="sensor_resolution"
-                  className="p-2 w-full bg-slate-100 border rounded"
+                  className="p-2 w-full bg-slate-50 border rounded"
                 />
               </div>
 
@@ -292,7 +292,7 @@ const Camera = ({ onClose, fetchData }) => {
                   value={data.image}
                   onChange={handleOnChange}
                   name="image"
-                  className="p-2 w-full bg-slate-100 border rounded"
+                  className="p-2 w-full bg-slate-50 border rounded"
                 />
               </div>
             </div>
@@ -309,7 +309,7 @@ const Camera = ({ onClose, fetchData }) => {
                   value={data.price}
                   onChange={handleOnChange}
                   name="price"
-                  className="p-2 w-full bg-slate-100 border rounded"
+                  className="p-2 w-full bg-slate-50 border rounded"
                 />
               </div>
 
@@ -324,7 +324,7 @@ const Camera = ({ onClose, fetchData }) => {
                   value={data.display}
                   onChange={handleOnChange}
                   name="display"
-                  className="p-2 w-full bg-slate-100 border rounded"
+                  className="p-2 w-full bg-slate-50 border rounded"
                 />
               </div>
             </div>
@@ -333,7 +333,7 @@ const Camera = ({ onClose, fetchData }) => {
               Video :
             </label>
             <textarea
-              className="h-40 p-2 bg-slate-100 border resize-none"
+              className="h-40 p-2 bg-slate-50 border resize-none"
               placeholder="Enter Video Description"
               rows={3}
               cols={5}
@@ -354,7 +354,7 @@ const Camera = ({ onClose, fetchData }) => {
                   value={data.usb_port}
                   onChange={handleOnChange}
                   name="usb_port"
-                  className="p-2 w-full bg-slate-100 border rounded"
+                  className="p-2 w-full bg-slate-50 border rounded"
                 />
               </div>
 
@@ -369,7 +369,7 @@ const Camera = ({ onClose, fetchData }) => {
                   value={data.charging_interface}
                   onChange={handleOnChange}
                   name="charging_interface"
-                  className="p-2 w-full bg-slate-100 border rounded"
+                  className="p-2 w-full bg-slate-50 border rounded"
                 />
               </div>
             </div>
@@ -386,7 +386,7 @@ const Camera = ({ onClose, fetchData }) => {
                   value={data.battery_type}
                   onChange={handleOnChange}
                   name="battery_type"
-                  className="p-2 w-full bg-slate-100 border rounded"
+                  className="p-2 w-full bg-slate-50 border rounded"
                 />
               </div>
 
@@ -401,7 +401,7 @@ const Camera = ({ onClose, fetchData }) => {
                   value={data.battery_capacity}
                   onChange={handleOnChange}
                   name="battery_capacity"
-                  className="p-2 w-full bg-slate-100 border rounded"
+                  className="p-2 w-full bg-slate-50 border rounded"
                 />
               </div>
             </div>
@@ -418,7 +418,7 @@ const Camera = ({ onClose, fetchData }) => {
                   value={data.wifi}
                   onChange={handleOnChange}
                   name="wifi"
-                  className="p-2 w-full bg-slate-100 border rounded"
+                  className="p-2 w-full bg-slate-50 border rounded"
                 />
               </div>
 
@@ -433,7 +433,7 @@ const Camera = ({ onClose, fetchData }) => {
                   value={data.water_resistant}
                   onChange={handleOnChange}
                   name="water_resistant"
-                  className="p-2 w-full bg-slate-100 border rounded"
+                  className="p-2 w-full bg-slate-50 border rounded"
                 />
               </div>
             </div>
@@ -450,7 +450,7 @@ const Camera = ({ onClose, fetchData }) => {
                   value={data.hdr_mode}
                   onChange={handleOnChange}
                   name="shdr_modeim"
-                  className="p-2 w-full bg-slate-100 border rounded"
+                  className="p-2 w-full bg-slate-50 border rounded"
                 />
               </div>
 
@@ -465,7 +465,7 @@ const Camera = ({ onClose, fetchData }) => {
                   value={data.slow_motion_recording}
                   onChange={handleOnChange}
                   name="slow_motion_recording"
-                  className="p-2 w-full bg-slate-100 border rounded"
+                  className="p-2 w-full bg-slate-50 border rounded"
                 />
               </div>
             </div>
@@ -482,7 +482,7 @@ const Camera = ({ onClose, fetchData }) => {
                   value={data.sellingPrice}
                   onChange={handleOnChange}
                   name="sellingPrice"
-                  className="p-2 w-full bg-slate-100 border rounded"
+                  className="p-2 w-full bg-slate-50 border rounded"
                 />
               </div>
 
@@ -497,7 +497,7 @@ const Camera = ({ onClose, fetchData }) => {
                   value={data.warranty}
                   onChange={handleOnChange}
                   name="warranty"
-                  className="p-2 w-full bg-slate-100 border rounded"
+                  className="p-2 w-full bg-slate-50 border rounded"
                 />
               </div>
             </div>
@@ -506,7 +506,7 @@ const Camera = ({ onClose, fetchData }) => {
               Description :
             </label>
             <textarea
-              className="h-40 p-2 bg-slate-100 border resize-none"
+              className="h-40 p-2 bg-slate-50 border resize-none"
               placeholder="Enter Proddct Description"
               rows={3}
               cols={5}

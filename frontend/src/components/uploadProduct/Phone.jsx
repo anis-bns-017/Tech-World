@@ -150,7 +150,7 @@ const Phone = ({onClose, fetchData}) => {
                   value={data.productName}
                   onChange={handleOnChange}
                   name="productName"
-                  className="p-2 w-full bg-slate-100 border rounded"
+                  className="p-2 w-full bg-slate-50 border rounded"
                 />
               </div>
 
@@ -165,7 +165,7 @@ const Phone = ({onClose, fetchData}) => {
                   value={data.brandName}
                   onChange={handleOnChange}
                   name="brandName"
-                  className="p-2 w-full bg-slate-100 border rounded"
+                  className="p-2 w-full bg-slate-50 border rounded"
                 />
               </div>
             </div>
@@ -176,7 +176,7 @@ const Phone = ({onClose, fetchData}) => {
                   Key Features :
                 </label>
                 <textarea
-                  className="min-h-32 p-2 w-full bg-slate-100 border resize-none"
+                  className="min-h-32 p-2 w-full bg-slate-50 border resize-none"
                   placeholder="Enter Proddct Key Features"
                   rows={3}
                   cols={5}
@@ -192,7 +192,7 @@ const Phone = ({onClose, fetchData}) => {
                 </label>
 
                 <label htmlFor="uploadImageInput">
-                  <div className="p-2 bg-slate-100 border rounded min-h-32 w-full flex justify-center items-center cursor-pointer">
+                  <div className="p-2 bg-slate-50 border rounded min-h-32 w-full flex justify-center items-center cursor-pointer">
                     <div className="text-slate-600 flex justify-center items-center flex-col gap-2">
                       <span className="text-4xl">
                         <FaCloudUploadAlt />
@@ -220,7 +220,7 @@ const Phone = ({onClose, fetchData}) => {
                               alt={el}
                               width={80}
                               height={80}
-                              className="bg-slate-100 border cursor-pointer"
+                              className="bg-slate-50 border cursor-pointer"
                               onClick={() => {
                                 setOpenFullScreenImage(true);
                                 setFullscreenImage(el);
@@ -253,7 +253,7 @@ const Phone = ({onClose, fetchData}) => {
                 </label>
                 <select
                   value={data.category}
-                  className="p-2 w-full bg-slate-100 border rounded"
+                  className="p-2 w-full bg-slate-50 border rounded"
                   onChange={handleOnChange}
                   name="category"
                 >
@@ -279,7 +279,7 @@ const Phone = ({onClose, fetchData}) => {
                   value={data.key_features}
                   onChange={handleOnChange}
                   name="key_features"
-                  className="p-2 w-full bg-slate-100 border rounded"
+                  className="p-2 w-full bg-slate-50 border rounded"
                 />
               </div>
             </div>
@@ -296,7 +296,7 @@ const Phone = ({onClose, fetchData}) => {
                   value={data.display_size}
                   onChange={handleOnChange}
                   name="display_size"
-                  className="p-2 w-full bg-slate-100 border rounded"
+                  className="p-2 w-full bg-slate-50 border rounded"
                 />
               </div>
 
@@ -311,7 +311,7 @@ const Phone = ({onClose, fetchData}) => {
                   value={data.display_type}
                   onChange={handleOnChange}
                   name="display_type"
-                  className="p-2 w-full bg-slate-100 border rounded"
+                  className="p-2 w-full bg-slate-50 border rounded"
                 />
               </div>
             </div>
@@ -328,7 +328,7 @@ const Phone = ({onClose, fetchData}) => {
                   value={data.screen_resolution}
                   onChange={handleOnChange}
                   name="screen_resolution"
-                  className="p-2 w-full bg-slate-100 border rounded"
+                  className="p-2 w-full bg-slate-50 border rounded"
                 />
               </div>
 
@@ -343,7 +343,7 @@ const Phone = ({onClose, fetchData}) => {
                   value={data.refresh_rate}
                   onChange={handleOnChange}
                   name="refresh_rate"
-                  className="p-2 w-full bg-slate-100 border rounded"
+                  className="p-2 w-full bg-slate-50 border rounded"
                 />
               </div>
             </div>
@@ -360,7 +360,7 @@ const Phone = ({onClose, fetchData}) => {
                   value={data.protection}
                   onChange={handleOnChange}
                   name="protection"
-                  className="p-2 w-full bg-slate-100 border rounded"
+                  className="p-2 w-full bg-slate-50 border rounded"
                 />
               </div>
 
@@ -375,7 +375,7 @@ const Phone = ({onClose, fetchData}) => {
                   value={data.display_features}
                   onChange={handleOnChange}
                   name="display_features"
-                  className="p-2 w-full bg-slate-100 border rounded"
+                  className="p-2 w-full bg-slate-50 border rounded"
                 />
               </div>
             </div>
@@ -392,7 +392,7 @@ const Phone = ({onClose, fetchData}) => {
                   value={data.chipset}
                   onChange={handleOnChange}
                   name="chipset"
-                  className="p-2 w-full bg-slate-100 border rounded"
+                  className="p-2 w-full bg-slate-50 border rounded"
                 />
               </div>
 
@@ -407,7 +407,7 @@ const Phone = ({onClose, fetchData}) => {
                   value={data.cpu_type}
                   onChange={handleOnChange}
                   name="cpu_type"
-                  className="p-2 w-full bg-slate-100 border rounded"
+                  className="p-2 w-full bg-slate-50 border rounded"
                 />
               </div>
             </div>
@@ -424,7 +424,7 @@ const Phone = ({onClose, fetchData}) => {
                   value={data.cpu_speed}
                   onChange={handleOnChange}
                   name="cpu_speed"
-                  className="p-2 w-full bg-slate-100 border rounded"
+                  className="p-2 w-full bg-slate-50 border rounded"
                 />
               </div>
 
@@ -439,7 +439,7 @@ const Phone = ({onClose, fetchData}) => {
                   value={data.gpu}
                   onChange={handleOnChange}
                   name="gpu"
-                  className="p-2 w-full bg-slate-100 border rounded"
+                  className="p-2 w-full bg-slate-50 border rounded"
                 />
               </div>
             </div>
@@ -456,7 +456,7 @@ const Phone = ({onClose, fetchData}) => {
                   value={data.ram}
                   onChange={handleOnChange}
                   name="ram"
-                  className="p-2 w-full bg-slate-100 border rounded"
+                  className="p-2 w-full bg-slate-50 border rounded"
                 />
               </div>
 
@@ -471,7 +471,7 @@ const Phone = ({onClose, fetchData}) => {
                   value={data.internal_storage}
                   onChange={handleOnChange}
                   name="internal_storage"
-                  className="p-2 w-full bg-slate-100 border rounded"
+                  className="p-2 w-full bg-slate-50 border rounded"
                 />
               </div>
             </div>
@@ -488,7 +488,7 @@ const Phone = ({onClose, fetchData}) => {
                   value={data.card_slot}
                   onChange={handleOnChange}
                   name="card_slot"
-                  className="p-2 w-full bg-slate-100 border rounded"
+                  className="p-2 w-full bg-slate-50 border rounded"
                 />
               </div>
 
@@ -503,7 +503,7 @@ const Phone = ({onClose, fetchData}) => {
                   value={data.rear_camera_resolution}
                   onChange={handleOnChange}
                   name="rear_camera_resolution"
-                  className="p-2 w-full bg-slate-100 border rounded"
+                  className="p-2 w-full bg-slate-50 border rounded"
                 />
               </div>
             </div>
@@ -520,7 +520,7 @@ const Phone = ({onClose, fetchData}) => {
                   value={data.rear_camera_features}
                   onChange={handleOnChange}
                   name="rear_camera_features"
-                  className="p-2 w-full bg-slate-100 border rounded"
+                  className="p-2 w-full bg-slate-50 border rounded"
                 />
               </div>
 
@@ -535,7 +535,7 @@ const Phone = ({onClose, fetchData}) => {
                   value={data.rear_video_recording}
                   onChange={handleOnChange}
                   name="rear_video_recording"
-                  className="p-2 w-full bg-slate-100 border rounded"
+                  className="p-2 w-full bg-slate-50 border rounded"
                 />
               </div>
             </div>
@@ -552,7 +552,7 @@ const Phone = ({onClose, fetchData}) => {
                   value={data.front_camera_resolution}
                   onChange={handleOnChange}
                   name="front_camera_resolution"
-                  className="p-2 w-full bg-slate-100 border rounded"
+                  className="p-2 w-full bg-slate-50 border rounded"
                 />
               </div>
 
@@ -567,7 +567,7 @@ const Phone = ({onClose, fetchData}) => {
                   value={data.front_video_recording}
                   onChange={handleOnChange}
                   name="front_video_recording"
-                  className="p-2 w-full bg-slate-100 border rounded"
+                  className="p-2 w-full bg-slate-50 border rounded"
                 />
               </div>
             </div>
@@ -584,7 +584,7 @@ const Phone = ({onClose, fetchData}) => {
                   value={data.speaker}
                   onChange={handleOnChange}
                   name="speaker"
-                  className="p-2 w-full bg-slate-100 border rounded"
+                  className="p-2 w-full bg-slate-50 border rounded"
                 />
               </div>
 
@@ -599,7 +599,7 @@ const Phone = ({onClose, fetchData}) => {
                   value={data.sim}
                   onChange={handleOnChange}
                   name="sim"
-                  className="p-2 w-full bg-slate-100 border rounded"
+                  className="p-2 w-full bg-slate-50 border rounded"
                 />
               </div>
             </div>
@@ -616,7 +616,7 @@ const Phone = ({onClose, fetchData}) => {
                   value={data.network}
                   onChange={handleOnChange}
                   name="network"
-                  className="p-2 w-full bg-slate-100 border rounded"
+                  className="p-2 w-full bg-slate-50 border rounded"
                 />
               </div>
 
@@ -631,7 +631,7 @@ const Phone = ({onClose, fetchData}) => {
                   value={data.bluetooth}
                   onChange={handleOnChange}
                   name="bluetooth"
-                  className="p-2 w-full bg-slate-100 border rounded"
+                  className="p-2 w-full bg-slate-50 border rounded"
                 />
               </div>
             </div>
@@ -648,7 +648,7 @@ const Phone = ({onClose, fetchData}) => {
                   value={data.gps}
                   onChange={handleOnChange}
                   name="gps"
-                  className="p-2 w-full bg-slate-100 border rounded"
+                  className="p-2 w-full bg-slate-50 border rounded"
                 />
               </div>
 
@@ -663,7 +663,7 @@ const Phone = ({onClose, fetchData}) => {
                   value={data.usb}
                   onChange={handleOnChange}
                   name="usb"
-                  className="p-2 w-full bg-slate-100 border rounded"
+                  className="p-2 w-full bg-slate-50 border rounded"
                 />
               </div>
             </div>
@@ -680,7 +680,7 @@ const Phone = ({onClose, fetchData}) => {
                   value={data.audio_jack}
                   onChange={handleOnChange}
                   name="audio_jack"
-                  className="p-2 w-full bg-slate-100 border rounded"
+                  className="p-2 w-full bg-slate-50 border rounded"
                 />
               </div>
 
@@ -695,7 +695,7 @@ const Phone = ({onClose, fetchData}) => {
                   value={data.opearating_system}
                   onChange={handleOnChange}
                   name="opearating_system"
-                  className="p-2 w-full bg-slate-100 border rounded"
+                  className="p-2 w-full bg-slate-50 border rounded"
                 />
               </div>
             </div>
@@ -712,7 +712,7 @@ const Phone = ({onClose, fetchData}) => {
                   value={data.finger_print}
                   onChange={handleOnChange}
                   name="finger_print"
-                  className="p-2 w-full bg-slate-100 border rounded"
+                  className="p-2 w-full bg-slate-50 border rounded"
                 />
               </div>
               <div className="flex-1">
@@ -726,7 +726,7 @@ const Phone = ({onClose, fetchData}) => {
                   value={data.sensor}
                   onChange={handleOnChange}
                   name="sensor"
-                  className="p-2 w-full bg-slate-100 border rounded"
+                  className="p-2 w-full bg-slate-50 border rounded"
                 />
               </div>
             </div>
@@ -743,7 +743,7 @@ const Phone = ({onClose, fetchData}) => {
                   value={data.battery}
                   onChange={handleOnChange}
                   name="battery"
-                  className="p-2 w-full bg-slate-100 border rounded"
+                  className="p-2 w-full bg-slate-50 border rounded"
                 />
               </div>
               <div className="flex-1">
@@ -757,7 +757,7 @@ const Phone = ({onClose, fetchData}) => {
                   value={data.dimension}
                   onChange={handleOnChange}
                   name="dimension"
-                  className="p-2 w-full bg-slate-100 border rounded"
+                  className="p-2 w-full bg-slate-50 border rounded"
                 />
               </div>
             </div>
@@ -774,7 +774,7 @@ const Phone = ({onClose, fetchData}) => {
                   value={data.color}
                   onChange={handleOnChange}
                   name="color"
-                  className="p-2 w-full bg-slate-100 border rounded"
+                  className="p-2 w-full bg-slate-50 border rounded"
                 />
               </div>
               <div className="flex-1">
@@ -788,7 +788,7 @@ const Phone = ({onClose, fetchData}) => {
                   value={data.motherboard}
                   onChange={handleOnChange}
                   name="warranty"
-                  className="p-2 w-full bg-slate-100 border rounded"
+                  className="p-2 w-full bg-slate-50 border rounded"
                 />
               </div>
             </div>
@@ -805,7 +805,7 @@ const Phone = ({onClose, fetchData}) => {
                   value={data.price}
                   onChange={handleOnChange}
                   name="price"
-                  className="p-2 w-full bg-slate-100 border rounded"
+                  className="p-2 w-full bg-slate-50 border rounded"
                 />
               </div>
 
@@ -820,7 +820,7 @@ const Phone = ({onClose, fetchData}) => {
                   value={data.sellingPrice}
                   onChange={handleOnChange}
                   name="sellingPrice"
-                  className="p-2 w-full bg-slate-100 border rounded"
+                  className="p-2 w-full bg-slate-50 border rounded"
                 />
               </div>
             </div>
@@ -829,7 +829,7 @@ const Phone = ({onClose, fetchData}) => {
               Description :
             </label>
             <textarea
-              className="h-40 p-2 bg-slate-100 border resize-none"
+              className="h-40 p-2 bg-slate-50 border resize-none"
               placeholder="Enter Proddct Description"
               rows={3}
               cols={5}

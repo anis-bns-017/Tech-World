@@ -52,7 +52,7 @@ const UserInfo = () => {
                 <div className="w-[17vh] h-[4px] mt-3 bg-slate-300 hover:bg-orange-500"></div>
               </Link>
 
-              <Link to={"update-address"} className="inline-block hover:text-orange-500 hover:bg-slate-50">
+              <Link to={"address"} className="inline-block hover:text-orange-500 hover:bg-slate-50">
                 <div className="flex gap-2">
                   <ImAddressBook className="text-2xl" />
                   <p>Addresses</p>

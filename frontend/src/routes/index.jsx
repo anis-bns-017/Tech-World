@@ -26,6 +26,7 @@ import Camera from "../components/uploadProduct/Camera";
 import Keyboard from "../components/uploadProduct/Keyboard";
 import Mouse from "../components/uploadProduct/Mouse";
 import HeadPhone from "../components/uploadProduct/HeadPhone";
+import DropDown from "../dropMenu/DropDown";
 
 const router = createBrowserRouter([
   {
@@ -48,9 +49,10 @@ const router = createBrowserRouter([
         path: "sign-up",
         element: <SignUp />,
       },
+
       {
-        path: "update-address",
-        element: <UserAddress />,
+        path: "upload",
+        element: <DropDown />,
       },
 
       {
@@ -128,6 +130,14 @@ const router = createBrowserRouter([
           {
             path: "address",
             element: <UserAddress />,
+          },
+          {
+            path: "all-users",
+            element: <AllUsers />,
+          },
+          {
+            path: "all-products",
+            element: <AllProducts />,
           },
         ],
       },

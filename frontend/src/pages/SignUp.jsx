@@ -1,8 +1,7 @@
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
- import SummaryApi from "../common";
+import SummaryApi from "../common";
 import { toast } from "react-toastify";
-
 
 const SignUp = () => {
   const [data, setData] = useState({
@@ -12,8 +11,7 @@ const SignUp = () => {
     password: "",
     confirmPassword: "",
     phone: "",
-    otp: "", 
-
+    otp: "",
   });
 
   const navigate = useNavigate();
@@ -34,7 +32,7 @@ const SignUp = () => {
     if (data.password === data.confirmPassword) {
       const dataResponse = await fetch(SummaryApi.signUp.url, {
         method: SummaryApi.signUp.method,
-        
+
         headers: {
           "content-type": "application/json",
         },
@@ -58,253 +56,129 @@ const SignUp = () => {
   return (
     <section id="signup">
       <div className="mx-auto container p-4">
-        <div className="bg-slate-50 p-5 w-full max-w-sm mx-auto rounded">
-          <h2 className="text-[21px] font-medium">Register Account</h2>
-          <form className="pt-6 flex flex-col gap-2" onSubmit={handleSubmit}>
+        <div className="bg-slate-800 p-5 w-full max-w-md mx-auto rounded">
+          <h2 className="text-[21px] text-white font-medium">
+            Register Account
+          </h2>
+          <form className="pt-6 flex flex-col gap-4" onSubmit={handleSubmit}>
             <div className="flex gap-3">
-              <div>
-                <label className="text-sm font-semibold"> First Name </label>
+              <div className="w-full">
+                <label className="text-sm text-white  font-semibold">
+                  First Name
+                </label>
                 <span className="text-red-600">*</span>
-                <div className="bg-slate-50">
-                  <input
-                    type="text"
-                    placeholder="First Name"
-                    name="firstName"
-                    value={data.firstName}
-                    onChange={handleChange}
-                    required
-                    className="border bg-slate-50 border-slate-400 p-2 rounded outline-none indent-2"
-                  />
-                </div>
-              </div>
-
-              <div>
-                <label className="text-sm font-semibold"> Last Name </label>
-                <span className="text-red-600">*</span>
-                <div className="bg-slate-50">
-                  <input
-                    type="text"
-                    placeholder="Last Name"
-                    name="lastName"
-                    value={data.lastName}
-                    onChange={handleChange}
-                    required
-                    className="border bg-slate-50 border-slate-400 p-2 rounded outline-none indent-2"
-                  />
-                </div>
-              </div>
-            </div>
-
-            <div className="grid mt-3">
-              <label>
-                E-mail <span className="text-red-600">*</span>
-              </label>
-
-              <div className="bg-slate-50 p-2">
-                <input
-                  type="email"
-                  placeholder="E-mail"
-                  name="email"
-                  value={data.email}
-                  required
-                  onChange={handleChange}
-                  className="-ml-2 w-[25.9rem] border bg-slate-50 border-slate-400 p-2 rounded outline-none indent-2"
-                />
-              </div>
-            </div>
-
-            <div className="grid mt-3">
-              <label>
-                Password <span className="text-red-600">*</span>
-              </label>
-
-              <div className="bg-slate-50 p-2">
-                <input
-                  type="password"
-                  placeholder="Password"
-                  name="password"
-                  value={data.password}
-                  required
-                  onChange={handleChange}
-                  className="-ml-2 w-[25.9rem] border bg-slate-50 border-slate-400 p-2 rounded outline-none indent-2"
-                />
-              </div>
-            </div>
-
-            <div className="grid mt-3">
-              <label>
-                Confirm Password <span className="text-red-600">*</span>
-              </label>
-
-              <div className="bg-slate-50 p-2">
-                <input
-                  type="password"
-                  placeholder="Confirm Password"
-                  name="confirmPassword"
-                  value={data.confirmPassword}
-                  required
-                  onChange={handleChange}
-                  className="-ml-2 w-[25.9rem] border bg-slate-50 border-slate-400 p-2 rounded outline-none indent-2"
-                />
-              </div>
-            </div>
-
-            <div className="grid">
-              <label>
-                Telephone <span className="text-red-600">*</span>
-              </label>
-              <div className="bg-slate-50 p-2 flex w-[50rem]">
-                <input
-                  type="number"
-                  placeholder="Telephone"
-                  name="phone"
-                  value={data.phone}
-                  onChange={handleChange}
-                  required
-                  className="-ml-2 w-[25.9rem] border bg-slate-50 border-slate-400 p-2 rounded outline-none indent-2"
-                />
-              </div>
-            </div>
-
-            <button className="bg-blue-800 w-[25.9rem] text-white px-6 py-2 w-fulltransition-all text-center rounded-[5px] block mt-6 pcBuilder cursor-pointer hover:bg-blue-500">
-              Continue
-            </button>
-          </form>
-
-          <p className="mb-12 text-center items-center mt-5 w-full">
-            <div className="flex w-full">
-              <p className="w-[80px] h-[0.1px] bg-slate-300 mt-3"></p>
-              <p className="">Already have an account?</p>
-              <p className="w-[80px] h-[0.1px] bg-slate-300 mt-3"></p>
-            </div>
-          </p>
-
-          <p className="-mt-5 w-[130%]">
-            If you already have an account with us, please login at the
-          </p>
-          <Link
-            to={"/login"}
-            className="text-red-500 hover:underline cursor-pointer"
-          >
-            Login Page
-          </Link>
-        </div>
-      </div>
-
-      <div>
-        {/* <div className="mx-auto container p-4">
-        <div className="bg-white p-5 w-full max-w-sm mx-auto rounded">
-          <div className="w-20 h-20 mx-auto relative overflow-hidden rounded-full">
-            <div>
-              <img src={data.profilePic || loginIcons} alt="login icons" />
-            </div>
-
-            <form>
-              <label>
-                <div className="text-xs bg-opacity-80 bg-slate-200 pb-4 pt-2 cursor-pointer  text-center absolute bottom-0 w-full">
-                  Upload Photo
-                </div>
-                <input
-                  type="file"
-                  className="hidden"
-                  onChange={handleUploadPic}
-                />
-              </label>
-            </form>
-          </div>
-
-          <form className="pt-6 flex flex-col gap-2" onSubmit={handleSubmit}>
-            <div className="grid">
-              <label> Name : </label>
-              <div className="bg-slate-50 p-2">
                 <input
                   type="text"
-                  placeholder="enter your name.."
-                  name="name"
-                  value={data.name}
+                  placeholder="First Name"
+                  name="firstName"
+                  value={data.firstName}
                   onChange={handleChange}
                   required
-                  className="w-full h-full outline-none bg-transparent"
+                  className="border bg-slate-50 border-slate-400 p-2 rounded outline-none w-full"
+                />
+              </div>
+
+              <div className="w-full">
+                <label className="text-sm text-white font-semibold">
+                  Last Name
+                </label>
+                <span className="text-red-600">*</span>
+                <input
+                  type="text"
+                  placeholder="Last Name"
+                  name="lastName"
+                  value={data.lastName}
+                  onChange={handleChange}
+                  required
+                  className="border bg-slate-50 border-slate-400 p-2 rounded outline-none w-full"
                 />
               </div>
             </div>
 
             <div className="grid">
-              <label> Email : </label>
-              <div className="bg-slate-50 p-2">
-                <input
-                  type="email"
-                  placeholder="enter email.."
-                  name="email"
-                  value={data.email}
-                  required
-                  onChange={handleChange}
-                  className="w-full h-full outline-none bg-transparent"
-                />
-              </div>
+              <label className="text-white ">
+                E-mail <span className="text-red-600">*</span>
+              </label>
+              <input
+                type="email"
+                placeholder="E-mail"
+                name="email"
+                value={data.email}
+                onChange={handleChange}
+                required
+                className="border bg-slate-50 border-slate-400 p-2 rounded outline-none w-full"
+              />
             </div>
 
-            <div>
-              <label> Password : </label>
-              <div className="bg-slate-50 p-2 flex">
-                <input
-                  type={showPassword ? "text" : "password"}
-                  placeholder="enter password"
-                  name="confirmPassword"
-                  value={data.confirmPassword}
-                  onChange={handleChange}
-                  required
-                  className="w-full h-full outline-none bg-transparent"
-                />
+            <div className="grid">
+              <label className="text-white ">
+                Password <span className="text-red-600">*</span>
+              </label>
+              <input
+                type="password"
+                placeholder="Password"
+                name="password"
+                value={data.password}
+                onChange={handleChange}
+                required
+                className="border bg-slate-50 border-slate-400 p-2 rounded outline-none w-full"
+              />
+            </div>
 
-                <div
-                  className="cursor-pointer text-xl"
-                  onClick={() => setShowPassword((prev) => !prev)}
-                >
-                  <span>{showPassword ? <IoEye /> : <IoMdEyeOff />}</span>
+            <div className="grid">
+              <label className="text-white ">
+                Confirm Password <span className="text-red-600">*</span>
+              </label>
+              <input
+                type="password"
+                placeholder="Confirm Password"
+                name="confirmPassword"
+                value={data.confirmPassword}
+                onChange={handleChange}
+                required
+                className="border bg-slate-50 border-slate-400 p-2 rounded outline-none w-full"
+              />
+            </div>
+
+            <div className="grid">
+              <label className="text-white ">
+                Telephone <span className="text-red-600">*</span>
+              </label>
+              <input
+                type="number"
+                placeholder="Telephone"
+                name="phone"
+                value={data.phone}
+                onChange={handleChange}
+                required
+                className="border bg-slate-50 border-slate-400 p-2 rounded outline-none w-full"
+              />
+            </div>
+
+            <button className="flex justify-center items-center">
+              <div className="relative inline-flex  group">
+                <div className="absolute transitiona-all duration-1000 opacity-70 -inset-px bg-gradient-to-r from-[#44BCFF] via-[#FF44EC] to-[#FF675E] rounded-xl blur-lg group-hover:opacity-100 group-hover:-inset-1 group-hover:duration-200 animate-tilt"></div>
+                <div className="relative inline-flex items-center justify-center px-8 py-4 text-lg font-bold text-white transition-all duration-200 bg-gray-900 font-pj rounded-xl focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-900">
+                  Continue
                 </div>
               </div>
-            </div>
-
-            <div>
-              <label> Confirm Password : </label>
-              <div className="bg-slate-50 p-2 flex">
-                <input
-                  type={showConfirmPassword ? "text" : "password"}
-                  placeholder="enter confirm password"
-                  name="password"
-                  value={data.password}
-                  onChange={handleChange}
-                  className="w-full h-full outline-none bg-transparent"
-                />
-
-                <div
-                  className="cursor-pointer text-xl"
-                  onClick={() => setShowConfirmPassword((prev) => !prev)}
-                >
-                  <span>
-                    {showConfirmPassword ? <IoEye /> : <IoMdEyeOff />}
-                  </span>
-                </div>
-              </div>
-            </div>
-
-            <button className="bg-red-600 text-white px-6 py-2 w-full max-w-[150px] rounded-full hover:scale-110 transition-all mx-auto block mt-6 hover:bg-red-500">
-              Sign Up
             </button>
           </form>
-
-          <p className="my-5">
-            Already have account ?{" "}
+          <div className="flex justify-center items-center my-5">
+            <p className="w-[80px] h-[0.1px] bg-slate-300"></p>
+            <p className="px-2 text-white ">Already have an account?</p>
+            <p className="w-[80px] h-[0.1px] bg-slate-300"></p>
+          </div>
+          <p className="text-center text-white ">
+            If you already have an account with us, please login at the
             <Link
-              to={"/login"}
-              className="text-red-600 hover:underline hover:text-red-700"
+              to="/login"
+              className="text-red-500  hover:underline cursor-pointer ml-1"
             >
-              Login
+              Login Page
             </Link>
           </p>
         </div>
-      </div> */}
       </div>
     </section>
   );

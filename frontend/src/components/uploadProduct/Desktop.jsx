@@ -129,7 +129,7 @@ const Desktop = () => {
               value={data.productName}
               onChange={handleOnChange}
               name="productName"
-              className="p-2 bg-slate-100 border rounded"
+              className="p-2 bg-slate-50 border rounded"
               required
             />
 
@@ -143,7 +143,7 @@ const Desktop = () => {
               value={data.brandName}
               onChange={handleOnChange}
               name="brandName"
-              className="p-2 bg-slate-100 border rounded"
+              className="p-2 bg-slate-50 border rounded"
               required
             />
 
@@ -152,7 +152,7 @@ const Desktop = () => {
             </label>
             <select
               value={data.category}
-              className="p-2 bg-slate-100 border rounded"
+              className="p-2 bg-slate-50 border rounded"
               onChange={handleOnChange}
               name="category"
               required
@@ -172,7 +172,7 @@ const Desktop = () => {
             </label>
 
             <label htmlFor="uploadImageInput">
-              <div className="p-2 bg-slate-100 border rounded min-h-32 w-full flex justify-center items-center cursor-pointer">
+              <div className="p-2 bg-slate-50 border rounded min-h-32 w-full flex justify-center items-center cursor-pointer">
                 <div className="text-slate-600 flex justify-center items-center flex-col gap-2">
                   <span className="text-4xl">
                     <FaCloudUploadAlt />
@@ -200,7 +200,7 @@ const Desktop = () => {
                           alt={el}
                           width={80}
                           height={80}
-                          className="bg-slate-100 border cursor-pointer"
+                          className="bg-slate-50 border cursor-pointer"
                           onClick={() => {
                             setOpenFullScreenImage(true);
                             setFullscreenImage(el);
@@ -228,7 +228,7 @@ const Desktop = () => {
               Key Features :
             </label>
             <textarea
-              className="h-28 bg-slate-100 border resize-none"
+              className="h-28 bg-slate-50 border resize-none"
               placeholder="Enter Proddct Key Features"
               rows={3}
               cols={5}
@@ -247,7 +247,7 @@ const Desktop = () => {
               value={data.processor_warranty}
               onChange={handleOnChange}
               name="processor_warranty"
-              className="p-2 bg-slate-100 border rounded"
+              className="p-2 bg-slate-50 border rounded"
               required
             />
 
@@ -261,7 +261,7 @@ const Desktop = () => {
               value={data.motherboard}
               onChange={handleOnChange}
               name="motherboard"
-              className="p-2 bg-slate-100 border rounded"
+              className="p-2 bg-slate-50 border rounded"
               required
             />
 
@@ -275,7 +275,7 @@ const Desktop = () => {
               value={data.motherboard_warranty}
               onChange={handleOnChange}
               name="motherboard_warranty"
-              className="p-2 bg-slate-100 border rounded"
+              className="p-2 bg-slate-50 border rounded"
               required
             />
 
@@ -289,7 +289,7 @@ const Desktop = () => {
               value={data.ram}
               onChange={handleOnChange}
               name="ram"
-              className="p-2 bg-slate-100 border rounded"
+              className="p-2 bg-slate-50 border rounded"
               required
             />
 
@@ -303,7 +303,7 @@ const Desktop = () => {
               value={data.ram_warranty}
               onChange={handleOnChange}
               name="ram_warranty"
-              className="p-2 bg-slate-100 border rounded"
+              className="p-2 bg-slate-50 border rounded"
               required
             />
 
@@ -317,7 +317,7 @@ const Desktop = () => {
               value={data.storoge}
               onChange={handleOnChange}
               name="storage"
-              className="p-2 bg-slate-100 border rounded"
+              className="p-2 bg-slate-50 border rounded"
               required
             />
 
@@ -331,7 +331,7 @@ const Desktop = () => {
               value={data.storage_warranty}
               onChange={handleOnChange}
               name="storage_warranty"
-              className="p-2 bg-slate-100 border rounded"
+              className="p-2 bg-slate-50 border rounded"
               required
             />
 
@@ -345,7 +345,7 @@ const Desktop = () => {
               value={data.casing}
               onChange={handleOnChange}
               name="casing"
-              className="p-2 bg-slate-100 border rounded"
+              className="p-2 bg-slate-50 border rounded"
               required
             />
 
@@ -359,7 +359,7 @@ const Desktop = () => {
               value={data.casing_warranty}
               onChange={handleOnChange}
               name="casing_warranty"
-              className="p-2 bg-slate-100 border rounded"
+              className="p-2 bg-slate-50 border rounded"
               required
             />
 
@@ -373,7 +373,7 @@ const Desktop = () => {
               value={data.price}
               onChange={handleOnChange}
               name="price"
-              className="p-2 bg-slate-100 border rounded"
+              className="p-2 bg-slate-50 border rounded"
               required
             />
 
@@ -387,7 +387,7 @@ const Desktop = () => {
               value={data.sellingPrice}
               onChange={handleOnChange}
               name="sellingPrice"
-              className="p-2 bg-slate-100 border rounded"
+              className="p-2 bg-slate-50 border rounded"
               required
             />
 
@@ -395,7 +395,7 @@ const Desktop = () => {
               Description :
             </label>
             <textarea
-              className="h-28 bg-slate-100 border resize-none"
+              className="h-28 bg-slate-50 border resize-none"
               placeholder="Enter Proddct Description"
               rows={3}
               cols={5}

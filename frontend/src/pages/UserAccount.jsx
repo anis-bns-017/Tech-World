@@ -10,11 +10,11 @@ const UserAccount = () => {
   // user?.role === ROLE.ADMIN
   return (
     <>
-      <div>
+      <div className="bg-slate-50">
         {user?.role === ROLE.ADMIN ? (
           <AdminPanel />
         ) : (
-          <div>
+          <div className="">
             <UserCredits />
             <UserInfo />
           </div>

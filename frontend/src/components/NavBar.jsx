@@ -1,8 +1,6 @@
-import { useState } from "react";
 import { Link } from "react-router-dom";
 
 const NavBar = () => {
-  const [openUploadProduct, setOpenUploadProduct] = useState(false);
   return (
     <div className="w-full h-[50px] bg-white relative -mt-3 justify-center items-center">
       <div className="flex gap-3 text-[15px] mx-11 mt-3 text-center items-center absolute">
@@ -38,7 +36,12 @@ const NavBar = () => {
         <Link className="cursor-pointer hover:text-red-500">
           Office equipment
         </Link>
-        <Link to={"upload-camera"} className="cursor-pointer hover:text-red-500">Camera</Link>
+        <Link
+          to={"upload-camera"}
+          className="cursor-pointer hover:text-red-500"
+        >
+          Camera
+        </Link>
         <Link className="cursor-pointer hover:text-red-500">Security</Link>
         <Link className="cursor-pointer hover:text-red-500">Networking</Link>
         <Link className="cursor-pointer hover:text-red-500">Software</Link>

@@ -6,10 +6,7 @@ import AllProducts from "./AllProducts";
 
 const Home = () => {
   return (
-    <div className="">
-      <BannerProduct />
-      <TextFlow />
-      <Link to={"/upload"} className="w-auto h-auto bg-slate-400 rounded">Upload</Link>
+    <div className="w-full">
       <FeatureCategory />
       <AllProducts />
       {/* <CategoryList /> */}
