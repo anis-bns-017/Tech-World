@@ -30,6 +30,7 @@ const cameraUploadController = require("../controller/productUpload/cameraUpload
 const keyboardUploadController = require("../controller/productUpload/keyboardUploadController");
 const mouseUploadController = require("../controller/productUpload/mouseUploadController");
 const headphoneUploadController = require("../controller/productUpload/headphoneUploadController");
+const getMobile = require("../controller/getSeperateProduct/getMobile");
 
 router.post("/signup", userSignupController);
 router.post("/signin", userSigninController);
@@ -63,6 +64,9 @@ router.get("/get-categoryProduct", getCategoryProduct);
 router.post("/category-product", getCategoryWiseProduct);
 router.post("/product-details", getProductDetails);
 router.get("/search", searchProudct);
+
+//get individual product
+router.get("/get-mobile", getMobile);
 
 //user add to cart
 router.post("/addToCart", authToken, addToCartController);

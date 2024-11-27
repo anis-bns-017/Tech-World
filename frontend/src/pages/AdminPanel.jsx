@@ -3,6 +3,7 @@ import { FaUser } from "react-icons/fa";
 import { useSelector } from "react-redux";
 import { Link, Outlet, useNavigate } from "react-router-dom";
 import ROLE from "../common/Role";
+import AllProducts from "./AllProducts";
 
 const AdminPanel = () => {
   const user = useSelector((state) => state?.user?.user);

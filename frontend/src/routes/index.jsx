@@ -27,6 +27,7 @@ import Keyboard from "../components/uploadProduct/Keyboard";
 import Mouse from "../components/uploadProduct/Mouse";
 import HeadPhone from "../components/uploadProduct/HeadPhone";
 import DropDown from "../dropMenu/DropDown";
+import MobileCategory from "../pages/productCategory/MobileCategory";
 
 const router = createBrowserRouter([
   {
@@ -142,6 +143,11 @@ const router = createBrowserRouter([
         ],
       },
 
+      //category start from here.
+      {
+        path: "mobile-phone",
+        element: <MobileCategory />,
+      },
       {
         path: "search",
         element: <SearchProduct />,

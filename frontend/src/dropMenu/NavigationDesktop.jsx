@@ -76,7 +76,7 @@ const NavigationDesktop = ({ navLinksData }) => {
                         onMouseEnter={() => subMenuOnMouseEnterHandler(ele.id)}
                         onMouseLeave={() => subMenuOnMouseLeaveHandler(ele.id)}
                         key={ele.id}
-                        className="sub-menu-options sub-menu-hover"
+                        className="sub-menu-options bg-red-700 sub-menu-hover"
                       >
                         <div className="sub-menu-div">
                           <span>{ele.name}</span>

@@ -111,6 +111,7 @@ body {
   top: 100%;
   list-style: none;
   width: 270px;
+  max-height: 50%;
 }
 
 .sub-menu-options {
@@ -140,7 +141,6 @@ body {
   top: 0px;
   left: 100%;
   width: 220px;
-   
 }
 
 .sub-menu-div {

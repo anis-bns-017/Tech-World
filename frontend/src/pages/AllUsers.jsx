@@ -62,7 +62,7 @@ const AllUsers = () => {
                       setUpdateUserDetails(el)
                       setOpenUpdateRole(true)
                     }}
-                    className="bg-green-100 p-2 rounded-full cursor-pointer hover:bg-green-300"
+                    className="bg-green-300 p-2 rounded-full cursor-pointer hover:bg-green-300"
                   >
                     <MdEdit />
                   </button>

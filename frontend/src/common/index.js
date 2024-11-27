@@ -92,6 +92,14 @@ const SummaryApi = {
     url: `${backendDomain}/api/get-product`,
     method: "get",
   },
+
+  //individual product starts from here.
+  
+  allMobiles: {
+    url: `${backendDomain}/api/get-mobile`,
+    method: "get",
+  },
+
   updateProduct: {
     url: `${backendDomain}/api/update-product`,
     method: "post",
@@ -123,6 +131,11 @@ const SummaryApi = {
   updateCartProduct: {
     url: `${backendDomain}/api/update-cart-product`,
     method: "post",
+  },
+  //product category starts from here.
+  mobilePhoneCategory: {
+    url: `${backendDomain}/api/mobile-phone`,
+    method: "get",
   },
   deleteCartProduct: {
     url: `${backendDomain}/api/delete-cart-product`,

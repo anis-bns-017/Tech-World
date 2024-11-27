@@ -9,7 +9,7 @@ const AdminProductCard = ({ data, fetchData, id }) => {
   const { sellingPrice, price, productName } = data;
 
   return (
-    <Link to={"product/" + productName} className="mx-[5px] my-[5px] hover:shadow-lg relative">
+    <Link to={"product/" + productName} className="mx-[5px] my-[5px] hover:shadow-lg relative bg-blue-200 shadow-lg">
       <div className="bg-white w-[40vh] rounded-t h-[250px] p-5 ml-0.8 overflow-hidden">
         <div className="flex justify-center items-center h-full">
           <img

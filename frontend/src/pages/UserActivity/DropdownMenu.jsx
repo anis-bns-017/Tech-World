@@ -8,7 +8,7 @@ const DropdownMenu = () => {
   return (
     <div className="flex gap-[10px] text-[15px] mx-11 mt-3 text-center items-center absolute">
       <FlyoutLink href="#" FlyoutContent={PricingContent}>
-        Desktop
+        Upload Product
       </FlyoutLink>
       {/* <FlyoutLink href="#" FlyoutContent={PricingContent}>
         Laptop
