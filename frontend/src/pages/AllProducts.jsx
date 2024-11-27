@@ -2,6 +2,8 @@ import { useEffect, useState } from "react";
 import UploadProduct from "../components/UploadProduct";
 import SummaryApi from "../common";
 import AdminProductCard from "../components/AdminProductCard";
+import DropdownMenu from "./UserActivity/DropdownMenu";
+import NavBar from "../components/NavBar";
 
 const AllProducts = () => {
   const [openUploadProduct, setOpenUploadProduct] = useState(false);
@@ -19,7 +21,7 @@ const AllProducts = () => {
   }, []);
 
   return (
-    <div className="pl-5 pt-10">
+    <div className=" pl-5 pt-10">
       <div className="items-center justify-center text-center">
         <h2 className="font-bold text-2xl">Featured Products</h2>
         <p>Check & Get Your Desired Product!</p>

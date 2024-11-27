@@ -62,7 +62,7 @@ const NavigationDesktop = ({ navLinksData }) => {
                         <li key={ele.id} className="sub-menu-li">
                           <a
                             href="#"
-                            className="sub-menu-link"
+                            className="sub-menu-link absolute"
                             style={{ textDecoration: "none" }}
                           >
                             <span>{ele.name}</span>

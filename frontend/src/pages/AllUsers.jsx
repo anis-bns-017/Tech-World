@@ -10,7 +10,8 @@ const AllUsers = () => {
   const [openUpdateRole, setOpenUpdateRole] = useState(false);
   const [updateUserDetails, setUpdateUserDetails] = useState({
     email: "",
-    name: "",
+    firstName: "",
+    lastName: "", 
     role: "",
     _id: ""
   });
@@ -52,7 +53,7 @@ const AllUsers = () => {
             return (
               <tr key={index}>
                 <td>{index + 1}</td>
-                <td>{el?.name}</td>
+                <td>{el?.firstName + " " + el?.lastName}</td>
                 <td>{el?.email}</td>
                 <td>{el?.role}</td>
                 <td>{moment(el?.createdAt).format("LL")}</td>

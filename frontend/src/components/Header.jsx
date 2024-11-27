@@ -3,6 +3,7 @@ import { ImSearch } from "react-icons/im";
 import { Link, Navigate, useLocation, useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import SummaryApi from "../common";
+import { FaCartPlus } from "react-icons/fa";
 import { toast } from "react-toastify";
 import { setUserDetails } from "../store/userSlice";
 import { useContext, useState } from "react";
@@ -14,6 +15,7 @@ import { SlEnergy } from "react-icons/sl";
 import { FaUserAlt } from "react-icons/fa";
 import DropDown from "../dropMenu/DropDown";
 import DropdownMenu from "../pages/UserActivity/DropdownMenu";
+import NavBar from "./NavBar";
 
 const Header = () => {
   const user = useSelector((state) => state?.user?.user);
@@ -156,14 +158,28 @@ const Header = () => {
             </div>
           )}
 
-          <div className="rounded bg-blue-600 p-2 ml-6 pcBuilder cursor-pointer]">
+          {/* <div className="rounded bg-blue-600 p-2 ml-6 pcBuilder cursor-pointer]">
             <div>
               <button className="w-[100px]">PC Builder</button>
             </div>
-          </div>
+          </div> */}
+
+          {user?._id && (
+            <Link to={"/cart"} className="text-2xl relative">
+              <span>
+                <FaCartPlus />
+              </span>
+
+              <div>
+                <p className="text-sm bg-blue-600 w-4 h-4 rounded text-yellow-100 p-2 flex items-center justify-center absolute -top-3 -right-4">
+                  {context?.cartProductCount}
+                </p>
+              </div>
+            </Link>
+          )}
         </div>
       </div>
-      <div>{user?.role === "ADMIN" ? <DropdownMenu /> : <DropDown />}</div>
+      <div>{user?.role === "ADMIN" ? <NavBar /> : <DropDown />}</div>
     </header>
   );
 };
