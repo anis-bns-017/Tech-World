@@ -4,6 +4,7 @@ import { useSelector } from "react-redux";
 import { Link, Outlet, useNavigate } from "react-router-dom";
 import ROLE from "../common/Role";
 import AllProducts from "./AllProducts";
+import VerticalCardProduct from "../components/VerticalCardProduct";
 
 const AdminPanel = () => {
   const user = useSelector((state) => state?.user?.user);
@@ -44,10 +45,10 @@ const AdminPanel = () => {
                 All users
               </Link>
               <Link
-                to={"all-products"}
+    
                 className="px-2 py-1 hover:bg-slate-50"
-              >
-                All Products
+              >                                                                                                     
+                <AllProducts />
               </Link>
             </nav>
           </div>

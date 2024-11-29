@@ -391,11 +391,11 @@ const MobileCategory = () => {
               </button>
             </form>
           </aside>
-          <main className="w-full h-full p-2">
+          <main className="w-full p-2">
             <Outlet />
           </main>
         </div>
-        <div className="h-screen w-screen bg-slate-50">
+        <div className="w-screen bg-slate-50">
           <ShowPhone />
         </div>
       </div>

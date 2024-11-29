@@ -3,12 +3,15 @@ import SummaryApi from "../common";
 import Context from "../context/Context";
 import displayCurrency from "../helpers/DisplayCurrency";
 import { MdDelete } from "react-icons/md";
+import { useNavigate } from "react-router-dom";
 
 const Cart = () => {
   const [data, setData] = useState([]);
   const [loading, setLoading] = useState(true);
   const context = useContext(Context);
   const loadingCart = new Array(context.cartProductCount).fill(null);
+
+  const navigate = useNavigate();
 
   const fetchData = async () => {
     setLoading(true);
@@ -28,10 +31,14 @@ const Cart = () => {
     }
   };
 
+
+  console.log("ANis ", data);
+
   useEffect(() => {
     fetchData();
   }, []);
 
+  
   const increaseQuantity = async (id, qty) => {
     const response = await fetch(SummaryApi.updateCartProduct.url, {
       method: SummaryApi.updateCartProduct.method,
@@ -74,6 +81,7 @@ const Cart = () => {
     }
   };
 
+  
   const deleteCartItem = async (id) => {
     const response = await fetch(SummaryApi.deleteCartProduct.url, {
       method: SummaryApi.deleteCartProduct.method,
@@ -104,6 +112,7 @@ const Cart = () => {
     0
   );
 
+  
   return (
     <div className="container mx-auto">
       <div className="text-center font-lg">

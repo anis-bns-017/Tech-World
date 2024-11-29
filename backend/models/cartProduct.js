@@ -1,18 +1,26 @@
 const mongoose = require("mongoose");
 
-const addToCart = mongoose.Schema(
-  {
-    productId: {
-      ref: "product",
-      type: String,
-    },
-    quantity: Number,
-    userId: String,
+const addToCart = mongoose.Schema({
+  productId: {
+    type: mongoose.Schema.Types.ObjectId,
+    required: true,
+    refPath: "productType",
   },
-  {
-    timestamps: true,
-  }
-);
+  productType: {
+    type: String,
+    required: true,
+    enum: ["phone", "keyboard", "mouse", "tablet", "desktop", "monitor", "laptop", "headphone", "mobile"],
+  },
+  quantity: {
+    type: Number,
+    default: 1,
+  }, 
+  userId: {
+    type: String,
+    required: true,
+  },
+}, { timestamps: true });
+
 
 const addToCartModel = mongoose.model("addToCart", addToCart);
 

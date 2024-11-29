@@ -71,7 +71,7 @@ router.get("/get-mobile", getMobile);
 //user add to cart
 router.post("/addToCart", authToken, addToCartController);
 router.get("/countAddToCartProduct", authToken, countAddToCartProduct);
-router.get("/view-cart-product", addToCartViewProduct);
+router.get("/view-cart-product", authToken, addToCartViewProduct);
 router.post("/update-cart-product", authToken, updateAddtoCartProduct);
 router.post("/delete-cart-product", authToken, deleleAddToCartProduct);
 
