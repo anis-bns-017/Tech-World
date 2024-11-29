@@ -7,6 +7,11 @@ const headphoneSchema = mongoose.Schema(
     category: String,
     productImage: [String],
     key_features: String, 
+    userId: {
+      type: mongoose.Schema.Types.ObjectId, // Reference to the User model
+      ref: "User",
+      required: true,
+    },
     description: String,
     frequency_range: String, 
     sensitivity: String, 

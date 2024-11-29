@@ -8,7 +8,12 @@ async function cameraUploadController(req, res) {
       throw new Error("permission denied");
     }
 
-    const uploadProduct = new cameraModel(req.body);
+    const productData = {
+      ...req.body,      // Spread the existing product data
+      userId: sessionUserId, // Add the user ID
+    };
+
+    const uploadProduct = new cameraModel(productData);
     const saveProduct = await uploadProduct.save();
 
     res.status(201).json({

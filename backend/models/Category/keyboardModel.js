@@ -8,6 +8,11 @@ const keyboardSchema = mongoose.Schema(
     productImage: [String],
     key_features: String,
     description: String,
+    userId: {
+      type: mongoose.Schema.Types.ObjectId, // Reference to the User model
+      ref: "User",
+      required: true,
+    },
     wired_wiredless: String, 
     keys: String, 
     polling_rate: String, 

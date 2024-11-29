@@ -4,8 +4,12 @@ import SummaryApi from "../common";
 import AdminProductCard from "../components/AdminProductCard";
 import DropdownMenu from "./UserActivity/DropdownMenu";
 import NavBar from "../components/NavBar";
+import { useSelector } from "react-redux";
+import SellerProductCard from "../components/SellerProductCard";
 
 const AllProducts = () => {
+  const user = useSelector((state) => state?.user?.user);
+
   const [openUploadProduct, setOpenUploadProduct] = useState(false);
   const [allProduct, setAllProduct] = useState([]);
 
@@ -28,7 +32,13 @@ const AllProducts = () => {
       </div>
       <div className="flex items-center flex-wrap my-4 ml-8 h-[calc(100vh-190px)] overflow-y-scroll scrollbar-none">
         {allProduct.map((product, index) => {
-          return (
+          return user?.role === "ADMIN" ? (
+            <SellerProductCard
+              data={product}
+              key={index + "allproducts"}
+              fetchData={fetchAllProduct}
+            />
+          ) : (
             <AdminProductCard
               data={product}
               key={index + "allproducts"}

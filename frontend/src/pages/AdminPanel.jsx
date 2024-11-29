@@ -45,16 +45,16 @@ const AdminPanel = () => {
                 All users
               </Link>
               <Link
-    
+              to={"all-products"}
                 className="px-2 py-1 hover:bg-slate-50"
               >                                                                                                     
-                <AllProducts />
+                All products
               </Link>
             </nav>
           </div>
         </aside>
 
-        <main className="w-full h-full p-2">
+        <main className="w-screen h-screen p-2">
           <Outlet />
         </main>
       </div>

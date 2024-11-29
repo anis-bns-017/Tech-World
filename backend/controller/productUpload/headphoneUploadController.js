@@ -8,7 +8,11 @@ async function headphoneUploadController(req, res) {
       throw new Error("permission denied");
     }
 
-    const uploadProduct = new headphoneModel(req.body);
+    const productData = {
+      ...req.body,      // Spread the existing product data
+      userId: sessionUserId, // Add the user ID
+    };
+    const uploadProduct = new headphoneModel(productData);
     const saveProduct = await uploadProduct.save();
 
     res.status(201).json({

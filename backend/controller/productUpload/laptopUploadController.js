@@ -8,7 +8,12 @@ async function laptopUploadController(req, res) {
       throw new Error("permission denied");
     }
 
-    const uploadProduct = new laptopModel(req.body);
+    const productData = {
+      ...req.body,      // Spread the existing product data
+      userId: sessionUserId, // Add the user ID
+    };
+
+    const uploadProduct = new laptopModel(productData);
     const saveProduct = await uploadProduct.save();
 
     res.status(201).json({

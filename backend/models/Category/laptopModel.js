@@ -7,6 +7,11 @@ const laptopSchema = mongoose.Schema(
     category: String,
     productImage: [String],
     key_features: String, 
+    userId: {
+      type: mongoose.Schema.Types.ObjectId, // Reference to the User model
+      ref: "User",
+      required: true,
+    },
     description: String,
     processor_brand: String, 
     processor_model: String, 

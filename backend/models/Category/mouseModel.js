@@ -8,6 +8,11 @@ const mouseSchema = mongoose.Schema(
     productImage: [String],
     key_features: String, 
     description: String,
+    userId: {
+      type: mongoose.Schema.Types.ObjectId, // Reference to the User model
+      ref: "User",
+      required: true,
+    },
     number_of_keys: Number,
     connection_type: String, 
     optical_sensor: String, 

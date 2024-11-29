@@ -7,6 +7,11 @@ const monitorSchema = mongoose.Schema(
     category: String,
     productImage: [String],
     key_features: String, 
+    userId: {
+      type: mongoose.Schema.Types.ObjectId, // Reference to the User model
+      ref: "User",
+      required: true,
+    },
     description: String,
     display_size: String, 
     display_type: String, 

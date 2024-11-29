@@ -8,6 +8,11 @@ const desktopSchema = mongoose.Schema(
     productImage: [],
     key_features: String, 
     description: String,
+    userId: {
+      type: mongoose.Schema.Types.ObjectId, // Reference to the User model
+      ref: "User",
+      required: true,
+    },
     processor: String, 
     processor_warranty: String, 
     motherboard: String, 

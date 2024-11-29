@@ -9,6 +9,11 @@ const cameraSchema = mongoose.Schema(
     key_features: String,
     description: String,
     image_sensor: String, 
+    userId: {
+      type: mongoose.Schema.Types.ObjectId, // Reference to the User model
+      ref: "User",
+      required: true,
+    },
     sensor_resolution: String, 
     sensor_type: String, 
     effective_pixel: String, 
