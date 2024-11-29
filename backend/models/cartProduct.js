@@ -9,7 +9,7 @@ const addToCart = mongoose.Schema({
   productType: {
     type: String,
     required: true,
-    enum: ["phone", "keyboard", "mouse", "tablet", "desktop", "monitor", "laptop", "headphone", "mobile"],
+    enum: ["phone", "keyboard", "mouse", "tablet", "desktop", "monitor", "laptop", "headphone", "camera"],
   },
   quantity: {
     type: Number,

@@ -12,9 +12,12 @@ const AdminProductCard = ({ data, fetchData}) => {
 
   const user = useSelector((state) => state?.user?.user);
   const userId = user?._id;
+  const productId = data?._id
 
   const [editProduct, setEditProduct] = useState(false);
   const { sellingPrice, price, productName, key_features, category } = data;
+
+  console.log("aso vai", productId);
 
   const { fetchUserAddToCart } = useContext(Context);
 
@@ -25,7 +28,7 @@ const AdminProductCard = ({ data, fetchData}) => {
 
   return (
     <Link
-      to={"product/" + productName}
+      to={"product/" + productId}
       className="mx-[5px] my-[5px] hover:shadow-lg relative bg-blue-200 shadow-lg"
     >
       <div className="bg-white w-[40vh] rounded-t h-[230px] p-5 ml-0.8 overflow-hidden">
@@ -69,7 +72,7 @@ const AdminProductCard = ({ data, fetchData}) => {
             </div>
           </div>
         </div>
-        <div className="text-center justify-center mt-3">
+        <div className="text-center justify-center mt-3 rounded-lg">
           <button
             className="bg-blue-50 rounded-sm hover:bg-blue-700 hover:text-white h-12 text-blue-800 px-3 py-1 w-full text-center justify-center flex gap-3 text-xl"
             onClick={(e) => handleAddToCart(e)}

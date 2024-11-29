@@ -7,9 +7,6 @@ import PriceRangeSlider from "../../components/PriceRangeSlider";
 
 const MobileCategory = () => {
   const user = useSelector((state) => state?.user?.user);
-
-  const [isVisible, setIsVisible] = useState(true);
-
   const brands = [
     "Apple",
     "Samsung",
@@ -60,11 +57,19 @@ const MobileCategory = () => {
   const rams = [2, 3, 4, 6, 8, 12, 16];
   const internalStorage = ["32GB", "64GB", "128GB", "256GB", "512GB", "1TB"];
 
-  const [rangeValues, setRangeValues] = useState({ min: 0, max: 100 });
+  const [rangeValues, setRangeValues] = useState({ min: 0, max: 334999 });
 
   const handleRangeChange = (values) => {
     setRangeValues(values);
   };
+
+  const [visibleBrand, SetVisibleBrand] = useState(true);
+  const [visibleDisplay, setVisibleDisplay] = useState(true);
+  const [visibleDisplayType, setVisibleDisplayType] = useState(true);
+  const [visibleChipset, setVisibleChipset] = useState(true);
+  const [visibleRam, setVisibleRam] = useState(true);
+  const [visibleStorage, setVisibleStorage] = useState(true);
+  const [visibleFeatures, setVisibleFeatures] = useState(true);
 
   return (
     <>
@@ -127,16 +132,16 @@ const MobileCategory = () => {
                   {/* Toggle Button */}
                   <h2
                     className="cursor-pointer transform transition-transform duration-300"
-                    onClick={() => setIsVisible(!isVisible)} // Toggle visibility
+                    onClick={() => SetVisibleBrand(!visibleBrand)} // Toggle visibility
                   >
-                    {isVisible ? "˅" : ">"}
+                    {visibleBrand ? "˅" : ">"}
                   </h2>
                 </div>
                 <hr />
                 {/* Content Section with Animation */}
                 <div
                   className={`transition-all duration-300 ease-in-out overflow-hidden ${
-                    isVisible ? "max-h-[50vh] opacity-100" : "max-h-0 opacity-0"
+                    visibleBrand ? "max-h-[50vh] opacity-100" : "max-h-0 opacity-0"
                   }`}
                 >
                   <div className="overflow-y-scroll h-[50vh] space-y-2 mt-3 p-3">
@@ -165,16 +170,16 @@ const MobileCategory = () => {
                   {/* Toggle Button */}
                   <h2
                     className="cursor-pointer transform transition-transform duration-300"
-                    onClick={() => setIsVisible(!isVisible)} // Toggle visibility
+                    onClick={() => setVisibleDisplay(!visibleDisplay)} // Toggle visibility
                   >
-                    {isVisible ? "˅" : ">"}
+                    {visibleDisplay ? "˅" : ">"}
                   </h2>
                 </div>
                 <hr />
                 {/* Content Section with Animation */}
                 <div
                   className={`transition-all duration-300 ease-in-out overflow-hidden ${
-                    isVisible ? "max-h-screen opacity-100" : "max-h-0 opacity-0"
+                    visibleDisplay ? "max-h-screen opacity-100" : "max-h-0 opacity-0"
                   }`}
                 >
                   <div className="space-y-2 p-3">
@@ -203,16 +208,16 @@ const MobileCategory = () => {
                   {/* Toggle Button */}
                   <h2
                     className="cursor-pointer transform transition-transform duration-300"
-                    onClick={() => setIsVisible(!isVisible)} // Toggle visibility
+                    onClick={() => setVisibleDisplayType(!visibleDisplayType)} // Toggle visibility
                   >
-                    {isVisible ? "˅" : ">"}
+                    {visibleDisplayType ? "˅" : ">"}
                   </h2>
                 </div>
                 <hr />
                 {/* Content Section with Animation */}
                 <div
                   className={`transition-all duration-300 ease-in-out overflow-hidden ${
-                    isVisible ? "max-h-screen opacity-100" : "max-h-0 opacity-0"
+                    visibleDisplayType ? "max-h-screen opacity-100" : "max-h-0 opacity-0"
                   }`}
                 >
                   <div className="space-y-2 p-3">
@@ -241,16 +246,16 @@ const MobileCategory = () => {
                   {/* Toggle Button */}
                   <h2
                     className="cursor-pointer transform transition-transform duration-300"
-                    onClick={() => setIsVisible(!isVisible)} // Toggle visibility
+                    onClick={() => setVisibleChipset(!visibleChipset)} // Toggle visibility
                   >
-                    {isVisible ? "˅" : ">"}
+                    {visibleChipset ? "˅" : ">"}
                   </h2>
                 </div>
                 <hr />
                 {/* Content Section with Animation */}
                 <div
                   className={`transition-all duration-300 ease-in-out overflow-hidden ${
-                    isVisible ? "max-h-screen opacity-100" : "max-h-0 opacity-0"
+                    visibleChipset ? "max-h-screen opacity-100" : "max-h-0 opacity-0"
                   }`}
                 >
                   <div className="space-y-2 p-3">
@@ -278,16 +283,16 @@ const MobileCategory = () => {
 
                   <h2
                     className="cursor-pointer transform transition-transform duration-300"
-                    onClick={() => setIsVisible(!isVisible)}
+                    onClick={() => setVisibleRam(!visibleRam)}
                   >
-                    {isVisible ? "˅" : ">"}
+                    {visibleRam ? "˅" : ">"}
                   </h2>
                 </div>
                 <hr />
                 {/* Content Section with Animation */}
                 <div
                   className={`transition-all duration-300 ease-in-out overflow-hidden ${
-                    isVisible ? "max-h-screen opacity-100" : "max-h-0 opacity-0"
+                    visibleRam ? "max-h-screen opacity-100" : "max-h-0 opacity-0"
                   }`}
                 >
                   <div className="space-y-2 p-3">
@@ -313,16 +318,16 @@ const MobileCategory = () => {
                   {/* Toggle Button */}
                   <h2
                     className="cursor-pointer transform transition-transform duration-300"
-                    onClick={() => setIsVisible(!isVisible)} // Toggle visibility
+                    onClick={() => setVisibleStorage(!visibleStorage)} // Toggle visibility
                   >
-                    {isVisible ? "˅" : ">"}
+                    {visibleStorage ? "˅" : ">"}
                   </h2>
                 </div>
                 <hr />
                 {/* Content Section with Animation */}
                 <div
                   className={`transition-all duration-300 ease-in-out overflow-hidden ${
-                    isVisible ? "max-h-screen opacity-100" : "max-h-0 opacity-0"
+                    visibleStorage ? "max-h-screen opacity-100" : "max-h-0 opacity-0"
                   }`}
                 >
                   <div className="space-y-2 p-3">
@@ -351,16 +356,16 @@ const MobileCategory = () => {
                   {/* Toggle Button */}
                   <h2
                     className="cursor-pointer transform transition-transform duration-300"
-                    onClick={() => setIsVisible(!isVisible)} // Toggle visibility
+                    onClick={() => setVisibleFeatures(!visibleFeatures)} // Toggle visibility
                   >
-                    {isVisible ? "˅" : ">"}
+                    {visibleFeatures ? "˅" : ">"}
                   </h2>
                 </div>
                 <hr />
                 {/* Content Section with Animation */}
                 <div
                   className={`transition-all duration-300 ease-in-out overflow-hidden ${
-                    isVisible ? "max-h-screen opacity-100" : "max-h-0 opacity-0"
+                    visibleFeatures ? "max-h-screen opacity-100" : "max-h-0 opacity-0"
                   }`}
                 >
                   <div className="space-y-2 p-3">

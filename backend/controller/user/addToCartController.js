@@ -4,6 +4,7 @@ const addToCartController = async (req, res) => {
   try {
     console.log("Request Body: ", req.body);
     const { productId, productType } = req.body;
+    console.log("BODY ", req.body);
     const currentUser = req.userId; // Assuming this is set by authentication middleware
 
     // Check if the product is already in the cart for the current user

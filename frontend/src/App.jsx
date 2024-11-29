@@ -74,7 +74,7 @@ const App = () => {
         {/* <DropDown /> */}
         {/* <NavBar_copy /> */}
 
-        <main className="min-h-[calc(100vh-120px)] pt-16">
+        <main className="min-h-[calc(100vh-120px)] bg-white">
           <Outlet />
         </main>
 

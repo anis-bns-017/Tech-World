@@ -24,6 +24,7 @@ const AllProducts = () => {
     fetchAllProduct();
   }, []);
 
+  console.log("SOb ", allProduct);
   return (
     <div className=" pl-5 pt-10">
       <div className="items-center justify-center text-center">
@@ -32,6 +33,16 @@ const AllProducts = () => {
       </div>
       <div className="flex items-center flex-wrap my-4 ml-8 h-[calc(100vh-190px)] overflow-y-scroll scrollbar-none">
         {allProduct.map((product, index) => {
+          return (
+            <AdminProductCard
+              data={product}
+              key={index + "allproducts"}
+              fetchData={fetchAllProduct}
+            />
+          );
+        })}
+
+        {/* {allProduct.map((product, index) => {
           return user?.role === "ADMIN" ? (
             <SellerProductCard
               data={product}
@@ -44,8 +55,7 @@ const AllProducts = () => {
               key={index + "allproducts"}
               fetchData={fetchAllProduct}
             />
-          );
-        })}
+          ); */}
       </div>
     </div>
   );

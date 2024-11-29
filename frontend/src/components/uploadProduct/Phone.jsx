@@ -269,16 +269,16 @@ const Phone = ({onClose, fetchData}) => {
               </div>
 
               <div className="flex-1">
-                <label htmlFor="key_features" className="mt-3">
-                  Key Features :
+                <label htmlFor="internal_storage" className="mt-3">
+                  Internal Storage :
                 </label>
                 <input
                   type="text"
-                  id="key_features"
-                  placeholder="Enter Key Features.."
-                  value={data.key_features}
+                  id="internal_storage"
+                  placeholder="Enter Internal Storage.."
+                  value={data.internal_storage}
                   onChange={handleOnChange}
-                  name="key_features"
+                  name="internal_storage"
                   className="p-2 w-full bg-slate-50 border rounded"
                 />
               </div>
@@ -354,7 +354,7 @@ const Phone = ({onClose, fetchData}) => {
                   Protected :
                 </label>
                 <input
-                  type="number"
+                  type="text"
                   id="protection"
                   placeholder="Enter Protection.."
                   value={data.protection}
@@ -369,7 +369,7 @@ const Phone = ({onClose, fetchData}) => {
                   Display Features :
                 </label>
                 <input
-                  type="number"
+                  type="text"
                   id="display_features"
                   placeholder="Enter Display Features.."
                   value={data.display_features}
@@ -430,7 +430,7 @@ const Phone = ({onClose, fetchData}) => {
 
               <div className="flex-1">
                 <label htmlFor="gpu" className="mt-3">
-                  Display Type :
+                  GPU :
                 </label>
                 <input
                   type="text"
@@ -525,16 +525,16 @@ const Phone = ({onClose, fetchData}) => {
               </div>
 
               <div className="flex-1">
-                <label htmlFor="rear_video_recording" className="mt-3">
-                  Rear Video Recording :
+                <label htmlFor="front_video_recording" className="mt-3">
+                  Front Video Recording :
                 </label>
                 <input
                   type="text"
-                  id="rear_video_recording"
+                  id="front_video_recording"
                   placeholder="Enter Rear Video Recording.."
-                  value={data.rear_video_recording}
+                  value={data.front_video_recording}
                   onChange={handleOnChange}
-                  name="rear_video_recording"
+                  name="front_video_recording"
                   className="p-2 w-full bg-slate-50 border rounded"
                 />
               </div>
