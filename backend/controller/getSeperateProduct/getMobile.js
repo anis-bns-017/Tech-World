@@ -4,7 +4,7 @@ const getMobile = async (req, res) => {
   try {
     const allMobiles = await phoneModel.find().sort({ createdAt: -1 });
     res.json({
-      message: "All products",
+      message: "All Phones",
       error: false,
       success: true,
       data: allMobiles,

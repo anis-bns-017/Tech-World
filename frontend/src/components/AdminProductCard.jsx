@@ -17,8 +17,6 @@ const AdminProductCard = ({ data, fetchData}) => {
   const [editProduct, setEditProduct] = useState(false);
   const { sellingPrice, price, productName, key_features, category } = data;
 
-  console.log("aso vai", productId);
-
   const { fetchUserAddToCart } = useContext(Context);
 
   const handleAddToCart = async (e) => {

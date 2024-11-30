@@ -149,6 +149,12 @@ const SummaryApi = {
     url: `${backendDomain}/api/search`,
     method: "get",
   },
+
+  //filter product start from here.
+  filterPhones: {
+    url: `${backendDomain}/api/filter-phone`,
+    method: "post",
+  },
 };
 
 export default SummaryApi;

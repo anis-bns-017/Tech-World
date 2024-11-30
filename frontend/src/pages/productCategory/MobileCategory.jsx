@@ -1,12 +1,15 @@
 import { useSelector } from "react-redux";
-import { Outlet } from "react-router-dom";
+import { Outlet, useLocation } from "react-router-dom";
 
 import ShowPhone from "../../components/categoryProduct/ShowPhone";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import PriceRangeSlider from "../../components/PriceRangeSlider";
+import SummaryApi from "../../common";
+import { toast } from "react-toastify";
 
-const MobileCategory = () => {
+const MobileCategory = ({ onClose, fetchData }) => {
   const user = useSelector((state) => state?.user?.user);
+
   const brands = [
     "Apple",
     "Samsung",
@@ -33,7 +36,6 @@ const MobileCategory = () => {
     '6.6" to 7.0"',
     '7.1" to 7.5"',
   ];
-
   const displayType = ["TFT", "IPS", "AMOLED", "Super AMOLED", "OLED"];
   const chipsets = [
     "Snapdragon",
@@ -44,24 +46,89 @@ const MobileCategory = () => {
     "Tensor",
     "Kirin",
   ];
-
   const features = [
     "Dual SIM",
     "eSIM Support",
     "Virtual Memory",
     "Fast Charging",
-    "Water Registance",
-    "Fordable",
+    "Water Resistance",
+    "Foldable",
   ];
-
   const rams = [2, 3, 4, 6, 8, 12, 16];
   const internalStorage = ["32GB", "64GB", "128GB", "256GB", "512GB", "1TB"];
 
-  const [rangeValues, setRangeValues] = useState({ min: 0, max: 334999 });
+  const [priceRange, setPriceRange] = useState({ min: 0, max: 334999 });
+  const [selectedBrands, setSelectedBrands] = useState([]);
+  const [selectedFeatures, setSelectedFeatures] = useState([]);
+  const [selectedRams, setSelectedRams] = useState([]);
+  const [selectedStorage, setSelectedStorage] = useState([]);
+  const [selectedDisplaySize, setSelectedDisplaySize] = useState([]);
+  const [selectedChipsets, setSelectedChipsets] = useState([]);
+  const [selectedDisplayType, setSelectedDisplayType] = useState([]);
+
+  const handleCheckboxChange = (setState, value, checked) => {
+    setState((prev) => {
+      if (checked) {
+        return [...prev, value];
+      } else {
+        return prev.filter((item) => item !== value);
+      }
+    });
+  };
 
   const handleRangeChange = (values) => {
-    setRangeValues(values);
+    setPriceRange(values);
   };
+
+  const [allPhones, setAllPhones] = useState([]);
+
+  const fetchFilteredProducts = async () => {
+    const filters = {
+      brands: selectedBrands,
+      displaySize: selectedDisplaySize,
+      displayType: selectedDisplaySize,
+      features: selectedFeatures,
+      ram: selectedRams,
+      storage: selectedStorage,
+      chipset: selectedChipsets,
+      price: priceRange,
+    };
+
+    console.log("Filters to send to the database:", filters);
+
+    
+    const response = await fetch(SummaryApi.filterPhones.url, {
+      method: SummaryApi.filterPhones.method,
+      credentials: "include",
+      headers: {
+        "content-type": "application/json",
+      },
+      body: JSON.stringify(filters),
+    });
+
+    const responseData = await response.json();
+    
+
+    
+    if (responseData.success) {
+      toast.success(responseData?.message);
+      setAllPhones(responseData?.data);
+      onClose();
+      fetchData();
+    }
+
+    if (responseData.error) {
+      toast.error(responseData?.message);
+    }
+  };
+
+  console.log("jaihok allah ", allPhones);
+
+
+  useEffect(() => {
+  fetchFilteredProducts(); // Fetch products when filters change
+}, [selectedBrands, selectedDisplaySize,selectedDisplayType, selectedFeatures, selectedRams, selectedStorage, selectedChipsets, priceRange]);
+
 
   const [visibleBrand, SetVisibleBrand] = useState(true);
   const [visibleDisplay, setVisibleDisplay] = useState(true);
@@ -70,6 +137,7 @@ const MobileCategory = () => {
   const [visibleRam, setVisibleRam] = useState(true);
   const [visibleStorage, setVisibleStorage] = useState(true);
   const [visibleFeatures, setVisibleFeatures] = useState(true);
+
 
   return (
     <>
@@ -102,8 +170,8 @@ const MobileCategory = () => {
                   <label className="flex items-center space-x-2">
                     <input
                       type="checkbox"
-                      name="category"
-                      value="electronics"
+                      name="avalability"
+                      value="avalability"
                       className="rounded text-blue-600 focus:ring focus:ring-blue-300"
                     />
                     <span className="text-[15px]">In Stock</span>
@@ -111,8 +179,8 @@ const MobileCategory = () => {
                   <label className="flex items-center space-x-2">
                     <input
                       type="checkbox"
-                      name="category"
-                      value="fashion"
+                      name="status"
+                      value="status"
                       className="rounded text-blue-600 focus:ring focus:ring-blue-300"
                     />
                     <span className="text-[15px]">Pre Order</span>
@@ -120,8 +188,8 @@ const MobileCategory = () => {
                   <label className="flex items-center space-x-2">
                     <input
                       type="checkbox"
-                      name="category"
-                      value="home"
+                      name="upcoming"
+                      value="upcoming"
                       className="rounded text-blue-600 focus:ring focus:ring-blue-300"
                     />
                     <span className="text-[15px]">Upcoming</span>
@@ -155,6 +223,13 @@ const MobileCategory = () => {
                     {brands.map((brand) => (
                       <label
                         key={brand}
+                        onChange={(e) =>
+                          handleCheckboxChange(
+                            setSelectedBrands,
+                            brand,
+                            e.target.checked
+                          )
+                        }
                         className="flex items-center space-x-2"
                       >
                         <input
@@ -196,6 +271,13 @@ const MobileCategory = () => {
                       <label
                         key={display}
                         className="flex items-center space-x-2"
+                        onChange={(e) =>
+                          handleCheckboxChange(
+                            setSelectedDisplaySize,
+                            display,
+                            e.target.checked
+                          )
+                        }
                       >
                         <input
                           type="checkbox"
@@ -236,6 +318,13 @@ const MobileCategory = () => {
                       <label
                         key={display}
                         className="flex items-center space-x-2"
+                        onChange={(e) =>
+                          handleCheckboxChange(
+                            setSelectedDisplayType,
+                            display,
+                            e.target.checked
+                          )
+                        }
                       >
                         <input
                           type="checkbox"
@@ -276,6 +365,13 @@ const MobileCategory = () => {
                       <label
                         key={chipset}
                         className="flex items-center space-x-2"
+                        onChange={(e) =>
+                          handleCheckboxChange(
+                            setSelectedChipsets,
+                            chipset,
+                            e.target.checked
+                          )
+                        }
                       >
                         <input
                           type="checkbox"
@@ -312,7 +408,17 @@ const MobileCategory = () => {
                 >
                   <div className="space-y-2 p-3">
                     {rams.map((ram) => (
-                      <label key={ram} className="flex items-center space-x-2">
+                      <label
+                        key={ram}
+                        className="flex items-center space-x-2"
+                        onChange={(e) =>
+                          handleCheckboxChange(
+                            setSelectedRams,
+                            ram,
+                            e.target.checked
+                          )
+                        }
+                      >
                         <input
                           type="checkbox"
                           name={ram}
@@ -352,6 +458,13 @@ const MobileCategory = () => {
                       <label
                         key={storage}
                         className="flex items-center space-x-2"
+                        onChange={(e) =>
+                          handleCheckboxChange(
+                            setSelectedStorage,
+                            storage,
+                            e.target.checked
+                          )
+                        }
                       >
                         <input
                           type="checkbox"
@@ -392,6 +505,13 @@ const MobileCategory = () => {
                       <label
                         key={feature}
                         className="flex items-center space-x-2"
+                        onChange={(e) =>
+                          handleCheckboxChange(
+                            setSelectedFeatures,
+                            feature,
+                            e.target.checked
+                          )
+                        }
                       >
                         <input
                           type="checkbox"
@@ -412,7 +532,7 @@ const MobileCategory = () => {
           </main>
         </div>
         <div className="w-full bg-slate-100">
-          <ShowPhone />
+          <ShowPhone phones = {allPhones} />
         </div>
       </div>
     </>

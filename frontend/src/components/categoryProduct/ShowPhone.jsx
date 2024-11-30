@@ -2,24 +2,13 @@ import { useEffect, useState } from "react";
 
 import SummaryApi from "../../common";
 import AdminProductCard from "../AdminProductCard";
+import { toast } from "react-toastify";
 
-const ShowPhone = () => {
-  const [allMobiles, setAllMobiles] = useState([]);
-
-  const fetchAllProduct = async () => {
-    const response = await fetch(SummaryApi.allMobiles.url);
-    const dataResponse = await response.json();
-
-    setAllMobiles(dataResponse?.data || []);
-  };
-
-  useEffect(() => {
-    fetchAllProduct();
-  }, []);
+const ShowPhone = ({phones}) => {
   return (
-    <div className="gap-3 bg-slate-200">
+    <div className="gap-3 h-full bg-slate-200">
       <div className="h-[10vh] w-[165vh] bg-white p-2 shadow-lg rounded-md flex justify-between ml-10">
-        <h2 className="text-3xl">Phone</h2>
+        <h2 className="text-2xl mt-1 text-blue-800 font-bold">Phone</h2>
         <div className="flex gap-5">
           <div>
             <spa>Show: </spa>
@@ -43,12 +32,12 @@ const ShowPhone = () => {
       </div>
       <div className="pl-1 h-screen">
         <div className="flex items-center flex-wrap my-4 ml-8 h-[calc(100vh-190px)] overflow-y-scroll scrollbar-none">
-          {allMobiles.map((product, index) => {
+          {phones.map((product, index) => {
             return (
               <AdminProductCard
                 data={product}
                 key={index + "allproducts"}
-                fetchData={fetchAllProduct}
+                fetchData={phones}
               />
             );
           })}
