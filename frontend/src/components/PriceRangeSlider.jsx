@@ -64,24 +64,23 @@ const PriceRangeSlider = ({
   return (
     <div className="w-full flex items-center justify-center flex-col space-y-14">
       {/* Display Price Value */}
-      <div className="w-[250px] px-4 flex items-center justify-between gap-x-5">
+      <div className="w-[220px] px-4 flex items-center justify-between gap-x-5">
         {/* Min Value Input */}
         <input
           type="number"
           value={minVal}
           onChange={(e) => setMinVal(Number(e.target.value))} // Update minVal via onChange handler
-          className="text-md text-black font-semibold border border-gray-300 rounded-md p-2 w-[20vh] text-center -ml-10"
+          className="text-md text-black border border-gray-300 rounded-md p-2 w-[13vh] text-center"
         />
 
         {/* Dashed Divider */}
-        <div className="flex-1 border-dashed border border-neutral-500 mt-1"></div>
-
+        
         {/* Max Value Input */}
         <input
           type="number"
           value={maxVal}
           onChange={(e) => setMaxVal(Number(e.target.value))} // Update maxVal via onChange handler
-          className="text-md text-black font-semibold border border-gray-300 rounded-md p-2 w-[20vh] text-center"
+          className="text-md text-black border border-gray-300 rounded-md p-2 -ml-5 w-[13vh] text-center"
         />
       </div>
 
@@ -96,7 +95,7 @@ const PriceRangeSlider = ({
             const value = Math.min(Number(event.target.value), maxVal - 1);
             setMinVal(value);
           }}
-          className="thumb thumb-left -mt-5"
+          className="thumb thumb-left -mt-5 ml-12"
           style={{
             width,
             zIndex: minVal > max - 100 || minVal === maxVal ? 5 : undefined,
@@ -112,14 +111,14 @@ const PriceRangeSlider = ({
             const value = Math.max(Number(event.target.value), minVal + 1);
             setMaxVal(value);
           }}
-          className="thumb thumb-right -mt-5"
+          className="thumb thumb-right -mt-5 -ml-12"
           style={{
             width,
             zIndex: minVal > max - 100 || minVal === maxVal ? 4 : undefined,
           }}
         />
 
-        <div className="slider -mt-5">
+        <div className="slider -mt-5 ml-12 w-[30vh]">
           <div
             style={{ backgroundColor: trackColor }}
             className="track-slider"

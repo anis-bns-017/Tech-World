@@ -525,16 +525,16 @@ const Phone = ({onClose, fetchData}) => {
               </div>
 
               <div className="flex-1">
-                <label htmlFor="front_video_recording" className="mt-3">
+                <label htmlFor="rear_video_recording" className="mt-3">
                   Front Video Recording :
                 </label>
                 <input
                   type="text"
-                  id="front_video_recording"
+                  id="rear_video_recording"
                   placeholder="Enter Rear Video Recording.."
-                  value={data.front_video_recording}
+                  value={data.rear_video_recording}
                   onChange={handleOnChange}
-                  name="front_video_recording"
+                  name="rear_video_recording"
                   className="p-2 w-full bg-slate-50 border rounded"
                 />
               </div>

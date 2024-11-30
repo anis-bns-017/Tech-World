@@ -20,7 +20,7 @@ const FeatureCategory = () => {
   return (
     <div>
       <div>
-        <div className="items-center justify-center text-center hover:shadow-lg mt-10">
+        <div className="items-center justify-center text-center pt-5">
           <h2 className="font-bold text-2xl">Featured Category</h2>
           <p className="mt-3">
             Get Your Desired Product from Featured Category!

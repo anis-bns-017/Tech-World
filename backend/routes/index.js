@@ -8,6 +8,7 @@ const userDetailsController = require("../controller/user/userDetails");
 const userLogout = require("../controller/user/userLogout");
 const allUsers = require("../controller/user/allUsers");
 const updateUser = require("../controller/user/updateUser");
+const updateRoleByAdmin = require("../controller/user/updateRoleByAdmin");
 const UploadProductController = require("../controller/product/uploadProduct");
 const getProductController = require("../controller/product/getProduct");
 const updateProductController = require("../controller/product/updateProduct");
@@ -40,6 +41,7 @@ router.get("/user-logout", userLogout);
 //admin-panel
 router.get("/all-users", authToken, allUsers);
 router.post("/update-user", authToken, updateUser);
+router.post("/update-role-admin", authToken, updateRoleByAdmin);
 
 //user
 router.post("/update-address", authToken, updateAddressController);

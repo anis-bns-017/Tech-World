@@ -32,8 +32,6 @@ const Cart = () => {
   };
 
 
-  console.log("ANis ", data);
-
   useEffect(() => {
     fetchData();
   }, []);

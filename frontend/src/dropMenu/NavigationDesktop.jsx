@@ -11,7 +11,6 @@ const NavigationDesktop = ({ navLinksData }) => {
 
   const subMenuOnMouseEnterHandler = (subMenuId) => {
     setShowSubMenu((prev) => {
-      console.log("running");
       let arr = [...prev];
       arr[subMenuId] = true;
       return arr;
@@ -19,7 +18,6 @@ const NavigationDesktop = ({ navLinksData }) => {
   };
   const subMenuOnMouseLeaveHandler = (subMenuId) => {
     setShowSubMenu((prev) => {
-      console.log("running");
       let arr = [...prev];
       arr[subMenuId] = false;
       return arr;

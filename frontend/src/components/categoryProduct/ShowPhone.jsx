@@ -17,8 +17,8 @@ const ShowPhone = () => {
     fetchAllProduct();
   }, []);
   return (
-    <div className="gap-3">
-      <div className="h-[10vh] bg-slate-200 p-2 shadow-lg flex justify-between">
+    <div className="gap-3 bg-slate-200">
+      <div className="h-[10vh] w-[165vh] bg-white p-2 shadow-lg rounded-md flex justify-between ml-10">
         <h2 className="text-3xl">Phone</h2>
         <div className="flex gap-5">
           <div>
@@ -41,7 +41,7 @@ const ShowPhone = () => {
           </div>
         </div>
       </div>
-      <div className="pl-5 h-screen">
+      <div className="pl-1 h-screen">
         <div className="flex items-center flex-wrap my-4 ml-8 h-[calc(100vh-190px)] overflow-y-scroll scrollbar-none">
           {allMobiles.map((product, index) => {
             return (

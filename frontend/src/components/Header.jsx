@@ -177,7 +177,7 @@ const Header = () => {
           )}
         </div>
       </div>
-      <div>{user?.role === "ADMIN" ? <NavBar /> : <DropDown />}</div>
+      <div>{user?.role === "ADMIN" || user?.role === "SELLER" ? <NavBar /> : <DropDown />}</div>
     </header>
   );
 };

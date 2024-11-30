@@ -1,30 +1,19 @@
 const userModel = require("../../models/userModel");
 
-async function updateUser(req, res) {
+async function updateRoleByAdmin(req, res) {
   try {
-    const {userId, firstName, lastName, phone, email, role } = req.body;
-    console.log("hereere", userId);
+    const {userId, role } = req.body;
 
-    // Log the incoming userId for debugging
-
-    const user_a = await userModel.findOne({ email: email });
+    const user_a = await userModel.findOne({userId});
 
     // Construct the payload for update
     const payload = {
-      ...(email && { email: email }),
-      ...(firstName && { firstName: firstName }),
-      ...(lastName && { lastName: lastName }),
-      ...(phone) && {phone: phone}, 
-      ...(role && { role: role }),
+      role: role
     };
 
     // Find the user by userId
     const user = await userModel.findById(userId);
     
-    // Log the found user for debugging
-    console.log("User found:", user);
-
-    // Check if the user exists
     if (!user) {
       return res.status(404).json({
         message: "User not found",
@@ -55,4 +44,4 @@ async function updateUser(req, res) {
   }
 }
 
-module.exports = updateUser;
+module.exports = updateRoleByAdmin;

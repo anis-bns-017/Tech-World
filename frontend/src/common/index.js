@@ -76,6 +76,10 @@ const SummaryApi = {
     url: `${backendDomain}/api/update-user`,
     method: "post",
   },
+  updateRole: {
+    url: `${backendDomain}/api/update-role-admin`,
+    method: "post",
+  },
   updatePassword: {
     url: `${backendDomain}/api/password`,
     method: "post",

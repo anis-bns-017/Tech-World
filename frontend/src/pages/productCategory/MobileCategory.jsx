@@ -73,14 +73,19 @@ const MobileCategory = () => {
 
   return (
     <>
-      <div className="ml-14 flex bg-slate-100">
-        <div className="w-[60vh] bg-100 shadow-lg rounded-lg p-4">
+      <div className="pl-8 flex bg-slate-200 py-5">
+        <div className="w-[35vh] bg-100 rounded-lg bg-slate-200">
           <aside>
-            <form className="space-y-4">
+            <form className="space-y-4 bg-slate-200">
               {/* Category Section */}
 
               <div className="bg-slate-50 p-5 rounded-md shadow-md items-center justify-center flex-col">
                 {/* <h1 className="text-3xl text-neutral-300 font-medium">Custom Price Range Slider</h1> */}
+                <div className="mb-3">
+                  <h3 className="text-lg font-medium mb-2">Price Range</h3>
+                  <hr></hr>
+                </div>
+
                 <PriceRangeSlider
                   min={0}
                   max={334999}
@@ -141,7 +146,9 @@ const MobileCategory = () => {
                 {/* Content Section with Animation */}
                 <div
                   className={`transition-all duration-300 ease-in-out overflow-hidden ${
-                    visibleBrand ? "max-h-[50vh] opacity-100" : "max-h-0 opacity-0"
+                    visibleBrand
+                      ? "max-h-[50vh] opacity-100"
+                      : "max-h-0 opacity-0"
                   }`}
                 >
                   <div className="overflow-y-scroll h-[50vh] space-y-2 mt-3 p-3">
@@ -179,7 +186,9 @@ const MobileCategory = () => {
                 {/* Content Section with Animation */}
                 <div
                   className={`transition-all duration-300 ease-in-out overflow-hidden ${
-                    visibleDisplay ? "max-h-screen opacity-100" : "max-h-0 opacity-0"
+                    visibleDisplay
+                      ? "max-h-screen opacity-100"
+                      : "max-h-0 opacity-0"
                   }`}
                 >
                   <div className="space-y-2 p-3">
@@ -217,7 +226,9 @@ const MobileCategory = () => {
                 {/* Content Section with Animation */}
                 <div
                   className={`transition-all duration-300 ease-in-out overflow-hidden ${
-                    visibleDisplayType ? "max-h-screen opacity-100" : "max-h-0 opacity-0"
+                    visibleDisplayType
+                      ? "max-h-screen opacity-100"
+                      : "max-h-0 opacity-0"
                   }`}
                 >
                   <div className="space-y-2 p-3">
@@ -255,7 +266,9 @@ const MobileCategory = () => {
                 {/* Content Section with Animation */}
                 <div
                   className={`transition-all duration-300 ease-in-out overflow-hidden ${
-                    visibleChipset ? "max-h-screen opacity-100" : "max-h-0 opacity-0"
+                    visibleChipset
+                      ? "max-h-screen opacity-100"
+                      : "max-h-0 opacity-0"
                   }`}
                 >
                   <div className="space-y-2 p-3">
@@ -292,7 +305,9 @@ const MobileCategory = () => {
                 {/* Content Section with Animation */}
                 <div
                   className={`transition-all duration-300 ease-in-out overflow-hidden ${
-                    visibleRam ? "max-h-screen opacity-100" : "max-h-0 opacity-0"
+                    visibleRam
+                      ? "max-h-screen opacity-100"
+                      : "max-h-0 opacity-0"
                   }`}
                 >
                   <div className="space-y-2 p-3">
@@ -327,7 +342,9 @@ const MobileCategory = () => {
                 {/* Content Section with Animation */}
                 <div
                   className={`transition-all duration-300 ease-in-out overflow-hidden ${
-                    visibleStorage ? "max-h-screen opacity-100" : "max-h-0 opacity-0"
+                    visibleStorage
+                      ? "max-h-screen opacity-100"
+                      : "max-h-0 opacity-0"
                   }`}
                 >
                   <div className="space-y-2 p-3">
@@ -365,7 +382,9 @@ const MobileCategory = () => {
                 {/* Content Section with Animation */}
                 <div
                   className={`transition-all duration-300 ease-in-out overflow-hidden ${
-                    visibleFeatures ? "max-h-screen opacity-100" : "max-h-0 opacity-0"
+                    visibleFeatures
+                      ? "max-h-screen opacity-100"
+                      : "max-h-0 opacity-0"
                   }`}
                 >
                   <div className="space-y-2 p-3">
@@ -386,21 +405,13 @@ const MobileCategory = () => {
                   </div>
                 </div>
               </div>
-
-              {/* Apply Filters Button */}
-              <button
-                type="submit"
-                className="w-full bg-blue-600 text-white py-2 rounded hover:bg-blue-700 transition-all"
-              >
-                Apply Filters
-              </button>
             </form>
           </aside>
           <main className="w-full p-2">
             <Outlet />
           </main>
         </div>
-        <div className="w-screen bg-slate-50">
+        <div className="w-full bg-slate-100">
           <ShowPhone />
         </div>
       </div>

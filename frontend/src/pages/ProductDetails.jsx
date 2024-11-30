@@ -29,7 +29,7 @@ const ProductDetails = () => {
   const { fetchUserAddToCart } = useContext(Context);
 
   const handleAddToCart = async (e, id) => {
-    await AddToCart(e, id);
+    await AddToCart(e, data, id);
     fetchUserAddToCart();
   };
 
@@ -390,12 +390,12 @@ const ProductDetails = () => {
         </div>
       </div>
 
-      {data?.category && (
+      {/* {data?.category && (
         <CategoryWiseProductDisplay
           category={data?.category}
           heading="Recommended Product"
         />
-      )}
+      )} */}
     </div>
   );
 };

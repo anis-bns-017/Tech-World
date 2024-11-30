@@ -5,7 +5,10 @@ import { useSelector } from "react-redux";
 
 const UpdateUserInfo = () => {
   const user = useSelector((state) => state?.user?.user);
+  console.log("here", user?._id);
+
   const [data, setData] = useState({
+    userId: "", 
     firstName: "",
     lastName: "",
     email: "",
@@ -18,6 +21,7 @@ const UpdateUserInfo = () => {
   useEffect(() => {
     if (user) {
       setData({
+        userId: user?._id, 
         firstName: user.firstName || "",
         lastName: user.lastName || "",
         email: user.email || "",
@@ -37,6 +41,7 @@ const UpdateUserInfo = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
+    console.log("are you handling", data);
     try {
       const response = await fetch(SummaryApi.updateUser.url, {
         method: SummaryApi.updateUser.method, // Use POST method
@@ -69,7 +74,9 @@ const UpdateUserInfo = () => {
         <form className="pt-6 flex flex-col gap-4" onSubmit={handleSubmit}>
           <div className="flex gap-4">
             <div className="w-1/2">
-              <label className="text-sm text-white font-semibold">First Name</label>
+              <label className="text-sm text-white font-semibold">
+                First Name
+              </label>
               <span className="text-red-600">*</span>
               <input
                 type="text"
@@ -83,7 +90,9 @@ const UpdateUserInfo = () => {
             </div>
 
             <div className="w-1/2">
-              <label className="text-sm text-white font-semibold">Last Name</label>
+              <label className="text-sm text-white font-semibold">
+                Last Name
+              </label>
               <span className="text-red-600">*</span>
               <input
                 type="text"
@@ -130,16 +139,14 @@ const UpdateUserInfo = () => {
           <div className="flex justify-center items-center">
             <div className="relative inline-flex  group">
               <div className="absolute transitiona-all duration-1000 opacity-70 -inset-px bg-gradient-to-r from-[#44BCFF] via-[#FF44EC] to-[#FF675E] rounded-xl blur-lg group-hover:opacity-100 group-hover:-inset-1 group-hover:duration-200 animate-tilt"></div>
-              <a
-                href="#"
-                title="Get quote now"
-                className="relative inline-flex items-center justify-center px-8 py-4 text-lg font-bold text-white transition-all duration-200 bg-gray-900 font-pj rounded-xl focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-900"
-                role="button"
-              >
+              <button className="relative inline-flex items-center justify-center px-8 py-4 text-lg font-bold text-white transition-all duration-200 bg-gray-900 font-pj rounded-xl focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-900">
                 Continue
-              </a>
+              </button>
             </div>
           </div>
+          {/* <button className="bg-blue-800 w-[25.9rem] text-white px-6 py-2 w-fulltransition-all text-center rounded-[5px] block mt-6 pcBuilder cursor-pointer hover:bg-blue-500">
+            Continue
+          </button> */}
         </form>
       </div>
     </>

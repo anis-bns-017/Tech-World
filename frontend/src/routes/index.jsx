@@ -104,6 +104,10 @@ const router = createBrowserRouter([
         element: <ProductDetails />,
       },
       {
+        path: "mobile-phone/product/:id",
+        element: <ProductDetails />,
+      },
+      {
         path: "cart",
         element: <Cart />,
       },
