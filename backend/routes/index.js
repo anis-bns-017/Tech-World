@@ -33,6 +33,7 @@ const mouseUploadController = require("../controller/productUpload/mouseUploadCo
 const headphoneUploadController = require("../controller/productUpload/headphoneUploadController");
 const getMobile = require("../controller/getSeperateProduct/getMobile");
 const filterPhoneController = require("../controller/getSeperateProduct/filterMobiles");
+const paymentController = require("../controller/order/paymentController")
 
 router.post("/signup", userSignupController);
 router.post("/signin", userSigninController);
@@ -80,5 +81,8 @@ router.get("/countAddToCartProduct", authToken, countAddToCartProduct);
 router.get("/view-cart-product", authToken, addToCartViewProduct);
 router.post("/update-cart-product", authToken, updateAddtoCartProduct);
 router.post("/delete-cart-product", authToken, deleleAddToCartProduct);
+
+//payment and order
+router.post("/checkout", authToken, paymentController)
 
 module.exports = router;

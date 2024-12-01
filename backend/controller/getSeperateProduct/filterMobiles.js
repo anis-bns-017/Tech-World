@@ -56,7 +56,7 @@ const filterProductController = async (req, res) => {
     // Find products based on the query
     const allMobiles = await phoneModel.find(query).sort({ createdAt: -1 });
 
-    console.log("Alhamdulillah: ", allMobiles);
+    // console.log("Alhamdulillah: ", allMobiles);
 
     res.json({
       data: allMobiles,

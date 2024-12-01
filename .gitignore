@@ -7,6 +7,8 @@
 logs
 **/*.backup.*
 **/*.back.*
+.env           # Ignore any .env files in root
+backend/.env   # Ignore .env in the backend directory specifically
 
 node_modules
 bower_components
@@ -17,4 +19,18 @@ psd
 thumb
 sketch
 
-# End of https://www.toptal.com/developers/gitignore/api/react
+# Additional files
+/build
+.vscode/
+coverage/
+yarn.lock
+
+# OS-specific files
+Thumbs.db
+ehthumbs.db
+
+# Continuous integration / deployment files
+.next
+.vercel
+.netlify
+backend/.env

@@ -155,6 +155,10 @@ const SummaryApi = {
     url: `${backendDomain}/api/filter-phone`,
     method: "post",
   },
+  payment: {
+    url: `${backendDomain}/api/checkout`,
+    method: "post",
+  }
 };
 
 export default SummaryApi;

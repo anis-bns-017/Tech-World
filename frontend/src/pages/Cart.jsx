@@ -31,12 +31,10 @@ const Cart = () => {
     }
   };
 
-
   useEffect(() => {
     fetchData();
   }, []);
 
-  
   const increaseQuantity = async (id, qty) => {
     const response = await fetch(SummaryApi.updateCartProduct.url, {
       method: SummaryApi.updateCartProduct.method,
@@ -79,7 +77,6 @@ const Cart = () => {
     }
   };
 
-  
   const deleteCartItem = async (id) => {
     const response = await fetch(SummaryApi.deleteCartProduct.url, {
       method: SummaryApi.deleteCartProduct.method,
@@ -100,6 +97,23 @@ const Cart = () => {
     }
   };
 
+  const handlePayment = async () => {
+    const response = await fetch(SummaryApi.payment.url, {
+      method: SummaryApi.payment.method,
+      credentials: "include",
+      headers: {
+        "content-type": "application/json",
+      },
+      body: JSON.stringify({
+        cartItems: data,
+      }),
+    });
+
+    const responseData = await response.json();
+
+    console.log("payment Response: ", responseData);
+  };
+
   const totalQuantity = data.reduce(
     (prevValue, CurrValue) => prevValue + CurrValue.quantity,
     0
@@ -110,7 +124,6 @@ const Cart = () => {
     0
   );
 
-  
   return (
     <div className="container mx-auto">
       <div className="text-center font-lg">
@@ -195,26 +208,35 @@ const Cart = () => {
         </div>
 
         {/* summary product */}
-        <div className="mt-5 lg:mt-0 w-full max-w-sm">
-          {loading ? (
-            <div className="h-36 bg-slate-200 border border-slate-300 animate-pulse"></div>
-          ) : (
-            <div className="h-36 bg-slate-200">
-              <h2 className="text-white bg-red-600 px-4 py-1 rounded">Summary</h2>
-              <div className="flex justify-between items-center px-4 gap-2 font-medium text-lg text-slate-600">
-                <p>Quantity</p>
-                <p>{totalQuantity}</p>
-              </div>
+        {data[0] && (
+          <div className="mt-5 lg:mt-0 w-full max-w-sm">
+            {loading ? (
+              <div className="h-36 bg-slate-200 border border-slate-300 animate-pulse"></div>
+            ) : (
+              <div className="h-36 bg-slate-200">
+                <h2 className="text-white bg-red-600 px-4 py-1 rounded">
+                  Summary
+                </h2>
+                <div className="flex justify-between items-center px-4 gap-2 font-medium text-lg text-slate-600">
+                  <p>Quantity</p>
+                  <p>{totalQuantity}</p>
+                </div>
 
-              <div className="flex justify-between items-center px-4 gap-2 font-medium text-lg text-slate-600">
-                <p>Total Price</p>
-                <p>{displayCurrency(totalPrice)}</p>
-              </div>
+                <div className="flex justify-between items-center px-4 gap-2 font-medium text-lg text-slate-600">
+                  <p>Total Price</p>
+                  <p>{displayCurrency(totalPrice)}</p>
+                </div>
 
-              <button className="bg-blue-600 p-2 text-white w-full rounded">Payment</button>
-            </div>
-          )}
-        </div>
+                <button
+                  className="bg-blue-600 p-2 mt-4 text-white w-full rounded"
+                  onClick={handlePayment}
+                >
+                  Payment
+                </button>
+              </div>
+            )}
+          </div>
+        )}
       </div>
     </div>
   );

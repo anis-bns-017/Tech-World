@@ -56,7 +56,7 @@ const SignUp = () => {
   return (
     <section id="signup">
       <div className="mx-auto container p-4">
-        <div className="bg-slate-800 p-5 w-full max-w-md mx-auto rounded">
+        <div className="bg-slate-800 p-10 w-full max-w-md mx-auto rounded">
           <h2 className="text-[21px] text-white font-medium">
             Register Account
           </h2>

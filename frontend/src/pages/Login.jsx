@@ -50,6 +50,7 @@ const Login = () => {
 
     if (dataApi.error) {
       toast.error(dataApi.message);
+      navigate("/sign-up");
     }
   };
 
