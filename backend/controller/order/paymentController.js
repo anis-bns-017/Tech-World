@@ -1,58 +1,42 @@
-const stripe = require("stripe")(process.env.STRIPE_SECRET_KEY); // Backend stripe library
 const userModel = require("../../models/userModel");
+const stripe = require("stripe")(
+  "sk_test_51QR5zPA8YvS28rwrn92tpS9LZV2ZjnUX4jurJwstpVuz4pPEytivnVpztpnb7WHWoTUvZNhO40DKaX74Lj7VaRXH00ouK8b82D"
+);
 
 const paymentController = async (req, res) => {
   try {
-    const { cartItems } = req.body;
+    const { products } = req.body;
 
-    console.log("wow cart: ", cartItems);
+    console.log("hey: ", products);
 
-    const user = await userModel.findOne({ _id: req.userId });
-
-    const params = {
-      submit_type: "pay",
-      mode: "payment",
-      payment_method_types: ["card"],
-      billing_address_collection: "auto", // Changed from "hide" to "auto"
-      shipping_options: [
-        {
-          shipping_rate: "shr_1QREXAA8YvS28rwrFYXAZgu6",
+    const lineItems = products.map((product) => ({
+      price_data: {
+        currency: "bdt",
+        product_data: {
+          name: product.productId.productName,
+          images: product.productId.productImage, // Ensure these are valid URLs
+          metadata: {
+            productId: product.productId._id,
+          },
         },
-      ],
-      customer_email: user.email,
-      line_items: cartItems.map((item) => {
-        return {
-          price_data: {
-            currency: "bdt",
-            product_data: {
-              name: item.productId.productName,
-              images: item.productId.productImage, // Ensure these are valid URLs
-              metadata: {
-                productId: item.productId._id,
-              },
-            },
-            unit_amount: item.productId.sellingPrice * 100, // Convert to cents
-          },
-          adjustable_quantity: {
-            enabled: true,
-            minimum: 1,
-          },
-          quantity: item.quantity,
-        };
-      }),
-      success_url: `${process.env.FRONTEND_URL}/success`,
-      cancel_url: `${process.env.FRONTEND_URL}/cancel`,
-    };
+        unit_amount: product.productId.sellingPrice * 100,
+      },
+      quantity: product.quantity,
+    }));
 
-    // Create Stripe Checkout session
-    const session = await stripe.checkout.sessions.create(params);
+    const session = await stripe.checkout.sessions.create({
+      payment_method_types: ["card"],
+      line_items: lineItems,
+      mode: "payment",
+      success_url: "http://localhost:5173/success",
+      cancel_url: "http://localhost:5173/cancel",
+    });
+    console.log("hey ", session?.id);
 
-    // Send the session ID to the frontend
-    res.status(200).json({session});
+    res.json({ id: session?.id });
   } catch (err) {
-    console.error("Stripe Error: ", err.message); // Log the error for debugging
     res.status(400).json({
-      message: err?.message || "An error occurred",
+      message: err?.message || err,
       error: true,
       success: false,
     });

@@ -1,7 +1,9 @@
 {
   "dependencies": {
     "bcryptjs": "^2.4.3",
+    "bkash-payment": "^3.0.5",
     "framer-motion": "^11.11.17",
+    "nodemailer": "^6.9.16",
     "twilio": "^5.3.3"
   }
 }

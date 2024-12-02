@@ -4,6 +4,8 @@ import Context from "../context/Context";
 import displayCurrency from "../helpers/DisplayCurrency";
 import { MdDelete } from "react-icons/md";
 import { useNavigate } from "react-router-dom";
+import { loadStripe } from "@stripe/stripe-js";
+import axios from "axios";
 
 const Cart = () => {
   const [data, setData] = useState([]);
@@ -73,6 +75,7 @@ const Cart = () => {
 
       if (responseData.success) {
         fetchData();
+        context.fetchUserAddToCart();
       }
     }
   };
@@ -98,6 +101,10 @@ const Cart = () => {
   };
 
   const handlePayment = async () => {
+    const stripe = await loadStripe(
+      "pk_test_51QR5zPA8YvS28rwr01Nih9Gvjm611NHoMRkclqBbQ5gb5nluGXFKUBTruOfKRJYrd4SR8PNlYm2ZaiNMO4Sm5VZd00ATPVDYcR"
+    );
+
     const response = await fetch(SummaryApi.payment.url, {
       method: SummaryApi.payment.method,
       credentials: "include",
@@ -105,13 +112,24 @@ const Cart = () => {
         "content-type": "application/json",
       },
       body: JSON.stringify({
-        cartItems: data,
+        products: data,
       }),
     });
 
     const responseData = await response.json();
 
-    console.log("payment Response: ", responseData);
+    if (responseData?.id) {
+      // Redirect to Stripe Checkout with the session ID
+      const result = await stripe.redirectToCheckout({
+        sessionId: responseData.id,
+      });
+
+      if (result.error) {
+        console.error("Stripe Checkout Error:", result.error.message);
+      }
+    } else {
+      console.error("Failed to retrieve session ID from backend.");
+    }
   };
 
   const totalQuantity = data.reduce(
@@ -208,35 +226,37 @@ const Cart = () => {
         </div>
 
         {/* summary product */}
-        {data[0] && (
-          <div className="mt-5 lg:mt-0 w-full max-w-sm">
-            {loading ? (
-              <div className="h-36 bg-slate-200 border border-slate-300 animate-pulse"></div>
-            ) : (
-              <div className="h-36 bg-slate-200">
-                <h2 className="text-white bg-red-600 px-4 py-1 rounded">
-                  Summary
-                </h2>
-                <div className="flex justify-between items-center px-4 gap-2 font-medium text-lg text-slate-600">
-                  <p>Quantity</p>
-                  <p>{totalQuantity}</p>
-                </div>
+        <div>
+          {data[0] && (
+            <div className="mt-5 lg:mt-0 w-full max-w-sm">
+              {loading ? (
+                <div className="h-36 bg-slate-200 border border-slate-300 animate-pulse"></div>
+              ) : (
+                <div className="h-36 bg-slate-200">
+                  <h2 className="text-white bg-blue-700 text-center px-4 py-1 rounded">
+                    Summary
+                  </h2>
+                  <div className="flex justify-between items-center px-4 gap-2 font-medium text-lg text-slate-600">
+                    <p>Quantity</p>
+                    <p>{totalQuantity}</p>
+                  </div>
 
-                <div className="flex justify-between items-center px-4 gap-2 font-medium text-lg text-slate-600">
-                  <p>Total Price</p>
-                  <p>{displayCurrency(totalPrice)}</p>
-                </div>
+                  <div className="flex justify-between items-center px-4 gap-2 font-medium text-lg text-slate-600">
+                    <p>Total Price</p>
+                    <p>{displayCurrency(totalPrice)}</p>
+                  </div>
 
-                <button
-                  className="bg-blue-600 p-2 mt-4 text-white w-full rounded"
-                  onClick={handlePayment}
-                >
-                  Payment
-                </button>
-              </div>
-            )}
-          </div>
-        )}
+                  <button
+                    className="bg-lime-600 text-xl font-semibold p-2 mt-4 text-white w-full rounded"
+                    onClick={handlePayment}
+                  >
+                    Payment
+                  </button>
+                </div>
+              )}
+            </div>
+          )}
+        </div>
       </div>
     </div>
   );

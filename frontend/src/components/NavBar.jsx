@@ -33,8 +33,8 @@ const NavBar = () => {
         >
           Tablet
         </Link>
-        <Link className="cursor-pointer hover:text-red-500">
-          Office equipment
+        <Link to={"upload-headphone"} className="cursor-pointer hover:text-red-500">
+          Headphone
         </Link>
         <Link
           to={"upload-camera"}

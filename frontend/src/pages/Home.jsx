@@ -6,7 +6,7 @@ import AllProducts from "./AllProducts";
 
 const Home = () => {
   return (
-    <div className="w-full">
+    <div className="w-full bg-slate-200">
       <FeatureCategory />
       <AllProducts />
       {/* <CategoryList /> */}

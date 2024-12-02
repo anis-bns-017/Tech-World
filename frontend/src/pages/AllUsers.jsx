@@ -4,16 +4,18 @@ import { toast } from "react-toastify";
 import moment from "moment";
 import { MdEdit } from "react-icons/md";
 import ChangeUserRole from "../components/ChangeUserRole";
+import { useSelector } from "react-redux";
 
 const AllUsers = () => {
+  const user = useSelector((state) => state?.user?.user);
   const [allUsers, setAllUsers] = useState([]);
   const [openUpdateRole, setOpenUpdateRole] = useState(false);
   const [updateUserDetails, setUpdateUserDetails] = useState({
     email: "",
     firstName: "",
-    lastName: "", 
+    lastName: "",
     role: "",
-    _id: ""
+    _id: "",
   });
 
   const fetchAllUsers = async () => {
@@ -50,26 +52,49 @@ const AllUsers = () => {
         </thead>
         <tbody>
           {allUsers.map((el, index) => {
-            return (
-              <tr key={index}>
-                <td>{index + 1}</td>
-                <td>{el?.firstName + " " + el?.lastName}</td>
-                <td>{el?.email}</td>
-                <td>{el?.role}</td>
-                <td>{moment(el?.createdAt).format("LL")}</td>
-                <td>
-                  <button
-                    onClick={()=> {
-                      setUpdateUserDetails(el)
-                      setOpenUpdateRole(true)
-                    }}
-                    className="bg-green-300 p-2 rounded-full cursor-pointer hover:bg-green-300"
-                  >
-                    <MdEdit />
-                  </button>
-                </td>
-              </tr>
-            );
+            if (user?.role === "ADMIN" && el?.role != "ADMIN") {
+              return (
+                <tr key={index}>
+                  <td>{index + 1}</td>
+                  <td>{el?.firstName + " " + el?.lastName}</td>
+                  <td>{el?.email}</td>
+                  <td>{el?.role}</td>
+                  <td>{moment(el?.createdAt).format("LL")}</td>
+                  <td>
+                    <button
+                      onClick={() => {
+                        setUpdateUserDetails(el);
+                        setOpenUpdateRole(true);
+                      }}
+                      className="bg-green-300 p-2 rounded-full cursor-pointer hover:bg-green-400"
+                    >
+                      <MdEdit />
+                    </button>
+                  </td>
+                </tr>
+              );
+            } else if (user?.role === "SELLER" && el?.role === "GENERAL") {
+              return (
+                <tr key={index}>
+                  <td>{index + 1}</td>
+                  <td>{el?.firstName + " " + el?.lastName}</td>
+                  <td>{el?.email}</td>
+                  <td>{el?.role}</td>
+                  <td>{moment(el?.createdAt).format("LL")}</td>
+                  <td>
+                    <button
+                      onClick={() => {
+                        setUpdateUserDetails(el);
+                        setOpenUpdateRole(true);
+                      }}
+                      className="bg-green-300 p-2 rounded-full cursor-pointer hover:bg-green-400"
+                    >
+                      <MdEdit />
+                    </button>
+                  </td>
+                </tr>
+              );
+            }
           })}
         </tbody>
       </table>

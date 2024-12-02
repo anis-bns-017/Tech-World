@@ -1216,58 +1216,6 @@
             {
                 "name": "Value-Top",
                 "id": 3211
-            },
-            {
-                "name": "Walton",
-                "id": 3212
-            },
-            {
-                "name": "Lenovo",
-                "id": 3213
-            },
-            {
-                "name": "NPC",
-                "id": 3214
-            },
-            {
-                "name": "AIWA",
-                "id": 3215
-            },
-            {
-                "name": "XIAOMI",
-                "id": 3216
-            },
-            {
-                "name": "Gigasosnic",
-                "id": 3217
-            },
-            {
-                "name": "TrendSonic",
-                "id": 3218
-            },
-            {
-                "name": "Gaming Monitor",
-                "id": 3219
-            },
-            {
-                "name": "Curved Monitor",
-                "id": 3220
-            },
-            {
-                "name": "Touch Monitor",
-                "id": 3221
-            },
-            {
-                "name": "4K Monitor",
-                "id": 3222
-            },
-            {
-                "name": "Monitor Arm",
-                "id": 3223
-            },
-            {
-                "name": "Show All Monitor",
-                "id": 3224
             }
         ]
     },
@@ -1664,26 +1612,6 @@
             {
                 "name": "Printer Drum",
                 "id": 3327
-            },
-            {
-                "name": "Scanner",
-                "id": 3328
-            },
-            {
-                "name": "Barcode Scanner",
-                "id": 3329
-            },
-            {
-                "name": "Cash Drawer",
-                "id": 3330
-            },
-            {
-                "name": "Telephone Set",
-                "id": 3331
-            },
-            {
-                "name": "IP Phone",
-                "id": 3332
             },
             {
                 "name": "PABX System",

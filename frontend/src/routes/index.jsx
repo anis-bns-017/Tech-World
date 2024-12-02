@@ -28,6 +28,8 @@ import Mouse from "../components/uploadProduct/Mouse";
 import HeadPhone from "../components/uploadProduct/HeadPhone";
 import DropDown from "../dropMenu/DropDown";
 import MobileCategory from "../pages/productCategory/MobileCategory";
+import Success from "../../../backend/controller/order/Success";
+import Cancel from "../../../backend/controller/order/Cancel";
 
 const router = createBrowserRouter([
   {
@@ -41,6 +43,14 @@ const router = createBrowserRouter([
       {
         path: "login",
         element: <Login />,
+      },
+      {
+        path: "success",
+        element: <Success />,
+      },
+      {
+        path: "cancel",
+        element: <Cancel />,
       },
       {
         path: "forgot-password",

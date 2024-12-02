@@ -19,7 +19,7 @@ const productCategory = [
     {id: 5, label: 'UPS', value: 'ups'},
     {id: 6, label: 'Phone', value: 'phone'}, 
     {id: 7, label: 'Tablet', value: 'tablet'}, 
-    {id: 8, label: 'Office equipment', value: 'officeEquipment'}, 
+    {id: 8, label: 'Headphohe', value: 'headphone'}, 
     {id: 9, label: 'Camera', value: 'camera'}, 
     {id: 10, label: 'Security', value: 'security'}, 
     {id: 11, label: 'Networking', value: 'networking'}, 
