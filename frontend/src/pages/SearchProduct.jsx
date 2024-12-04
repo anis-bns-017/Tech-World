@@ -19,6 +19,7 @@ const SearchProduct = () => {
   useEffect(() => {
     fetchProduct();
   });
+  
   return (
     <div className="container mx-auto p-4">
       {loading && <p className="text-lg text-center">Loading......</p>}

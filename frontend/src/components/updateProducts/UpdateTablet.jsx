@@ -7,42 +7,44 @@ import productCategory from "../../helpers/productCategory";
 import { FaCloudUploadAlt } from "react-icons/fa";
 import { MdDelete } from "react-icons/md";
 import DisplayImage from "../DIsplayImage";
-import { useNavigate } from "react-router-dom";
+import { useLocation, useNavigate, useParams } from "react-router-dom";
 
-const Tablet = ({ onClose, fetchData }) => {
+const UpdateTablet = ({ onClose, fetchData }) => {
+  const location = useLocation();
+  const product = location.state?.product;
+
   const [data, setData] = useState({
-    productName: "",
-    brandName: "",
-    category: "",
-    productImage: [],
-    key_features: "",
-    description: "",
-    display_size: "",
-    display_type: "",
-
-    display_resolution: "",
-    processor: "",
-    ram: "",
-    storage: "",
-    connectivity: "", 
-    operating_system: "", 
-    audio: "", 
-    dimension: "", 
-    weight: "", 
-    sim: "", 
-    color: "", 
-    rear_camera: "", 
-    front_camera: "", 
-    battery_type: "", 
-    battery_capacity: "", 
-    bluetooth: "", 
-    GPS: "", 
-    sensor: "", 
-    usb: "", 
-    wlan: "", 
-    price: "",
-    sellingPrice: "",
-    warranty: "",
+    productName: product?.productName || "",
+    brandName: product?.brandName || "",
+    category: product?.category || "",
+    productImage: product?.productImage || [],
+    key_features: product?.key_features || "",
+    description: product?.description || "",
+    display_size: product?.display_size || "",
+    display_type: product?.display_type || "",
+    display_resolution: product?.display_resolution || "",
+    processor: product?.processor || "",
+    ram: product?.ram || "",
+    storage: product?.storage || "",
+    connectivity: product?.connectivity || "",
+    operating_system: product?.operating_system || "",
+    audio: product?.audio || "",
+    dimension: product?.dimension || "",
+    weight: product?.weight || "",
+    sim: product?.sim || "",
+    color: product?.color || "",
+    rear_camera: product?.rear_camera || "",
+    front_camera: product?.front_camera || "",
+    battery_type: product?.battery_type || "",
+    battery_capacity: product?.battery_capacity || "",
+    bluetooth: product?.bluetooth || "",
+    GPS: product?.GPS || "",
+    sensor: product?.sensor || "",
+    usb: product?.usb || "",
+    wlan: product?.wlan || "",
+    price: product?.price || "",
+    sellingPrice: product?.sellingPrice || "",
+    warranty: product?.warranty || "",
   });
 
   const [openFullScreenImage, setOpenFullScreenImage] = useState(false);
@@ -85,19 +87,19 @@ const Tablet = ({ onClose, fetchData }) => {
 
   const view = () => {
     setOpenUploadProduct(false);
-    navigate("/");
+    navigate("/account/all-products");
   };
   // upload product
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    const response = await fetch(SummaryApi.uploadTablet.url, {
-      method: SummaryApi.uploadTablet.method,
+    const response = await fetch(SummaryApi.updateTablet.url, {
+      method: SummaryApi.updateTablet.method,
       credentials: "include",
       headers: {
         "content-type": "application/json",
       },
-      body: JSON.stringify(data),
+      body: JSON.stringify({data, productId: product?._id}),
     });
 
     const responseData = await response.json();
@@ -115,10 +117,10 @@ const Tablet = ({ onClose, fetchData }) => {
 
   return (
     openUploadProduct && (
-      <div className="fixed w-full h-full bg-slate-200 bg-opacity-35 top-0 left-0 right-0 bottom-0 flex justify-center items-center">
+      <div className="fixed opacity-100 w-full h-full bg-slate-200 bg-opacity-35 top-0 left-0 right-0 bottom-0 flex justify-center items-center">
         <div className="bg-white p-4 rounded w-full max-w-7xl h-full max-h-[80%] overflow-hidden">
           <div className="flex justify-center items-center">
-            <h2 className="font-bold text-lg">Upload Tablet</h2>
+            <h2 className="font-bold text-blue-800 text-lg">Update Tablet</h2>
             <div
               className="w-fit hover:cursor-pointer ml-auto text-2xl"
               onClick={view}
@@ -310,7 +312,7 @@ const Tablet = ({ onClose, fetchData }) => {
             <div className="flex gap-4">
               <div className="flex-1">
                 <label htmlFor="processor" className="mt-3">
-                Processor :
+                  Processor :
                 </label>
                 <input
                   type="text"
@@ -357,7 +359,7 @@ const Tablet = ({ onClose, fetchData }) => {
 
               <div className="flex-1">
                 <label htmlFor="connectivity" className="mt-3">
-                Connectivity :
+                  Connectivity :
                 </label>
                 <input
                   type="text"
@@ -389,7 +391,7 @@ const Tablet = ({ onClose, fetchData }) => {
 
               <div className="flex-1">
                 <label htmlFor="audio" className="mt-3">
-                  Audio  :
+                  Audio :
                 </label>
                 <input
                   type="text"
@@ -593,13 +595,12 @@ const Tablet = ({ onClose, fetchData }) => {
                   className="p-2 w-full bg-slate-50 border rounded"
                 />
               </div>
-
             </div>
 
             <div className="flex gap-4">
               <div className="flex-1">
                 <label htmlFor="wlan" className="mt-3">
-                   WLAN :
+                  WLAN :
                 </label>
                 <input
                   type="number"
@@ -631,7 +632,7 @@ const Tablet = ({ onClose, fetchData }) => {
             <div className="flex gap-4">
               <div className="flex-1">
                 <label htmlFor="sellingPrice" className="mt-3">
-                   Selling Price :
+                  Selling Price :
                 </label>
                 <input
                   type="number"
@@ -674,7 +675,7 @@ const Tablet = ({ onClose, fetchData }) => {
             ></textarea>
 
             <button className="px-23 py-2  bg-blue-600 text-white rounded mb-10 hover:bg-red-800">
-              Upload Product
+              Update Tablet
             </button>
           </form>
         </div>
@@ -691,4 +692,4 @@ const Tablet = ({ onClose, fetchData }) => {
   );
 };
 
-export default Tablet;
+export default UpdateTablet;

@@ -9,7 +9,7 @@ import { MdDelete } from "react-icons/md";
 import DisplayImage from "../DIsplayImage";
 import { useNavigate } from "react-router-dom";
 
-const Desktop = () => {
+const Desktop = ({fetData}) => {
   const [data, setData] = useState({
     productName: "",
     brandName: "",
@@ -94,7 +94,7 @@ const Desktop = () => {
 
     if (responseData.success) {
       toast.success(responseData?.message);
-      onClose();
+      view();
       fetchData();
     }
 

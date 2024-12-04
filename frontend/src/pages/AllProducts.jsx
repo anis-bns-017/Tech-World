@@ -24,7 +24,6 @@ const AllProducts = () => {
     fetchAllProduct();
   }, []);
 
-  console.log("SOb ", allProduct);
   return (
     <div className=" pl-5 pt-10">
       <div className="items-center justify-center text-center">

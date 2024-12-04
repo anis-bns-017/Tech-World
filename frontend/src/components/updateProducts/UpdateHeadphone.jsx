@@ -7,42 +7,45 @@ import productCategory from "../../helpers/productCategory";
 import { FaCloudUploadAlt } from "react-icons/fa";
 import { MdDelete } from "react-icons/md";
 import DisplayImage from "../DIsplayImage";
-import { useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 
-const Tablet = ({ onClose, fetchData }) => {
+const UpdateHeadPhone = ({ onClose, fetchData }) => {
+  const location = useLocation();
+  const product = location.state?.product;
+
   const [data, setData] = useState({
-    productName: "",
-    brandName: "",
-    category: "",
-    productImage: [],
-    key_features: "",
-    description: "",
-    display_size: "",
-    display_type: "",
+    productName: product?.productName || "",
+    brandName: product?.brandName || "",
+    category: product?.category || "",
+    productImage: product?.productImage || [],
+    key_features: product?.key_features || "",
+    description: product?.description || "",
 
-    display_resolution: "",
-    processor: "",
-    ram: "",
-    storage: "",
-    connectivity: "", 
-    operating_system: "", 
-    audio: "", 
-    dimension: "", 
-    weight: "", 
-    sim: "", 
-    color: "", 
-    rear_camera: "", 
-    front_camera: "", 
-    battery_type: "", 
-    battery_capacity: "", 
-    bluetooth: "", 
-    GPS: "", 
-    sensor: "", 
-    usb: "", 
-    wlan: "", 
-    price: "",
-    sellingPrice: "",
-    warranty: "",
+    frequency_range: product?.frequency_range || "",
+    sensitivity: product?.sensitivity || "",
+    cable_length: product?.cable_length || "",
+    impedance: product?.impedance || "",
+    others: product?.others || "",
+    driver_diameter: product?.driver_diameter || "",
+    connectivity: product?.connectivity || "",
+
+    battery_capacity: product?.battery_capacity || "",
+    battery_life: product?.battery_life || "",
+
+    input_jack: product?.input_jack || "",
+    system_requirement: product?.system_requirement || "",
+    noise_ratio: product?.noise_ratio || "",
+    pickup_pattern: product?.pickup_pattern || "",
+
+    weight: product?.weight || "",
+    color: product?.color || "",
+
+    mic_frequency: product?.mic_frequency || "",
+    mic_sensitivity: product?.mic_sensitivity || "",
+
+    price: product?.price || "",
+    sellingPrice: product?.sellingPrice || "",
+    warranty: product?.warranty || "",
   });
 
   const [openFullScreenImage, setOpenFullScreenImage] = useState(false);
@@ -91,13 +94,13 @@ const Tablet = ({ onClose, fetchData }) => {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    const response = await fetch(SummaryApi.uploadTablet.url, {
-      method: SummaryApi.uploadTablet.method,
+    const response = await fetch(SummaryApi.updateHeadPHone.url, {
+      method: SummaryApi.updateHeadPHone.method,
       credentials: "include",
       headers: {
         "content-type": "application/json",
       },
-      body: JSON.stringify(data),
+      body: JSON.stringify({ data, productId: product?._id }),
     });
 
     const responseData = await response.json();
@@ -118,7 +121,7 @@ const Tablet = ({ onClose, fetchData }) => {
       <div className="fixed w-full h-full bg-slate-200 bg-opacity-35 top-0 left-0 right-0 bottom-0 flex justify-center items-center">
         <div className="bg-white p-4 rounded w-full max-w-7xl h-full max-h-[80%] overflow-hidden">
           <div className="flex justify-center items-center">
-            <h2 className="font-bold text-lg">Upload Tablet</h2>
+            <h2 className="font-bold text-lg">Upload UpdateHeadPhone</h2>
             <div
               className="w-fit hover:cursor-pointer ml-auto text-2xl"
               onClick={view}
@@ -260,16 +263,16 @@ const Tablet = ({ onClose, fetchData }) => {
               </div>
 
               <div className="flex-1">
-                <label htmlFor="display_size" className="mt-3">
-                  Display Size:
+                <label htmlFor="frequency_range" className="mt-3">
+                  Frequency Range :
                 </label>
                 <input
                   type="text"
-                  id="display_size"
-                  placeholder="Enter Display Size.."
-                  value={data.display_size}
+                  id="frequency_range"
+                  placeholder="Enter Frequency Rate.."
+                  value={data.frequency_range}
                   onChange={handleOnChange}
-                  name="display_size"
+                  name="frequency_range"
                   className="p-2 w-full bg-slate-50 border rounded"
                 />
               </div>
@@ -277,31 +280,31 @@ const Tablet = ({ onClose, fetchData }) => {
 
             <div className="flex gap-4">
               <div className="flex-1">
-                <label htmlFor="display_type" className="mt-3">
-                  Display Type :
+                <label htmlFor="sensitivity" className="mt-3">
+                  Sensitivity :
                 </label>
                 <input
                   type="text"
-                  id="display_type"
-                  placeholder="Enter Display Type.."
-                  value={data.display_type}
+                  id="sensitivity"
+                  placeholder="Enter Sensitivity.."
+                  value={data.sensitivity}
                   onChange={handleOnChange}
-                  name="display_type"
+                  name="sensitivity"
                   className="p-2 w-full bg-slate-50 border rounded"
                 />
               </div>
 
               <div className="flex-1">
-                <label htmlFor="display_resolution" className="mt-3">
-                  Display Resolution :
+                <label htmlFor="cable_lenght" className="mt-3">
+                  Cable Lenght :
                 </label>
                 <input
                   type="text"
-                  id="display_resolution"
-                  placeholder="Enter Display Resolution.."
-                  value={data.display_resolution}
+                  id="cable_lenght"
+                  placeholder="Enter Cable Lenght.."
+                  value={data.cable_lenght}
                   onChange={handleOnChange}
-                  name="display_resolution"
+                  name="cable_lenght"
                   className="p-2 w-full bg-slate-50 border rounded"
                 />
               </div>
@@ -309,55 +312,53 @@ const Tablet = ({ onClose, fetchData }) => {
 
             <div className="flex gap-4">
               <div className="flex-1">
-                <label htmlFor="processor" className="mt-3">
-                Processor :
+                <label htmlFor="impedance" className="mt-3">
+                  Impedance :
                 </label>
                 <input
                   type="text"
-                  id="processor"
-                  placeholder="Enter Processor.."
-                  value={data.processor}
+                  id="impedance"
+                  placeholder="Enter Impedance.."
+                  value={data.impedance}
                   onChange={handleOnChange}
-                  name="processor"
+                  name="impedance"
                   className="p-2 w-full bg-slate-50 border rounded"
                 />
               </div>
 
               <div className="flex-1">
-                <label htmlFor="ram" className="mt-3">
-                  RAM :
+                <label htmlFor="driver_diameter" className="mt-3">
+                  Driver Diameter :
                 </label>
                 <input
                   type="text"
-                  id="ram"
-                  placeholder="Enter RAM.."
-                  value={data.ram}
+                  id="driver_diameter"
+                  placeholder="Enter  Driver Diameter.."
+                  value={data.driver_diameter}
                   onChange={handleOnChange}
-                  name="ram"
+                  name="driver_diameter"
                   className="p-2 w-full bg-slate-50 border rounded"
                 />
               </div>
             </div>
 
-            <div className="flex gap-4">
-              <div className="flex-1">
-                <label htmlFor="storage" className="mt-3">
-                  Storage :
-                </label>
-                <input
-                  type="text"
-                  id="storage"
-                  placeholder="Enter Storage.."
-                  value={data.storage}
-                  onChange={handleOnChange}
-                  name="storage"
-                  className="p-2 w-full bg-slate-50 border rounded"
-                />
-              </div>
+            <label htmlFor="others" className="mt-3">
+              Others :
+            </label>
+            <textarea
+              className="h-40 p-2 bg-slate-50 border resize-none"
+              placeholder="Enter Others"
+              rows={3}
+              cols={5}
+              onChange={handleOnChange}
+              name="others"
+              value={data.others}
+            ></textarea>
 
+            <div className="flex gap-4">
               <div className="flex-1">
                 <label htmlFor="connectivity" className="mt-3">
-                Connectivity :
+                  Connectivity :
                 </label>
                 <input
                   type="text"
@@ -366,151 +367,6 @@ const Tablet = ({ onClose, fetchData }) => {
                   value={data.connectivity}
                   onChange={handleOnChange}
                   name="connectivity"
-                  className="p-2 w-full bg-slate-50 border rounded"
-                />
-              </div>
-            </div>
-
-            <div className="flex gap-4">
-              <div className="flex-1">
-                <label htmlFor="operating_system" className="mt-3">
-                  Operating System :
-                </label>
-                <input
-                  type="text"
-                  id="operating_system"
-                  placeholder="Enter Operating System.."
-                  value={data.operating_system}
-                  onChange={handleOnChange}
-                  name="operating_system"
-                  className="p-2 w-full bg-slate-50 border rounded"
-                />
-              </div>
-
-              <div className="flex-1">
-                <label htmlFor="audio" className="mt-3">
-                  Audio  :
-                </label>
-                <input
-                  type="text"
-                  id="audio"
-                  placeholder="Enter Audio.."
-                  value={data.audio}
-                  onChange={handleOnChange}
-                  name="audio"
-                  className="p-2 w-full bg-slate-50 border rounded"
-                />
-              </div>
-            </div>
-
-            <div className="flex gap-4">
-              <div className="flex-1">
-                <label htmlFor="dimension" className="mt-3">
-                  Dimension :
-                </label>
-                <input
-                  type="text"
-                  id="dimension"
-                  placeholder="Enter Dimensions.."
-                  value={data.dimension}
-                  onChange={handleOnChange}
-                  name="dimension"
-                  className="p-2 w-full bg-slate-50 border rounded"
-                />
-              </div>
-
-              <div className="flex-1">
-                <label htmlFor="weight" className="mt-3">
-                  Weight :
-                </label>
-                <input
-                  type="text"
-                  id="weight"
-                  placeholder="Enter Weight.."
-                  value={data.weight}
-                  onChange={handleOnChange}
-                  name="weight"
-                  className="p-2 w-full bg-slate-50 border rounded"
-                />
-              </div>
-            </div>
-
-            <div className="flex gap-4">
-              <div className="flex-1">
-                <label htmlFor="sim" className="mt-3">
-                  SIM :
-                </label>
-                <input
-                  type="text"
-                  id="sim"
-                  placeholder="Enter SIM.."
-                  value={data.sim}
-                  onChange={handleOnChange}
-                  name="sim"
-                  className="p-2 w-full bg-slate-50 border rounded"
-                />
-              </div>
-
-              <div className="flex-1">
-                <label htmlFor="color" className="mt-3">
-                  Color :
-                </label>
-                <input
-                  type="text"
-                  id="color"
-                  placeholder="Enter Color.."
-                  value={data.color}
-                  onChange={handleOnChange}
-                  name="color"
-                  className="p-2 w-full bg-slate-50 border rounded"
-                />
-              </div>
-            </div>
-
-            <div className="flex gap-4">
-              <div className="flex-1">
-                <label htmlFor="rear_camera" className="mt-3">
-                  Rear Camera :
-                </label>
-                <input
-                  type="number"
-                  id="rear_camera"
-                  placeholder="Enter Rear Camera.."
-                  value={data.rear_camera}
-                  onChange={handleOnChange}
-                  name="rear_camera"
-                  className="p-2 w-full bg-slate-50 border rounded"
-                />
-              </div>
-
-              <div className="flex-1">
-                <label htmlFor="front_camera" className="mt-3">
-                  Front Camera :
-                </label>
-                <input
-                  type="number"
-                  id="front_camera"
-                  placeholder="Enter Front Camera.."
-                  value={data.front_camera}
-                  onChange={handleOnChange}
-                  name="front_camera"
-                  className="p-2 w-full bg-slate-50 border rounded"
-                />
-              </div>
-            </div>
-
-            <div className="flex gap-4">
-              <div className="flex-1">
-                <label htmlFor="battery_type" className="mt-3">
-                  Battery Type :
-                </label>
-                <input
-                  type="text"
-                  id="battery_type"
-                  placeholder="Enter Battery Type.."
-                  value={data.battery_type}
-                  onChange={handleOnChange}
-                  name="battery_type"
                   className="p-2 w-full bg-slate-50 border rounded"
                 />
               </div>
@@ -533,31 +389,31 @@ const Tablet = ({ onClose, fetchData }) => {
 
             <div className="flex gap-4">
               <div className="flex-1">
-                <label htmlFor="bluetooth" className="mt-3">
-                  Bluetooth :
+                <label htmlFor="battery_life" className="mt-3">
+                  Battery Life :
                 </label>
                 <input
                   type="text"
-                  id="bluetooth"
-                  placeholder="Enter Bluetooth.."
-                  value={data.bluetooth}
+                  id="battery_life"
+                  placeholder="Enter Battery Life.."
+                  value={data.battery_life}
                   onChange={handleOnChange}
-                  name="bluetooth"
+                  name="battery_life"
                   className="p-2 w-full bg-slate-50 border rounded"
                 />
               </div>
 
               <div className="flex-1">
-                <label htmlFor="GPS" className="mt-3">
-                  GPS :
+                <label htmlFor="input_jack" className="mt-3">
+                  Input Jack :
                 </label>
                 <input
                   type="text"
-                  id="GPS"
-                  placeholder="Enter GPS.."
-                  value={data.GPS}
+                  id="input_jack"
+                  placeholder="Enter Input Jack.."
+                  value={data.input_jack}
                   onChange={handleOnChange}
-                  name="GPS"
+                  name="coinput_jacklor"
                   className="p-2 w-full bg-slate-50 border rounded"
                 />
               </div>
@@ -565,64 +421,31 @@ const Tablet = ({ onClose, fetchData }) => {
 
             <div className="flex gap-4">
               <div className="flex-1">
-                <label htmlFor="sensor" className="mt-3">
-                  Sensor :
+                <label htmlFor="system_requirement" className="mt-3">
+                  System Requirement :
                 </label>
                 <input
                   type="text"
-                  id="sensor"
-                  placeholder="Enter Sensor.."
-                  value={data.sensor}
+                  id="system_requirement"
+                  placeholder="Enter System Requirement.."
+                  value={data.system_requirement}
                   onChange={handleOnChange}
-                  name="sensor"
+                  name="system_requirement"
                   className="p-2 w-full bg-slate-50 border rounded"
                 />
               </div>
 
               <div className="flex-1">
-                <label htmlFor="usb" className="mt-3">
-                  USB :
+                <label htmlFor="weight" className="mt-3">
+                  Weight :
                 </label>
                 <input
                   type="text"
-                  id="usb"
-                  placeholder="Enter USB.."
-                  value={data.usb}
+                  id="weight"
+                  placeholder="Enter Weight.."
+                  value={data.weight}
                   onChange={handleOnChange}
-                  name="usb"
-                  className="p-2 w-full bg-slate-50 border rounded"
-                />
-              </div>
-
-            </div>
-
-            <div className="flex gap-4">
-              <div className="flex-1">
-                <label htmlFor="wlan" className="mt-3">
-                   WLAN :
-                </label>
-                <input
-                  type="number"
-                  id="wlan"
-                  placeholder="Enter WLAN.."
-                  value={data.wlan}
-                  onChange={handleOnChange}
-                  name="wlan"
-                  className="p-2 w-full bg-slate-50 border rounded"
-                />
-              </div>
-
-              <div className="flex-1">
-                <label htmlFor="price" className="mt-3">
-                  Price :
-                </label>
-                <input
-                  type="number"
-                  id="price"
-                  placeholder="Enter Price.."
-                  value={data.price}
-                  onChange={handleOnChange}
-                  name="price"
+                  name="weight"
                   className="p-2 w-full bg-slate-50 border rounded"
                 />
               </div>
@@ -630,16 +453,80 @@ const Tablet = ({ onClose, fetchData }) => {
 
             <div className="flex gap-4">
               <div className="flex-1">
-                <label htmlFor="sellingPrice" className="mt-3">
-                   Selling Price :
+                <label htmlFor="noise_ratio" className="mt-3">
+                  Noise Ratio :
                 </label>
                 <input
-                  type="number"
-                  id="sellingPrice"
-                  placeholder="Enter Selling Price.."
-                  value={data.sellingPrice}
+                  type="text"
+                  id="noise_ratio"
+                  placeholder="Enter Noise Ratio.."
+                  value={data.noise_ratio}
                   onChange={handleOnChange}
-                  name="sellingPrice"
+                  name="noise_ratio"
+                  className="p-2 w-full bg-slate-50 border rounded"
+                />
+              </div>
+
+              <div className="flex-1">
+                <label htmlFor="pickup_pattern" className="mt-3">
+                  Pickup Pattern :
+                </label>
+                <input
+                  type="text"
+                  id="pickup_pattern"
+                  placeholder="Enter Pickup Pattern.."
+                  value={data.pickup_pattern}
+                  onChange={handleOnChange}
+                  name="pickup_pattern"
+                  className="p-2 w-full bg-slate-50 border rounded"
+                />
+              </div>
+            </div>
+
+            <div className="flex gap-4">
+              <div className="flex-1">
+                <label htmlFor="color" className="mt-3">
+                  Color :
+                </label>
+                <input
+                  type="text"
+                  id="color"
+                  placeholder="Enter Color.."
+                  value={data.color}
+                  onChange={handleOnChange}
+                  name="color"
+                  className="p-2 w-full bg-slate-50 border rounded"
+                />
+              </div>
+
+              <div className="flex-1">
+                <label htmlFor="mic_frequency" className="mt-3">
+                  Mic Frequency :
+                </label>
+                <input
+                  type="text"
+                  id="mic_frequency"
+                  placeholder="Enter Mic Frequency.."
+                  value={data.mic_frequency}
+                  onChange={handleOnChange}
+                  name="mic_frequency"
+                  className="p-2 w-full bg-slate-50 border rounded"
+                />
+              </div>
+            </div>
+
+            <div className="flex gap-4">
+              <div className="flex-1">
+                <label htmlFor="mic_sensitivity" className="mt-3">
+                  Mic Sensitivity :
+                </label>
+                <input
+                  type="text"
+                  id="mic_sensitivity"
+                  placeholder="Enter Mic Sensitivity.."
+                  value={data.mic_sensitivity}
+                  onChange={handleOnChange}
+                  name="mic_sensitivity"
                   className="p-2 w-full bg-slate-50 border rounded"
                 />
               </div>
@@ -655,6 +542,37 @@ const Tablet = ({ onClose, fetchData }) => {
                   value={data.warranty}
                   onChange={handleOnChange}
                   name="warranty"
+                  className="p-2 w-full bg-slate-50 border rounded"
+                />
+              </div>
+            </div>
+
+            <div className="flex gap-4">
+              <div className="flex-1">
+                <label htmlFor="price" className="mt-3">
+                  Price :
+                </label>
+                <input
+                  type="number"
+                  id="price"
+                  placeholder="Enter Price.."
+                  value={data.price}
+                  onChange={handleOnChange}
+                  name="price"
+                  className="p-2 w-full bg-slate-50 border rounded"
+                />
+              </div>
+              <div className="flex-1">
+                <label htmlFor="sellingPrice" className="mt-3">
+                  Selling Price :
+                </label>
+                <input
+                  type="number"
+                  id="sellingPrice"
+                  placeholder="Enter Selling Price.."
+                  value={data.sellingPrice}
+                  onChange={handleOnChange}
+                  name="sellingPrice"
                   className="p-2 w-full bg-slate-50 border rounded"
                 />
               </div>
@@ -691,4 +609,4 @@ const Tablet = ({ onClose, fetchData }) => {
   );
 };
 
-export default Tablet;
+export default UpdateHeadPhone;

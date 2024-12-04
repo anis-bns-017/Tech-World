@@ -30,6 +30,10 @@ import DropDown from "../dropMenu/DropDown";
 import MobileCategory from "../pages/productCategory/MobileCategory";
 import Success from "../../../backend/controller/order/Success";
 import Cancel from "../../../backend/controller/order/Cancel";
+import UpdateTablet from "../components/updateProducts/UpdateTablet";
+import UpdateMonitor from "../components/uploadProduct/Monitor";
+import UpdateHeadPhone from "../components/updateProducts/UpdateHeadphone";
+import UpdatePhone from "../components/updateProducts/UpdatePhone";
 
 const router = createBrowserRouter([
   {
@@ -153,8 +157,44 @@ const router = createBrowserRouter([
           {
             path: "all-products",
             element: <AllProducts />,
+
+            children: [
+              {
+                path: "update-tablet",
+                element: <UpdateTablet />,
+              },
+              {
+                path: "update-monitor",
+                element: <UpdateMonitor />,
+              },
+              {
+                path: "update-headphone",
+                element: <UpdateHeadPhone />,
+              },
+              {
+                path: "update-phone",
+                element: <UpdatePhone />,
+              },
+            ],
           },
         ],
+      },
+
+      {
+        path: "update-tablet",
+        element: <UpdateTablet />,
+      },
+      {
+        path: "update-monitor",
+        element: <UpdateMonitor />,
+      },
+      {
+        path: "update-headphone",
+        element: <UpdateHeadPhone />,
+      },
+      {
+        path: "update-phone",
+        element: <UpdatePhone />,
       },
 
       //category start from here.
@@ -166,6 +206,8 @@ const router = createBrowserRouter([
         path: "search",
         element: <SearchProduct />,
       },
+      //update Products
+
       {
         path: "admin-panel",
         element: <AdminPanel />,
@@ -177,6 +219,24 @@ const router = createBrowserRouter([
           {
             path: "all-products",
             element: <AllProducts />,
+            children: [
+              {
+                path: "update-tablet",
+                element: <UpdateTablet />,
+              },
+              {
+                path: "update-monitor",
+                element: <UpdateMonitor />,
+              },
+              {
+                path: "update-headphone",
+                element: <UpdateHeadPhone />,
+              },
+              {
+                path: "update-tablet",
+                element: <UpdateTablet />,
+              },
+            ],
           },
         ],
       },

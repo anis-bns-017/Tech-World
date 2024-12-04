@@ -94,7 +94,7 @@ const Camera = ({ onClose, fetchData }) => {
 
     if (responseData.success) {
       toast.success(responseData?.message);
-      onClose();
+      view();
       fetchData();
     }
 

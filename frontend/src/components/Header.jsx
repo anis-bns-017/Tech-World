@@ -162,7 +162,7 @@ const Header = () => {
             </div>
           </div> */}
 
-          {user?._id && (
+          {user?._id && user?.role === "GENERAL" && (
             <Link to={"/cart"} className="text-2xl relative">
               <span>
                 <FaCartPlus />

@@ -16,9 +16,10 @@ async function userSignupController(req, res) {
       city,
     } = req.body;
 
+    console.log("address: ", req.body);
+
     // Find the user by ID
     const user = await userModel.findById(req.userId);
-    console.log("User:", user);
 
     // Check if the user exists
     if (!user) {

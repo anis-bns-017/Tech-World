@@ -1,3 +1,5 @@
+import UpdateMonitor from "../components/uploadProduct/Monitor";
+
 const backendDomain = "http://localhost:8080";
 
 const SummaryApi = {
@@ -158,7 +160,28 @@ const SummaryApi = {
   payment: {
     url: `${backendDomain}/api/checkout`,
     method: "post",
-  }
+  },
+
+  //update Product
+  updateTablet: {
+    url: `${backendDomain}/api/update-tablet`,
+    method: "post",
+  },
+
+  UpdateMonitor: {
+    url: `${backendDomain}/api/update-monitor`,
+    method: "post",
+  },
+
+  updateHeadPHone: {
+    url: `${backendDomain}/api/update-headphone`,
+    method: "post",
+  },
+
+  updatePhone: {
+    url: `${backendDomain}/api/update-phone`,
+    method: "post",
+  },
 };
 
 export default SummaryApi;

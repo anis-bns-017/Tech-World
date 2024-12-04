@@ -4,7 +4,7 @@ import { MdClose } from "react-icons/md";
 import SummaryApi from "../common";
 import { toast } from "react-toastify";
 
-const ChangeUserRole = ({ name, email, role, onClose, userId, callFunc }) => {
+const ChangeUserRole = ({ firstName, lastName, email, role, onClose, userId, callFunc }) => {
   const [userRole, setUserRole] = useState(role);
 
   const handleOnChangeSelect = (e) => {
@@ -42,7 +42,7 @@ const ChangeUserRole = ({ name, email, role, onClose, userId, callFunc }) => {
         </button>
 
         <h1 className="pb-4 text-lg font-medium">Change your Role</h1>
-        <p> Name: {name}</p>
+        <p> Name: {firstName + " " + lastName}</p>
         <p> Email: {email} </p>
 
         <div className="flex items-center justify-between my-4">

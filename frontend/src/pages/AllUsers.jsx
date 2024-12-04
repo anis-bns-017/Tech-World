@@ -8,6 +8,8 @@ import { useSelector } from "react-redux";
 
 const AllUsers = () => {
   const user = useSelector((state) => state?.user?.user);
+  console.log("Your ROle: ", user);
+
   const [allUsers, setAllUsers] = useState([]);
   const [openUpdateRole, setOpenUpdateRole] = useState(false);
   const [updateUserDetails, setUpdateUserDetails] = useState({
@@ -47,7 +49,7 @@ const AllUsers = () => {
             <th>Email</th>
             <th>Role</th>
             <th>Created Date</th>
-            <th>Action</th>
+            {user?.role === "ADMIN" && <th>Action</th>}
           </tr>
         </thead>
         <tbody>
@@ -81,17 +83,19 @@ const AllUsers = () => {
                   <td>{el?.email}</td>
                   <td>{el?.role}</td>
                   <td>{moment(el?.createdAt).format("LL")}</td>
-                  <td>
-                    <button
-                      onClick={() => {
-                        setUpdateUserDetails(el);
-                        setOpenUpdateRole(true);
-                      }}
-                      className="bg-green-300 p-2 rounded-full cursor-pointer hover:bg-green-400"
-                    >
-                      <MdEdit />
-                    </button>
-                  </td>
+                  {user?.role === "ADMIN" && (
+                    <td>
+                      <button
+                        onClick={() => {
+                          setUpdateUserDetails(el);
+                          setOpenUpdateRole(true);
+                        }}
+                        className="bg-green-300 p-2 rounded-full cursor-pointer hover:bg-green-400"
+                      >
+                        <MdEdit />
+                      </button>
+                    </td>
+                  )}
                 </tr>
               );
             }
@@ -102,7 +106,8 @@ const AllUsers = () => {
       {openUpdateRole && (
         <ChangeUserRole
           onClose={() => setOpenUpdateRole(false)}
-          name={updateUserDetails.name}
+          firstName={updateUserDetails.firstName}
+          lastName={updateUserDetails.lastName}
           email={updateUserDetails.email}
           role={updateUserDetails.role}
           userId={updateUserDetails._id}

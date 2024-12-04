@@ -34,6 +34,7 @@ const headphoneUploadController = require("../controller/productUpload/headphone
 const getMobile = require("../controller/getSeperateProduct/getMobile");
 const filterPhoneController = require("../controller/getSeperateProduct/filterMobiles");
 const paymentController = require("../controller/order/paymentController")
+const updateTabletController = require("../controller/updateProduct/updateTabletController")
 
 router.post("/signup", userSignupController);
 router.post("/signin", userSigninController);
@@ -60,6 +61,9 @@ router.post("/upload-camera", authToken, cameraUploadController);
 router.post("/upload-keyboard", authToken, keyboardUploadController);
 router.post("/upload-mouse", authToken, mouseUploadController);
 router.post("/upload-headphone", authToken, headphoneUploadController);
+
+//update
+router.post("/update-tablet", authToken, updateTabletController);
 
 //other thing about product.
 router.get("/get-product", getProductController);

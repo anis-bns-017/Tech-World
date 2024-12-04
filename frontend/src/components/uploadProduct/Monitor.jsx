@@ -7,39 +7,64 @@ import productCategory from "../../helpers/productCategory";
 import { FaCloudUploadAlt } from "react-icons/fa";
 import { MdDelete } from "react-icons/md";
 import DisplayImage from "../DIsplayImage";
-import { useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 
-const Monitor = ({ onClose, fetchData }) => {
+const UpdateMonitor = ({ onClose, fetchData }) => {
+  const location = useLocation();
+  const product = location.state?.product;
+
   const [data, setData] = useState({
-    productName: "",
-    brandName: "",
-    category: "",
-    productImage: [],
-    key_features: "",
-    description: "",
-    display_size: "",
-    display_type: "",
-    panel_type: "",
-    resolution: "",
-    aspect_ratio: "",
-    viewing_ratio: "",
-    brightness: "",
-    contrast_ratio: "",
-    refresh_rate: "",
-    color_support: "",
-    response_time: "",
-    curvature: "",
-    vga: "",
-    hdmi: "",
-    vesa_wall_mount: "",
-    color: "",
-    dimension: "",
-    weight: "",
-    power_consumption: "",
-    voltage: "",
-    price: "", 
-    sellingPrice: "", 
-    warranty: "",
+    productName: product?.productName || "",
+    brandName: product?.brandName || "",
+    category: product?.category || "",
+    productImage: product?.productImage || [],
+    key_features: product?.key_features || "",
+    description: product?.description || "",
+
+    display_size: product?.display_size || "",
+    display_type: product?.display_type || "",
+    panel_type: product?.panel_type || "",
+    resolution: product?.resolution || "",
+    aspect_ratio: product?.aspect_ratio || "",
+    viewing_ratio: product?.viewing_ratio || "",
+    brightness: product?.brightness || "",
+    contrast_ratio: product?.contrast_ratio || "",
+    refresh_rate: product?.refresh_rate || "",
+    color_support: product?.color_support || "",
+    response_time: product?.response_time || "",
+    curvature: product?.curvature || "",
+
+    vga: product?.vga || "",
+    hdmi: product?.hdmi || "",
+    vesa_wall_mount: product?.vesa_wall_mount || "",
+    color: product?.color || "",
+    dimension: product?.dimension || "",
+    weight: product?.weight || "",
+    power_consumption: product?.power_consumption || "",
+    voltage: product?.voltage || "",
+
+    frequency_range: product?.frequency_range || "",
+    sensitivity: product?.sensitivity || "",
+    cable_length: product?.cable_length || "",
+    impedance: product?.impedance || "",
+    others: product?.others || "",
+    driver_diameter: product?.driver_diameter || "",
+    connectivity: product?.connectivity || "",
+
+    battery_capacity: product?.battery_capacity || "",
+    battery_life: product?.battery_life || "",
+
+    input_jack: product?.input_jack || "",
+    system_requirement: product?.system_requirement || "",
+    noise_ratio: product?.noise_ratio || "",
+    pickup_pattern: product?.pickup_pattern || "",
+
+    mic_frequency: product?.mic_frequency || "",
+    mic_sensitivity: product?.mic_sensitivity || "",
+
+    price: product?.price || "",
+    sellingPrice: product?.sellingPrice || "",
+    warranty: product?.warranty || "",
   });
 
   const [openFullScreenImage, setOpenFullScreenImage] = useState(false);
@@ -94,14 +119,14 @@ const Monitor = ({ onClose, fetchData }) => {
       headers: {
         "content-type": "application/json",
       },
-      body: JSON.stringify(data),
+      body: JSON.stringify({data, productId: product?._id}),
     });
 
     const responseData = await response.json();
 
     if (responseData.success) {
       toast.success(responseData?.message);
-      onClose();
+      view();
       fetchData();
     }
 
@@ -138,7 +163,7 @@ const Monitor = ({ onClose, fetchData }) => {
                   value={data.productName}
                   onChange={handleOnChange}
                   name="productName"
-                  className="p-2 w-full bg-slate-50 border rounded"
+                  className="p-2 w-full bg-slate-100 border rounded"
                 />
               </div>
 
@@ -153,7 +178,7 @@ const Monitor = ({ onClose, fetchData }) => {
                   value={data.brandName}
                   onChange={handleOnChange}
                   name="brandName"
-                  className="p-2 w-full bg-slate-50 border rounded"
+                  className="p-2 w-full bg-slate-100 border rounded"
                 />
               </div>
             </div>
@@ -164,7 +189,7 @@ const Monitor = ({ onClose, fetchData }) => {
                   Key Features :
                 </label>
                 <textarea
-                  className="min-h-32 p-2 w-full bg-slate-50 border resize-none"
+                  className="min-h-32 p-2 w-full bg-slate-100 border resize-none"
                   placeholder="Enter Proddct Key Features"
                   rows={3}
                   cols={5}
@@ -180,7 +205,7 @@ const Monitor = ({ onClose, fetchData }) => {
                 </label>
 
                 <label htmlFor="uploadImageInput">
-                  <div className="p-2 bg-slate-50 border rounded min-h-32 w-full flex justify-center items-center cursor-pointer">
+                  <div className="p-2 bg-slate-100 border rounded min-h-32 w-full flex justify-center items-center cursor-pointer">
                     <div className="text-slate-600 flex justify-center items-center flex-col gap-2">
                       <span className="text-4xl">
                         <FaCloudUploadAlt />
@@ -208,7 +233,7 @@ const Monitor = ({ onClose, fetchData }) => {
                               alt={el}
                               width={80}
                               height={80}
-                              className="bg-slate-50 border cursor-pointer"
+                              className="bg-slate-100 border cursor-pointer"
                               onClick={() => {
                                 setOpenFullScreenImage(true);
                                 setFullscreenImage(el);
@@ -241,7 +266,7 @@ const Monitor = ({ onClose, fetchData }) => {
                 </label>
                 <select
                   value={data.category}
-                  className="p-2 w-full bg-slate-50 border rounded"
+                  className="p-2 w-full bg-slate-100 border rounded"
                   onChange={handleOnChange}
                   name="category"
                 >
@@ -267,7 +292,7 @@ const Monitor = ({ onClose, fetchData }) => {
                   value={data.display_size}
                   onChange={handleOnChange}
                   name="display_size"
-                  className="p-2 w-full bg-slate-50 border rounded"
+                  className="p-2 w-full bg-slate-100 border rounded"
                 />
               </div>
             </div>
@@ -284,7 +309,7 @@ const Monitor = ({ onClose, fetchData }) => {
                   value={data.display_type}
                   onChange={handleOnChange}
                   name="display_type"
-                  className="p-2 w-full bg-slate-50 border rounded"
+                  className="p-2 w-full bg-slate-100 border rounded"
                 />
               </div>
 
@@ -299,7 +324,7 @@ const Monitor = ({ onClose, fetchData }) => {
                   value={data.panel_type}
                   onChange={handleOnChange}
                   name="panel_type"
-                  className="p-2 w-full bg-slate-50 border rounded"
+                  className="p-2 w-full bg-slate-100 border rounded"
                 />
               </div>
             </div>
@@ -316,7 +341,7 @@ const Monitor = ({ onClose, fetchData }) => {
                   value={data.resolution}
                   onChange={handleOnChange}
                   name="resolution"
-                  className="p-2 w-full bg-slate-50 border rounded"
+                  className="p-2 w-full bg-slate-100 border rounded"
                 />
               </div>
 
@@ -331,7 +356,7 @@ const Monitor = ({ onClose, fetchData }) => {
                   value={data.aspect_ratio}
                   onChange={handleOnChange}
                   name="aspect_ratio"
-                  className="p-2 w-full bg-slate-50 border rounded"
+                  className="p-2 w-full bg-slate-100 border rounded"
                 />
               </div>
             </div>
@@ -348,7 +373,7 @@ const Monitor = ({ onClose, fetchData }) => {
                   value={data.viewing_ratio}
                   onChange={handleOnChange}
                   name="viewing_ratio"
-                  className="p-2 w-full bg-slate-50 border rounded"
+                  className="p-2 w-full bg-slate-100 border rounded"
                 />
               </div>
 
@@ -363,7 +388,7 @@ const Monitor = ({ onClose, fetchData }) => {
                   value={data.brightness}
                   onChange={handleOnChange}
                   name="brightness"
-                  className="p-2 w-full bg-slate-50 border rounded"
+                  className="p-2 w-full bg-slate-100 border rounded"
                 />
               </div>
             </div>
@@ -380,7 +405,7 @@ const Monitor = ({ onClose, fetchData }) => {
                   value={data.contrast_ratio}
                   onChange={handleOnChange}
                   name="contrast_ratio"
-                  className="p-2 w-full bg-slate-50 border rounded"
+                  className="p-2 w-full bg-slate-100 border rounded"
                 />
               </div>
 
@@ -395,7 +420,7 @@ const Monitor = ({ onClose, fetchData }) => {
                   value={data.color_support}
                   onChange={handleOnChange}
                   name="color_support"
-                  className="p-2 w-full bg-slate-50 border rounded"
+                  className="p-2 w-full bg-slate-100 border rounded"
                 />
               </div>
             </div>
@@ -412,7 +437,7 @@ const Monitor = ({ onClose, fetchData }) => {
                   value={data.response_time}
                   onChange={handleOnChange}
                   name="response_time"
-                  className="p-2 w-full bg-slate-50 border rounded"
+                  className="p-2 w-full bg-slate-100 border rounded"
                 />
               </div>
 
@@ -427,7 +452,7 @@ const Monitor = ({ onClose, fetchData }) => {
                   value={data.curvature}
                   onChange={handleOnChange}
                   name="curvature"
-                  className="p-2 w-full bg-slate-50 border rounded"
+                  className="p-2 w-full bg-slate-100 border rounded"
                 />
               </div>
             </div>
@@ -444,7 +469,7 @@ const Monitor = ({ onClose, fetchData }) => {
                   value={data.vga}
                   onChange={handleOnChange}
                   name="vga"
-                  className="p-2 w-full bg-slate-50 border rounded"
+                  className="p-2 w-full bg-slate-100 border rounded"
                 />
               </div>
 
@@ -459,7 +484,7 @@ const Monitor = ({ onClose, fetchData }) => {
                   value={data.hdmi}
                   onChange={handleOnChange}
                   name="hdmi"
-                  className="p-2 w-full bg-slate-50 border rounded"
+                  className="p-2 w-full bg-slate-100 border rounded"
                 />
               </div>
             </div>
@@ -476,7 +501,7 @@ const Monitor = ({ onClose, fetchData }) => {
                   value={data.vesa_wall_mount}
                   onChange={handleOnChange}
                   name="vesa_wall_mount"
-                  className="p-2 w-full bg-slate-50 border rounded"
+                  className="p-2 w-full bg-slate-100 border rounded"
                 />
               </div>
 
@@ -491,7 +516,7 @@ const Monitor = ({ onClose, fetchData }) => {
                   value={data.color}
                   onChange={handleOnChange}
                   name="color"
-                  className="p-2 w-full bg-slate-50 border rounded"
+                  className="p-2 w-full bg-slate-100 border rounded"
                 />
               </div>
             </div>
@@ -508,7 +533,7 @@ const Monitor = ({ onClose, fetchData }) => {
                   value={data.dimension}
                   onChange={handleOnChange}
                   name="dimension"
-                  className="p-2 w-full bg-slate-50 border rounded"
+                  className="p-2 w-full bg-slate-100 border rounded"
                 />
               </div>
 
@@ -523,7 +548,7 @@ const Monitor = ({ onClose, fetchData }) => {
                   value={data.weight}
                   onChange={handleOnChange}
                   name="weight"
-                  className="p-2 w-full bg-slate-50 border rounded"
+                  className="p-2 w-full bg-slate-100 border rounded"
                 />
               </div>
             </div>
@@ -540,7 +565,7 @@ const Monitor = ({ onClose, fetchData }) => {
                   value={data.power_consumption}
                   onChange={handleOnChange}
                   name="power_consumption"
-                  className="p-2 w-full bg-slate-50 border rounded"
+                  className="p-2 w-full bg-slate-100 border rounded"
                 />
               </div>
 
@@ -555,7 +580,7 @@ const Monitor = ({ onClose, fetchData }) => {
                   value={data.voltage}
                   onChange={handleOnChange}
                   name="voltage"
-                  className="p-2 w-full bg-slate-50 border rounded"
+                  className="p-2 w-full bg-slate-100 border rounded"
                 />
               </div>
             </div>
@@ -572,7 +597,7 @@ const Monitor = ({ onClose, fetchData }) => {
                   value={data.warranty}
                   onChange={handleOnChange}
                   name="warranty"
-                  className="p-2 w-full bg-slate-50 border rounded"
+                  className="p-2 w-full bg-slate-100 border rounded"
                 />
               </div>
 
@@ -587,10 +612,9 @@ const Monitor = ({ onClose, fetchData }) => {
                   value={data.price}
                   onChange={handleOnChange}
                   name="price"
-                  className="p-2 w-full bg-slate-50 border rounded"
+                  className="p-2 w-full bg-slate-100 border rounded"
                 />
               </div>
-
             </div>
 
             <div className="flex gap-4">
@@ -605,7 +629,7 @@ const Monitor = ({ onClose, fetchData }) => {
                   value={data.sellingPrice}
                   onChange={handleOnChange}
                   name="sellingPrice"
-                  className="p-2 w-full bg-slate-50 border rounded"
+                  className="p-2 w-full bg-slate-100 border rounded"
                 />
               </div>
             </div>
@@ -614,7 +638,7 @@ const Monitor = ({ onClose, fetchData }) => {
               Description :
             </label>
             <textarea
-              className="h-40 p-2 bg-slate-50 border resize-none"
+              className="h-40 p-2 bg-slate-100 border resize-none"
               placeholder="Enter Proddct Description"
               rows={3}
               cols={5}
@@ -641,4 +665,4 @@ const Monitor = ({ onClose, fetchData }) => {
   );
 };
 
-export default Monitor;
+export default UpdateMonitor;
