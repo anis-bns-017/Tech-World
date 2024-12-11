@@ -1,39 +1,71 @@
 const userModel = require("../../models/userModel");
-const stripe = require("stripe")(
-  "sk_test_51QR5zPA8YvS28rwrn92tpS9LZV2ZjnUX4jurJwstpVuz4pPEytivnVpztpnb7WHWoTUvZNhO40DKaX74Lj7VaRXH00ouK8b82D"
-);
+const SSLCommerzPayment = require("sslcommerz-lts");
+const express = require("express");
+const app = express();
 
 const paymentController = async (req, res) => {
   try {
-    const { products } = req.body;
+    const { products, total_amount, total_quantity, buyerDetails } = req.body;
 
-    console.log("hey: ", products);
+    // console.log("hey: ", products);
+    // console.log("Buyer: ", buyerDetails);
+    // console.log("amount: ", total_amount);
+    // console.log("quantity: ", total_quantity);
+    const store_id = process.env.STORE_ID;
+    const store_passwd = process.env.STORE_PASS;
+    const is_live = false;
 
-    const lineItems = products.map((product) => ({
-      price_data: {
-        currency: "bdt",
-        product_data: {
-          name: product.productId.productName,
-          images: product.productId.productImage, // Ensure these are valid URLs
-          metadata: {
-            productId: product.productId._id,
-          },
-        },
-        unit_amount: product.productId.sellingPrice * 100,
-      },
-      quantity: product.quantity,
-    }));
+    const transID = `TRANS_${Date.now()}_${Math.floor(
+      Math.random() * 1000000
+    )}`;
 
-    const session = await stripe.checkout.sessions.create({
-      payment_method_types: ["card"],
-      line_items: lineItems,
-      mode: "payment",
-      success_url: "http://localhost:5173/success",
-      cancel_url: "http://localhost:5173/cancel",
+    const data = {
+      total_amount: total_amount,
+      currency: buyerDetails.currency,
+      tran_id: transID, // use unique tran_id for each api call
+      success_url: `http://localhost:8080/api/success/${transID}`,
+      fail_url: "http://localhost:3030/fail",
+      cancel_url: "http://localhost:3030/cancel",
+      ipn_url: "http://localhost:3030/ipn",
+      shipping_method: "Courier",
+      product_name: "Computer.",
+      product_category: "Electronic",
+      product_profile: "general",
+      cus_name: buyerDetails.name,
+      cus_email: "customer@example.com",
+      cus_add1: buyerDetails.address,
+      cus_add2: "Dhaka",
+      cus_city: "Dhaka",
+      cus_state: "Dhaka",
+      cus_postcode: buyerDetails.postCode,
+      cus_country: "Bangladesh",
+      cus_phone: buyerDetails.phoneNumber,
+      cus_fax: "01711111111",
+      ship_name: "Customer Name",
+      ship_add1: "Dhaka",
+      ship_add2: "Dhaka",
+      ship_city: "Dhaka",
+      ship_state: "Dhaka",
+      ship_postcode: 1000,
+      ship_country: "Bangladesh",
+    };
+
+    console.log("My Data: ", data);
+    const sslcz = new SSLCommerzPayment(store_id, store_passwd, is_live);
+    sslcz.init(data).then((apiResponse) => {
+      // Redirect the user to payment gateway
+      let GatewayPageURL = apiResponse.GatewayPageURL;
+      res.send({ url: GatewayPageURL });
+
+      const finalOrder = {
+        products,
+        paidStatus: false,
+        tansactionId: transID,
+      };
+
+      const result = 
+      console.log("Redirecting to: ", GatewayPageURL);
     });
-    console.log("hey ", session?.id);
-
-    res.json({ id: session?.id });
   } catch (err) {
     res.status(400).json({
       message: err?.message || err,

@@ -34,7 +34,10 @@ const headphoneUploadController = require("../controller/productUpload/headphone
 const getMobile = require("../controller/getSeperateProduct/getMobile");
 const filterPhoneController = require("../controller/getSeperateProduct/filterMobiles");
 const paymentController = require("../controller/order/paymentController")
+const successController = require("../controller/order/successController")
+
 const updateTabletController = require("../controller/updateProduct/updateTabletController")
+const updateLaptopController = require("../controller/updateProduct/updateLaptopController")
 
 router.post("/signup", userSignupController);
 router.post("/signin", userSigninController);
@@ -64,6 +67,7 @@ router.post("/upload-headphone", authToken, headphoneUploadController);
 
 //update
 router.post("/update-tablet", authToken, updateTabletController);
+router.post("/update-laptop", authToken, updateLaptopController);
 
 //other thing about product.
 router.get("/get-product", getProductController);
@@ -88,5 +92,6 @@ router.post("/delete-cart-product", authToken, deleleAddToCartProduct);
 
 //payment and order
 router.post("/checkout", authToken, paymentController)
+router.post("/success/:transID", successController);
 
 module.exports = router;

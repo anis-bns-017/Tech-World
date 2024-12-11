@@ -164,6 +164,7 @@ const UpdateMonitor = ({ onClose, fetchData }) => {
                   onChange={handleOnChange}
                   name="productName"
                   className="p-2 w-full bg-slate-100 border rounded"
+                  required
                 />
               </div>
 
@@ -179,6 +180,7 @@ const UpdateMonitor = ({ onClose, fetchData }) => {
                   onChange={handleOnChange}
                   name="brandName"
                   className="p-2 w-full bg-slate-100 border rounded"
+                  required
                 />
               </div>
             </div>
@@ -269,6 +271,7 @@ const UpdateMonitor = ({ onClose, fetchData }) => {
                   className="p-2 w-full bg-slate-100 border rounded"
                   onChange={handleOnChange}
                   name="category"
+                  required
                 >
                   <option value="">Select Category</option>
                   {productCategory.map((el, index) => {
@@ -613,6 +616,7 @@ const UpdateMonitor = ({ onClose, fetchData }) => {
                   onChange={handleOnChange}
                   name="price"
                   className="p-2 w-full bg-slate-100 border rounded"
+                  required
                 />
               </div>
             </div>
@@ -630,6 +634,7 @@ const UpdateMonitor = ({ onClose, fetchData }) => {
                   onChange={handleOnChange}
                   name="sellingPrice"
                   className="p-2 w-full bg-slate-100 border rounded"
+                  required
                 />
               </div>
             </div>

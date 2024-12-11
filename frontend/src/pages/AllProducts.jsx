@@ -10,7 +10,7 @@ import SellerProductCard from "../components/SellerProductCard";
 const AllProducts = () => {
   const user = useSelector((state) => state?.user?.user);
 
-  const [openUploadProduct, setOpenUploadProduct] = useState(false);
+  
   const [allProduct, setAllProduct] = useState([]);
 
   const fetchAllProduct = async () => {
@@ -40,21 +40,6 @@ const AllProducts = () => {
             />
           );
         })}
-
-        {/* {allProduct.map((product, index) => {
-          return user?.role === "ADMIN" ? (
-            <SellerProductCard
-              data={product}
-              key={index + "allproducts"}
-              fetchData={fetchAllProduct}
-            />
-          ) : (
-            <AdminProductCard
-              data={product}
-              key={index + "allproducts"}
-              fetchData={fetchAllProduct}
-            />
-          ); */}
       </div>
     </div>
   );

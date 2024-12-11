@@ -87,7 +87,13 @@ const UpdateTablet = ({ onClose, fetchData }) => {
 
   const view = () => {
     setOpenUploadProduct(false);
-    navigate("/account/all-products");
+    const storeLocation = location.pathname;
+    const containsAccount = storeLocation.includes("/account");
+    if (containsAccount) {
+      navigate("/account/all-products");
+    } else {
+      navigate("/");
+    }
   };
   // upload product
   const handleSubmit = async (e) => {

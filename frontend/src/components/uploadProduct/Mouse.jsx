@@ -9,7 +9,7 @@ import { MdDelete } from "react-icons/md";
 import DisplayImage from "../DIsplayImage";
 import { useNavigate } from "react-router-dom";
 
-const Mouse = ({ onClose, fetchData }) => {
+const Mouse = ({ fetchData }) => {
   const [data, setData] = useState({
     productName: "",
     brandName: "",
@@ -33,8 +33,8 @@ const Mouse = ({ onClose, fetchData }) => {
     cable_lenth: "",
     mechanical_switches: "",
     built_in_memory: "",
-    price: "",
-    sellingPrice: "",
+    price: null,
+    sellingPrice: null,
     warranty: "",
   });
 
@@ -242,6 +242,7 @@ const Mouse = ({ onClose, fetchData }) => {
                   className="p-2 w-full bg-slate-50 border rounded"
                   onChange={handleOnChange}
                   name="category"
+                  required
                 >
                   <option value="">Select Category</option>
                   {productCategory.map((el, index) => {
@@ -487,6 +488,7 @@ const Mouse = ({ onClose, fetchData }) => {
                   onChange={handleOnChange}
                   name="price"
                   className="p-2 w-full bg-slate-50 border rounded"
+                  required
                 />
               </div>
               <div className="flex-1">
@@ -501,6 +503,7 @@ const Mouse = ({ onClose, fetchData }) => {
                   onChange={handleOnChange}
                   name="sellingPrice"
                   className="p-2 w-full bg-slate-50 border rounded"
+                  required
                 />
               </div>
             </div>

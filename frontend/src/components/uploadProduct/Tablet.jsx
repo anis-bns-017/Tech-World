@@ -40,8 +40,8 @@ const Tablet = ({ onClose, fetchData }) => {
     sensor: "", 
     usb: "", 
     wlan: "", 
-    price: "",
-    sellingPrice: "",
+    price: null,
+    sellingPrice: null,
     warranty: "",
   });
 

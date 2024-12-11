@@ -15,8 +15,8 @@ const UploadProduct = ({ onClose, fetchData }) => {
     category: "",
     productImage: [],
     description: "",
-    price: "",
-    sellingPrice: "",
+    price: null,
+    sellingPrice: null,
   });
 
   const [openFullScreenImage, setOpenFullScreenImage] = useState(false);

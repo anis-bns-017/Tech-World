@@ -34,8 +34,8 @@ const HeadPhone = ({ onClose, fetchData }) => {
     color: "",
     mic_frequency: "",
     mic_sensitivity: "",
-    price: "",
-    sellingPrice: "",
+    price: null,
+    sellingPrice: null,
     warranty: "",
   });
 
@@ -136,6 +136,7 @@ const HeadPhone = ({ onClose, fetchData }) => {
                   onChange={handleOnChange}
                   name="productName"
                   className="p-2 w-full bg-slate-50 border rounded"
+                  required
                 />
               </div>
 
@@ -151,6 +152,7 @@ const HeadPhone = ({ onClose, fetchData }) => {
                   onChange={handleOnChange}
                   name="brandName"
                   className="p-2 w-full bg-slate-50 border rounded"
+                  required
                 />
               </div>
             </div>
@@ -188,6 +190,7 @@ const HeadPhone = ({ onClose, fetchData }) => {
                         id="uploadImageInput"
                         className="hidden"
                         onChange={handleUploadProduct}
+                        required
                       />
                     </div>
                   </div>
@@ -241,6 +244,7 @@ const HeadPhone = ({ onClose, fetchData }) => {
                   className="p-2 w-full bg-slate-50 border rounded"
                   onChange={handleOnChange}
                   name="category"
+                  required
                 >
                   <option value="">Select Category</option>
                   {productCategory.map((el, index) => {
@@ -551,6 +555,7 @@ const HeadPhone = ({ onClose, fetchData }) => {
                   onChange={handleOnChange}
                   name="price"
                   className="p-2 w-full bg-slate-50 border rounded"
+                  required
                 />
               </div>
               <div className="flex-1">
@@ -565,6 +570,7 @@ const HeadPhone = ({ onClose, fetchData }) => {
                   onChange={handleOnChange}
                   name="sellingPrice"
                   className="p-2 w-full bg-slate-50 border rounded"
+                  required
                 />
               </div>
             </div>

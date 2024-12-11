@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import uploadImage from "../../helpers/UploadImage";
 import SummaryApi from "../../common";
 import { toast } from "react-toastify";
@@ -7,69 +7,72 @@ import productCategory from "../../helpers/productCategory";
 import { FaCloudUploadAlt } from "react-icons/fa";
 import { MdDelete } from "react-icons/md";
 import DisplayImage from "../DIsplayImage";
-import { useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 
-const Laptop = ({fetchData}) => {
+const UpdateLaptop = () => {
+  const location = useLocation();
+  const product = location.state?.product;
+   
   const [data, setData] = useState({
-    productName: "",
-    brandName: "",
-    category: "",
-    productImage: [],
-    key_features: "",
-    description: "",
-    processor_brand: "",
-    processor_model: "",
-    processor_frequency: "",
-    processor_core: "",
-    processor_thread: "",
-    cpu_cache: "",
-    chipset: "",
-    chipset_model: "",
-    display: "",
-    display_type: "",
-    display_resolution: "",
-    touch_screen: "",
-    refresh_rate: "",
-    display_features: "",
-    ram: "",
-    ram_type: "",
-    bus_speed: "",
-    total_ram_slot: "",
-    max_ram_capacity: "",
-    storage_type: "",
-    storage_capacity: "",
-    extra_m2_slot: "",
-    storage_upgrade: "",
-    graphics_model: "",
-    graphics_memory: "",
-    graphics_type: "",
-    keyboard_type: "",
-    touchPad: "",
-    webcam: "",
-    speaker: "",
-    microphone: "",
-    audio_features: "",
-    optical_drive: "",
-    card_reader: "",
-    hdmi_port: "",
-    usb_port: "",
-    usb_type_c: "",
-    microphone_port: "",
-    lan: "",
-    wifi: "",
-    bluetooth: "",
-    fingerPrint: "",
-    camera_privacy_shutter: "",
-    security_chip: "",
-    operating_system: "",
-    battery_capacity: "",
-    adapter_type: "",
-    dimensions: "",
-    weight: "",
-    body_material: "",
-    warranty: "",
-    price: null,
-    sellingPrice: null,
+    productName: product?.productName || "",
+    brandName: product?.brandName || "",
+    category: product?.category || "",
+    productImage: product?.productImage || [],
+    key_features: product?.key_features || "",
+    description: product?.description || "",
+    processor_brand: product?.processor_brand || "",
+    processor_model: product?.processor_model || "",
+    processor_frequency: product?.processor_frequency || "",
+    processor_core: product?.processor_core || "",
+    processor_thread: product?.processor_thread || "",
+    cpu_cache: product?.cpu_cache || "",
+    chipset: product?.chipset || "",
+    chipset_model: product?.chipset_model || "",
+    display: product?.display || "",
+    display_type: product?.display_type || "",
+    display_resolution: product?.display_resolution || "",
+    touch_screen: product?.touch_screen || "",
+    refresh_rate: product?.refresh_rate || "",
+    display_features: product?.display_features || "",
+    ram: product?.ram || "",
+    ram_type: product?.ram_type || "",
+    bus_speed: product?.bus_speed || "",
+    total_ram_slot: product?.total_ram_slot || "",
+    max_ram_capacity: product?.max_ram_capacity || "",
+    storage_type: product?.storage_type || "",
+    storage_capacity: product?.storage_capacity || "",
+    extra_m2_slot: product?.extra_m2_slot || "",
+    storage_upgrade: product?.storage_upgrade || "",
+    graphics_model: product?.graphics_model || "",
+    graphics_memory: product?.graphics_memory || "",
+    graphics_type: product?.graphics_type || "",
+    keyboard_type: product?.keyboard_type || "",
+    touchPad: product?.touchPad || "",
+    webcam: product?.webcam || "",
+    speaker: product?.speaker || "",
+    microphone: product?.microphone || "",
+    audio_features: product?.audio_features || "",
+    optical_drive: product?.optical_drive || "",
+    card_reader: product?.card_reader || "",
+    hdmi_port: product?.hdmi_port || "",
+    usb_port: product?.usb_port || "",
+    usb_type_c: product?.usb_type_c || "",
+    microphone_port: product?.microphone_port || "",
+    lan: product?.lan || "",
+    wifi: product?.wifi || "",
+    bluetooth: product?.bluetooth || "",
+    fingerPrint: product?.fingerPrint || "",
+    camera_privacy_shutter: product?.camera_privacy_shutter || "",
+    security_chip: product?.security_chip || "",
+    operating_system: product?.operating_system || "",
+    battery_capacity: product?.battery_capacity || "",
+    adapter_type: product?.adapter_type || "",
+    dimensions: product?.dimensions || "",
+    weight: product?.weight || "",
+    body_material: product?.body_material || "",
+    warranty: product?.warranty || "",
+    price: product?.price || "",
+    sellingPrice: product?.sellingPrice || "",
   });
 
   const [openFullScreenImage, setOpenFullScreenImage] = useState(false);
@@ -85,6 +88,7 @@ const Laptop = ({fetchData}) => {
       };
     });
   };
+
   const handleUploadProduct = async (e) => {
     const file = e.target.files[0];
 
@@ -112,19 +116,39 @@ const Laptop = ({fetchData}) => {
 
   const view = () => {
     setOpenUploadProduct(false);
-    navigate("/");
-  }
+    const storeLocation = location.pathname;
+    const containsAccount = storeLocation.includes("/account");
+    if (containsAccount) {
+      navigate("/account/all-products");
+    } else {
+      navigate("/");
+    }
+  };
+
+  const [allProduct, setAllProduct] = useState([]);
+
+  const fetchAllProduct = async () => {
+    const response = await fetch(SummaryApi.allProduct.url);
+    const dataResponse = await response.json();
+
+    setAllProduct(dataResponse?.data || []);
+  };
+
+  useEffect(() => {
+    fetchAllProduct();
+  }, []);
+
   // upload product
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    const response = await fetch(SummaryApi.uploadLaptop.url, {
-      method: SummaryApi.uploadLaptop.method,
+    const response = await fetch(SummaryApi.updateLaptop.url, {
+      method: SummaryApi.updateLaptop.method,
       credentials: "include",
       headers: {
         "content-type": "application/json",
       },
-      body: JSON.stringify(data),
+      body: JSON.stringify({ data, productId: product?._id }),
     });
 
     const responseData = await response.json();
@@ -132,7 +156,7 @@ const Laptop = ({fetchData}) => {
     if (responseData.success) {
       toast.success(responseData?.message);
       view();
-      fetchData();
+      fetchAllProduct();
     }
 
     if (responseData.error) {
@@ -142,10 +166,12 @@ const Laptop = ({fetchData}) => {
 
   return (
     openUploadProduct && (
-      <div className="fixed w-full h-full bg-slate-200 bg-opacity-35 top-0 left-0 right-0 bottom-0 flex justify-center items-center">
+      <div className="fixed w-screen h-screen bg-slate-200 bg-opacity-35 top-0 left-0 right-0 bottom-0 flex justify-center items-center">
         <div className="bg-white p-4 rounded w-full max-w-7xl h-full max-h-[80%] overflow-hidden">
           <div className="flex justify-center items-center">
-            <h2 className="font-bold text-lg">Upload Product</h2>
+            <h2 className="font-bold text-lg text-center justify-center">
+              Update Laptop
+            </h2>
             <div
               className="w-fit hover:cursor-pointer ml-auto text-2xl"
               onClick={view}
@@ -169,7 +195,6 @@ const Laptop = ({fetchData}) => {
                   onChange={handleOnChange}
                   name="productName"
                   className="p-2 w-full bg-slate-50 border rounded"
-                  required
                 />
               </div>
 
@@ -185,7 +210,6 @@ const Laptop = ({fetchData}) => {
                   onChange={handleOnChange}
                   name="brandName"
                   className="p-2 w-full bg-slate-50 border rounded"
-                  required
                 />
               </div>
             </div>
@@ -276,7 +300,6 @@ const Laptop = ({fetchData}) => {
                   className="p-2 w-full bg-slate-50 border rounded"
                   onChange={handleOnChange}
                   name="category"
-                  required
                 >
                   <option value="">Select Category</option>
                   {productCategory.map((el, index) => {
@@ -301,7 +324,6 @@ const Laptop = ({fetchData}) => {
                   onChange={handleOnChange}
                   name="usb_type_c"
                   className="p-2 w-full bg-slate-50 border rounded"
-                  
                 />
               </div>
             </div>
@@ -319,7 +341,6 @@ const Laptop = ({fetchData}) => {
                   onChange={handleOnChange}
                   name="processor_brand"
                   className="p-2 w-full bg-slate-50 border rounded"
-                  
                 />
               </div>
 
@@ -335,7 +356,6 @@ const Laptop = ({fetchData}) => {
                   onChange={handleOnChange}
                   name="processor_model"
                   className="p-2 w-full bg-slate-50 border rounded"
-                  
                 />
               </div>
             </div>
@@ -353,7 +373,6 @@ const Laptop = ({fetchData}) => {
                   onChange={handleOnChange}
                   name="processor_frequency"
                   className="p-2 w-full bg-slate-50 border rounded"
-                  
                 />
               </div>
 
@@ -369,7 +388,6 @@ const Laptop = ({fetchData}) => {
                   onChange={handleOnChange}
                   name="processor_core"
                   className="p-2 w-full bg-slate-50 border rounded"
-                  
                 />
               </div>
             </div>
@@ -387,7 +405,6 @@ const Laptop = ({fetchData}) => {
                   onChange={handleOnChange}
                   name="processor_thread"
                   className="p-2 w-full bg-slate-50 border rounded"
-                  
                 />
               </div>
 
@@ -403,7 +420,6 @@ const Laptop = ({fetchData}) => {
                   onChange={handleOnChange}
                   name="cpu_cache"
                   className="p-2 w-full bg-slate-50 border rounded"
-                  
                 />
               </div>
             </div>
@@ -421,7 +437,6 @@ const Laptop = ({fetchData}) => {
                   onChange={handleOnChange}
                   name="chipset"
                   className="p-2 w-full bg-slate-50 border rounded"
-                  
                 />
               </div>
 
@@ -437,7 +452,6 @@ const Laptop = ({fetchData}) => {
                   onChange={handleOnChange}
                   name="chipset_model"
                   className="p-2 w-full bg-slate-50 border rounded"
-                  
                 />
               </div>
             </div>
@@ -455,7 +469,6 @@ const Laptop = ({fetchData}) => {
                   onChange={handleOnChange}
                   name="display"
                   className="p-2 w-full bg-slate-50 border rounded"
-                  
                 />
               </div>
 
@@ -471,7 +484,6 @@ const Laptop = ({fetchData}) => {
                   onChange={handleOnChange}
                   name="display_type"
                   className="p-2 w-full bg-slate-50 border rounded"
-                  
                 />
               </div>
             </div>
@@ -489,7 +501,6 @@ const Laptop = ({fetchData}) => {
                   onChange={handleOnChange}
                   name="display_resolution"
                   className="p-2 w-full bg-slate-50 border rounded"
-                  
                 />
               </div>
 
@@ -505,7 +516,6 @@ const Laptop = ({fetchData}) => {
                   onChange={handleOnChange}
                   name="touch_screen"
                   className="p-2 w-full bg-slate-50 border rounded"
-                  
                 />
               </div>
             </div>
@@ -523,7 +533,6 @@ const Laptop = ({fetchData}) => {
                   onChange={handleOnChange}
                   name="refresh_rate"
                   className="p-2 w-full bg-slate-50 border rounded"
-                  
                 />
               </div>
 
@@ -539,7 +548,6 @@ const Laptop = ({fetchData}) => {
                   onChange={handleOnChange}
                   name="display_features"
                   className="p-2 w-full bg-slate-50 border rounded"
-                  
                 />
               </div>
             </div>
@@ -557,7 +565,6 @@ const Laptop = ({fetchData}) => {
                   onChange={handleOnChange}
                   name="ram"
                   className="p-2 w-full bg-slate-50 border rounded"
-                  
                 />
               </div>
 
@@ -573,7 +580,6 @@ const Laptop = ({fetchData}) => {
                   onChange={handleOnChange}
                   name="ram_type"
                   className="p-2 w-full bg-slate-50 border rounded"
-                  
                 />
               </div>
             </div>
@@ -591,7 +597,6 @@ const Laptop = ({fetchData}) => {
                   onChange={handleOnChange}
                   name="bus_speed"
                   className="p-2 w-full bg-slate-50 border rounded"
-                  
                 />
               </div>
 
@@ -607,7 +612,6 @@ const Laptop = ({fetchData}) => {
                   onChange={handleOnChange}
                   name="total_ram_slot"
                   className="p-2 w-full bg-slate-50 border rounded"
-                  
                 />
               </div>
             </div>
@@ -625,7 +629,6 @@ const Laptop = ({fetchData}) => {
                   onChange={handleOnChange}
                   name="max_ram_capacity"
                   className="p-2 w-full bg-slate-50 border rounded"
-                  
                 />
               </div>
 
@@ -641,7 +644,6 @@ const Laptop = ({fetchData}) => {
                   onChange={handleOnChange}
                   name="storage_type"
                   className="p-2 w-full bg-slate-50 border rounded"
-                  
                 />
               </div>
             </div>
@@ -659,7 +661,6 @@ const Laptop = ({fetchData}) => {
                   onChange={handleOnChange}
                   name="storage_capacity"
                   className="p-2 w-full bg-slate-50 border rounded"
-                  
                 />
               </div>
 
@@ -675,7 +676,6 @@ const Laptop = ({fetchData}) => {
                   onChange={handleOnChange}
                   name="extra_m2_slot"
                   className="p-2 w-full bg-slate-50 border rounded"
-                  
                 />
               </div>
             </div>
@@ -693,7 +693,6 @@ const Laptop = ({fetchData}) => {
                   onChange={handleOnChange}
                   name="storage_upgrade"
                   className="p-2 w-full bg-slate-50 border rounded"
-                  
                 />
               </div>
 
@@ -709,7 +708,6 @@ const Laptop = ({fetchData}) => {
                   onChange={handleOnChange}
                   name="graphics_model"
                   className="p-2 w-full bg-slate-50 border rounded"
-                  
                 />
               </div>
             </div>
@@ -727,7 +725,6 @@ const Laptop = ({fetchData}) => {
                   onChange={handleOnChange}
                   name="graphics_memory"
                   className="p-2 w-full bg-slate-50 border rounded"
-                  
                 />
               </div>
 
@@ -743,7 +740,6 @@ const Laptop = ({fetchData}) => {
                   onChange={handleOnChange}
                   name="graphics_type"
                   className="p-2 w-full bg-slate-50 border rounded"
-                  
                 />
               </div>
             </div>
@@ -761,7 +757,6 @@ const Laptop = ({fetchData}) => {
                   onChange={handleOnChange}
                   name="keyboard_type"
                   className="p-2 w-full bg-slate-50 border rounded"
-                  
                 />
               </div>
               <div className="flex-1">
@@ -776,7 +771,6 @@ const Laptop = ({fetchData}) => {
                   onChange={handleOnChange}
                   name="touchPad"
                   className="p-2 w-full bg-slate-50 border rounded"
-                  
                 />
               </div>
             </div>
@@ -794,7 +788,6 @@ const Laptop = ({fetchData}) => {
                   onChange={handleOnChange}
                   name="webcame"
                   className="p-2 w-full bg-slate-50 border rounded"
-                  
                 />
               </div>
               <div className="flex-1">
@@ -809,7 +802,6 @@ const Laptop = ({fetchData}) => {
                   onChange={handleOnChange}
                   name="speaker"
                   className="p-2 w-full bg-slate-50 border rounded"
-                  
                 />
               </div>
             </div>
@@ -827,7 +819,6 @@ const Laptop = ({fetchData}) => {
                   onChange={handleOnChange}
                   name="microphone"
                   className="p-2 w-full bg-slate-50 border rounded"
-                  
                 />
               </div>
 
@@ -843,7 +834,6 @@ const Laptop = ({fetchData}) => {
                   onChange={handleOnChange}
                   name="audio_features"
                   className="p-2 w-full bg-slate-50 border rounded"
-                  
                 />
               </div>
             </div>
@@ -861,7 +851,6 @@ const Laptop = ({fetchData}) => {
                   onChange={handleOnChange}
                   name="optical_drive"
                   className="p-2 w-full bg-slate-50 border rounded"
-                  
                 />
               </div>
               <div className="flex-1">
@@ -876,7 +865,6 @@ const Laptop = ({fetchData}) => {
                   onChange={handleOnChange}
                   name="card_reader"
                   className="p-2 w-full bg-slate-50 border rounded"
-                  
                 />
               </div>
             </div>
@@ -894,7 +882,6 @@ const Laptop = ({fetchData}) => {
                   onChange={handleOnChange}
                   name="hdmi_port"
                   className="p-2 w-full bg-slate-50 border rounded"
-                  
                 />
               </div>
               <div className="flex-1">
@@ -909,7 +896,6 @@ const Laptop = ({fetchData}) => {
                   onChange={handleOnChange}
                   name="usb_port"
                   className="p-2 w-full bg-slate-50 border rounded"
-                  
                 />
               </div>
             </div>
@@ -927,7 +913,6 @@ const Laptop = ({fetchData}) => {
                   onChange={handleOnChange}
                   name="microphone_port"
                   className="p-2 w-full bg-slate-50 border rounded"
-                  
                 />
               </div>
 
@@ -943,7 +928,6 @@ const Laptop = ({fetchData}) => {
                   onChange={handleOnChange}
                   name="lan"
                   className="p-2 w-full bg-slate-50 border rounded"
-                  
                 />
               </div>
             </div>
@@ -961,7 +945,6 @@ const Laptop = ({fetchData}) => {
                   onChange={handleOnChange}
                   name="wifi"
                   className="p-2 w-full bg-slate-50 border rounded"
-                  
                 />
               </div>
 
@@ -977,7 +960,6 @@ const Laptop = ({fetchData}) => {
                   onChange={handleOnChange}
                   name="bluetooth"
                   className="p-2 w-full bg-slate-50 border rounded"
-                  
                 />
               </div>
             </div>
@@ -994,7 +976,6 @@ const Laptop = ({fetchData}) => {
                   onChange={handleOnChange}
                   name="fingerPrint"
                   className="p-2 w-full bg-slate-50 border rounded"
-                  
                 />
               </div>
 
@@ -1010,7 +991,6 @@ const Laptop = ({fetchData}) => {
                   onChange={handleOnChange}
                   name="camera_privacy_shutter"
                   className="p-2 w-full bg-slate-50 border rounded"
-                  
                 />
               </div>
             </div>
@@ -1028,7 +1008,6 @@ const Laptop = ({fetchData}) => {
                   onChange={handleOnChange}
                   name="security_chip"
                   className="p-2 w-full bg-slate-50 border rounded"
-                  
                 />
               </div>
 
@@ -1044,7 +1023,6 @@ const Laptop = ({fetchData}) => {
                   onChange={handleOnChange}
                   name="operating_system"
                   className="p-2 w-full bg-slate-50 border rounded"
-                  
                 />
               </div>
             </div>
@@ -1062,7 +1040,6 @@ const Laptop = ({fetchData}) => {
                   onChange={handleOnChange}
                   name="battery_capacity"
                   className="p-2 w-full bg-slate-50 border rounded"
-                  
                 />
               </div>
 
@@ -1078,7 +1055,6 @@ const Laptop = ({fetchData}) => {
                   onChange={handleOnChange}
                   name="adapter_type"
                   className="p-2 w-full bg-slate-50 border rounded"
-                  
                 />
               </div>
             </div>
@@ -1096,7 +1072,6 @@ const Laptop = ({fetchData}) => {
                   onChange={handleOnChange}
                   name="dimensions"
                   className="p-2 w-full bg-slate-50 border rounded"
-                  
                 />
               </div>
 
@@ -1112,7 +1087,6 @@ const Laptop = ({fetchData}) => {
                   onChange={handleOnChange}
                   name="weight"
                   className="p-2 w-full bg-slate-50 border rounded"
-                  
                 />
               </div>
             </div>
@@ -1130,7 +1104,6 @@ const Laptop = ({fetchData}) => {
                   onChange={handleOnChange}
                   name="body_material"
                   className="p-2 w-full bg-slate-50 border rounded"
-                  
                 />
               </div>
 
@@ -1146,7 +1119,6 @@ const Laptop = ({fetchData}) => {
                   onChange={handleOnChange}
                   name="warranty"
                   className="p-2 w-full bg-slate-50 border rounded"
-                  
                 />
               </div>
             </div>
@@ -1164,7 +1136,6 @@ const Laptop = ({fetchData}) => {
                   onChange={handleOnChange}
                   name="price"
                   className="p-2 w-full bg-slate-50 border rounded"
-                  required
                 />
               </div>
 
@@ -1180,7 +1151,6 @@ const Laptop = ({fetchData}) => {
                   onChange={handleOnChange}
                   name="sellingPrice"
                   className="p-2 w-full bg-slate-50 border rounded"
-                  required
                 />
               </div>
             </div>
@@ -1199,7 +1169,7 @@ const Laptop = ({fetchData}) => {
             ></textarea>
 
             <button className="px-23 py-2  bg-blue-600 text-white rounded mb-10 hover:bg-red-800">
-              Upload Product
+              Update Laptop
             </button>
           </form>
         </div>
@@ -1216,4 +1186,4 @@ const Laptop = ({fetchData}) => {
   );
 };
 
-export default Laptop;
+export default UpdateLaptop;

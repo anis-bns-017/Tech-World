@@ -1,4 +1,3 @@
-import UpdateMonitor from "../components/uploadProduct/Monitor";
 
 const backendDomain = "http://localhost:8080";
 
@@ -161,6 +160,10 @@ const SummaryApi = {
     url: `${backendDomain}/api/checkout`,
     method: "post",
   },
+  success: {
+    url: `${backendDomain}/api/success`,
+    method: "post",
+  },
 
   //update Product
   updateTablet: {
@@ -180,6 +183,11 @@ const SummaryApi = {
 
   updatePhone: {
     url: `${backendDomain}/api/update-phone`,
+    method: "post",
+  },
+
+  updateLaptop: {
+    url: `${backendDomain}/api/update-laptop`,
     method: "post",
   },
 };

@@ -30,8 +30,8 @@ const Camera = ({ onClose, fetchData }) => {
     water_resistant: "",
     hdr_mode: "",
     slow_motion_recording: "",
-    price: "",
-    sellingPrice: "",
+    price: null,
+    sellingPrice: null,
     warranty: "",
   });
 
@@ -132,6 +132,7 @@ const Camera = ({ onClose, fetchData }) => {
                   onChange={handleOnChange}
                   name="productName"
                   className="p-2 w-full bg-slate-50 border rounded"
+                  required
                 />
               </div>
 
@@ -147,6 +148,7 @@ const Camera = ({ onClose, fetchData }) => {
                   onChange={handleOnChange}
                   name="brandName"
                   className="p-2 w-full bg-slate-50 border rounded"
+                  required
                 />
               </div>
             </div>
@@ -184,6 +186,7 @@ const Camera = ({ onClose, fetchData }) => {
                         id="uploadImageInput"
                         className="hidden"
                         onChange={handleUploadProduct}
+                        required
                       />
                     </div>
                   </div>
@@ -237,6 +240,7 @@ const Camera = ({ onClose, fetchData }) => {
                   className="p-2 w-full bg-slate-50 border rounded"
                   onChange={handleOnChange}
                   name="category"
+                  required
                 >
                   <option value="">Select Category</option>
                   {productCategory.map((el, index) => {
@@ -310,6 +314,7 @@ const Camera = ({ onClose, fetchData }) => {
                   onChange={handleOnChange}
                   name="price"
                   className="p-2 w-full bg-slate-50 border rounded"
+                  required
                 />
               </div>
 
@@ -483,6 +488,7 @@ const Camera = ({ onClose, fetchData }) => {
                   onChange={handleOnChange}
                   name="sellingPrice"
                   className="p-2 w-full bg-slate-50 border rounded"
+                  required
                 />
               </div>
 

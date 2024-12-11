@@ -1,4 +1,4 @@
-import { useContext, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import displayCurrency from "../helpers/DisplayCurrency";
 import { Link, Outlet } from "react-router-dom";
 import AddToCart from "../helpers/AddToCart";
@@ -6,11 +6,10 @@ import Context from "../context/Context";
 import { MdEdit } from "react-icons/md";
 import { FaShoppingCart } from "react-icons/fa";
 import { useSelector } from "react-redux";
-import Go from "./updateProducts/Go";
+import SummaryApi from "../common";
 
-const AdminProductCard = ({ data, onClose, fetchData }) => {
+const AdminProductCard = ({ data, fetchData }) => {
   const user = useSelector((state) => state?.user?.user);
-  console.log("Data: ", data);
 
   const userId = user?._id;
   const productId = data?._id;
@@ -19,6 +18,19 @@ const AdminProductCard = ({ data, onClose, fetchData }) => {
   const { sellingPrice, price, productName, key_features, category } = data;
 
   const { fetchUserAddToCart } = useContext(Context);
+
+  const [allProduct, setAllProduct] = useState([]);
+
+  const fetchAllProduct = async () => {
+    const response = await fetch(SummaryApi.allProduct.url);
+    const dataResponse = await response.json();
+
+    setAllProduct(dataResponse?.data || []);
+  };
+
+  useEffect(() => {
+    fetchAllProduct();
+  }, []);
 
   const handleAddToCart = async (e) => {
     await AddToCart(e, data, userId);
@@ -60,8 +72,6 @@ const AdminProductCard = ({ data, onClose, fetchData }) => {
   const currentProductConfig = productConfig.find(
     (config) => config.category === data?.category
   );
-
-  console.log("aaaaaa: ", currentProductConfig);
 
   return (
     <div className="mx-[5px] my-[5px] hover:shadow-lg relative bg-blue-200 shadow-lg">
@@ -107,10 +117,7 @@ const AdminProductCard = ({ data, onClose, fetchData }) => {
           </div>
         </div>
         {user?.role === "GENERAL" && (
-          <Link
-            to={"update-tablet"}
-            className="text-center justify-center mt-3 rounded-lg"
-          >
+          <div className="text-center justify-center mt-3 rounded-lg">
             <button
               className="bg-blue-50 rounded-sm hover:bg-blue-700 hover:text-white h-12 text-blue-800 px-3 py-1 w-full text-center justify-center flex gap-3 text-xl"
               onClick={(e) => handleAddToCart(e)}
@@ -120,7 +127,7 @@ const AdminProductCard = ({ data, onClose, fetchData }) => {
               </span>
               <span className="mt-1">Buy Now</span>
             </button>
-          </Link>
+          </div>
         )}
         {user?.role === "SELLER" && (
           <Link
@@ -155,9 +162,9 @@ const AdminProductCard = ({ data, onClose, fetchData }) => {
         save: {displayCurrency(`${price - sellingPrice}`)}
       </div>
 
-      <div className="w-full h-full">
+      <main className="w-full h-full">
         <Outlet />
-      </div>
+      </main>
     </div>
   );
 };

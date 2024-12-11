@@ -1,4 +1,3 @@
-const productModel = require("../../models/productModel");
 const laptopModel = require("../../models/Category/laptopModel");
 const mouseModel = require("../../models/Category/mouseModel");
 const desktopModel = require("../../models/Category/desktopModel");
@@ -6,32 +5,66 @@ const tabletModel = require("../../models/Category/tabletModel");
 const phoneModel = require("../../models/Category/phoneModel");
 const monitorModel = require("../../models/Category/monitorModel");
 const keyboardModel = require("../../models/Category/keyboardModel");
+const allProductModel = require("../../models/Category/allProductModel");
 
 const getProductController = async (req, res) => {
   try {
-    // Fetch laptops and cameras concurrently
-    const [laptops, cameras, desktops, tablets, monitors, keyboards] = await Promise.all([
-      laptopModel.find().sort({ createdAt: -1 }),
-      mouseModel.find().sort({ createdAt: -1 }),
-      desktopModel.find().sort({ createdAt: -1 }),
-      tabletModel.find().sort({ createdAt: -1 }),
-      phoneModel.find().sort({ createdAt: -1 }),
-      monitorModel.find().sort({ createdAt: -1 }),
-      keyboardModel.find().sort({ createdAt: -1 }),
-    ]);
+    // Define the models array
+    const models = [
+      laptopModel,
+      mouseModel,
+      desktopModel,
+      tabletModel,
+      phoneModel,
+      monitorModel,
+      keyboardModel,
+    ];
 
-    // Combine the results
-    const allProducts = [...laptops, ...cameras, ...desktops, ...tablets, ...monitors, ...keyboards];
+    // Fetch products concurrently from all models
+    const allProducts = await Promise.all(
+      models.map((model) => model.find().sort({ createdAt: -1 }))
+    );
+
+    // Flatten the array of products
+    const combinedProducts = allProducts.flat();
+
+    // Initialize an array to store all order items
+    const orderItems = [];
+
+    // Iterate through each product in combinedProducts
+    for (const product of combinedProducts) {
+      if (product && product.productName && product.sellingPrice) {
+        const orderItem = {
+          productId: product?._id,
+          category: product.category,
+          productName: product.productName,
+          brandName: product.brandName,
+          userId: product?.userId,
+          productImage: product.productImage,
+          sellingPrice: product.sellingPrice || 0,
+          price: product.price || 0,
+        };
+
+
+        // Create a new instance of allProductModel
+        const newOrder = new allProductModel(orderItem);
+        await newOrder.save();
+
+        // Attempt to save the new order and handle errors
+         
+      }  
+    }
 
     res.json({
-      message: "All products",
+      message: "All products processed successfully",
       error: false,
       success: true,
-      data: allProducts, // Combine results in a single array
+      data: combinedProducts, // Return combined results
     });
   } catch (err) {
+    console.error("An error occurred during processing:", err);
     res.status(400).json({
-      message: err?.message || err,
+      message: err?.message || "An unexpected error occurred.",
       error: true,
       success: false,
     });

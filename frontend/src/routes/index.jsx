@@ -34,6 +34,8 @@ import UpdateTablet from "../components/updateProducts/UpdateTablet";
 import UpdateMonitor from "../components/uploadProduct/Monitor";
 import UpdateHeadPhone from "../components/updateProducts/UpdateHeadphone";
 import UpdatePhone from "../components/updateProducts/UpdatePhone";
+import UpdateLaptop from "../components/updateProducts/UpdateLaptop";
+import OnePageCheckout from "../pages/OnePageCheckout";
 
 const router = createBrowserRouter([
   {
@@ -127,6 +129,11 @@ const router = createBrowserRouter([
       },
 
       {
+        path: "cart/onepageCheckout",
+        element: <OnePageCheckout />,
+      },
+
+      {
         path: "account",
         element: <UserAccount />,
         children: [
@@ -175,6 +182,10 @@ const router = createBrowserRouter([
                 path: "update-phone",
                 element: <UpdatePhone />,
               },
+              {
+                path: "update-laptop",
+                element: <UpdateLaptop />,
+              },
             ],
           },
         ],
@@ -195,6 +206,10 @@ const router = createBrowserRouter([
       {
         path: "update-phone",
         element: <UpdatePhone />,
+      },
+      {
+        path: "update-laptop",
+        element: <UpdateLaptop />,
       },
 
       //category start from here.

@@ -2,8 +2,14 @@ const express = require("express");
 const cors = require("cors");
 require("dotenv").config();
 const connectDB = require("./config/db");
+const SSLCommerzPayment = require('sslcommerz-lts')
 const cookieParser = require("cookie-parser");
 const router = require("./routes");
+
+const store_id = process.env.STORE_ID
+const store_passwd = process.env.STORE_PASS
+const is_live = false //true for live, false for sandbox
+
 
 const app = express();
 app.use(

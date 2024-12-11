@@ -14,7 +14,6 @@ import { MdOutlineCardGiftcard } from "react-icons/md";
 import { SlEnergy } from "react-icons/sl";
 import { FaUserAlt } from "react-icons/fa";
 import DropDown from "../dropMenu/DropDown";
-import DropdownMenu from "../pages/UserActivity/DropdownMenu";
 import NavBar from "./NavBar";
 
 const Header = () => {

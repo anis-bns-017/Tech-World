@@ -151,6 +151,7 @@ const Phone = ({onClose, fetchData}) => {
                   onChange={handleOnChange}
                   name="productName"
                   className="p-2 w-full bg-slate-50 border rounded"
+                  required
                 />
               </div>
 
@@ -166,6 +167,7 @@ const Phone = ({onClose, fetchData}) => {
                   onChange={handleOnChange}
                   name="brandName"
                   className="p-2 w-full bg-slate-50 border rounded"
+                  required
                 />
               </div>
             </div>
@@ -256,6 +258,7 @@ const Phone = ({onClose, fetchData}) => {
                   className="p-2 w-full bg-slate-50 border rounded"
                   onChange={handleOnChange}
                   name="category"
+                  required
                 >
                   <option value="">Select Category</option>
                   {productCategory.map((el, index) => {
@@ -806,6 +809,7 @@ const Phone = ({onClose, fetchData}) => {
                   onChange={handleOnChange}
                   name="price"
                   className="p-2 w-full bg-slate-50 border rounded"
+                  required
                 />
               </div>
 
@@ -821,6 +825,7 @@ const Phone = ({onClose, fetchData}) => {
                   onChange={handleOnChange}
                   name="sellingPrice"
                   className="p-2 w-full bg-slate-50 border rounded"
+                  required
                 />
               </div>
             </div>

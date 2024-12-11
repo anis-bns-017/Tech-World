@@ -29,8 +29,8 @@ const Keyboard = ({ onClose, fetchData }) => {
     color: "",
     dimension: "",
     weight: "",
-    price: "",
-    sellingPrice: "",
+    price: null,
+    sellingPrice: null,
     warranty: "",
   });
 
@@ -93,7 +93,7 @@ const Keyboard = ({ onClose, fetchData }) => {
 
     if (responseData.success) {
       toast.success(responseData?.message);
-      onClose();
+      view();
       fetchData();
     }
 
@@ -131,6 +131,7 @@ const Keyboard = ({ onClose, fetchData }) => {
                   onChange={handleOnChange}
                   name="productName"
                   className="p-2 w-full bg-slate-50 border rounded"
+                  required
                 />
               </div>
 
@@ -146,6 +147,7 @@ const Keyboard = ({ onClose, fetchData }) => {
                   onChange={handleOnChange}
                   name="brandName"
                   className="p-2 w-full bg-slate-50 border rounded"
+                  required
                 />
               </div>
             </div>
@@ -236,6 +238,7 @@ const Keyboard = ({ onClose, fetchData }) => {
                   className="p-2 w-full bg-slate-50 border rounded"
                   onChange={handleOnChange}
                   name="category"
+                  required
                 >
                   <option value="">Select Category</option>
                   {productCategory.map((el, index) => {
@@ -450,6 +453,7 @@ const Keyboard = ({ onClose, fetchData }) => {
                   onChange={handleOnChange}
                   name="price"
                   className="p-2 w-full bg-slate-50 border rounded"
+                  required
                 />
               </div>
               <div className="flex-1">
@@ -464,6 +468,7 @@ const Keyboard = ({ onClose, fetchData }) => {
                   onChange={handleOnChange}
                   name="sellingPrice"
                   className="p-2 w-full bg-slate-50 border rounded"
+                  required
                 />
               </div>
             </div>
