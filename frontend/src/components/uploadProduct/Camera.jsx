@@ -30,8 +30,8 @@ const Camera = ({ onClose, fetchData }) => {
     water_resistant: "",
     hdr_mode: "",
     slow_motion_recording: "",
-    price: null,
-    sellingPrice: null,
+    price: 0,
+    sellingPrice: 0,
     warranty: "",
   });
 

@@ -11,17 +11,36 @@ const OnePageCheckout = () => {
 
   const user = useSelector((state) => state?.user?.user);
   const [data, setData] = useState({
-    firstName: "",
-    lastName: "",
-    email: user?.email,
-    phone: "",
-    company: "",
-    address1: "",
-    address2: "",
-    city: "",
-    post_code: "",
-    country: "",
-    region: "",
+    customer: {
+      firstName: "",
+      lastName: "",
+      email: "",
+      phone: "",
+      address: "",
+      city: "",
+      postCode: "",
+      region: "",
+      country: "",
+      comment: "",
+    },
+    orderItems: [
+      {
+        productId: "",
+        name: "",
+        quantity: 0,
+        price: 0,
+      },
+    ],
+    totalAmount: 0,
+    totalQuantity: 0,
+    paymentInfo: {
+      status: "pending",
+      transactionId: "",
+      method: "sslcommerz",
+    },
+    orderStatus: "pending",
+    payment_method: "Cash on Delivery",
+    delivery_method: "Home Delivery",
   });
 
   const [selectedMethod, setSelectedMethod] = useState("");
@@ -82,14 +101,14 @@ const OnePageCheckout = () => {
       <div className="flex gap-5 justify-between pt-5">
         <div className="bg-slate-200 ml-10 p-5">
           <div>
-            <div className="ml-[30px] bg text-2xl font-semibold text-blue-700">
+            <div className="ml-[30px] bg text-2xl font-semibold text-blue-700 text-center">
               Customar Information
             </div>
           </div>
 
           <div>
             <form
-              className="ml-[30px] pt-6 flex flex-col gap-2"
+              className="mx-auto pt-6 flex flex-col gap-2"
               onSubmit={handleSubmit}
             >
               <div className="flex gap-3">
@@ -436,7 +455,11 @@ const OnePageCheckout = () => {
             onChange={() => handleCheckboxChange("Request Express")}
             className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500"
           />
-          <label htmlFor="express-request" className="ml-2 text-gray-700">
+          <label
+            htmlFor="express-request"
+            className="ml-2 text-gray-700"
+            required
+          >
             I have read and agree to the Terms and Conditions, Privacy Policy
             and Refund and Return Policy
           </label>

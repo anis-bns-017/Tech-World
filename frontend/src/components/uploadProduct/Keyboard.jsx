@@ -29,8 +29,8 @@ const Keyboard = ({ onClose, fetchData }) => {
     color: "",
     dimension: "",
     weight: "",
-    price: null,
-    sellingPrice: null,
+    price: 0,
+    sellingPrice: 0,
     warranty: "",
   });
 

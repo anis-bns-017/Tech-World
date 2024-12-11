@@ -15,8 +15,8 @@ const ProductDetails = () => {
     category: "",
     productImage: [],
     description: "",
-    price: null,
-    sellingPrice: null,
+    price: 0,
+    sellingPrice: 0,
   });
 
   const [loading, setLaoding] = useState(true);

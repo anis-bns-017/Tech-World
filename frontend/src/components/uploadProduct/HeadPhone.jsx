@@ -34,8 +34,8 @@ const HeadPhone = ({ onClose, fetchData }) => {
     color: "",
     mic_frequency: "",
     mic_sensitivity: "",
-    price: null,
-    sellingPrice: null,
+    price: 0,
+    sellingPrice: 0,
     warranty: "",
   });
 

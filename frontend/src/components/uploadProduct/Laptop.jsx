@@ -68,8 +68,8 @@ const Laptop = ({fetchData}) => {
     weight: "",
     body_material: "",
     warranty: "",
-    price: null,
-    sellingPrice: null,
+    price: 0,
+    sellingPrice: 0,
   });
 
   const [openFullScreenImage, setOpenFullScreenImage] = useState(false);

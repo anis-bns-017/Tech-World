@@ -33,8 +33,8 @@ const Mouse = ({ fetchData }) => {
     cable_lenth: "",
     mechanical_switches: "",
     built_in_memory: "",
-    price: null,
-    sellingPrice: null,
+    price: 0,
+    sellingPrice: 0,
     warranty: "",
   });
 

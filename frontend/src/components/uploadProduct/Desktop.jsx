@@ -27,8 +27,8 @@ const Desktop = ({fetData}) => {
     storage_warranty: "",
     casing: "",
     casing_warranty: "",
-    price: null,
-    sellingPrice: null,
+    price: 0,
+    sellingPrice: 0,
   });
 
   const [openFullScreenImage, setOpenFullScreenImage] = useState(false);
