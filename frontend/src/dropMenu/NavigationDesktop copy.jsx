@@ -26,7 +26,7 @@ const NavigationDesktop = ({ navLinksData }) => {
 
   return (
     <nav>
-      <ul className="main-nav ">
+      <ul className="main-nav">
         {navLinksData.map((el) => {
           if (!el.children) {
             return (
@@ -43,7 +43,7 @@ const NavigationDesktop = ({ navLinksData }) => {
               onMouseEnter={() => subMenuOnMouseEnterHandler(el.id)}
               onMouseLeave={() => subMenuOnMouseLeaveHandler(el.id)}
               key={el.id}
-              className="header-nav-options options-hover "
+              className="header-nav-options options-hover"
             >
               <div className="header-nav-div">
                 <span>{el.name}</span>
@@ -57,7 +57,9 @@ const NavigationDesktop = ({ navLinksData }) => {
                   el.children.map((ele) => {
                     if (!ele.children) {
                       return (
-                        <li key={ele.id} className="sub-menu-li ">
+                        <li key={ele.id} 
+                        className="sub-menu-li"
+                        >
                           <a
                             href="#"
                             className="sub-menu-link absolute"
@@ -78,9 +80,7 @@ const NavigationDesktop = ({ navLinksData }) => {
                       >
                         <div className="sub-menu-div">
                           <span>{ele.name}</span>
-                          <span className="arrow text-[5vh] text-red-400 ">
-                            {"»"}
-                          </span>
+                          <span className="arrow text-[5vh] text-red-400">{"»"}</span>               
                         </div>
                         <motion.ul
                           variants={variants}
@@ -90,7 +90,9 @@ const NavigationDesktop = ({ navLinksData }) => {
                           {showSubMenu[ele.id] &&
                             ele.children.map((elem) => {
                               return (
-                                <li key={elem.id} className="grand-child-link">
+                                <li key={elem.id} 
+                                className="grand-child-link"
+                                >
                                   <a href="#">
                                     <span>{elem.name}</span>
                                   </a>

@@ -1,16 +1,16 @@
 const orderProductModel = require("../../models/Category/orderProductModel");
 
-const successController = async (req, res) => {
+const failController = async (req, res) => {
   try {
     // Extract transactionId from req.params
     const transacID = req.params.transactionId;
 
-    // Search for the order using transactionId
-    const existingOrder = await orderProductModel.findOne({
+    // Search and delete the order using transactionId
+    const deletedOrder = await orderProductModel.findOneAndDelete({
       transactionId: transacID,
     });
 
-    if (!existingOrder) {
+    if (!deletedOrder) {
       return res.status(404).json({
         message: "Order not found",
         error: true,
@@ -18,12 +18,8 @@ const successController = async (req, res) => {
       });
     }
 
-    // Update payment_status
-    existingOrder.payment_status = true;
-    await existingOrder.save();
-
-    // Redirect to success page
-    return res.redirect(`http://localhost:5173/payment-success/${transacID}`);
+    // Redirect to failure page with transactionId
+    return res.redirect(`http://localhost:5173/payment-fail/${transacID}`);
   } catch (err) {
     res.status(400).json({
       message: err?.message || err,
@@ -33,4 +29,4 @@ const successController = async (req, res) => {
   }
 };
 
-module.exports = successController;
+module.exports = failController;

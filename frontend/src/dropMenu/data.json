@@ -1414,26 +1414,6 @@
             {
                 "name": "Walton",
                 "id": 3278
-            },
-            {
-                "name": "Motorola",
-                "id": 3279
-            },
-            {
-                "name": "XTRA",
-                "id": 3280
-            },
-            {
-                "name": "Hallo",
-                "id": 3281
-            },
-            {
-                "name": "Mobile Accessories",
-                "id": 3282
-            },
-            {
-                "name": "Show All Phone",
-                "id": 3283
             }
         ]
     },
@@ -1498,34 +1478,6 @@
             {
                 "name": "HUAWEI",
                 "id": 3294
-            },
-            {
-                "name": "Amazon",
-                "id": 3295
-            },
-            {
-                "name": "Google",
-                "id": 3296
-            },
-            {
-                "name": "Stylus",
-                "id": 3297
-            },
-            {
-                "name": "Teclast",
-                "id": 3298
-            },
-            {
-                "name": "Symphony",
-                "id": 3299
-            },
-            {
-                "name": "ZTE",
-                "id": 3300
-            },
-            {
-                "name": "Show All Tablet",
-                "id": 3301
             }
         ]
     },
@@ -1580,58 +1532,6 @@
             {
                 "name": "POS Printer",
                 "id": 3319
-            },
-            {
-                "name": "Label Printer",
-                "id": 3320
-            },
-            {
-                "name": "Photocopier",
-                "id": 3321
-            },
-            {
-                "name": "Toner",
-                "id": 3322
-            },
-            {
-                "name": "Cartridge",
-                "id": 3323
-            },
-            {
-                "name": "Ink Bottle",
-                "id": 3324
-            },
-            {
-                "name": "Printer Paper",
-                "id": 3325
-            },
-            {
-                "name": "Ribbon",
-                "id": 3326
-            },
-            {
-                "name": "Printer Drum",
-                "id": 3327
-            },
-            {
-                "name": "PABX System",
-                "id": 3333
-            },
-            {
-                "name": "Money Counting Machine",
-                "id": 3334
-            },
-            {
-                "name": "Paper Shredder",
-                "id": 3335
-            },
-            {
-                "name": "Laminating Machine",
-                "id": 3336
-            },
-            {
-                "name": "Binding Machine",
-                "id": 3337
             }
         ]
     },

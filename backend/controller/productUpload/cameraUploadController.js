@@ -3,7 +3,7 @@ const cameraModel = require("../../models/Category/cameraModel")
 
 async function cameraUploadController(req, res) {
   try {
-    const sessionUserId = req.userId;
+    
     if (!uploadProductPermission(sessionUserId)) {
       throw new Error("permission denied");
     }

@@ -5,6 +5,7 @@
   align-items: center;
   justify-content: space-between;
   margin: 0 2rem;
+  
 }
 
 .header-parent {
@@ -14,6 +15,7 @@
   color: #f1f1f1;
   font-weight: 400;
   font-size: 16px;
+  
 }
 
 body {
@@ -31,7 +33,7 @@ body {
   height: 100%;
   display: flex;
   width: auto;
-  color: black;
+  color: black; overflow: scroll;
   margin: 3px 5px;
   justify-content: center;
   /* border: solid 1px #CDD1C4; */
@@ -43,6 +45,7 @@ body {
 .header-nav-link span {
   display: block;
   align-self: center;
+  
 }
 
 .header-nav-options {
@@ -52,6 +55,7 @@ body {
   display: flex;
   margin-left: 9px;
   align-items: center;
+  
   cursor: pointer;
 }
 
@@ -65,9 +69,11 @@ body {
   height: 100%;
   display: flex;
   width: auto;
+  
   justify-content: center;
   /* border: solid 1px #CDD1C4; */
   border-bottom: none;
+
 }
 
 .header-nav-div span {
@@ -91,15 +97,17 @@ body {
   width: 100%;
   height: 40px;
   background-color: #ffffff;
+  text-align: center;
 }
 
 .sub-menu-link {
   display: flex;
   align-items: center;
   border-bottom: none;
-  padding-left: 1rem;
+  padding: 1.3rem;
   height: 100%;
   width: 100%;
+ 
 }
 
 .sub-menu-li:last-child {
@@ -121,17 +129,17 @@ body {
   background-color: white;
 }
 
-
 .sub-menu-li:hover,
 .grand-child-link:hover,
 .options-hover:hover .header-nav-div,
 .sub-menu-hover:hover .sub-menu-div {
   background-color: tomato;
-  color:white
+  color: white;
+  border-radius: 5px;
 }
 
 .header-nav-link:hover {
-    color:tomato
+  color: tomato;
 }
 
 .sub-menu-ul {
@@ -141,6 +149,11 @@ body {
   top: 0px;
   left: 100%;
   width: 220px;
+  max-height: 350px;
+  overflow: scroll;
+}
+.sub-menu-ul::-webkit-scrollbar {
+  display: none;
 }
 
 .sub-menu-div {
@@ -166,6 +179,7 @@ body {
   display: flex;
   align-items: center;
   height: 40px;
+  border-radius: 5px;
   border-bottom: none;
   white-space: nowrap;
 }

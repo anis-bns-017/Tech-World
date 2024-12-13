@@ -4,7 +4,7 @@ import navLinksData from "../dropMenu/data.json";
 
 function DropDown() {
   return (
-    <div className="App bg-slate-50">
+    <div className="App bg-slate-50 pb-3">
       <div className="header-parent">
         <header className="header">
           <NavigationDesktop navLinksData={navLinksData} />

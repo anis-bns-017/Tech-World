@@ -36,6 +36,7 @@ import UpdateHeadPhone from "../components/updateProducts/UpdateHeadphone";
 import UpdatePhone from "../components/updateProducts/UpdatePhone";
 import UpdateLaptop from "../components/updateProducts/UpdateLaptop";
 import OnePageCheckout from "../pages/OnePageCheckout";
+import Fail from "../../../backend/controller/order/Fail";
 
 const router = createBrowserRouter([
   {
@@ -131,6 +132,16 @@ const router = createBrowserRouter([
       {
         path: "cart/onepageCheckout",
         element: <OnePageCheckout />,
+      },
+
+      {
+        path: "payment-success/:transactionId",
+        element: <Success />,
+      },
+      
+      {
+        path: "payment-fail/:transactionId",
+        element: <Fail />,
       },
 
       {

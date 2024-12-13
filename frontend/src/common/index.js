@@ -161,7 +161,11 @@ const SummaryApi = {
     method: "post",
   },
   success: {
-    url: `${backendDomain}/api/success`,
+    url: `${backendDomain}/api/payment-success/:transactionId`,
+    method: "post",
+  },
+  fail: {
+    url: `${backendDomain}/api/payment-fail/:transactionId`,
     method: "post",
   },
 

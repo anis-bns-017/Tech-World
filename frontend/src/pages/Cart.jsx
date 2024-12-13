@@ -100,19 +100,6 @@ const Cart = () => {
     }
   };
 
-  const [formData, setFormData] = useState({
-    name: "",
-    currency: "BDT",
-    postCode: "",
-    address: "",
-    phoneNumber: "",
-  });
-
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-    setFormData((prev) => ({ ...prev, [name]: value }));
-  };
-
   const totalQuantity = data.reduce(
     (prevValue, CurrValue) => prevValue + CurrValue.quantity,
     0
@@ -123,53 +110,8 @@ const Cart = () => {
     0
   );
 
-  const handlePayment = async (e) => {
-    e.preventDefault();
-
-    const response = fetch(SummaryApi.payment.url, {
-      method: SummaryApi.payment.method,
-      credentials: "include",
-      headers: {
-        "content-type": "application/json",
-      },
-      body: JSON.stringify({
-        products: data,
-        buyerDetails: formData,
-        total_amount: totalPrice,
-        total_quantity: totalQuantity,
-      }),
-    })
-      .then((response) => {
-        if (!response.ok) {
-          throw new Error(`HTTP error! Status: ${response.status}`);
-        }
-        return response.json();
-      })
-      .then((result) => {
-        window.location.replace(result.url);
-        console.log(result);
-        // Handle result here
-      })
-      .catch((error) => {
-        console.error("Error during fetch:", error.message);
-        // Handle error gracefully
-      });
-
-    const responseData = await response.json();
-
-    if (responseData.success) {
-      toast.success(responseData?.message);
-      fetchData();
-    }
-
-    if (responseData.error) {
-      toast.error(responseData?.message);
-    }
-  };
-
   return (
     <div className="container mx-auto">
-
       <div className="text-center font-lg">
         {data.length === 0 && !loading && (
           <p className="bg-white py-5">No Data</p>
@@ -273,7 +215,16 @@ const Cart = () => {
                   </div>
 
                   <div className="bg-lime-600 text-center text-xl font-semibold p-2 mt-4 text-white w-full rounded">
-                    <Link to={"onepageCheckout"}>
+                    <Link
+                      to={{
+                        pathname: "onepageCheckout",
+                      }}
+                      state={{
+                        products: data,
+                        total_amount: totalPrice,
+                        total_quantity: totalQuantity,
+                      }}
+                    >
                       CheckOut
                     </Link>
                   </div>
@@ -282,99 +233,6 @@ const Cart = () => {
             </div>
           )}
         </div>
-      </div>
-
-      <div>
-        <form
-          onSubmit={handlePayment}
-          className="bg-gray-100 p-6 rounded-md shadow-md w-full max-w-md mx-auto"
-        >
-          <div className="mb-4">
-            <label
-              className="block text-gray-700 font-medium mb-2"
-              htmlFor="name"
-            >
-              Name
-            </label>
-            <input
-              type="text"
-              id="name"
-              name="name"
-              value={formData.name}
-              onChange={handleChange}
-              className="w-full border-gray-300 rounded-md shadow-sm focus:ring-2 focus:ring-blue-500 p-2"
-              placeholder="Enter your name"
-              required
-            />
-          </div>
-
-          <div className="mb-4 flex gap-2">
-            <select
-              name="currency"
-              value={formData.currency}
-              onChange={handleChange}
-              className="border-gray-300 w-full rounded-md shadow-sm focus:ring-2 focus:ring-blue-500 p-2"
-            >
-              <option value="BDT">BDT</option>
-              <option value="USD">USD</option>
-              <option value="EUR">EUR</option>
-            </select>
-            <input
-              type="text"
-              name="postCode"
-              value={formData.postCode}
-              onChange={handleChange}
-              className="flex-1 border-gray-300 rounded-md shadow-sm focus:ring-2 focus:ring-blue-500 p-2"
-              placeholder="Post code"
-              required
-            />
-          </div>
-
-          <div className="mb-4">
-            <label
-              className="block text-gray-700 font-medium mb-2"
-              htmlFor="address"
-            >
-              Address
-            </label>
-            <input
-              type="text"
-              id="address"
-              name="address"
-              value={formData.address}
-              onChange={handleChange}
-              className="w-full border-gray-300 rounded-md shadow-sm focus:ring-2 focus:ring-blue-500 p-2"
-              placeholder="Enter your address"
-              required
-            />
-          </div>
-
-          <div className="mb-4">
-            <label
-              className="block text-gray-700 font-medium mb-2"
-              htmlFor="phoneNumber"
-            >
-              Phone Number
-            </label>
-            <input
-              type="tel"
-              id="phoneNumber"
-              name="phoneNumber"
-              value={formData.phoneNumber}
-              onChange={handleChange}
-              className="w-full border-gray-300 rounded-md shadow-sm focus:ring-2 focus:ring-blue-500 p-2"
-              placeholder="Enter your phone number"
-              required
-            />
-          </div>
-
-          <button
-            type="submit"
-            className="w-full bg-red-500 text-white font-medium py-2 rounded-md hover:bg-red-600 transition"
-          >
-            Pay
-          </button>
-        </form>
       </div>
     </div>
   );

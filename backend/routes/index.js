@@ -33,11 +33,12 @@ const mouseUploadController = require("../controller/productUpload/mouseUploadCo
 const headphoneUploadController = require("../controller/productUpload/headphoneUploadController");
 const getMobile = require("../controller/getSeperateProduct/getMobile");
 const filterPhoneController = require("../controller/getSeperateProduct/filterMobiles");
-const paymentController = require("../controller/order/paymentController")
-const successController = require("../controller/order/successController")
+const paymentController = require("../controller/order/paymentController");
+const successController = require("../controller/order/successController");
+const failController = require("../controller/order/failController");
 
-const updateTabletController = require("../controller/updateProduct/updateTabletController")
-const updateLaptopController = require("../controller/updateProduct/updateLaptopController")
+const updateTabletController = require("../controller/updateProduct/updateTabletController");
+const updateLaptopController = require("../controller/updateProduct/updateLaptopController");
 
 router.post("/signup", userSignupController);
 router.post("/signin", userSigninController);
@@ -91,7 +92,8 @@ router.post("/update-cart-product", authToken, updateAddtoCartProduct);
 router.post("/delete-cart-product", authToken, deleleAddToCartProduct);
 
 //payment and order
-router.post("/checkout", authToken, paymentController)
-router.post("/success/:transID", successController);
+router.post("/checkout", authToken, paymentController);
+router.post("/payment-success/:transactionId", successController);
+router.post("/payment-fail/:transactionId", failController);
 
 module.exports = router;
