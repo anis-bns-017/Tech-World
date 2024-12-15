@@ -1,78 +1,44 @@
-const productModel = require("../../models/productModel");
-const laptopModel = require("../../models/Category/laptopModel");
-const mouseModel = require("../../models/Category/mouseModel");
-const desktopModel = require("../../models/Category/desktopModel");
-const tabletModel = require("../../models/Category/tabletModel");
-const phoneModel = require("../../models/Category/phoneModel");
-const monitorModel = require("../../models/Category/monitorModel");
-const keyboardModel = require("../../models/Category/keyboardModel");
+const productModels = [
+  require("../../models/Category/phoneModel"),
+  require("../../models/Category/laptopModel"),
+  require("../../models/Category/mouseModel"),
+  require("../../models/Category/desktopModel"),
+  require("../../models/Category/tabletModel"),
+  require("../../models/Category/monitorModel"),
+  require("../../models/Category/keyboardModel"),
+];
 
 const searchProduct = async (req, res) => {
   try {
     const query = req.query.q;
+    // console.log("Search query:", query);
 
-    if (!query) {
-      return res.status(400).json({ success: false, message: "Query is required" });
+    if (!query || typeof query !== "string") {
+      return res
+        .status(400)
+        .json({
+          success: false,
+          message: "Query is required and must be a string",
+        });
     }
 
-    const regex = new RegExp(query, "i", "s");
+    const regex = new RegExp(query, "i"); // Case-insensitive search
 
     // Query all models concurrently
-    const [phones, laptops, mice, desktops, tablets, monitors, keyboards] = await Promise.all([
-      phoneModel.find({
-        "$or": [
-          { productName: regex },
-          { category: regex },
-        ],
-      }),
-      laptopModel.find({
-        "$or": [
-          { productName: regex },
-          { category: regex },
-        ],
-      }),
-      mouseModel.find({
-        "$or": [
-          { productName: regex },
-          { category: regex },
-        ],
-      }),
-      desktopModel.find({
-        "$or": [
-          { productName: regex },
-          { category: regex },
-        ],
-      }),
-      tabletModel.find({
-        "$or": [
-          { productName: regex },
-          { category: regex },
-        ],
-      }),
-      monitorModel.find({
-        "$or": [
-          { productName: regex },
-          { category: regex },
-        ],
-      }),
-      keyboardModel.find({
-        "$or": [
-          { productName: regex },
-          { category: regex },
-        ],
-      }),
-    ]);
+    const results = await Promise.all(
+      productModels.map(
+        (model) =>
+          model
+            .find({
+              $or: [{ productName: regex }, { category: regex }],
+            })
+            .limit(10) // Limit results for each model
+            .sort({ productName: 1 }) // Sort by product name (alphabetical)
+      )
+    );
 
-    // Combine results from all models
-    const allProducts = [
-      ...phones,
-      ...laptops,
-      ...mice,
-      ...desktops,
-      ...tablets,
-      ...monitors,
-      ...keyboards,
-    ];
+    // Flatten the results from all models into a single array
+    const allProducts = results.flat();
 
     res.json({
       data: allProducts,
@@ -81,8 +47,9 @@ const searchProduct = async (req, res) => {
       success: true,
     });
   } catch (err) {
-    res.json({
-      message: err?.message || err,
+    console.error("Error searching products:", err);
+    res.status(500).json({
+      message: err.message || "An error occurred during product search",
       error: true,
       success: false,
     });

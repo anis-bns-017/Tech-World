@@ -211,6 +211,10 @@ const router = createBrowserRouter([
         path: "search",
         element: <SearchProduct />,
       },
+      {
+        path: "seek/:word",
+        element: <SearchProduct />,
+      },
       //update Products
 
       {

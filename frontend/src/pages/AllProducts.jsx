@@ -25,7 +25,7 @@ const AllProducts = () => {
   }, []);
 
   return (
-    <div className=" pl-5 pt-10">
+    <div className="pl-5 pt-10">
       <div className="items-center justify-center text-center">
         <h2 className="font-bold text-2xl">Featured Products</h2>
         <p>Check & Get Your Desired Product!</p>

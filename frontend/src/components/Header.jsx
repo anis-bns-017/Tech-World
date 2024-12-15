@@ -44,15 +44,23 @@ const Header = () => {
     }
   };
 
+  let debounceTimeout;
+
   const handleSearch = (e) => {
     const { value } = e.target;
     setSearch(value);
 
-    if (value) {
-      navigate(`/search?q=${value}`);
-    } else {
-      navigate("/");
-    }
+    // Clear previous debounce timeout
+    if (debounceTimeout) clearTimeout(debounceTimeout);
+
+    // Debounce navigation
+    debounceTimeout = setTimeout(() => {
+      if (value) {
+        navigate(`/search?q=${encodeURIComponent(value)}`);
+      } else {
+        navigate("/");
+      }
+    }, 50); // 300ms delay to prevent excessive navigation
   };
 
   return (
@@ -177,7 +185,13 @@ const Header = () => {
           )}
         </div>
       </div>
-      <div>{user?.role === "ADMIN" || user?.role === "SELLER" ? <NavBar /> : <AnisDown />}</div>
+      <div>
+        {user?.role === "ADMIN" || user?.role === "SELLER" ? (
+          <NavBar />
+        ) : (
+          <AnisDown />
+        )}
+      </div>
     </header>
   );
 };
