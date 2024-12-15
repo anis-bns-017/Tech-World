@@ -4,7 +4,7 @@ const updateAddtoCartProduct = async (req, res) => {
   try {
     const addToCartProductId = req?.body?._id;
 
-    console.log("product Id: ", addToCartProductId);
+    // console.log("product Id: ", addToCartProductId);
     const qty = req.body.quantity;
 
     const updateProduct = await addToCartModel.updateOne({_id: addToCartProductId}, {

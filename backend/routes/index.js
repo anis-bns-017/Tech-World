@@ -18,6 +18,7 @@ const getProductDetails = require("../controller/product/getProductDetails");
 const addToCartController = require("../controller/user/addToCartController");
 const countAddToCartProduct = require("../controller/user/countAddToCartProduct");
 const addToCartViewProduct = require("../controller/user/addToCartViewProduct");
+const orderHistory = require("../controller/user/orderHistory");
 const updateAddtoCartProduct = require("../controller/user/updateAddtoCartProduct");
 const deleleAddToCartProduct = require("../controller/user/deleleAddToCartProduct");
 const searchProudct = require("../controller/product/searchProduct");
@@ -90,6 +91,7 @@ router.get("/countAddToCartProduct", authToken, countAddToCartProduct);
 router.get("/view-cart-product", authToken, addToCartViewProduct);
 router.post("/update-cart-product", authToken, updateAddtoCartProduct);
 router.post("/delete-cart-product", authToken, deleleAddToCartProduct);
+router.get("/get-orderedProducts", authToken, orderHistory);
 
 //payment and order
 router.post("/checkout", authToken, paymentController);

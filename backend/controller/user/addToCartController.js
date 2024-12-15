@@ -2,9 +2,8 @@ const addToCartModel = require("../../models/cartProduct");
 
 const addToCartController = async (req, res) => {
   try {
-    console.log("Request Body: ", req.body);
+    // console.log("Request Body: ", req.body);
     const { productId, productType } = req.body;
-    console.log("BODY ", req.body);
     const currentUser = req.userId; // Assuming this is set by authentication middleware
 
     // Check if the product is already in the cart for the current user
@@ -25,6 +24,7 @@ const addToCartController = async (req, res) => {
     const payload = {
       productId,
       quantity: 1,
+      payment_status: false, 
       userId: currentUser,
       productType,
     };

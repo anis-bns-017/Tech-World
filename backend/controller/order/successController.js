@@ -1,3 +1,5 @@
+const addToCartModel = require("../../models/cartProduct");
+const orderHistoryModel = require("../../models/Category/orderHistoryModel");
 const orderProductModel = require("../../models/Category/orderProductModel");
 
 const successController = async (req, res) => {
@@ -10,6 +12,17 @@ const successController = async (req, res) => {
       transactionId: transacID,
     });
 
+    const ordered = existingOrder.products;
+    console.log("ki ekta obostha: ", ordered);
+    for (const product of ordered) {
+      const payload = {
+        product: product,
+      };
+      const newOrder = new orderHistoryModel(payload);
+      await newOrder.save();
+      await addToCartModel.deleteOne({ productId: product?.productId?._id });
+    }
+
     if (!existingOrder) {
       return res.status(404).json({
         message: "Order not found",
@@ -17,6 +30,15 @@ const successController = async (req, res) => {
         success: false,
       });
     }
+
+    // const allProduct = await addToCartModel
+    //   .find({ userId: currentUser,
+    //     payment_status: false
+    //    }) // Filter by the current user's ID
+    //   .populate({
+    //     path: "productId",
+    //     select: "productName price productImage category sellingPrice",
+    //   });
 
     // Update payment_status
     existingOrder.payment_status = true;

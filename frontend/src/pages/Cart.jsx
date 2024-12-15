@@ -3,17 +3,13 @@ import SummaryApi from "../common";
 import Context from "../context/Context";
 import displayCurrency from "../helpers/DisplayCurrency";
 import { MdDelete } from "react-icons/md";
-import { Link, Outlet, useNavigate } from "react-router-dom";
-import { loadStripe } from "@stripe/stripe-js";
-import { toast } from "react-toastify";
+import { Link, useNavigate } from "react-router-dom";
 
 const Cart = () => {
   const [data, setData] = useState([]);
   const [loading, setLoading] = useState(true);
   const context = useContext(Context);
   const loadingCart = new Array(context.cartProductCount).fill(null);
-
-  const navigate = useNavigate();
 
   const fetchData = async () => {
     setLoading(true);
@@ -114,7 +110,7 @@ const Cart = () => {
     <div className="container mx-auto">
       <div className="text-center font-lg">
         {data.length === 0 && !loading && (
-          <p className="bg-white py-5">No Data</p>
+          <p className="bg-white py-5 text-3xl font-bold">Your Shopping Cart is empty!! </p>
         )}
       </div>
 
@@ -124,10 +120,11 @@ const Cart = () => {
           {loading
             ? loadingCart.map((el) => {
                 return (
-                  <div
-                    key={el + "Add to cart loading"}
-                    className="bg-slate-200 w-full h-32 my-2 border border-slate-300 animate-pulse rounded"
-                  ></div>
+                  // <div
+                  //   key={el + "Add to cart loading"}
+                  //   className="bg-red-800 w-full h-32 my-2 border border-slate-300 animate-pulse rounded"
+                  // ></div>
+                  <div key={el}></div>
                 );
               })
             : data.map((product) => {

@@ -10,10 +10,10 @@ const paymentController = async (req, res) => {
     const { OrderData, products, total_amount, total_quantity } = req.body;
     //console.log("asfas: ", req.body);
 
-    console.log("hey: ", products);
-    console.log("Buyer: ", OrderData);
-    console.log("amount: ", total_amount);
-    console.log("quantity: ", total_quantity);
+    // console.log("hey: ", products);
+    // console.log("Buyer: ", OrderData);
+    // console.log("amount: ", total_amount);
+    // console.log("quantity: ", total_quantity);
 
     const {
       customar_firstName,
@@ -72,8 +72,12 @@ const paymentController = async (req, res) => {
       let GatewayPageURL = apiResponse.GatewayPageURL;
       res.send({ url: GatewayPageURL });
 
+      products.map((product) => {
+        product.payment_status = true;
+      });
+      
       const payload = {
-        userId: sessionUserId, 
+        userId: sessionUserId,
         customar_firstName,
         customar_address,
         customar_city,
@@ -89,6 +93,7 @@ const paymentController = async (req, res) => {
         transactionId: transID,
         delivery_method: delivery_method,
         payment_method: payment_method,
+        products: products,
       };
 
       const uploadProduct = new orderProductModel(payload);

@@ -37,6 +37,8 @@ import UpdatePhone from "../components/updateProducts/UpdatePhone";
 import UpdateLaptop from "../components/updateProducts/UpdateLaptop";
 import OnePageCheckout from "../pages/OnePageCheckout";
 import Fail from "../../../backend/controller/order/Fail";
+import Anis from "../dropMenu/Anis";
+import AnisDown from "../dropMenu/AnisDown";
 
 const router = createBrowserRouter([
   {
@@ -138,7 +140,7 @@ const router = createBrowserRouter([
         path: "payment-success/:transactionId",
         element: <Success />,
       },
-      
+
       {
         path: "payment-fail/:transactionId",
         element: <Fail />,
@@ -175,29 +177,6 @@ const router = createBrowserRouter([
           {
             path: "all-products",
             element: <AllProducts />,
-
-            children: [
-              {
-                path: "update-tablet",
-                element: <UpdateTablet />,
-              },
-              {
-                path: "update-monitor",
-                element: <UpdateMonitor />,
-              },
-              {
-                path: "update-headphone",
-                element: <UpdateHeadPhone />,
-              },
-              {
-                path: "update-phone",
-                element: <UpdatePhone />,
-              },
-              {
-                path: "update-laptop",
-                element: <UpdateLaptop />,
-              },
-            ],
           },
         ],
       },
@@ -245,26 +224,44 @@ const router = createBrowserRouter([
           {
             path: "all-products",
             element: <AllProducts />,
-            children: [
-              {
-                path: "update-tablet",
-                element: <UpdateTablet />,
-              },
-              {
-                path: "update-monitor",
-                element: <UpdateMonitor />,
-              },
-              {
-                path: "update-headphone",
-                element: <UpdateHeadPhone />,
-              },
-              {
-                path: "update-tablet",
-                element: <UpdateTablet />,
-              },
-            ],
           },
         ],
+      },
+      {
+        path: "anis",
+        element: <AnisDown />,
+      },
+      {
+        path: "admin-panel/all-products/update-tablet",
+        element: <UpdateTablet />,
+      },
+      {
+        path: "admin-panel/all-products/update-monitor",
+        element: <UpdateMonitor />,
+      },
+      {
+        path: "admin-panel/all-products/update-headphone",
+        element: <UpdateHeadPhone />,
+      },
+      {
+        path: "admin-panel/all-products/update-tablet",
+        element: <UpdateTablet />,
+      },
+      {
+        path: "account/all-products/update-tablet",
+        element: <UpdateTablet />,
+      },
+      {
+        path: "account/all-products/update-monitor",
+        element: <UpdateMonitor />,
+      },
+      {
+        path: "account/all-products/update-headphone",
+        element: <UpdateHeadPhone />,
+      },
+      {
+        path: "account/all-products/update-tablet",
+        element: <UpdateTablet />,
       },
     ],
   },

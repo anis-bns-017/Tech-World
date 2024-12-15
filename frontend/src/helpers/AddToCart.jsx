@@ -15,7 +15,6 @@ const AddToCart = async (e, data, userId) => {
   }
 
  
-
   const response = await fetch(SummaryApi.addToCartProduct.url, {
     method: SummaryApi.addToCartProduct.method,
     credentials: "include",

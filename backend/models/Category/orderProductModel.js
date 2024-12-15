@@ -19,6 +19,11 @@ const orderSchema = new mongoose.Schema(
     productId: String,
     produt_name: String,
     currency: String,
+    products: {
+      // Embedding full user data
+      type: Object,
+      required: true, // Ensure user details are always present
+    },
     totalAmount: Number,
     totalQuantity: Number,
     transactionId: String,

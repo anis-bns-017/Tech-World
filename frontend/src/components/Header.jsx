@@ -15,6 +15,7 @@ import { SlEnergy } from "react-icons/sl";
 import { FaUserAlt } from "react-icons/fa";
 import DropDown from "../dropMenu/DropDown";
 import NavBar from "./NavBar";
+import AnisDown from "../dropMenu/AnisDown";
 
 const Header = () => {
   const user = useSelector((state) => state?.user?.user);
@@ -176,7 +177,7 @@ const Header = () => {
           )}
         </div>
       </div>
-      <div>{user?.role === "ADMIN" || user?.role === "SELLER" ? <NavBar /> : <DropDown />}</div>
+      <div>{user?.role === "ADMIN" || user?.role === "SELLER" ? <NavBar /> : <AnisDown />}</div>
     </header>
   );
 };

@@ -133,6 +133,10 @@ const SummaryApi = {
     url: `${backendDomain}/api/view-cart-product`,
     method: "get",
   },
+  getOrderedProducts: {
+    url: `${backendDomain}/api/get-orderedProducts`,
+    method: "get",
+  },
   updateCartProduct: {
     url: `${backendDomain}/api/update-cart-product`,
     method: "post",

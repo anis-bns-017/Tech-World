@@ -6,13 +6,13 @@ const addToCartViewProduct = async (req, res) => {
 
     // Find all products and populate dynamically based on productType
     const allProduct = await addToCartModel
-      .find({ userId: currentUser }) // Filter by the current user's ID
+      .find({ userId: currentUser, payment_status: false }) // Filter by the current user's ID
       .populate({
         path: "productId",
         select: "productName price productImage category sellingPrice",
       }); // Automatically uses refPath to fetch the correct model
 
-
+      // console.log("LL: ", allProduct);
     res.json({
       data: allProduct,
       error: false,

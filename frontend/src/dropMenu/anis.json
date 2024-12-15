@@ -1,0 +1,2204 @@
+[
+    {
+        "title": "Desktop",
+        "id": 1,
+        "children": [
+            {
+                "title": "Desktop Offer",
+                "id": 99
+            },
+            {
+                "title": "Star PC",
+                "id": 100,
+                "children": [
+                    {
+                        "title": "Inter PC",
+                        "id": 1000
+                    },
+                    {
+                        "title": "Ryzen PC",
+                        "id": 1001
+                    }
+                ]
+            },
+            {
+                "title": "Gaming PC",
+                "id": 101,
+                "children": [
+                    {
+                        "title": "Inter PC",
+                        "id": 1010
+                    },
+                    {
+                        "title": "Ryzen PC",
+                        "id": 1011
+                    }
+                ]
+            },
+            {
+                "title": "Brand PC",
+                "id": 102,
+                "children": [
+                    {
+                        "title": "Acer",
+                        "id": 1020
+                    },
+                    {
+                        "title": "Asus",
+                        "id": 1021
+                    },
+                    {
+                        "title": "Dell",
+                        "id": 1022
+                    },
+                    {
+                        "title": "HP",
+                        "id": 1023
+                    },
+                    {
+                        "title": "Lenovo",
+                        "id": 1024
+                    },
+                    {
+                        "title": "MSI",
+                        "id": 1025
+                    }
+                ]
+            },
+            {
+                "title": "All-in-One PC",
+                "id": 103,
+                "children": [
+                    {
+                        "title": "DELL",
+                        "id": 1030
+                    },
+                    {
+                        "title": "Microsoft",
+                        "id": 1031
+                    },
+                    {
+                        "title": "MSI",
+                        "id": 1032
+                    },
+                    {
+                        "title": "HP",
+                        "id": 1033
+                    },
+                    {
+                        "title": "LENOVO",
+                        "id": 1034
+                    },
+                    {
+                        "title": "WALTON",
+                        "id": 1035
+                    },
+                    {
+                        "title": "Teclast",
+                        "id": 1035
+                    }
+                ]
+            },
+            {
+                "title": "Portable Mini PC",
+                "id": 104,
+                "children": [
+                    {
+                        "title": "Asus",
+                        "id": 1040
+                    },
+                    {
+                        "title": "Intel",
+                        "id": 1041
+                    },
+                    {
+                        "title": "MSI",
+                        "id": 1042
+                    },
+                    {
+                        "title": "Zotac",
+                        "id": 1043
+                    },
+                    {
+                        "title": "LENOVO",
+                        "id": 1044
+                    }
+                ]
+            },
+            {
+                "title": "Apple Mac Mini",
+                "id": 105
+            },
+            {
+                "title": "Apple iMac",
+                "id": 106
+            },
+            {
+                "title": "Apple Mac Studio",
+                "id": 107
+            },
+            {
+                "title": "Apple Mac Pro",
+                "id": 108
+            },
+            {
+                "title": "Show All Desktop",
+                "id": 109
+            }
+        ]
+    },
+    {
+        "title": "Laptop",
+        "id": 2,
+        "children": [
+            {
+                "title": "All Laptop",
+                "id": 20,
+                "children": [
+                    {
+                        "title": "AVITA Laptop",
+                        "id": 200
+                    },
+                    {
+                        "title": "Lenovo",
+                        "id": 201
+                    },
+                    {
+                        "title": "MSI",
+                        "id": 202
+                    },
+                    {
+                        "title": "Asus",
+                        "id": 203
+                    },
+                    {
+                        "title": "HP",
+                        "id": 204
+                    },
+                    {
+                        "title": "Acer",
+                        "id": 205
+                    },
+                    {
+                        "title": "Dell",
+                        "id": 206
+                    },
+                    {
+                        "title": "Macbook",
+                        "id": 207
+                    },
+                    {
+                        "title": "Microsoft",
+                        "id": 208
+                    },
+                    {
+                        "title": "Infinix",
+                        "id": 209
+                    },
+                    {
+                        "title": "Chuwi",
+                        "id": 210
+                    },
+                    {
+                        "title": "Gigabyte",
+                        "id": 211
+                    },
+                    {
+                        "title": "ThunderBot",
+                        "id": 212
+                    },
+                    {
+                        "title": "HUAWEI",
+                        "id": 213
+                    },
+                    {
+                        "title": "Walton",
+                        "id": 214
+                    },
+                    {
+                        "title": "Smart",
+                        "id": 215
+                    }
+                ]
+            },
+            {
+                "title": "Gaming Laptop",
+                "id": 21,
+                "children": [
+                    {
+                        "title": "Lenovo",
+                        "id": 201
+                    },
+                    {
+                        "title": "MSI",
+                        "id": 202
+                    },
+                    {
+                        "title": "Asus",
+                        "id": 203
+                    },
+                    {
+                        "title": "HP",
+                        "id": 204
+                    },
+                    {
+                        "title": "Acer",
+                        "id": 205
+                    },
+                    {
+                        "title": "Dell",
+                        "id": 206
+                    },
+                    {
+                        "title": "RAZER",
+                        "id": 210
+                    },
+                    {
+                        "title": "ThunderBot",
+                        "id": 212
+                    }
+                ]
+            },
+            {
+                "title": "Premium Ultrabook",
+                "id": 22,
+                "children": [
+                    {
+                        "title": "Lenovo",
+                        "id": 221
+                    },
+                    {
+                        "title": "MSI",
+                        "id": 222
+                    },
+                    {
+                        "title": "Asus",
+                        "id": 223
+                    },
+                    {
+                        "title": "HP",
+                        "id": 224
+                    },
+                    {
+                        "title": "Acer",
+                        "id": 225
+                    },
+                    {
+                        "title": "Dell",
+                        "id": 226
+                    },
+                    {
+                        "title": "Samsung",
+                        "id": 227
+                    },
+                    {
+                        "title": "Microsoft",
+                        "id": 228
+                    }
+                ]
+            },
+            {
+                "title": "Laptop Bag",
+                "id": 23,
+                "children": [
+                    {
+                        "title": "Lenovo",
+                        "id": 231
+                    },
+                    {
+                        "title": "MaxGreen",
+                        "id": 232
+                    },
+                    {
+                        "title": "Asus",
+                        "id": 233
+                    },
+                    {
+                        "title": "HP",
+                        "id": 234
+                    },
+                    {
+                        "title": "Fantech",
+                        "id": 235
+                    },
+                    {
+                        "title": "Targus",
+                        "id": 236
+                    },
+                    {
+                        "title": "Tucano",
+                        "id": 230
+                    },
+                    {
+                        "title": "UGREEN",
+                        "id": 232
+                    },
+                    {
+                        "title": "WiWU",
+                        "id": 232
+                    }
+                ]
+            },
+            {
+                "title": "Laptop Accessories",
+                "id": 24,
+                "children": [
+                    {
+                        "title": "Laptop Cooler",
+                        "id": 241
+                    },
+                    {
+                        "title": "Laptop Desk",
+                        "id": 242
+                    },
+                    {
+                        "title": "Laptop Stand",
+                        "id": 243
+                    },
+                    {
+                        "title": "Laptop Battery",
+                        "id": 244
+                    },
+                    {
+                        "title": "Lapter Charger / Adapter",
+                        "id": 245
+                    },
+                    {
+                        "title": "Display",
+                        "id": 246
+                    },
+                    {
+                        "title": "Laptop Keyboard",
+                        "id": 247
+                    },
+                    {
+                        "title": "CADDY",
+                        "id": 248
+                    },
+                    {
+                        "title": "Laptop Locker",
+                        "id": 249
+                    }
+                ]
+            },
+            {
+                "title": "Show All Laptop",
+                "id": 25
+            }
+        ]
+    },
+    {
+        "title": "Component",
+        "id": 3,
+        "children": [
+            {
+                "title": "Processor",
+                "id": 3000,
+                "children": [
+                    {
+                        "title": "AMD",
+                        "id": 3015
+                    },
+                    {
+                        "title": "Intel",
+                        "id": 3016
+                    }
+                ]
+            },
+            {
+                "title": "CPU Cooler",
+                "id": 3001,
+                "children": [
+                    {
+                        "title": "Antec",
+                        "id": 3017
+                    },
+                    {
+                        "title": "Gamdias",
+                        "id": 3018
+                    },
+                    {
+                        "title": "Xtreme",
+                        "id": 3019
+                    },
+                    {
+                        "title": "Lian Li",
+                        "id": 3020
+                    },
+                    {
+                        "title": "TEAM",
+                        "id": 3021
+                    },
+                    {
+                        "title": "Corsair",
+                        "id": 3022
+                    },
+                    {
+                        "title": "Gigabyte",
+                        "id": 3023
+                    },
+                    {
+                        "title": "NZXT",
+                        "id": 3024
+                    },
+                    {
+                        "title": "Thermaright",
+                        "id": 3025
+                    },
+                    {
+                        "title": "Thermaltake",
+                        "id": 3026
+                    },
+                    {
+                        "title": "Cooler Master",
+                        "id": 3027
+                    },
+                    {
+                        "title": "Asus",
+                        "id": 3028
+                    },
+                    {
+                        "title": "Deepcool",
+                        "id": 3029
+                    },
+                    {
+                        "title": "1STPLAYER",
+                        "id": 3030
+                    },
+                    {
+                        "title": "Xigmatek",
+                        "id": 3031
+                    },
+                    {
+                        "title": "AMD",
+                        "id": 3032
+                    },
+                    {
+                        "title": "Value-Top",
+                        "id": 3033
+                    },
+                    {
+                        "title": "Power Train",
+                        "id": 3034
+                    },
+                    {
+                        "title": "ARCTIC",
+                        "id": 3035
+                    },
+                    {
+                        "title": "Hunkey",
+                        "id": 3036
+                    }
+                ]
+            },
+            {
+                "title": "Water / Liquid Cooling",
+                "id": 3037,
+                "children": [
+                    {
+                        "title": "EKWB",
+                        "id": 3038
+                    },
+                    {
+                        "title": "Lian Li",
+                        "id": 3039
+                    }
+                ]
+            },
+            {
+                "title": "Motherboard",
+                "id": 3040,
+                "children": [
+                    {
+                        "title": "ASTock(intel)",
+                        "id": 3041
+                    },
+                    {
+                        "title": "ASTock(AMD)",
+                        "id": 3042
+                    },
+                    {
+                        "title": "ASUS(Intel)",
+                        "id": 3043
+                    },
+                    {
+                        "title": "ASUS(AMD)",
+                        "id": 3044
+                    },
+                    {
+                        "title": "GIGABYTE(intel)",
+                        "id": 3045
+                    },
+                    {
+                        "title": "GIGABYTE(AMD)",
+                        "id": 3046
+                    },
+                    {
+                        "title": "MSI(Intel)",
+                        "id": 3047
+                    },
+                    {
+                        "title": "MSI(AMD)",
+                        "id": 3048
+                    },
+                    {
+                        "title": "Colorful(intel)",
+                        "id": 3049
+                    },
+                    {
+                        "title": "Colorful(AMD)",
+                        "id": 3050
+                    },
+                    {
+                        "title": "BIOSTER(Intel)",
+                        "id": 3051
+                    },
+                    {
+                        "title": "BIOSTER(AMD)",
+                        "id": 3052
+                    },
+                    {
+                        "title": "NZXR(intel)",
+                        "id": 3053
+                    },
+                    {
+                        "title": "NZXR(AMD)",
+                        "id": 3054
+                    },
+                    {
+                        "title": "ARKTEK(Intel)",
+                        "id": 3055
+                    }
+                ]
+            },
+            {
+                "title": "Graphics Card",
+                "id": 3056,
+                "children": [
+                    {
+                        "title": "ASRock",
+                        "id": 3057
+                    },
+                    {
+                        "title": "ASUS",
+                        "id": 3058
+                    },
+                    {
+                        "title": "GIGABYTE",
+                        "id": 3059
+                    },
+                    {
+                        "title": "INTEL",
+                        "id": 3060
+                    },
+                    {
+                        "title": "ZOTAC",
+                        "id": 3061
+                    },
+                    {
+                        "title": "MSI",
+                        "id": 3062
+                    },
+                    {
+                        "title": "Sapphire",
+                        "id": 3063
+                    },
+                    {
+                        "title": "GUNNIR",
+                        "id": 3064
+                    },
+                    {
+                        "title": "ARKTEK",
+                        "id": 3065
+                    },
+                    {
+                        "title": "PELADN",
+                        "id": 3066
+                    },
+                    {
+                        "title": "OCPC",
+                        "id": 3067
+                    },
+                    {
+                        "title": "PowerColor",
+                        "id": 3068
+                    },
+                    {
+                        "title": "PNY",
+                        "id": 3069
+                    },
+                    {
+                        "title": "VGA Holder",
+                        "id": 3070
+                    }
+                ]
+            },
+            {
+                "title": "RAM (Desktop)",
+                "id": 3071,
+                "children": [
+                    {
+                        "title": "Colorful",
+                        "id": 3072
+                    },
+                    {
+                        "title": "Corsair",
+                        "id": 3073
+                    },
+                    {
+                        "title": "Gigabyte",
+                        "id": 3074
+                    },
+                    {
+                        "title": "G.Skill",
+                        "id": 3075
+                    },
+                    {
+                        "title": "PNY",
+                        "id": 3076
+                    },
+                    {
+                        "title": "Kingston",
+                        "id": 3077
+                    },
+                    {
+                        "title": "TwinMOS",
+                        "id": 3078
+                    },
+                    {
+                        "title": "Adata",
+                        "id": 3079
+                    },
+                    {
+                        "title": "Patriot",
+                        "id": 3080
+                    },
+                    {
+                        "title": "Transcend",
+                        "id": 3081
+                    },
+                    {
+                        "title": "HP",
+                        "id": 3082
+                    },
+                    {
+                        "title": "Apacer",
+                        "id": 3083
+                    },
+                    {
+                        "title": "Crucial",
+                        "id": 3084
+                    },
+                    {
+                        "title": "XOC",
+                        "id": 3085
+                    },
+                    {
+                        "title": "Lexar",
+                        "id": 3086
+                    }
+                ]
+            },
+            {
+                "title": "Power Supply",
+                "id": 3007,
+                "children": [
+                    {
+                        "title": "Antec",
+                        "id": 3088
+                    },
+                    {
+                        "title": "Gamdias",
+                        "id": 3089
+                    },
+                    {
+                        "title": "Lian Li",
+                        "id": 3090
+                    },
+                    {
+                        "title": "FSP",
+                        "id": 3091
+                    },
+                    {
+                        "title": "MaxGreen",
+                        "id": 3092
+                    },
+                    {
+                        "title": "Cooler Master",
+                        "id": 3093
+                    },
+                    {
+                        "title": "Thermaltake",
+                        "id": 3094
+                    },
+                    {
+                        "title": "Corsair",
+                        "id": 3095
+                    },
+                    {
+                        "title": "Gigabyte",
+                        "id": 3096
+                    },
+                    {
+                        "title": "1STPLAYER",
+                        "id": 3097
+                    },
+                    {
+                        "title": "MSI",
+                        "id": 3098
+                    },
+                    {
+                        "title": "Asus",
+                        "id": 3099
+                    },
+                    {
+                        "title": "Deepcool",
+                        "id": 3100
+                    },
+                    {
+                        "title": "NZXT",
+                        "id": 3101
+                    },
+                    {
+                        "title": "Power Train",
+                        "id": 3102
+                    },
+                    {
+                        "title": "PC Power",
+                        "id": 3103
+                    },
+                    {
+                        "title": "Xtreme",
+                        "id": 3104
+                    },
+                    {
+                        "title": "Acer",
+                        "id": 3105
+                    },
+                    {
+                        "title": "Xigmatek",
+                        "id": 3106
+                    },
+                    {
+                        "title": "Huntkey",
+                        "id": 3107
+                    },
+                    {
+                        "title": "Value-Top",
+                        "id": 3108
+                    }
+                ]
+            },
+            {
+                "title": "Hard Disk Drive",
+                "id": 3109,
+                "children": [
+                    {
+                        "title": "Seagate",
+                        "id": 3110
+                    },
+                    {
+                        "title": "Toshiba",
+                        "id": 3111
+                    },
+                    {
+                        "title": "Western Digital",
+                        "id": 3112
+                    }
+                ]
+            },
+            {
+                "title": "Portable Hard Disk Drive",
+                "id": 3113,
+                "children": [
+                    {
+                        "title": "Toshiba",
+                        "id": 3114
+                    },
+                    {
+                        "title": "ADATA",
+                        "id": 3115
+                    },
+                    {
+                        "title": "Transcend",
+                        "id": 3116
+                    },
+                    {
+                        "title": "Western Digital",
+                        "id": 3117
+                    },
+                    {
+                        "title": "Seagate",
+                        "id": 3118
+                    },
+                    {
+                        "title": "LaCie",
+                        "id": 3119
+                    },
+                    {
+                        "title": "SanDisk",
+                        "id": 3120
+                    }
+                ]
+            },
+            {
+                "title": "SSD",
+                "id": 3121,
+                "children": [
+                    {
+                        "title": "Gigabyte",
+                        "id": 3122
+                    },
+                    {
+                        "title": "Colorful",
+                        "id": 3123
+                    },
+                    {
+                        "title": "MiPhi",
+                        "id": 3124
+                    },
+                    {
+                        "title": "Samsung",
+                        "id": 3125
+                    },
+                    {
+                        "title": "HP",
+                        "id": 3126
+                    },
+                    {
+                        "title": "GeIL",
+                        "id": 3127
+                    },
+                    {
+                        "title": "Transcend",
+                        "id": 3128
+                    },
+                    {
+                        "title": "PNY",
+                        "id": 3129
+                    },
+                    {
+                        "title": "Adata",
+                        "id": 3130
+                    },
+                    {
+                        "title": "Corsair",
+                        "id": 3131
+                    },
+                    {
+                        "title": "Kingston",
+                        "id": 3132
+                    },
+                    {
+                        "title": "MSI",
+                        "id": 3133
+                    },
+                    {
+                        "title": "Lexar",
+                        "id": 3134
+                    },
+                    {
+                        "title": "Twinmos",
+                        "id": 3135
+                    },
+                    {
+                        "title": "Crucial",
+                        "id": 3136
+                    },
+                    {
+                        "title": "Netac",
+                        "id": 3137
+                    },
+                    {
+                        "title": "AGI",
+                        "id": 3138
+                    },
+                    {
+                        "title": "XOC",
+                        "id": 3139
+                    },
+                    {
+                        "title": "Acer",
+                        "id": 3140
+                    },
+                    {
+                        "title": "Kimtigo",
+                        "id": 3141
+                    },
+                    {
+                        "title": "OCPC",
+                        "id": 3142
+                    }
+                ]
+            },
+            {
+                "title": "Portable SSD",
+                "id": 3143,
+                "children": [
+                    {
+                        "title": "Sandisk",
+                        "id": 3144
+                    },
+                    {
+                        "title": "Samsung",
+                        "id": 3145
+                    },
+                    {
+                        "title": "TEAM",
+                        "id": 3146
+                    },
+                    {
+                        "title": "Teutons",
+                        "id": 3147
+                    },
+                    {
+                        "title": "Adata",
+                        "id": 3148
+                    },
+                    {
+                        "title": "Transcend",
+                        "id": 3149
+                    },
+                    {
+                        "title": "Crucial",
+                        "id": 3150
+                    },
+                    {
+                        "title": "Corsair",
+                        "id": 3151
+                    },
+                    {
+                        "title": "Seagate",
+                        "id": 3152
+                    },
+                    {
+                        "title": "Silicon Power",
+                        "id": 3153
+                    }
+                ]
+            },
+            {
+                "title": "Casing",
+                "id": 3154,
+                "children": [
+                    {
+                        "title": "Antec",
+                        "id": 3155
+                    },
+                    {
+                        "title": "Gamdias",
+                        "id": 3156
+                    },
+                    {
+                        "title": "Lian Li",
+                        "id": 3157
+                    },
+                    {
+                        "title": "MaxGreen",
+                        "id": 3158
+                    },
+                    {
+                        "title": "Corsair",
+                        "id": 3159
+                    },
+                    {
+                        "title": "Asus",
+                        "id": 3160
+                    },
+                    {
+                        "title": "MSI",
+                        "id": 3161
+                    },
+                    {
+                        "title": "1STPLAYER",
+                        "id": 3162
+                    },
+                    {
+                        "title": "NZXT",
+                        "id": 3163
+                    },
+                    {
+                        "title": "Value-Top",
+                        "id": 3164
+                    },
+                    {
+                        "title": "Thermaltake",
+                        "id": 3165
+                    },
+                    {
+                        "title": "Deepcool",
+                        "id": 3166
+                    },
+                    {
+                        "title": "Xigmatek",
+                        "id": 3167
+                    },
+                    {
+                        "title": "FSP",
+                        "id": 3168
+                    },
+                    {
+                        "title": "OVO",
+                        "id": 3169
+                    },
+                    {
+                        "title": "PC Power",
+                        "id": 3170
+                    },
+                    {
+                        "title": "Huntkey",
+                        "id": 3171
+                    },
+                    {
+                        "title": "Monarch",
+                        "id": 3172
+                    }
+                ]
+            },
+            {
+                "title": "Casing Cooler",
+                "id": 3173,
+                "children": [
+                    {
+                        "title": "Antec",
+                        "id": 3174
+                    },
+                    {
+                        "title": "Xtreme",
+                        "id": 3175
+                    },
+                    {
+                        "title": "Lian Li",
+                        "id": 3176
+                    },
+                    {
+                        "title": "MaxGreen",
+                        "id": 3177
+                    },
+                    {
+                        "title": "Gamdias",
+                        "id": 3178
+                    },
+                    {
+                        "title": "Corsair",
+                        "id": 3179
+                    },
+                    {
+                        "title": "Fantech",
+                        "id": 3180
+                    },
+                    {
+                        "title": "NZXT",
+                        "id": 3181
+                    },
+                    {
+                        "title": "Deepcool",
+                        "id": 3182
+                    },
+                    {
+                        "title": "Redragon",
+                        "id": 3183
+                    },
+                    {
+                        "title": "Value-Top",
+                        "id": 3184
+                    },
+                    {
+                        "title": "ORICO",
+                        "id": 3185
+                    },
+                    {
+                        "title": "Xigmatek",
+                        "id": 3186
+                    },
+                    {
+                        "title": "Thermalright",
+                        "id": 3187
+                    },
+                    {
+                        "title": "ARCTIC",
+                        "id": 3188
+                    },
+                    {
+                        "title": "Yeston",
+                        "id": 3189
+                    }
+                ]
+            },
+            {
+                "title": "Optical Disk Drive",
+                "id": 3190,
+                "children": [
+                    {
+                        "title": "External Optical Disk Drive",
+                        "id": 3191
+                    },
+                    {
+                        "title": "Internal Optical Disk Drive",
+                        "id": 3192
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "title": "Monitor",
+        "id": 3193,
+        "children": [
+            {
+                "title": "MSI",
+                "id": 3194
+            },
+            {
+                "title": "AOC",
+                "id": 3195
+            },
+            {
+                "title": "LG",
+                "id": 3196
+            },
+            {
+                "title": "Asus",
+                "id": 3197
+            },
+            {
+                "title": "HP",
+                "id": 3198
+            },
+            {
+                "title": "Samsung",
+                "id": 3199
+            },
+            {
+                "title": "Acer",
+                "id": 3200
+            },
+            {
+                "title": "Dell",
+                "id": 3201
+            },
+            {
+                "title": "PHILIPS",
+                "id": 3202
+            },
+            {
+                "title": "Viewsonic",
+                "id": 3203
+            },
+            {
+                "title": "GIGABYTE",
+                "id": 3204
+            },
+            {
+                "title": "Corsair",
+                "id": 3205
+            },
+            {
+                "title": "BenQ",
+                "id": 3206
+            },
+            {
+                "title": "HUAWEI",
+                "id": 3207
+            },
+            {
+                "title": "Hikvision",
+                "id": 3208
+            },
+            {
+                "title": "Dahua",
+                "id": 3209
+            },
+            {
+                "title": "PC Power",
+                "id": 3210
+            },
+            {
+                "title": "Value-Top",
+                "id": 3211
+            }
+        ]
+    },
+    {
+        "title": "UPS",
+        "id": 3225,
+        "children": [
+            {
+                "title": "Online UPS",
+                "id": 3226,
+                "children": [
+                    {
+                        "title": "MaxGreen",
+                        "id": 3234
+                    },
+                    {
+                        "title": "SANTAK",
+                        "id": 3235
+                    },
+                    {
+                        "title": "Tecnoware",
+                        "id": 3236
+                    },
+                    {
+                        "title": "Digital X",
+                        "id": 3237
+                    },
+                    {
+                        "title": "ZIGOR",
+                        "id": 3238
+                    },
+                    {
+                        "title": "APOLLO",
+                        "id": 3239
+                    },
+                    {
+                        "title": "EnSmart",
+                        "id": 3240
+                    },
+                    {
+                        "title": "MARSRIVA",
+                        "id": 3241
+                    },
+                    {
+                        "title": "KSTAR",
+                        "id": 3242
+                    },
+                    {
+                        "title": "Power Pac",
+                        "id": 3243
+                    },
+                    {
+                        "title": "Power Guard",
+                        "id": 3244
+                    },
+                    {
+                        "title": "Vertiv",
+                        "id": 3245
+                    },
+                    {
+                        "title": "APC",
+                        "id": 3246
+                    }
+                ]
+            },
+            {
+                "title": "Offline UPS",
+                "id": 3247,
+                "children": [
+                    {
+                        "title": "MaxGreen",
+                        "id": 3248
+                    },
+                    {
+                        "title": "SANTAK",
+                        "id": 3249
+                    },
+                    {
+                        "title": "Digital X",
+                        "id": 3250
+                    },
+                    {
+                        "title": "Prolink",
+                        "id": 3251
+                    },
+                    {
+                        "title": "APOLLO",
+                        "id": 3252
+                    },
+                    {
+                        "title": "Power Guard",
+                        "id": 3253
+                    },
+                    {
+                        "title": "KSTAR",
+                        "id": 3254
+                    },
+                    {
+                        "title": "PC Power",
+                        "id": 3255
+                    },
+                    {
+                        "title": "MARSRIVA",
+                        "id": 3256
+                    },
+                    {
+                        "title": "Power Pac",
+                        "id": 3257
+                    },
+                    {
+                        "title": "Hikvision",
+                        "id": 3258
+                    }
+                ]
+            },
+            {
+                "title": "Mini UPS",
+                "id": 3259,
+                "children": [
+                    {
+                        "title": "MARSRIVA",
+                        "id": 3260
+                    },
+                    {
+                        "title": "Power Guard",
+                        "id": 3261
+                    },
+                    {
+                        "title": "PC Power",
+                        "id": 3262
+                    }
+                ]
+            },
+            {
+                "title": "UPS Battery",
+                "id": 3263
+            },
+            {
+                "title": "Voltage Stabilizer",
+                "id": 3264
+            },
+            {
+                "title": "IPS",
+                "id": 3265
+            },
+            {
+                "title": "Show All UPS",
+                "id": 3266
+            }
+        ]
+    },
+    {
+        "title": "Phone",
+        "id": 3267,
+        "children": [
+            {
+                "title": "OnePlus",
+                "id": 3268
+            },
+            {
+                "title": "OPPO",
+                "id": 3269
+            },
+            {
+                "title": "Vivo",
+                "id": 3270
+            },
+            {
+                "title": "Realme",
+                "id": 3271
+            },
+            {
+                "title": "Infinix",
+                "id": 3272
+            },
+            {
+                "title": "TECNO",
+                "id": 3273
+            },
+            {
+                "title": "TCL",
+                "id": 3274
+            },
+            {
+                "title": "Nokia",
+                "id": 3275
+            },
+            {
+                "title": "ZTE",
+                "id": 3276
+            },
+            {
+                "title": "benco",
+                "id": 3277
+            },
+            {
+                "title": "Walton",
+                "id": 3278
+            }
+        ]
+    },
+    {
+        "title": "Tablet",
+        "id": 3284,
+        "children": [
+            {
+                "title": "Graphics Tablet",
+                "id": 3285,
+                "children": [
+                    {
+                        "title": "XP-PEN",
+                        "id": 3302
+                    },
+                    {
+                        "title": "Huion",
+                        "id": 3303
+                    },
+                    {
+                        "title": "Wacom",
+                        "id": 3304
+                    },
+                    {
+                        "title": "VEIKK",
+                        "id": 3305
+                    }
+                ]
+            },
+            {
+                "title": "iPad",
+                "id": 3286
+            },
+            {
+                "title": "Black Shark",
+                "id": 3287
+            },
+            {
+                "title": "Lenovo",
+                "id": 3288
+            },
+            {
+                "title": "Samsung",
+                "id": 3289
+            },
+            {
+                "title": "HONOR",
+                "id": 3290
+            },
+            {
+                "title": "Xiaomi",
+                "id": 3291
+            },
+            {
+                "title": "Huion",
+                "id": 3292
+            },
+            {
+                "title": "Walton",
+                "id": 3293
+            },
+            {
+                "title": "HUAWEI",
+                "id": 3294
+            }
+        ]
+    },
+    {
+        "title": "Office Equipment",
+        "id": 3302,
+        "children": [
+            {
+                "title": "Projector",
+                "id": 3308
+            },
+            {
+                "title": "Conference System",
+                "id": 3309
+            },
+            {
+                "title": "PA System",
+                "id": 3310
+            },
+            {
+                "title": "Interactive Flat Panel",
+                "id": 3311
+            },
+            {
+                "title": "Video Wall",
+                "id": 3312
+            },
+            {
+                "title": "Signage",
+                "id": 3313
+            },
+            {
+                "title": "Kiosk",
+                "id": 3314
+            },
+            {
+                "title": "Printer",
+                "id": 3315
+            },
+            {
+                "title": "Laser Printer",
+                "id": 3316
+            },
+            {
+                "title": "Large Format Printer",
+                "id": 3317
+            },
+            {
+                "title": "ID Card Printer",
+                "id": 3318
+            },
+            {
+                "title": "POS Printer",
+                "id": 3319
+            }
+        ]
+    },
+    {
+        "title": "Camera",
+        "id": 3338,
+        "children": [
+            {
+                "title": "Action Camera",
+                "id": 3339
+            },
+            {
+                "title": "Camera Lenses",
+                "id": 3340
+            },
+            {
+                "title": "Digital Camera",
+                "id": 3341
+            },
+            {
+                "title": "DSLR",
+                "id": 3342
+            },
+            {
+                "title": "Handycam",
+                "id": 3343
+            },
+            {
+                "title": "Mirrorless Camera",
+                "id": 3344
+            },
+            {
+                "title": "Dash Cam",
+                "id": 3345
+            },
+            {
+                "title": "Video Camera",
+                "id": 3346
+            },
+            {
+                "title": "Instant Camera",
+                "id": 3347
+            },
+            {
+                "title": "Camera Accessories",
+                "id": 3348
+            },
+            {
+                "title": "Camera Tripod",
+                "id": 3349
+            }
+        ]
+    },
+    {
+        "title": "Security",
+        "id": 3350,
+        "children": [
+            {
+                "title": "Portable WiFi Camera",
+                "id": 3351
+            },
+            {
+                "title": "IP Camera",
+                "id": 3352
+            },
+            {
+                "title": "CC Camera",
+                "id": 3353
+            },
+            {
+                "title": "PTZ Camera",
+                "id": 3354
+            },
+            {
+                "title": "CC Camera Package",
+                "id": 3355
+            },
+            {
+                "title": "IP Camera Package",
+                "id": 3356
+            },
+            {
+                "title": "DVR",
+                "id": 3357
+            },
+            {
+                "title": "NVR",
+                "id": 3358
+            },
+            {
+                "title": "XVR",
+                "id": 3359
+            },
+            {
+                "title": "CC Camera Accessories",
+                "id": 3360
+            },
+            {
+                "title": "Door Lock",
+                "id": 3361
+            },
+            {
+                "title": "Smart Door Bell",
+                "id": 3362
+            },
+            {
+                "title": "Access Control",
+                "id": 3363
+            },
+            {
+                "title": "Entrance Control",
+                "id": 3364
+            },
+            {
+                "title": "Digital Locker & Vault",
+                "id": 3365
+            },
+            {
+                "title": "KVM Switch",
+                "id": 3366
+            }
+        ]
+    },
+    {
+        "title": "Networking",
+        "id": 3367,
+        "children": [
+            {
+                "title": "Router",
+                "id": 3369
+            },
+            {
+                "title": "Pocket Router",
+                "id": 3370
+            },
+            {
+                "title": "Access Point & Range Extender",
+                "id": 3371
+            },
+            {
+                "title": "Network Switch",
+                "id": 3372
+            },
+            {
+                "title": "Firewall",
+                "id": 3373
+            },
+            {
+                "title": "LAN Card",
+                "id": 3374
+            },
+            {
+                "title": "Networking Cable",
+                "id": 3375
+            },
+            {
+                "title": "Patch Cord",
+                "id": 3376
+            },
+            {
+                "title": "Connector",
+                "id": 3377
+            },
+            {
+                "title": "OLT",
+                "id": 3378
+            },
+            {
+                "title": "ONU",
+                "id": 3379
+            },
+            {
+                "title": "Splicer Machine",
+                "id": 3380
+            },
+            {
+                "title": "Crimping Tool",
+                "id": 3381
+            },
+            {
+                "title": "OTDR",
+                "id": 3382
+            },
+            {
+                "title": "PoE Injector",
+                "id": 3383
+            },
+            {
+                "title": "Network Transceivers",
+                "id": 3384
+            },
+            {
+                "title": "Faceplate",
+                "id": 3385
+            },
+            {
+                "title": "Patch Panel",
+                "id": 3386
+            },
+            {
+                "title": "Media Converter",
+                "id": 3387
+            }
+        ]
+    },
+    {
+        "title": "Software",
+        "id": 3388,
+        "children": [
+            {
+                "title": "Operating System",
+                "id": 3389
+            },
+            {
+                "title": "Office Application",
+                "id": 3390
+            },
+            {
+                "title": "Database Server Solution",
+                "id": 3391
+            },
+            {
+                "title": "Mail Server Solution",
+                "id": 3392
+            },
+            {
+                "title": "Cloud Solutions",
+                "id": 3393
+            },
+            {
+                "title": "Antivirus",
+                "id": 3394
+            },
+            {
+                "title": "Bangla Typing Software",
+                "id": 3395
+            },
+            {
+                "title": "Adobe",
+                "id": 3396
+            },
+            {
+                "title": "VMware",
+                "id": 3397
+            },
+            {
+                "title": "AutoDesk",
+                "id": 3398
+            },
+            {
+                "title": "AnyDesk",
+                "id": 3399
+            }
+        ]
+    },
+    {
+        "title": "Server & Storage",
+        "id": 4000,
+        "children": [
+            {
+                "title": "Server",
+                "id": 3341
+            },
+            {
+                "title": "Workstation",
+                "id": 3342
+            },
+            {
+                "title": "Server Rack",
+                "id": 3343
+            },
+            {
+                "title": "NAS Storage",
+                "id": 3344
+            },
+            {
+                "title": "SAN Storage",
+                "id": 3345
+            },
+            {
+                "title": "Server HDD",
+                "id": 3346
+            },
+            {
+                "title": "Server HDD Bay",
+                "id": 3347
+            },
+            {
+                "title": "Server RAM",
+                "id": 3348
+            },
+            {
+                "title": "Server SSD",
+                "id": 3349
+            },
+            {
+                "title": "Server Power Supply",
+                "id": 3350,
+                "children": [
+                    {
+                        "title": "Keyboard",
+                        "id": 3352
+                    },
+                    {
+                        "title": "Mouse",
+                        "id": 3353
+                    },
+                    {
+                        "title": "Headphone",
+                        "id": 3354
+                    },
+                    {
+                        "title": "Bluetooth Headphone",
+                        "id": 3355
+                    },
+                    {
+                        "title": "Mouse Pad",
+                        "id": 3356
+                    },
+                    {
+                        "title": "Wrist Rest",
+                        "id": 3357
+                    },
+                    {
+                        "title": "Headphone Stand",
+                        "id": 3358
+                    },
+                    {
+                        "title": "Speaker & Home Theater",
+                        "id": 3359
+                    },
+                    {
+                        "title": "Bluetooth Speakers",
+                        "id": 3360
+                    },
+                    {
+                        "title": "Soundbar",
+                        "id": 3361
+                    },
+                    {
+                        "title": "Webcam",
+                        "id": 3362
+                    },
+                    {
+                        "title": "Cable",
+                        "id": 3363
+                    },
+                    {
+                        "title": "Converter",
+                        "id": 3364
+                    },
+                    {
+                        "title": "Card Reader",
+                        "id": 3365
+                    },
+                    {
+                        "title": "Hubs & Docks",
+                        "id": 3366
+                    },
+                    {
+                        "title": "Microphone",
+                        "id": 3367
+                    },
+                    {
+                        "title": "Digital Voice Recorder",
+                        "id": 3368
+                    },
+                    {
+                        "title": "Presenter",
+                        "id": 3369
+                    },
+                    {
+                        "title": "Memory Card",
+                        "id": 3370
+                    },
+                    {
+                        "title": "Sound Card",
+                        "id": 3371
+                    },
+                    {
+                        "title": "Capture Card",
+                        "id": 3372
+                    },
+                    {
+                        "title": "Pen Drive",
+                        "id": 3373
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "title": "Accessories",
+        "id": 3374,
+        "children": [
+            {
+                "title": "Smart Watch",
+                "id": 3375
+            },
+            {
+                "title": "Smart Band",
+                "id": 3376
+            },
+            {
+                "title": "Earphone",
+                "id": 3377
+            },
+            {
+                "title": "Earbuds",
+                "id": 3378
+            },
+            {
+                "title": "Neckband",
+                "id": 3379
+            },
+            {
+                "title": "Power Bank",
+                "id": 3380
+            },
+            {
+                "title": "Portable Power Station",
+                "id": 3381
+            },
+            {
+                "title": "TV Box",
+                "id": 3382
+            },
+            {
+                "title": "Studio Equipment",
+                "id": 3383
+            },
+            {
+                "title": "Musical Keyboard",
+                "id": 3384
+            },
+            {
+                "title": "Drones",
+                "id": 3385
+            },
+            {
+                "title": "Gimbal",
+                "id": 3386
+            },
+            {
+                "title": "Daily Lifestyle",
+                "id": 3387
+            },
+            {
+                "title": "Calculator",
+                "id": 3388
+            },
+            {
+                "title": "Blower Machine",
+                "id": 3389
+            },
+            {
+                "title": "Stream Deck",
+                "id": 3390
+            }
+        ]
+    },
+    {
+        "title": "Gadget",
+        "id": 3391,
+        "children": [
+            {
+                "title": "Smart Watch",
+                "id": 3392
+            },
+            {
+                "title": "Smart Band",
+                "id": 3393
+            },
+            {
+                "title": "Earphone",
+                "id": 3394
+            },
+            {
+                "title": "Earbuds",
+                "id": 3395
+            },
+            {
+                "title": "Neckband",
+                "id": 3396
+            },
+            {
+                "title": "Power Bank",
+                "id": 3397
+            },
+            {
+                "title": "Portable Power Station",
+                "id": 3398
+            },
+            {
+                "title": "TV Box",
+                "id": 3399
+            },
+            {
+                "title": "Studio Equipment",
+                "id": 3400
+            },
+            {
+                "title": "Musical Keyboard",
+                "id": 3401
+            },
+            {
+                "title": "Drones",
+                "id": 3402
+            },
+            {
+                "title": "Gimbal",
+                "id": 3403
+            },
+            {
+                "title": "Daily Lifestyle",
+                "id": 3404
+            },
+            {
+                "title": "Calculator",
+                "id": 3405
+            },
+            {
+                "title": "Blower Machine",
+                "id": 3406
+            },
+            {
+                "title": "Stream Deck",
+                "id": 3407
+            }
+        ]
+    },
+    {
+        "title": "Gaming",
+        "id": 3408, 
+        "children": [
+            {
+              "title": "Gaming Chair",
+              "id": 3409
+            },
+            {
+              "title": "Gaming Desk",
+              "id": 3410
+            },
+            {
+              "title": "Keyboard",
+              "id": 3411
+            },
+            {
+              "title": "Mouse",
+              "id": 3412
+            },
+            {
+              "title": "Headphone",
+              "id": 3413
+            },
+            {
+              "title": "Mouse Pad",
+              "id": 3414
+            },
+            {
+              "title": "Gamepad",
+              "id": 3415
+            },
+            {
+              "title": "VR",
+              "id": 3416
+            },
+            {
+              "title": "Gaming Console",
+              "id": 3417
+            },
+            {
+              "title": "Gaming Sofa",
+              "id": 3418
+            },
+            {
+              "title": "Games",
+              "id": 3419
+            }
+          ]
+    },
+    {
+        "title": "TV",
+        "id": 3420,
+        "children": [
+            {
+                "title": "All TV",
+                "id": 3421
+            },
+            {
+                "title": "LED TV",
+                "id": 3422
+            },
+            {
+                "title": "Smart TV",
+                "id": 3423
+            },
+            {
+                "title": "Android TV",
+                "id": 3424
+            },
+            {
+                "title": "4K TV",
+                "id": 3425
+            },
+            {
+                "title": "AKASH Digital TV",
+                "id": 3426
+            },
+            {
+                "title": "TV Stand & Wall Mount",
+                "id": 3427
+            }
+        ]
+    },
+    {
+        "title": "Appliance",
+        "id": 3428,
+        "children": [
+            {
+                "title": "AC",
+                "id": 3430
+            },
+            {
+                "title": "Geyser",
+                "id": 3431
+            },
+            {
+                "title": "Oven",
+                "id": 3432
+            },
+            {
+                "title": "Air Fryer",
+                "id": 3433
+            },
+            {
+                "title": "Washing Machine",
+                "id": 3434
+            },
+            {
+                "title": "Sewing Machine",
+                "id": 3435
+            },
+            {
+                "title": "Air Purifier",
+                "id": 3436
+            },
+            {
+                "title": "Vacuum Cleaner",
+                "id": 3437
+            },
+            {
+                "title": "Blender",
+                "id": 3438
+            },
+            {
+                "title": "Cooker",
+                "id": 3439
+            },
+            {
+                "title": "Iron",
+                "id": 3440
+            },
+            {
+                "title": "Refrigerator",
+                "id": 3441
+            }
+        ]
+    }
+]
