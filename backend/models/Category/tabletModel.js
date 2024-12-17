@@ -10,7 +10,11 @@ const tabletSchema = mongoose.Schema(
     description: String,
     display_size: String,
     display_type: String,
-
+    userId: {
+      type: mongoose.Schema.Types.ObjectId, // Reference to the User model
+      ref: "User",
+      required: true,
+    },
     display_resolution: String,
     processor: String,
     ram: String,

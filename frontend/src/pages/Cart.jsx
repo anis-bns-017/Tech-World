@@ -33,6 +33,8 @@ const Cart = () => {
     fetchData();
   }, []);
 
+  // console.log("Cart Data: ", data);
+
   const increaseQuantity = async (id, qty) => {
     const response = await fetch(SummaryApi.updateCartProduct.url, {
       method: SummaryApi.updateCartProduct.method,

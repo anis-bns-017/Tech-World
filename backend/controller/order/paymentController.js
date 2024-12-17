@@ -10,10 +10,11 @@ const paymentController = async (req, res) => {
     const { OrderData, products, total_amount, total_quantity } = req.body;
     //console.log("asfas: ", req.body);
 
-    // console.log("hey: ", products);
+     console.log("hey: ", products);
     // console.log("Buyer: ", OrderData);
     // console.log("amount: ", total_amount);
     // console.log("quantity: ", total_quantity);
+
 
     const {
       customar_firstName,

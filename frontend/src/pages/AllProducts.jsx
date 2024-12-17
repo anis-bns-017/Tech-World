@@ -1,12 +1,8 @@
 import { useEffect, useState } from "react";
-import UploadProduct from "../components/UploadProduct";
-import SummaryApi from "../common";
+ import SummaryApi from "../common";
 import AdminProductCard from "../components/AdminProductCard";
-import DropdownMenu from "./UserActivity/DropdownMenu";
-import NavBar from "../components/NavBar";
-import { useSelector } from "react-redux";
-import SellerProductCard from "../components/SellerProductCard";
-
+ import { useSelector } from "react-redux";
+ 
 const AllProducts = () => {
   const user = useSelector((state) => state?.user?.user);
 

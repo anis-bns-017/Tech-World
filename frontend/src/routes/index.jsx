@@ -39,6 +39,8 @@ import OnePageCheckout from "../pages/OnePageCheckout";
 import Fail from "../../../backend/controller/order/Fail";
 import Anis from "../dropMenu/Anis";
 import AnisDown from "../dropMenu/AnisDown";
+import OrderList from "../components/OrderList";
+import OrderProductDetails from "../components/OrderProductDetails";
 
 const router = createBrowserRouter([
   {
@@ -127,10 +129,23 @@ const router = createBrowserRouter([
         element: <ProductDetails />,
       },
       {
+        path: "account/all-products/product/:id",
+        element: <ProductDetails />,
+      },
+      {
         path: "cart",
         element: <Cart />,
       },
-
+      {
+        path: "order-list",
+        element: <OrderList />,
+        children: [
+          {
+            path: "product-details",
+            element: <OrderProductDetails />,
+          },
+        ],
+      },
       {
         path: "cart/onepageCheckout",
         element: <OnePageCheckout />,

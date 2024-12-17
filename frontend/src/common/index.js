@@ -97,6 +97,10 @@ const SummaryApi = {
     url: `${backendDomain}/api/get-product`,
     method: "get",
   },
+  getOrderList: {
+    url: `${backendDomain}/api/get-orderRequest`,
+    method: "get",
+  },
 
   //individual product starts from here.
   

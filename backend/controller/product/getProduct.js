@@ -5,7 +5,9 @@ const tabletModel = require("../../models/Category/tabletModel");
 const phoneModel = require("../../models/Category/phoneModel");
 const monitorModel = require("../../models/Category/monitorModel");
 const keyboardModel = require("../../models/Category/keyboardModel");
+const headphoneModel = require("../../models/Category/headphoneModel");
 const allProductModel = require("../../models/Category/allProductModel");
+const cameraModel = require("../../models/Category/cameraModel");
 
 const getProductController = async (req, res) => {
   try {
@@ -18,6 +20,8 @@ const getProductController = async (req, res) => {
       phoneModel,
       monitorModel,
       keyboardModel,
+      cameraModel,
+      headphoneModel
     ];
 
     // Fetch products concurrently from all models

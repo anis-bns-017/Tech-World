@@ -40,6 +40,7 @@ const failController = require("../controller/order/failController");
 
 const updateTabletController = require("../controller/updateProduct/updateTabletController");
 const updateLaptopController = require("../controller/updateProduct/updateLaptopController");
+const getOrderProductController = require("../controller/product/getOrderProductController");
 
 router.post("/signup", userSignupController);
 router.post("/signin", userSigninController);
@@ -92,6 +93,7 @@ router.get("/view-cart-product", authToken, addToCartViewProduct);
 router.post("/update-cart-product", authToken, updateAddtoCartProduct);
 router.post("/delete-cart-product", authToken, deleleAddToCartProduct);
 router.get("/get-orderedProducts", authToken, orderHistory);
+router.get("/get-orderRequest", authToken, getOrderProductController);
 
 //payment and order
 router.post("/checkout", authToken, paymentController);

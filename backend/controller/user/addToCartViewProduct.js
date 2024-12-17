@@ -9,7 +9,7 @@ const addToCartViewProduct = async (req, res) => {
       .find({ userId: currentUser, payment_status: false }) // Filter by the current user's ID
       .populate({
         path: "productId",
-        select: "productName price productImage category sellingPrice",
+        select: "productName price productImage userId category sellingPrice",
       }); // Automatically uses refPath to fetch the correct model
 
       // console.log("LL: ", allProduct);

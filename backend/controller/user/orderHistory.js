@@ -7,7 +7,6 @@ const orderHistory = async (req, res) => {
     // Find all products and populate dynamically based on productType
     const allProducts = await orderHistoryModel.find(); // Filter by the current user's ID
 
-    console.log("LL: ", allProducts);
     res.json({
       data: allProducts,
       error: false,

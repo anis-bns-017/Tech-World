@@ -77,6 +77,8 @@ const OnePageCheckout = () => {
   // console.log("b: ", total_amount);
   // console.log("c: ", total_quantity);
 
+  // console.log("one go: ", products);
+
   const handlePayment = async (e) => {
     e.preventDefault();
 

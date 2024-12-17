@@ -60,7 +60,7 @@ const filterProductController = async (req, res) => {
 
     res.json({
       data: allMobiles,
-      message: "Filtered products retrieved successfully.",
+      // message: "Filtered products retrieved successfully.",
       error: false,
       success: true,
     });

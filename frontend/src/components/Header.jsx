@@ -13,7 +13,8 @@ import Context from "../context/Context";
 import { MdOutlineCardGiftcard } from "react-icons/md";
 import { SlEnergy } from "react-icons/sl";
 import { FaUserAlt } from "react-icons/fa";
-import DropDown from "../dropMenu/DropDown";
+import { GiShoppingCart } from "react-icons/gi";
+
 import NavBar from "./NavBar";
 import AnisDown from "../dropMenu/AnisDown";
 
@@ -174,6 +175,33 @@ const Header = () => {
             <Link to={"/cart"} className="text-2xl relative">
               <span>
                 <FaCartPlus />
+              </span>
+
+              <div>
+                <p className="text-sm bg-blue-600 w-4 h-4 rounded text-yellow-100 p-2 flex items-center justify-center absolute -top-3 -right-4">
+                  {context?.cartProductCount}
+                </p>
+              </div>
+            </Link>
+          )}
+          {user?._id && user?.role === "SELLER" && (
+            <Link to={"/order-list"} className="text-2xl relative">
+              <span>
+                <GiShoppingCart />
+              </span>
+
+              <div>
+                <p className="text-sm bg-blue-600 w-4 h-4 rounded text-yellow-100 p-2 flex items-center justify-center absolute -top-3 -right-4">
+                  {context?.cartProductCount}
+                </p>
+              </div>
+            </Link>
+          )}
+
+          {user?._id && user?.role === "ADMIN" && (
+            <Link to={"/order-list"} className="text-2xl relative">
+              <span>
+                <GiShoppingCart />
               </span>
 
               <div>
