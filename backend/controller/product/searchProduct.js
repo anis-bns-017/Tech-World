@@ -6,6 +6,8 @@ const productModels = [
   require("../../models/Category/tabletModel"),
   require("../../models/Category/monitorModel"),
   require("../../models/Category/keyboardModel"),
+  require("../../models/Category/headphoneModel"),
+  require("../../models/Category/cameraModel"),
 ];
 
 const searchProduct = async (req, res) => {

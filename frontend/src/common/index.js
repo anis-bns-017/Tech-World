@@ -202,6 +202,11 @@ const SummaryApi = {
     url: `${backendDomain}/api/update-laptop`,
     method: "post",
   },
+
+  updateCamera: {
+    url: `${backendDomain}/api/update-camera`,
+    method: "post",
+  },
 };
 
 export default SummaryApi;

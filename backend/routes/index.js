@@ -41,6 +41,7 @@ const failController = require("../controller/order/failController");
 const updateTabletController = require("../controller/updateProduct/updateTabletController");
 const updateLaptopController = require("../controller/updateProduct/updateLaptopController");
 const getOrderProductController = require("../controller/product/getOrderProductController");
+const updatePhoneController = require("../controller/updateProduct/updatePhoneController");
 
 router.post("/signup", userSignupController);
 router.post("/signin", userSigninController);
@@ -71,6 +72,7 @@ router.post("/upload-headphone", authToken, headphoneUploadController);
 //update
 router.post("/update-tablet", authToken, updateTabletController);
 router.post("/update-laptop", authToken, updateLaptopController);
+router.post("/update-phone", authToken, updatePhoneController);
 
 //other thing about product.
 router.get("/get-product", getProductController);
