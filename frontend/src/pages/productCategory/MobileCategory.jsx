@@ -96,7 +96,7 @@ const MobileCategory = ({ onClose, fetchData }) => {
 
     console.log("Filters to send to the database:", filters);
 
-    
+
     const response = await fetch(SummaryApi.filterPhones.url, {
       method: SummaryApi.filterPhones.method,
       credentials: "include",
@@ -107,9 +107,9 @@ const MobileCategory = ({ onClose, fetchData }) => {
     });
 
     const responseData = await response.json();
-    
 
-    
+
+
     if (responseData.success) {
       toast.success(responseData?.message);
       setAllPhones(responseData?.data);
@@ -122,12 +122,10 @@ const MobileCategory = ({ onClose, fetchData }) => {
     }
   };
 
-  console.log("jaihok allah ", allPhones);
-
 
   useEffect(() => {
-  fetchFilteredProducts(); // Fetch products when filters change
-}, [selectedBrands, selectedDisplaySize,selectedDisplayType, selectedFeatures, selectedRams, selectedStorage, selectedChipsets, priceRange]);
+    fetchFilteredProducts(); // Fetch products when filters change
+  }, [selectedBrands, selectedDisplaySize, selectedDisplayType, selectedFeatures, selectedRams, selectedStorage, selectedChipsets, priceRange]);
 
 
   const [visibleBrand, SetVisibleBrand] = useState(true);
@@ -213,11 +211,10 @@ const MobileCategory = ({ onClose, fetchData }) => {
                 <hr />
                 {/* Content Section with Animation */}
                 <div
-                  className={`transition-all duration-300 ease-in-out overflow-hidden ${
-                    visibleBrand
+                  className={`transition-all duration-300 ease-in-out overflow-hidden ${visibleBrand
                       ? "max-h-[50vh] opacity-100"
                       : "max-h-0 opacity-0"
-                  }`}
+                    }`}
                 >
                   <div className="overflow-y-scroll h-[50vh] space-y-2 mt-3 p-3">
                     {brands.map((brand) => (
@@ -260,11 +257,10 @@ const MobileCategory = ({ onClose, fetchData }) => {
                 <hr />
                 {/* Content Section with Animation */}
                 <div
-                  className={`transition-all duration-300 ease-in-out overflow-hidden ${
-                    visibleDisplay
+                  className={`transition-all duration-300 ease-in-out overflow-hidden ${visibleDisplay
                       ? "max-h-screen opacity-100"
                       : "max-h-0 opacity-0"
-                  }`}
+                    }`}
                 >
                   <div className="space-y-2 p-3">
                     {displaySize.map((display) => (
@@ -307,11 +303,10 @@ const MobileCategory = ({ onClose, fetchData }) => {
                 <hr />
                 {/* Content Section with Animation */}
                 <div
-                  className={`transition-all duration-300 ease-in-out overflow-hidden ${
-                    visibleDisplayType
+                  className={`transition-all duration-300 ease-in-out overflow-hidden ${visibleDisplayType
                       ? "max-h-screen opacity-100"
                       : "max-h-0 opacity-0"
-                  }`}
+                    }`}
                 >
                   <div className="space-y-2 p-3">
                     {displayType.map((display) => (
@@ -354,11 +349,10 @@ const MobileCategory = ({ onClose, fetchData }) => {
                 <hr />
                 {/* Content Section with Animation */}
                 <div
-                  className={`transition-all duration-300 ease-in-out overflow-hidden ${
-                    visibleChipset
+                  className={`transition-all duration-300 ease-in-out overflow-hidden ${visibleChipset
                       ? "max-h-screen opacity-100"
                       : "max-h-0 opacity-0"
-                  }`}
+                    }`}
                 >
                   <div className="space-y-2 p-3">
                     {chipsets.map((chipset) => (
@@ -400,11 +394,10 @@ const MobileCategory = ({ onClose, fetchData }) => {
                 <hr />
                 {/* Content Section with Animation */}
                 <div
-                  className={`transition-all duration-300 ease-in-out overflow-hidden ${
-                    visibleRam
+                  className={`transition-all duration-300 ease-in-out overflow-hidden ${visibleRam
                       ? "max-h-screen opacity-100"
                       : "max-h-0 opacity-0"
-                  }`}
+                    }`}
                 >
                   <div className="space-y-2 p-3">
                     {rams.map((ram) => (
@@ -447,11 +440,10 @@ const MobileCategory = ({ onClose, fetchData }) => {
                 <hr />
                 {/* Content Section with Animation */}
                 <div
-                  className={`transition-all duration-300 ease-in-out overflow-hidden ${
-                    visibleStorage
+                  className={`transition-all duration-300 ease-in-out overflow-hidden ${visibleStorage
                       ? "max-h-screen opacity-100"
                       : "max-h-0 opacity-0"
-                  }`}
+                    }`}
                 >
                   <div className="space-y-2 p-3">
                     {internalStorage.map((storage) => (
@@ -494,11 +486,10 @@ const MobileCategory = ({ onClose, fetchData }) => {
                 <hr />
                 {/* Content Section with Animation */}
                 <div
-                  className={`transition-all duration-300 ease-in-out overflow-hidden ${
-                    visibleFeatures
+                  className={`transition-all duration-300 ease-in-out overflow-hidden ${visibleFeatures
                       ? "max-h-screen opacity-100"
                       : "max-h-0 opacity-0"
-                  }`}
+                    }`}
                 >
                   <div className="space-y-2 p-3">
                     {features.map((feature) => (
@@ -532,7 +523,7 @@ const MobileCategory = ({ onClose, fetchData }) => {
           </main>
         </div>
         <div className="w-full bg-slate-100">
-          <ShowPhone phones = {allPhones} />
+          <ShowPhone phones={allPhones} />
         </div>
       </div>
     </>

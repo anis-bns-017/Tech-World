@@ -98,7 +98,6 @@ const UpdateTablet = ({ onClose, fetchData }) => {
   // upload product
   const handleSubmit = async (e) => {
     e.preventDefault();
-
     const response = await fetch(SummaryApi.updateTablet.url, {
       method: SummaryApi.updateTablet.method,
       credentials: "include",

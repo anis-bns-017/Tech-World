@@ -36,6 +36,8 @@ const PriceRangeSlider = ({
     const minPercent = getPercent(minVal);
     const maxPercent = getPercent(maxValRef.current);
 
+    console.log(minPercent + " asdfasdf " + maxPercent);
+    
     if (range.current) {
       range.current.style.left = `৳{minPercent}%`;
       range.current.style.width = `৳{maxPercent - minPercent}%`;
@@ -46,6 +48,9 @@ const PriceRangeSlider = ({
   useEffect(() => {
     const minPercent = getPercent(minValRef.current);
     const maxPercent = getPercent(maxVal);
+
+    console.log("wow: ", minPercent + "okay: ", maxPercent);
+    
 
     if (range.current) {
       range.current.style.width = `৳{maxPercent - minPercent}%`;
@@ -74,7 +79,7 @@ const PriceRangeSlider = ({
         />
 
         {/* Dashed Divider */}
-        
+
         {/* Max Value Input */}
         <input
           type="number"
@@ -92,14 +97,10 @@ const PriceRangeSlider = ({
           max={max}
           value={minVal}
           onChange={(event) => {
-            const value = Math.min(Number(event.target.value), maxVal - 1);
+            const value = Math.min(Number(event.target.value), maxVal - 1); // Prevent crossing
             setMinVal(value);
           }}
-          className="thumb thumb-left -mt-5 ml-12"
-          style={{
-            width,
-            zIndex: minVal > max - 100 || minVal === maxVal ? 5 : undefined,
-          }}
+          className="thumb thumb-left"
         />
 
         <input
@@ -108,15 +109,12 @@ const PriceRangeSlider = ({
           max={max}
           value={maxVal}
           onChange={(event) => {
-            const value = Math.max(Number(event.target.value), minVal + 1);
+            const value = Math.max(Number(event.target.value), minVal + 1); // Prevent crossing
             setMaxVal(value);
           }}
-          className="thumb thumb-right -mt-5 -ml-12"
-          style={{
-            width,
-            zIndex: minVal > max - 100 || minVal === maxVal ? 4 : undefined,
-          }}
+          className="thumb thumb-right"
         />
+
 
         <div className="slider -mt-5 ml-12 w-[30vh]">
           <div

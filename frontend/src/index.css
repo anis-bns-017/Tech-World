@@ -132,12 +132,16 @@ body {
   outline: none;
 }
 
+/* Length of left thumb */
 .thumb-left {
   z-index: 3;
+  width: 200px;
 }
 
+/* lenght of right thumb */
 .thumb-right {
   z-index: 4;
+  width: 200px;
 }
 
 .thumb::-webkit-slider-thumb {
@@ -148,7 +152,8 @@ body {
   cursor: pointer;
   height: 28px;
   width: 28px;
-  margin-top: 4.5px;
+  margin-left: 45px;
+  margin-top: -30px;
   pointer-events: all;
   position: relative;
   transition: transform 0.3s ease-in-out;

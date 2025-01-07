@@ -9,7 +9,7 @@ import { MdDelete } from "react-icons/md";
 import DisplayImage from "../DIsplayImage";
 import { useNavigate } from "react-router-dom";
 
-const Phone = ({onClose, fetchData}) => {
+const Phone = ({ onClose, fetchData }) => {
   const [data, setData] = useState({
     productName: "",
     brandName: "",
